@@ -1,0 +1,89 @@
+#!/usr/bin/env perl
+
+use strict;
+use warnings;
+use autodie;
+
+use Carp qw( croak );
+use MaxMind::DB::Writer::Tree::InMemory;
+use MaxMind::DB::Writer::Tree::File;
+use Test::MaxMind::DB::Common::Util qw( standard_metadata );
+use Net::Works::Network;
+
+sub main {
+    my @sizes = ( 24, 28, 32 );
+    my @ipv4_range = ('1.1.1.1', '1.1.1.32');
+
+    my @ipv4_subnets = Net::Works::Network->range_as_subnets(@ipv4_range);
+
+    foreach my $record_size (@sizes) {
+        write_tree(
+            $record_size,
+            \@ipv4_subnets,
+            { ip_version => 4 },
+            'ipv4',
+        );
+    }
+
+    my @ipv6_subnets = Net::Works::Network->range_as_subnets(
+        '::1:ffff:ffff',
+        '::2:0000:0059'
+    );
+
+    foreach my $record_size (@sizes) {
+        write_tree(
+            $record_size,
+            \@ipv6_subnets,
+            { ip_version => 6 },
+            'ipv6',
+        );
+
+        write_tree(
+            $record_size,
+            [
+                @ipv6_subnets,
+                Net::Works::Network->range_as_subnets( @ipv4_range, 6 ),
+            ],
+            { ip_version => 6 },
+            'mixed',
+        );
+    }
+}
+
+sub write_tree {
+    my $record_size     = shift;
+    my $subnets         = shift;
+    my $metadata        = shift;
+    my $ip_version_name = shift;
+
+    my $tree = MaxMind::DB::Writer::Tree::InMemory->new(
+        ip_version => $subnets->[0]->version() );
+
+    for my $subnet ( @{$subnets} ) {
+        $tree->insert_subnet(
+            $subnet,
+            { ip => $subnet->first()->as_string() }
+        );
+    }
+
+    my $writer = MaxMind::DB::Writer::Tree::File->new(
+        tree        => $tree,
+        record_size => $record_size,
+        standard_metadata(),
+        %{$metadata},
+        map_key_type_callback => sub { 'utf8_string' },
+    );
+
+    my $filename = sprintf(
+        'MaxMind-DB-test-%s-%i.mmdb',
+        $ip_version_name,
+        $record_size,
+    );
+    open my $fh, '>', $filename;
+
+    $writer->write_tree($fh);
+
+    return ( $tree, $filename );
+}
+
+main();
