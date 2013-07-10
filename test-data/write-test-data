@@ -5,19 +5,20 @@ use warnings;
 use autodie;
 
 use Carp qw( croak );
+use MaxMind::DB::Writer::Serializer;
 use MaxMind::DB::Writer::Tree::InMemory;
 use MaxMind::DB::Writer::Tree::File;
-use Test::MaxMind::DB::Common::Util qw( standard_metadata );
+use Test::MaxMind::DB::Common::Util qw( standard_test_metadata );
 use Net::Works::Network;
 
 sub main {
     my @sizes = ( 24, 28, 32 );
-    my @ipv4_range = ('1.1.1.1', '1.1.1.32');
+    my @ipv4_range = ( '1.1.1.1', '1.1.1.32' );
 
     my @ipv4_subnets = Net::Works::Network->range_as_subnets(@ipv4_range);
 
     foreach my $record_size (@sizes) {
-        write_tree(
+        write_test_db(
             $record_size,
             \@ipv4_subnets,
             { ip_version => 4 },
@@ -31,14 +32,14 @@ sub main {
     );
 
     foreach my $record_size (@sizes) {
-        write_tree(
+        write_test_db(
             $record_size,
             \@ipv6_subnets,
             { ip_version => 6 },
             'ipv6',
         );
 
-        write_tree(
+        write_test_db(
             $record_size,
             [
                 @ipv6_subnets,
@@ -48,9 +49,11 @@ sub main {
             'mixed',
         );
     }
+
+    write_test_serialization_data();
 }
 
-sub write_tree {
+sub write_test_db {
     my $record_size     = shift;
     my $subnets         = shift;
     my $metadata        = shift;
@@ -69,7 +72,7 @@ sub write_tree {
     my $writer = MaxMind::DB::Writer::Tree::File->new(
         tree        => $tree,
         record_size => $record_size,
-        standard_metadata(),
+        standard_test_metadata(),
         %{$metadata},
         map_key_type_callback => sub { 'utf8_string' },
     );
@@ -84,6 +87,25 @@ sub write_tree {
     $writer->write_tree($fh);
 
     return ( $tree, $filename );
+}
+
+sub write_test_serialization_data {
+    my $serializer = MaxMind::DB::Writer::Serializer->new(
+        map_key_type_callback => sub { 'utf8_string' } );
+
+    $serializer->store_data( map => { long_key  => 'long_value1' } );
+    $serializer->store_data( map => { long_key  => 'long_value2' } );
+    $serializer->store_data( map => { long_key2 => 'long_value1' } );
+    $serializer->store_data( map => { long_key2 => 'long_value2' } );
+    $serializer->store_data( map => { long_key  => 'long_value1' } );
+    $serializer->store_data( map => { long_key2 => 'long_value2' } );
+
+    open my $fh, '>', 'maps-with-pointers.raw';
+    print {$fh} ${ $serializer->buffer() }
+        or die "Cannot write to maps-with-pointers.raw: $!";
+    close $fh;
+
+    return;
 }
 
 main();
