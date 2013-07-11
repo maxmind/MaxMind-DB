@@ -74,6 +74,7 @@ sub write_test_db {
         record_size => $record_size,
         standard_test_metadata(),
         %{$metadata},
+        alias_ipv6_to_ipv4 => ( $subnets->[0]->version() == 6 ? 1 : 0 ),
         map_key_type_callback => sub { 'utf8_string' },
     );
 
