@@ -3,13 +3,18 @@
 use strict;
 use warnings;
 use autodie;
+use utf8;
 
 use Carp qw( croak );
+use Cwd qw( abs_path );
+use File::Basename qw( dirname );
 use MaxMind::DB::Writer::Serializer;
 use MaxMind::DB::Writer::Tree::InMemory;
 use MaxMind::DB::Writer::Tree::File;
-use Test::MaxMind::DB::Common::Util qw( standard_test_metadata );
 use Net::Works::Network;
+use Test::MaxMind::DB::Common::Util qw( standard_test_metadata );
+
+my $Dir = dirname( abs_path($0) );
 
 sub main {
     my @sizes = ( 24, 28, 32 );
@@ -50,6 +55,8 @@ sub main {
         );
     }
 
+    write_geoip2_city_db();
+
     write_test_serialization_data();
 }
 
@@ -79,7 +86,7 @@ sub write_test_db {
     );
 
     my $filename = sprintf(
-        'MaxMind-DB-test-%s-%i.mmdb',
+        "$Dir/MaxMind-DB-test-%s-%i.mmdb",
         $ip_version_name,
         $record_size,
     );
@@ -88,6 +95,65 @@ sub write_test_db {
     $writer->write_tree($fh);
 
     return ( $tree, $filename );
+}
+
+sub write_geoip2_city_db {
+    my $tree = MaxMind::DB::Writer::Tree::InMemory->new( ip_version => 6 );
+
+    my $json = JSON::XS->new()->utf8();
+
+    open my $source_fh, '<', "$Dir/../source-data/GeoIP2-City-Test.json";
+    while (<$source_fh>) {
+        my ( $network, $record ) = @{ $json->decode($_) };
+        $tree->insert_subnet(
+            Net::Works::Network->new_from_string( string => $network ),
+            $record
+        );
+    }
+    close $source_fh;
+
+
+    my %type_map = (
+        cellular              => 'uint16',
+        city                  => 'map',
+        continent             => 'map',
+        country               => 'map',
+        geoname_id            => 'uint32',
+        is_anonymous_proxy    => 'boolean',
+        is_satellite_provider => 'boolean',
+        latitude              => 'double',
+        location              => 'map',
+        longitude             => 'double',
+        names                 => 'map',
+        postal                => 'map',
+        registered_country    => 'map',
+        represented_country   => 'map',
+        subdivisions          => [ 'array', 'map' ],
+        traits                => 'map',
+    );
+
+    my $type_cb = sub { $type_map{ $_[0] } // 'utf8_string' };
+
+    my $writer = MaxMind::DB::Writer::Tree::File->new(
+        tree          => $tree,
+        record_size   => 28,
+        ip_version    => 6,
+        database_type => 'GeoIP2 City Test Database',
+        languages     => [ 'en', 'zh' ],
+        description   => {
+            en =>
+                'GeoIP2 City Test Database (a small sample of real GeoIP2 data)',
+            zh => '小型数据库',
+        },
+        alias_ipv6_to_ipv4    => 1,
+        map_key_type_callback => $type_cb,
+    );
+
+    open my $output_fh, '>', "$Dir/GeoIP2-City-Test.mmdb";
+    $writer->write_tree($output_fh);
+    close $output_fh;
+
+    return;
 }
 
 sub write_test_serialization_data {
