@@ -56,6 +56,7 @@ sub main {
     }
 
     write_geoip2_city_db();
+    write_broken_geoip2_city_db();
 
     write_test_serialization_data();
 }
@@ -98,6 +99,29 @@ sub write_test_db {
 }
 
 sub write_geoip2_city_db {
+    _write_geoip2_city_db('Test');
+}
+
+sub write_broken_geoip2_city_db {
+    no warnings 'redefine';
+
+    # This is how we _used_ to encode doubles. Storing them this way with the
+    # current reader tools can lead to weird errors. This broken database is a
+    # good way to test the robustness of reader code in the face of broken
+    # databases.
+    local *MaxMind::DB::Writer::Serializer::_encode_double = sub {
+        my $self  = shift;
+        my $value = shift;
+
+        $self->_simple_encode( double => $value );
+    };
+
+    _write_geoip2_city_db('Test Broken Double Format');
+}
+
+sub _write_geoip2_city_db {
+    my $description = shift;
+
     my $tree = MaxMind::DB::Writer::Tree::InMemory->new( ip_version => 6 );
 
     my $json = JSON::XS->new()->utf8();
@@ -138,18 +162,19 @@ sub write_geoip2_city_db {
         tree          => $tree,
         record_size   => 28,
         ip_version    => 6,
-        database_type => 'GeoIP2 City Test Database',
+        database_type => 'GeoIP2 City',
         languages     => [ 'en', 'zh' ],
         description   => {
             en =>
-                'GeoIP2 City Test Database (a small sample of real GeoIP2 data)',
+                "GeoIP2 City $description Database (a small sample of real GeoIP2 data)",
             zh => '小型数据库',
         },
         alias_ipv6_to_ipv4    => 1,
         map_key_type_callback => $type_cb,
     );
 
-    open my $output_fh, '>', "$Dir/GeoIP2-City-Test.mmdb";
+    my $suffix = $description =~ s/ /-/gr;
+    open my $output_fh, '>', "$Dir/GeoIP2-City-$suffix.mmdb";
     $writer->write_tree($output_fh);
     close $output_fh;
 
