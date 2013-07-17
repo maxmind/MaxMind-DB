@@ -8,6 +8,8 @@ use utf8;
 use Carp qw( croak );
 use Cwd qw( abs_path );
 use File::Basename qw( dirname );
+use JSON::XS;
+use Math::Int128 qw( uint128 );
 use MaxMind::DB::Writer::Serializer;
 use MaxMind::DB::Writer::Tree::InMemory;
 use MaxMind::DB::Writer::Tree::File;
@@ -55,6 +57,8 @@ sub main {
         );
     }
 
+    write_decoder_test_db();
+
     write_geoip2_city_db();
     write_broken_geoip2_city_db();
 
@@ -96,6 +100,77 @@ sub write_test_db {
     $writer->write_tree($fh);
 
     return ( $tree, $filename );
+}
+
+{
+    # We will store this once for each subnet so we will also be testing
+    # pointers, since the serializer will generate a pointer to this
+    # structure.
+    my %all_types = (
+        utf8_string => 'unicode! ☯ - ♫',
+        double      => 42.123456,
+        bytes       => pack( 'N', 42 ),
+        uint16      => 100,
+        uint32      => 2**28,
+        uint64      => uint128(2) << 60,
+        uint128     => uint128(2) << 120,
+        array       => [ 1, 2, 3, ],
+        map         => {
+            mapX => {
+                utf8_stringX => 'hello',
+                arrayX       => [ 7, 8, 9 ],
+            },
+        },
+        boolean => 1,
+        float   => 1.1,
+    );
+
+    sub write_decoder_test_db {
+        my $tree
+            = MaxMind::DB::Writer::Tree::InMemory->new( ip_version => 6 );
+
+        my @subnets
+            = map { Net::Works::Network->new_from_string( string => $_ ) }
+            qw(
+            ::1.1.1.0/120
+            ::2.0.0.0/112
+            ::3.0.0.0/104
+            ::4.5.6.7/128
+            abcd::/64
+            1000::1234:0000/112
+        );
+
+        for my $subnet (@subnets) {
+            $tree->insert_subnet(
+                $subnet,
+                \%all_types,
+            );
+        }
+
+        my $writer = MaxMind::DB::Writer::Tree::File->new(
+            tree          => $tree,
+            record_size   => 24,
+            ip_version    => 6,
+            database_type => 'MaxMind DB Decoder Test',
+            languages     => ['en'],
+            description   => {
+                en =>
+                    'MaxMind DB Decoder Test database - contains every MaxMind DB data type',
+            },
+            alias_ipv6_to_ipv4    => 1,
+            map_key_type_callback => sub {
+                my $key = $_[0];
+                $key =~ s/X$//;
+                return $key eq 'array' ? [ 'array', 'uint32' ] : $key;
+            }
+        );
+
+        open my $fh, '>', "$Dir/MaxMind-DB-test-decoder.mmdb";
+
+        $writer->write_tree($fh);
+
+        return;
+    }
 }
 
 sub write_geoip2_city_db {
