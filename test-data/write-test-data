@@ -112,6 +112,7 @@ sub write_test_db {
         bytes       => pack( 'N', 42 ),
         uint16      => 100,
         uint32      => 2**28,
+        int32       => -1 * ( 2**28 ),
         uint64      => uint128(1) << 60,
         uint128     => uint128(1) << 120,
         array       => [ 1, 2, 3, ],
