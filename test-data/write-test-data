@@ -62,6 +62,8 @@ sub main {
     write_geoip2_city_db();
     write_broken_geoip2_city_db();
 
+    write_no_map_db(\@ipv4_subnets);
+
     write_test_serialization_data();
 }
 
@@ -251,6 +253,38 @@ sub _write_geoip2_city_db {
 
     my $suffix = $description =~ s/ /-/gr;
     open my $output_fh, '>', "$Dir/GeoIP2-City-$suffix.mmdb";
+    $writer->write_tree($output_fh);
+    close $output_fh;
+
+    return;
+}
+
+# The point of this database is to provide something where we can test looking
+# up a single value. In other words, each IP address points to a non-compound
+# value, a string rather than a map or array.
+sub write_no_map_db {
+    my $subnets = shift;
+
+    my $tree = MaxMind::DB::Writer::Tree::InMemory->new( ip_version => 4 );
+
+    for my $subnet (@{$subnets}) {
+        $tree->insert_subnet( $subnet, $subnet->as_string() );
+    }
+
+    my $writer = MaxMind::DB::Writer::Tree::File->new(
+        tree          => $tree,
+        record_size   => 24,
+        ip_version    => 4,
+        database_type => 'MaxMind DB String Value Entries',
+        languages     => ['en'],
+        description   => {
+            en =>
+                'MaxMind DB String Value Entries (no maps or arrays as values)',
+        },
+        root_data_type => 'utf8_string',
+    );
+
+    open my $output_fh, '>', "$Dir/MaxMind-DB-string-value-entries.mmdb";
     $writer->write_tree($output_fh);
     close $output_fh;
 
