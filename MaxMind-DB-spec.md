@@ -35,6 +35,9 @@ allow for arbitrary binary data in the data section, some other piece of data
 could contain these values. This is why you need to find the last occurrence
 of this sequence.
 
+The maximum allowable size for the metadata section, including the marker that
+starts the metadata, is 128kb.
+
 The metadata is stored as a map data structure. This structure is described
 later in the spec. Changing a key's data type or removing a key would
 consistute a major version change for this spec.
