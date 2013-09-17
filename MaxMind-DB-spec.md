@@ -42,7 +42,11 @@ The metadata is stored as a map data structure. This structure is described
 later in the spec. Changing a key's data type or removing a key would
 consistute a major version change for this spec.
 
-Adding a key constitutes a minor version change.
+Except where otherwise specified, each key listed is required for the database
+to be considered valid.
+
+Adding a key constitutes a minor version change. Removing a key or changing
+its type constitutes a major version change.
 
 The list of known keys for the current version of the format is as follows:
 
@@ -91,8 +95,8 @@ database's binary format.
 
 ### build\_epoch
 
-This is an unsigned 64-bit integer that contains database build timestamp as a
-Unix epoch value.
+This is an unsigned 64-bit integer that contains the database build timestamp
+as a Unix epoch value.
 
 ### description
 
@@ -104,7 +108,8 @@ The codes may include additional information such as script or country
 identifiers, like "zh-TW" or "mn-Cyrl-MN". The additional identifiers will be
 separated by a dash character ("-").
 
-The only language code we guarantee to include is "en" (English).
+This is key is optional. However, creators of databases are strongly
+encouraged to include a description in at least one language.
 
 ### Calculating the Search Tree Section Size
 
