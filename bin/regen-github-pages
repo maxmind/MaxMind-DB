@@ -4,11 +4,13 @@ use strict;
 use warnings;
 use autodie qw( :all );
 
+use Cwd qw( abs_path );
 use FindBin qw( $Bin );
 use File::Slurp qw( read_file );
 use Markdent::Simple::Fragment 0.22;
 
-my $markdown = read_file("$Bin/../MaxMind-DB-spec.md");
+my $repo = abs_path("$Bin/..");
+my $markdown = read_file("$repo/MaxMind-DB-spec.md");
 
 my $mds       = Markdent::Simple::Fragment->new();
 my $spec_html = $mds->markdown_to_html(
@@ -32,7 +34,6 @@ EOF
 
 system qw( git co gh-pages );
 
-open my $fh, '>', "$Bin/../index.html";
+open my $fh, '>', "$repo/index.html";
 print {$fh} $index_html;
 close $fh;
-
