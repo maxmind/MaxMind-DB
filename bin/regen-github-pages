@@ -1,0 +1,38 @@
+#!/usr/bin/env perl
+
+use strict;
+use warnings;
+use autodie qw( :all );
+
+use FindBin qw( $Bin );
+use File::Slurp qw( read_file );
+use Markdent::Simple::Fragment 0.22;
+
+my $markdown = read_file("$Bin/../MaxMind-DB-spec.md");
+
+my $mds       = Markdent::Simple::Fragment->new();
+my $spec_html = $mds->markdown_to_html(
+    dialects => 'GitHub',
+    markdown => $markdown,
+);
+
+my ($title) = $markdown =~ /^\#\s+(.+)\n/;
+
+my $index_html = <<"EOF";
+<!DOCTYPE html>
+<html>
+<head>
+  <title>$title</title>
+</head>
+<body>
+$spec_html
+</body>
+</html>
+EOF
+
+system qw( git co gh-pages );
+
+open my $fh, '>', "$Bin/../index.html";
+print {$fh} $index_html;
+close $fh;
+
