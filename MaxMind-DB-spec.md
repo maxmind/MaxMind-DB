@@ -1,4 +1,4 @@
-# MaxMind DB Format
+# MaxMind DB File Format Specification
 
 ## Version
 
