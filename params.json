@@ -1,0 +1,1 @@
+{"name":"Maxmind-db","tagline":"","body":"MaxMind DB is a binary file format that stores data indexed by IP address\r\nsubnets (IPv4 or IPv6).\r\n\r\nThis repository contains the spec for that format.\r\n","google":"","note":"Don't delete this file! It's used internally to help with page regeneration."}
