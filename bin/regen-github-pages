@@ -25,9 +25,16 @@ my $index_html = <<"EOF";
 <html>
 <head>
   <title>$title</title>
+  <link rel="stylesheet" id="maxmind-bootstrap-css"  href="http://www.maxmind.com/css/maxmind.css" type="text/css" media="all" />
 </head>
 <body>
+
+<div class="row-fluid">
+  <div class="span2"></div>
+  <div class="span8">
 $spec_html
+  </div>
+  <div class="span2"></div>
 </body>
 </html>
 EOF
