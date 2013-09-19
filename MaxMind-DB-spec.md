@@ -1,3 +1,8 @@
+---
+layout: default
+title: MaxMind DB File Format Specification
+version: v2.0
+---
 # MaxMind DB File Format Specification
 
 ## Version
