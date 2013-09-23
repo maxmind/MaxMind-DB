@@ -1,4 +1,3 @@
 pygments:    false
-lsi:         true
-markdown: redcarpet
+markdown:    redcarpet
 permalink:   /:title.html
