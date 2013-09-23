@@ -314,7 +314,7 @@ A 128-bit integer can use up to 16 bytes, but may use fewer. Similarly, a
 32-bit integer may use from 0-4 bytes. The number of bytes used is determined
 by the length specifier in the control byte. See below for details.
 
-When storing a signed integer, the left-most bit is the sign. A 1 is negative,
+When storing a signed integer, the left-most bit is the sign. A 1 is negative
 and a 0 is positive.
 
 The type numbers for our integer types are:
