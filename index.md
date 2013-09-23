@@ -1,1 +1,0 @@
-MaxMind-DB-spec.md
