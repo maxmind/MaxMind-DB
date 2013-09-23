@@ -1,3 +1,4 @@
+safe:        true
 pygments:    false
 markdown:    redcarpet
 permalink:   /:title.html
