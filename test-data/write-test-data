@@ -10,9 +10,9 @@ use Cwd qw( abs_path );
 use File::Basename qw( dirname );
 use JSON::XS;
 use Math::Int128 qw( uint128 );
-use MaxMind::DB::Writer::Serializer 0.042000;
-use MaxMind::DB::Writer::Tree::InMemory 0.042000;
-use MaxMind::DB::Writer::Tree::File 0.042000;
+use MaxMind::DB::Writer::Serializer 0.043000;
+use MaxMind::DB::Writer::Tree::InMemory 0.043000;
+use MaxMind::DB::Writer::Tree::File 0.043000;
 use Net::Works::Network;
 use Test::MaxMind::DB::Common::Util qw( standard_test_metadata );
 
