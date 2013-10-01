@@ -24,7 +24,7 @@ sub main {
 
     my @ipv4_subnets = Net::Works::Network->range_as_subnets(@ipv4_range);
 
-    foreach my $record_size (@sizes) {
+    for my $record_size (@sizes) {
         write_test_db(
             $record_size,
             \@ipv4_subnets,
@@ -38,7 +38,7 @@ sub main {
         '::2:0000:0059'
     );
 
-    foreach my $record_size (@sizes) {
+    for my $record_size (@sizes) {
         write_test_db(
             $record_size,
             \@ipv6_subnets,
@@ -61,6 +61,8 @@ sub main {
 
     write_geoip2_city_db();
     write_broken_geoip2_city_db();
+
+    write_no_ipv4_tree_db();
 
     write_no_map_db(\@ipv4_subnets);
 
@@ -100,6 +102,8 @@ sub write_test_db {
     open my $fh, '>', $filename;
 
     $writer->write_tree($fh);
+
+    close $fh;
 
     return ( $tree, $filename );
 }
@@ -171,6 +175,8 @@ sub write_test_db {
         open my $fh, '>', "$Dir/MaxMind-DB-test-decoder.mmdb";
 
         $writer->write_tree($fh);
+
+        close $fh;
 
         return;
     }
@@ -258,6 +264,35 @@ sub _write_geoip2_city_db {
 
     return;
 }
+
+sub write_no_ipv4_tree_db {
+    my $subnets = shift;
+
+    my $tree = MaxMind::DB::Writer::Tree::InMemory->new( ip_version => 6 );
+
+    my $subnet = Net::Works::Network->new_from_string( string => '::/64' );
+    $tree->insert_subnet( $subnet, $subnet->as_string() );
+
+    my $writer = MaxMind::DB::Writer::Tree::File->new(
+        tree          => $tree,
+        record_size   => 24,
+        ip_version    => 6,
+        database_type => 'MaxMind DB No IPv4 Search Tree',
+        languages     => ['en'],
+        description   => {
+            en =>
+                'MaxMind DB No IPv4 Search Tree',
+        },
+        root_data_type => 'utf8_string',
+    );
+
+    open my $output_fh, '>', "$Dir/MaxMind-DB-no-ipv4-search-tree.mmdb";
+    $writer->write_tree($output_fh);
+    close $output_fh;
+
+    return;
+}
+
 
 # The point of this database is to provide something where we can test looking
 # up a single value. In other words, each IP address points to a non-compound
