@@ -289,7 +289,8 @@ beginning of the file.
 
 ### UTF-8 string - 2
 
-A variable length byte sequence that contains valid utf8.
+A variable length byte sequence that contains valid utf8. If the length is
+zero then this is an empty string.
 
 ### double - 3
 
@@ -298,7 +299,8 @@ length of a double is always 8 bytes.
 
 ### bytes - 4
 
-A variable length byte sequence containing any sort of binary data.
+A variable length byte sequence containing any sort of binary data. If the
+length is zero then this a zero-length byte sequence.
 
 This is not currently used but may be used in the future to embed non-text
 data (images, etc.).
@@ -313,6 +315,8 @@ support 32-bit signed integers.
 A 128-bit integer can use up to 16 bytes, but may use fewer. Similarly, a
 32-bit integer may use from 0-4 bytes. The number of bytes used is determined
 by the length specifier in the control byte. See below for details.
+
+A length of zero always indicates the number 0.
 
 When storing a signed integer, the left-most bit is the sign. A 1 is negative
 and a 0 is positive.
@@ -334,7 +338,7 @@ The signed 32-bit integers are stored using the 2's complement representation.
 
 A map data type contains a set of key/value pairs. Unlike other data types,
 the length information for maps indicates how many key/value pairs it
-contains, not its length in bytes.
+contains, not its length in bytes. This size can be zero.
 
 See below for the algorithm used to determine the number of pairs in the
 hash. This algorithm is also used to determine the length of a field's
@@ -343,7 +347,8 @@ payload.
 ### array - 11
 
 An array type contains a set of ordered values. The length information for
-arrays indicates how many values it contains, not its length in bytes.
+arrays indicates how many values it contains, not its length in bytes. This
+size can be zero.
 
 This type uses the same algorithm as maps for determining the length of a
 field's payload.
