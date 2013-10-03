@@ -132,6 +132,21 @@ sub write_test_db {
         float   => 1.1,
     );
 
+    my %all_types_0 = (
+        utf8_string => q{},
+        double      => 0,
+        bytes       => q{},
+        uint16      => 0,
+        uint32      => 0,
+        int32       => 0,
+        uint64      => uint128(0),
+        uint128     => uint128(0),
+        array       => [],
+        map         => {},
+        boolean     => 0,
+        float       => 0,
+    );
+
     sub write_decoder_test_db {
         my $tree
             = MaxMind::DB::Writer::Tree::InMemory->new( ip_version => 6 );
@@ -153,6 +168,11 @@ sub write_test_db {
                 \%all_types,
             );
         }
+
+        $tree->insert_subnet(
+            Net::Works::Network->new_from_string( string => '::0.0.0.0/128' ),
+            \%all_types_0,
+        );
 
         my $writer = MaxMind::DB::Writer::Tree::File->new(
             tree          => $tree,
