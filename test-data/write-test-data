@@ -23,7 +23,6 @@ sub main {
     my @ipv4_range = ( '1.1.1.1', '1.1.1.32' );
 
     my @ipv4_subnets = Net::Works::Network->range_as_subnets(@ipv4_range);
-
     for my $record_size (@sizes) {
         write_test_db(
             $record_size,
@@ -32,6 +31,13 @@ sub main {
             'ipv4',
         );
     }
+
+    write_broken_pointers_test_db(
+        24,
+        \@ipv4_subnets,
+        { ip_version => 4 },
+        'broken-pointers',
+    );
 
     my @ipv6_subnets = Net::Works::Network->range_as_subnets(
         '::1:ffff:ffff',
@@ -68,6 +74,57 @@ sub main {
     write_no_map_db(\@ipv4_subnets);
 
     write_test_serialization_data();
+}
+
+sub write_broken_pointers_test_db {
+    no warnings 'redefine';
+
+    my $orig_store_data = MaxMind::DB::Writer::Serializer->can('store_data');
+
+    # This breaks the value of the record for the 1.1.1.32 network, causing it
+    # to point outside the database.
+    local *MaxMind::DB::Writer::Serializer::store_data = sub {
+        my $data_pointer = shift->$orig_store_data(@_);
+        my $value = $_[1];
+        if (   ref($value) eq 'HASH'
+            && exists $value->{ip}
+            && $value->{ip} eq '1.1.1.32' ) {
+
+            $data_pointer += 100_000;
+        }
+        return $data_pointer;
+    };
+
+    # The next two hacks will combine to poison the data section for the
+    # 1.1.16/28 subnet value. It will be a pointer to a value outside the
+    # database.
+    my $orig_key_for_data
+        = MaxMind::DB::Writer::Serializer->can('_key_for_data');
+
+    local *MaxMind::DB::Writer::Serializer::_key_for_data = sub {
+        my $value = $_[1];
+        if ( ref($value) eq 'HASH' && exists $value->{ip} ) {
+            return 'ip - ' . $value->{ip};
+        }
+        else {
+            return shift->$orig_key_for_data(@_);
+        }
+    };
+
+    my $orig_position_for_data
+        = MaxMind::DB::Writer::Serializer->can('_position_for_data');
+    local *MaxMind::DB::Writer::Serializer::_position_for_data = sub {
+        my $key = $_[1];
+
+        if ( $key eq 'ip - 1.1.1.16' ) {
+            return 1_000_000;
+        }
+        else {
+            return shift->$orig_position_for_data(@_);
+        }
+    };
+
+    write_test_db(@_);
 }
 
 sub write_test_db {
