@@ -241,7 +241,7 @@ Creators of databases should decide on a strategy for handling the various
 mappings between IPv4 and IPv6.
 
 The strategy that MaxMind uses for its GeoIP databases is to include a pointer
-from the `::ffff:0:0/80` subnet to the root node of the IPv4 address space in
+from the `::ffff:0:0/96` subnet to the root node of the IPv4 address space in
 the tree. This accounts for the
 [IPv4-mapped IPv6 address](http://en.wikipedia.org/wiki/IPv6#IPv4-mapped_IPv6_addresses).
 
@@ -415,7 +415,7 @@ tell us the type:
     001XXXXX          pointer
     010XXXXX          UTF-8 string
     010XXXXX          unsigned 32-bit int (ASCII)
-    000XXXXX 00001010 unsigned 128-bit int (binary)
+    000XXXXX 00000011 unsigned 128-bit int (binary)
     000XXXXX 00000100 array
     000XXXXX 00000110 end marker
 
@@ -431,7 +431,7 @@ bytes. For example:
     01000010          UTF-8 string - 2 bytes long
     01011100          UTF-8 string - 28 bytes long
     11000001          unsigned 32-bit int - 1 byte long
-    00000011 00001010 unsigned 128-bit int - 3 bytes long
+    00000011 00000011 unsigned 128-bit int - 3 bytes long
 
 If the five bits are equal to 29, 30, or 31, then use the following algorithm
 to calculate the payload size.
@@ -447,11 +447,11 @@ type specifying bytes as a single unsigned integer*.
 
 Some examples:
 
-    01011101 00110011 UTF-8 string - 70 bytes long
+    01011101 00110011 UTF-8 string - 80 bytes long
 
 In this case, the last five bits of the control byte equal 29. We treat the
 next byte as an unsigned integer. The next byte is 51, so the total size is
-(29 + 51) = 70.
+(29 + 51) = 80.
 
     01011110 00110011 00110011 UTF-8 string - 13,392 bytes long
 
