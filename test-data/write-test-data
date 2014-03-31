@@ -375,6 +375,7 @@ sub _write_geoip2_city_db {
         latitude              => 'double',
         location              => 'map',
         longitude             => 'double',
+        metro_code            => 'uint16',
         names                 => 'map',
         postal                => 'map',
         registered_country    => 'map',
