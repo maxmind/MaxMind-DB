@@ -142,8 +142,9 @@ The pointers can point to one of three things. First, it may point to another
 node in the search tree address space. These pointers are followed as part of
 the IP address search algorithm, described below.
 
-The pointer can also point to 0. If this is the case, it means that the IP
-address we are searching for is not in the database.
+The pointer can point to a value equal to C<$number_of_nodes>. If this is the
+case, it means that the IP address we are searching for is not in the
+database.
 
 Finally, it may point to an address in the data section. This is the data
 relevant to the given netblock.
