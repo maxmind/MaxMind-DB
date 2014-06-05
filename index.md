@@ -142,7 +142,7 @@ The pointers can point to one of three things. First, it may point to another
 node in the search tree address space. These pointers are followed as part of
 the IP address search algorithm, described below.
 
-The pointer can point to a value equal to C<$number_of_nodes>. If this is the
+The pointer can point to a value equal to `$number_of_nodes`. If this is the
 case, it means that the IP address we are searching for is not in the
 database.
 
