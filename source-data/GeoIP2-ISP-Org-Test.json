@@ -1,0 +1,1418 @@
+[
+  {
+     "::0/11" : {
+        "autonomous_system_number" : 2856,
+        "autonomous_system_organization" : "BTnet UK Regional network"
+     }
+  },
+  {
+     "20::/11" : {
+        "autonomous_system_number" : 17676,
+        "autonomous_system_organization" : "Softbank BB Corp."
+     }
+  },
+  {
+     "40::/10" : {
+        "autonomous_system_number" : 721,
+        "autonomous_system_organization" : "DoD Network Information Center"
+     }
+  },
+  {
+     "80::/9" : {
+        "autonomous_system_number" : 721,
+        "autonomous_system_organization" : "DoD Network Information Center"
+     }
+  },
+  {
+     "2001:1700::/27" : {
+        "autonomous_system_number" : 6730,
+        "autonomous_system_organization" : "Sunrise Communications AG"
+     }
+  },
+  {
+     "2001:1c00::/23" : {
+        "autonomous_system_number" : 9143,
+        "autonomous_system_organization" : "Ziggo B.V."
+     }
+  },
+  {
+     "2001:2000::/20" : {
+        "autonomous_system_number" : 1299,
+        "autonomous_system_organization" : "TeliaSonera International Carrier"
+     }
+  },
+  {
+     "2001:4540::/27" : {
+        "autonomous_system_number" : 9924,
+        "autonomous_system_organization" : "Taiwan Fixed Network, Telco and Network Service Provider."
+     }
+  },
+  {
+     "2001:4580::/26" : {
+        "autonomous_system_number" : 4780,
+        "autonomous_system_organization" : "Digital United Inc."
+     }
+  },
+  {
+     "2001:4600::/24" : {
+        "autonomous_system_number" : 2119,
+        "autonomous_system_organization" : "Telenor Norge AS"
+     }
+  },
+  {
+     "2001:5000::/24" : {
+        "autonomous_system_number" : 1273,
+        "autonomous_system_organization" : "Cable and Wireless Worldwide plc"
+     }
+  },
+  {
+     "2001:5100::/24" : {
+        "autonomous_system_number" : 2529,
+        "autonomous_system_organization" : "Now maintained by Cable & Wireless Worldwide"
+     }
+  },
+  {
+     "2001:5200::/23" : {
+        "autonomous_system_number" : 1273,
+        "autonomous_system_organization" : "Cable and Wireless Worldwide plc"
+     }
+  },
+  {
+     "2001:5400::/22" : {
+        "autonomous_system_number" : 1273,
+        "autonomous_system_organization" : "Cable and Wireless Worldwide plc"
+     }
+  },
+  {
+     "2001:8000::/20" : {
+        "autonomous_system_number" : 1221,
+        "autonomous_system_organization" : "Telstra Pty Ltd"
+     }
+  },
+  {
+     "2001:b000::/21" : {
+        "autonomous_system_number" : 17419,
+        "autonomous_system_organization" : "HiNet IPv6 Service Network.,"
+     }
+  },
+  {
+     "2002::/16" : {
+        "autonomous_system_number" : 44581,
+        "autonomous_system_organization" : "AllTele Allmanna Svenska Telefonaktiebolaget"
+     }
+  },
+  {
+     "2003::/19" : {
+        "autonomous_system_number" : 3320,
+        "autonomous_system_organization" : "Deutsche Telekom AG"
+     }
+  },
+  {
+     "2400::/20" : {
+        "autonomous_system_number" : 4766,
+        "autonomous_system_organization" : "Korea Telecom"
+     }
+  },
+  {
+     "2400:1000::/20" : {
+        "autonomous_system_number" : 237,
+        "autonomous_system_organization" : "Merit Network Inc."
+     }
+  },
+  {
+     "2400:2000::/20" : {
+        "autonomous_system_number" : 17676,
+        "autonomous_system_organization" : "Softbank BB Corp."
+     }
+  },
+  {
+     "2400:3000::/20" : {
+        "autonomous_system_number" : 237,
+        "autonomous_system_organization" : "Merit Network Inc."
+     }
+  },
+  {
+     "2400:4000::/22" : {
+        "autonomous_system_number" : 4713,
+        "autonomous_system_organization" : "NTT Communications Corporation"
+     }
+  },
+  {
+     "2400:4400::/22" : {
+        "autonomous_system_number" : 237,
+        "autonomous_system_organization" : "Merit Network Inc."
+     }
+  },
+  {
+     "2400:4800::/21" : {
+        "autonomous_system_number" : 237,
+        "autonomous_system_organization" : "Merit Network Inc."
+     }
+  },
+  {
+     "2400:5000::/20" : {
+        "autonomous_system_number" : 237,
+        "autonomous_system_organization" : "Merit Network Inc."
+     }
+  },
+  {
+     "2400:6000::/19" : {
+        "autonomous_system_number" : 237,
+        "autonomous_system_organization" : "Merit Network Inc."
+     }
+  },
+  {
+     "2400:8000::/17" : {
+        "autonomous_system_number" : 237,
+        "autonomous_system_organization" : "Merit Network Inc."
+     }
+  },
+  {
+     "2401::/17" : {
+        "autonomous_system_number" : 237,
+        "autonomous_system_organization" : "Merit Network Inc."
+     }
+  },
+  {
+     "2401:8000::/26" : {
+        "autonomous_system_number" : 9919,
+        "autonomous_system_organization" : "New Century InfoComm Tech Co., Ltd."
+     }
+  },
+  {
+     "2401:8040::/26" : {
+        "autonomous_system_number" : 237,
+        "autonomous_system_organization" : "Merit Network Inc."
+     }
+  },
+  {
+     "2401:8080::/25" : {
+        "autonomous_system_number" : 237,
+        "autonomous_system_organization" : "Merit Network Inc."
+     }
+  },
+  {
+     "2401:8100::/24" : {
+        "autonomous_system_number" : 237,
+        "autonomous_system_organization" : "Merit Network Inc."
+     }
+  },
+  {
+     "2401:8200::/23" : {
+        "autonomous_system_number" : 237,
+        "autonomous_system_organization" : "Merit Network Inc."
+     }
+  },
+  {
+     "2401:8400::/22" : {
+        "autonomous_system_number" : 237,
+        "autonomous_system_organization" : "Merit Network Inc."
+     }
+  },
+  {
+     "2401:8800::/21" : {
+        "autonomous_system_number" : 237,
+        "autonomous_system_organization" : "Merit Network Inc."
+     }
+  },
+  {
+     "2401:9000::/20" : {
+        "autonomous_system_number" : 237,
+        "autonomous_system_organization" : "Merit Network Inc."
+     }
+  },
+  {
+     "2401:a000::/19" : {
+        "autonomous_system_number" : 237,
+        "autonomous_system_organization" : "Merit Network Inc."
+     }
+  },
+  {
+     "2401:c000::/18" : {
+        "autonomous_system_number" : 237,
+        "autonomous_system_organization" : "Merit Network Inc."
+     }
+  },
+  {
+     "2402::/16" : {
+        "autonomous_system_number" : 237,
+        "autonomous_system_organization" : "Merit Network Inc."
+     }
+  },
+  {
+     "2403::/17" : {
+        "autonomous_system_number" : 237,
+        "autonomous_system_organization" : "Merit Network Inc."
+     }
+  },
+  {
+     "2403:8000::/20" : {
+        "autonomous_system_number" : 237,
+        "autonomous_system_organization" : "Merit Network Inc."
+     }
+  },
+  {
+     "2403:9000::/21" : {
+        "autonomous_system_number" : 237,
+        "autonomous_system_organization" : "Merit Network Inc."
+     }
+  },
+  {
+     "2403:9800::/24" : {
+        "autonomous_system_number" : 237,
+        "autonomous_system_organization" : "Merit Network Inc."
+     }
+  },
+  {
+     "2403:9900::/24" : {
+        "autonomous_system_number" : 17676,
+        "autonomous_system_organization" : "Softbank BB Corp."
+     }
+  },
+  {
+     "2403:9a00::/23" : {
+        "autonomous_system_number" : 237,
+        "autonomous_system_organization" : "Merit Network Inc."
+     }
+  },
+  {
+     "2403:9c00::/22" : {
+        "autonomous_system_number" : 237,
+        "autonomous_system_organization" : "Merit Network Inc."
+     }
+  },
+  {
+     "2403:a000::/19" : {
+        "autonomous_system_number" : 237,
+        "autonomous_system_organization" : "Merit Network Inc."
+     }
+  },
+  {
+     "2403:c000::/18" : {
+        "autonomous_system_number" : 237,
+        "autonomous_system_organization" : "Merit Network Inc."
+     }
+  },
+  {
+     "2404::/26" : {
+        "autonomous_system_number" : 17709,
+        "autonomous_system_organization" : "Eastern Broadband Telecom Co.,Ltd"
+     }
+  },
+  {
+     "2404:40::/26" : {
+        "autonomous_system_number" : 237,
+        "autonomous_system_organization" : "Merit Network Inc."
+     }
+  },
+  {
+     "2404:80::/25" : {
+        "autonomous_system_number" : 237,
+        "autonomous_system_organization" : "Merit Network Inc."
+     }
+  },
+  {
+     "2404:100::/24" : {
+        "autonomous_system_number" : 237,
+        "autonomous_system_organization" : "Merit Network Inc."
+     }
+  },
+  {
+     "2404:200::/23" : {
+        "autonomous_system_number" : 237,
+        "autonomous_system_organization" : "Merit Network Inc."
+     }
+  },
+  {
+     "2404:400::/22" : {
+        "autonomous_system_number" : 237,
+        "autonomous_system_organization" : "Merit Network Inc."
+     }
+  },
+  {
+     "2404:800::/21" : {
+        "autonomous_system_number" : 237,
+        "autonomous_system_organization" : "Merit Network Inc."
+     }
+  },
+  {
+     "2404:1000::/20" : {
+        "autonomous_system_number" : 237,
+        "autonomous_system_organization" : "Merit Network Inc."
+     }
+  },
+  {
+     "2404:2000::/19" : {
+        "autonomous_system_number" : 237,
+        "autonomous_system_organization" : "Merit Network Inc."
+     }
+  },
+  {
+     "2404:4000::/18" : {
+        "autonomous_system_number" : 237,
+        "autonomous_system_organization" : "Merit Network Inc."
+     }
+  },
+  {
+     "2404:8000::/17" : {
+        "autonomous_system_number" : 237,
+        "autonomous_system_organization" : "Merit Network Inc."
+     }
+  },
+  {
+     "2405::/16" : {
+        "autonomous_system_number" : 237,
+        "autonomous_system_organization" : "Merit Network Inc."
+     }
+  },
+  {
+     "2406::/15" : {
+        "autonomous_system_number" : 237,
+        "autonomous_system_organization" : "Merit Network Inc."
+     }
+  },
+  {
+     "2408::/22" : {
+        "autonomous_system_number" : 55817,
+        "autonomous_system_organization" : "Nippon Telegraph and Telephone Corporation PF Labs"
+     }
+  },
+  {
+     "2408:400::/22" : {
+        "autonomous_system_number" : 237,
+        "autonomous_system_organization" : "Merit Network Inc."
+     }
+  },
+  {
+     "2408:800::/21" : {
+        "autonomous_system_number" : 237,
+        "autonomous_system_organization" : "Merit Network Inc."
+     }
+  },
+  {
+     "2408:1000::/20" : {
+        "autonomous_system_number" : 237,
+        "autonomous_system_organization" : "Merit Network Inc."
+     }
+  },
+  {
+     "2408:2000::/19" : {
+        "autonomous_system_number" : 237,
+        "autonomous_system_organization" : "Merit Network Inc."
+     }
+  },
+  {
+     "2408:4000::/18" : {
+        "autonomous_system_number" : 237,
+        "autonomous_system_organization" : "Merit Network Inc."
+     }
+  },
+  {
+     "2408:8000::/17" : {
+        "autonomous_system_number" : 237,
+        "autonomous_system_organization" : "Merit Network Inc."
+     }
+  },
+  {
+     "2409::/23" : {
+        "autonomous_system_number" : 55391,
+        "autonomous_system_organization" : "INTERNET MULTIFEED CO."
+     }
+  },
+  {
+     "2409:200::/23" : {
+        "autonomous_system_number" : 55392,
+        "autonomous_system_organization" : "INTERNET MULTIFEED CO."
+     }
+  },
+  {
+     "2409:400::/22" : {
+        "autonomous_system_number" : 237,
+        "autonomous_system_organization" : "Merit Network Inc."
+     }
+  },
+  {
+     "2409:800::/21" : {
+        "autonomous_system_number" : 237,
+        "autonomous_system_organization" : "Merit Network Inc."
+     }
+  },
+  {
+     "2409:1000::/20" : {
+        "autonomous_system_number" : 237,
+        "autonomous_system_organization" : "Merit Network Inc."
+     }
+  },
+  {
+     "2409:2000::/19" : {
+        "autonomous_system_number" : 237,
+        "autonomous_system_organization" : "Merit Network Inc."
+     }
+  },
+  {
+     "2409:4000::/18" : {
+        "autonomous_system_number" : 237,
+        "autonomous_system_organization" : "Merit Network Inc."
+     }
+  },
+  {
+     "2409:8000::/17" : {
+        "autonomous_system_number" : 237,
+        "autonomous_system_organization" : "Merit Network Inc."
+     }
+  },
+  {
+     "240a::/16" : {
+        "autonomous_system_number" : 237,
+        "autonomous_system_organization" : "Merit Network Inc."
+     }
+  },
+  {
+     "240b::/22" : {
+        "autonomous_system_number" : 2516,
+        "autonomous_system_organization" : "KDDI KDDI CORPORATION"
+     }
+  },
+  {
+     "240b:400::/22" : {
+        "autonomous_system_number" : 237,
+        "autonomous_system_organization" : "Merit Network Inc."
+     }
+  },
+  {
+     "240b:800::/21" : {
+        "autonomous_system_number" : 237,
+        "autonomous_system_organization" : "Merit Network Inc."
+     }
+  },
+  {
+     "240b:1000::/20" : {
+        "autonomous_system_number" : 237,
+        "autonomous_system_organization" : "Merit Network Inc."
+     }
+  },
+  {
+     "240b:2000::/19" : {
+        "autonomous_system_number" : 237,
+        "autonomous_system_organization" : "Merit Network Inc."
+     }
+  },
+  {
+     "240b:4000::/18" : {
+        "autonomous_system_number" : 237,
+        "autonomous_system_organization" : "Merit Network Inc."
+     }
+  },
+  {
+     "240b:8000::/17" : {
+        "autonomous_system_number" : 237,
+        "autonomous_system_organization" : "Merit Network Inc."
+     }
+  },
+  {
+     "240c::/16" : {
+        "autonomous_system_number" : 237,
+        "autonomous_system_organization" : "Merit Network Inc."
+     }
+  },
+  {
+     "240d::/27" : {
+        "autonomous_system_number" : 2527,
+        "autonomous_system_organization" : "So-net Entertainment Corporation"
+     }
+  },
+  {
+     "240d:20::/27" : {
+        "autonomous_system_number" : 237,
+        "autonomous_system_organization" : "Merit Network Inc."
+     }
+  },
+  {
+     "240d:40::/26" : {
+        "autonomous_system_number" : 237,
+        "autonomous_system_organization" : "Merit Network Inc."
+     }
+  },
+  {
+     "240d:80::/25" : {
+        "autonomous_system_number" : 237,
+        "autonomous_system_organization" : "Merit Network Inc."
+     }
+  },
+  {
+     "240d:100::/24" : {
+        "autonomous_system_number" : 237,
+        "autonomous_system_organization" : "Merit Network Inc."
+     }
+  },
+  {
+     "240d:200::/23" : {
+        "autonomous_system_number" : 237,
+        "autonomous_system_organization" : "Merit Network Inc."
+     }
+  },
+  {
+     "240d:400::/22" : {
+        "autonomous_system_number" : 237,
+        "autonomous_system_organization" : "Merit Network Inc."
+     }
+  },
+  {
+     "240d:800::/21" : {
+        "autonomous_system_number" : 237,
+        "autonomous_system_organization" : "Merit Network Inc."
+     }
+  },
+  {
+     "240d:1000::/20" : {
+        "autonomous_system_number" : 237,
+        "autonomous_system_organization" : "Merit Network Inc."
+     }
+  },
+  {
+     "240d:2000::/19" : {
+        "autonomous_system_number" : 237,
+        "autonomous_system_organization" : "Merit Network Inc."
+     }
+  },
+  {
+     "240d:4000::/18" : {
+        "autonomous_system_number" : 237,
+        "autonomous_system_organization" : "Merit Network Inc."
+     }
+  },
+  {
+     "240d:8000::/17" : {
+        "autonomous_system_number" : 237,
+        "autonomous_system_organization" : "Merit Network Inc."
+     }
+  },
+  {
+     "240e::/24" : {
+        "autonomous_system_number" : 4134,
+        "autonomous_system_organization" : "Chinanet"
+     }
+  },
+  {
+     "240e:100::/24" : {
+        "autonomous_system_number" : 237,
+        "autonomous_system_organization" : "Merit Network Inc."
+     }
+  },
+  {
+     "240e:200::/23" : {
+        "autonomous_system_number" : 237,
+        "autonomous_system_organization" : "Merit Network Inc."
+     }
+  },
+  {
+     "240e:400::/22" : {
+        "autonomous_system_number" : 237,
+        "autonomous_system_organization" : "Merit Network Inc."
+     }
+  },
+  {
+     "240e:800::/21" : {
+        "autonomous_system_number" : 237,
+        "autonomous_system_organization" : "Merit Network Inc."
+     }
+  },
+  {
+     "240e:1000::/20" : {
+        "autonomous_system_number" : 237,
+        "autonomous_system_organization" : "Merit Network Inc."
+     }
+  },
+  {
+     "240e:2000::/19" : {
+        "autonomous_system_number" : 237,
+        "autonomous_system_organization" : "Merit Network Inc."
+     }
+  },
+  {
+     "240e:4000::/18" : {
+        "autonomous_system_number" : 237,
+        "autonomous_system_organization" : "Merit Network Inc."
+     }
+  },
+  {
+     "240e:8000::/17" : {
+        "autonomous_system_number" : 237,
+        "autonomous_system_organization" : "Merit Network Inc."
+     }
+  },
+  {
+     "240f::/24" : {
+        "autonomous_system_number" : 2516,
+        "autonomous_system_organization" : "KDDI KDDI CORPORATION"
+     }
+  },
+  {
+     "240f:100::/24" : {
+        "autonomous_system_number" : 237,
+        "autonomous_system_organization" : "Merit Network Inc."
+     }
+  },
+  {
+     "240f:200::/23" : {
+        "autonomous_system_number" : 237,
+        "autonomous_system_organization" : "Merit Network Inc."
+     }
+  },
+  {
+     "240f:400::/22" : {
+        "autonomous_system_number" : 237,
+        "autonomous_system_organization" : "Merit Network Inc."
+     }
+  },
+  {
+     "240f:800::/21" : {
+        "autonomous_system_number" : 237,
+        "autonomous_system_organization" : "Merit Network Inc."
+     }
+  },
+  {
+     "240f:1000::/20" : {
+        "autonomous_system_number" : 237,
+        "autonomous_system_organization" : "Merit Network Inc."
+     }
+  },
+  {
+     "240f:2000::/19" : {
+        "autonomous_system_number" : 237,
+        "autonomous_system_organization" : "Merit Network Inc."
+     }
+  },
+  {
+     "240f:4000::/18" : {
+        "autonomous_system_number" : 237,
+        "autonomous_system_organization" : "Merit Network Inc."
+     }
+  },
+  {
+     "240f:8000::/17" : {
+        "autonomous_system_number" : 237,
+        "autonomous_system_organization" : "Merit Network Inc."
+     }
+  },
+  {
+     "2600::/21" : {
+        "autonomous_system_number" : 237,
+        "autonomous_system_organization" : "Merit Network Inc."
+     }
+  },
+  {
+     "2600:800::/27" : {
+        "autonomous_system_number" : 701,
+        "autonomous_system_organization" : "MCI Communications Services, Inc. d/b/a Verizon Business"
+     }
+  },
+  {
+     "2600:820::/27" : {
+        "autonomous_system_number" : 237,
+        "autonomous_system_organization" : "Merit Network Inc."
+     }
+  },
+  {
+     "2600:840::/26" : {
+        "autonomous_system_number" : 237,
+        "autonomous_system_organization" : "Merit Network Inc."
+     }
+  },
+  {
+     "2600:880::/25" : {
+        "autonomous_system_number" : 237,
+        "autonomous_system_organization" : "Merit Network Inc."
+     }
+  },
+  {
+     "2600:900::/24" : {
+        "autonomous_system_number" : 237,
+        "autonomous_system_organization" : "Merit Network Inc."
+     }
+  },
+  {
+     "2600:a00::/23" : {
+        "autonomous_system_number" : 237,
+        "autonomous_system_organization" : "Merit Network Inc."
+     }
+  },
+  {
+     "2600:c00::/22" : {
+        "autonomous_system_number" : 237,
+        "autonomous_system_organization" : "Merit Network Inc."
+     }
+  },
+  {
+     "2600:1000::/22" : {
+        "autonomous_system_number" : 237,
+        "autonomous_system_organization" : "Merit Network Inc."
+     }
+  },
+  {
+     "2600:1400::/27" : {
+        "autonomous_system_number" : 31377,
+        "autonomous_system_organization" : "Akamai International B.V."
+     }
+  },
+  {
+     "2600:1420::/27" : {
+        "autonomous_system_number" : 237,
+        "autonomous_system_organization" : "Merit Network Inc."
+     }
+  },
+  {
+     "2600:1440::/26" : {
+        "autonomous_system_number" : 237,
+        "autonomous_system_organization" : "Merit Network Inc."
+     }
+  },
+  {
+     "2600:1480::/25" : {
+        "autonomous_system_number" : 237,
+        "autonomous_system_organization" : "Merit Network Inc."
+     }
+  },
+  {
+     "2600:1500::/24" : {
+        "autonomous_system_number" : 237,
+        "autonomous_system_organization" : "Merit Network Inc."
+     }
+  },
+  {
+     "2600:1600::/23" : {
+        "autonomous_system_number" : 237,
+        "autonomous_system_organization" : "Merit Network Inc."
+     }
+  },
+  {
+     "2600:1800::/21" : {
+        "autonomous_system_number" : 237,
+        "autonomous_system_organization" : "Merit Network Inc."
+     }
+  },
+  {
+     "2600:2000::/19" : {
+        "autonomous_system_number" : 237,
+        "autonomous_system_organization" : "Merit Network Inc."
+     }
+  },
+  {
+     "2600:4000::/20" : {
+        "autonomous_system_number" : 237,
+        "autonomous_system_organization" : "Merit Network Inc."
+     }
+  },
+  {
+     "2600:5000::/22" : {
+        "autonomous_system_number" : 237,
+        "autonomous_system_organization" : "Merit Network Inc."
+     }
+  },
+  {
+     "2600:5400::/27" : {
+        "autonomous_system_number" : 19108,
+        "autonomous_system_organization" : "Suddenlink Communications"
+     }
+  },
+  {
+     "2600:5420::/27" : {
+        "autonomous_system_number" : 237,
+        "autonomous_system_organization" : "Merit Network Inc."
+     }
+  },
+  {
+     "2600:5440::/26" : {
+        "autonomous_system_number" : 237,
+        "autonomous_system_organization" : "Merit Network Inc."
+     }
+  },
+  {
+     "2600:5480::/25" : {
+        "autonomous_system_number" : 237,
+        "autonomous_system_organization" : "Merit Network Inc."
+     }
+  },
+  {
+     "2600:5500::/24" : {
+        "autonomous_system_number" : 237,
+        "autonomous_system_organization" : "Merit Network Inc."
+     }
+  },
+  {
+     "2600:5600::/23" : {
+        "autonomous_system_number" : 237,
+        "autonomous_system_organization" : "Merit Network Inc."
+     }
+  },
+  {
+     "2600:5800::/21" : {
+        "autonomous_system_number" : 237,
+        "autonomous_system_organization" : "Merit Network Inc."
+     }
+  },
+  {
+     "2600:6000::/20" : {
+        "autonomous_system_number" : 237,
+        "autonomous_system_organization" : "Merit Network Inc."
+     }
+  },
+  {
+     "2600:7000::/24" : {
+        "autonomous_system_number" : 6939,
+        "autonomous_system_organization" : "Hurricane Electric, Inc."
+     }
+  },
+  {
+     "2600:7100::/24" : {
+        "autonomous_system_number" : 237,
+        "autonomous_system_organization" : "Merit Network Inc."
+     }
+  },
+  {
+     "2600:7200::/23" : {
+        "autonomous_system_number" : 237,
+        "autonomous_system_organization" : "Merit Network Inc."
+     }
+  },
+  {
+     "2600:7400::/22" : {
+        "autonomous_system_number" : 237,
+        "autonomous_system_organization" : "Merit Network Inc."
+     }
+  },
+  {
+     "2600:7800::/21" : {
+        "autonomous_system_number" : 237,
+        "autonomous_system_organization" : "Merit Network Inc."
+     }
+  },
+  {
+     "2600:8000::/17" : {
+        "autonomous_system_number" : 237,
+        "autonomous_system_organization" : "Merit Network Inc."
+     }
+  },
+  {
+     "2601::/16" : {
+        "autonomous_system_number" : 237,
+        "autonomous_system_organization" : "Merit Network Inc."
+     }
+  },
+  {
+     "2602::/24" : {
+        "autonomous_system_number" : 209,
+        "autonomous_system_organization" : "NOVARTIS-DMZ-US"
+     }
+  },
+  {
+     "2602:100::/24" : {
+        "autonomous_system_number" : 237,
+        "autonomous_system_organization" : "Merit Network Inc."
+     }
+  },
+  {
+     "2602:200::/24" : {
+        "autonomous_system_number" : 237,
+        "autonomous_system_organization" : "Merit Network Inc."
+     }
+  },
+  {
+     "2602:300::/24" : {
+        "autonomous_system_number" : 7018,
+        "autonomous_system_organization" : "AT&T Services, Inc."
+     }
+  },
+  {
+     "2602:400::/22" : {
+        "autonomous_system_number" : 237,
+        "autonomous_system_organization" : "Merit Network Inc."
+     }
+  },
+  {
+     "2602:800::/21" : {
+        "autonomous_system_number" : 237,
+        "autonomous_system_organization" : "Merit Network Inc."
+     }
+  },
+  {
+     "2602:1000::/20" : {
+        "autonomous_system_number" : 237,
+        "autonomous_system_organization" : "Merit Network Inc."
+     }
+  },
+  {
+     "2602:2000::/19" : {
+        "autonomous_system_number" : 237,
+        "autonomous_system_organization" : "Merit Network Inc."
+     }
+  },
+  {
+     "2602:4000::/18" : {
+        "autonomous_system_number" : 237,
+        "autonomous_system_organization" : "Merit Network Inc."
+     }
+  },
+  {
+     "2602:8000::/17" : {
+        "autonomous_system_number" : 237,
+        "autonomous_system_organization" : "Merit Network Inc."
+     }
+  },
+  {
+     "2603::/16" : {
+        "autonomous_system_number" : 237,
+        "autonomous_system_organization" : "Merit Network Inc."
+     }
+  },
+  {
+     "2604::/14" : {
+        "autonomous_system_number" : 237,
+        "autonomous_system_organization" : "Merit Network Inc."
+     }
+  },
+  {
+     "2608::/13" : {
+        "autonomous_system_number" : 237,
+        "autonomous_system_organization" : "Merit Network Inc."
+     }
+  },
+  {
+     "2800::/19" : {
+        "autonomous_system_number" : 237,
+        "autonomous_system_organization" : "Merit Network Inc."
+     }
+  },
+  {
+     "2800:2000::/20" : {
+        "autonomous_system_number" : 10318,
+        "autonomous_system_organization" : "S.A."
+     }
+  },
+  {
+     "2800:3000::/20" : {
+        "autonomous_system_number" : 237,
+        "autonomous_system_organization" : "Merit Network Inc."
+     }
+  },
+  {
+     "2800:4000::/18" : {
+        "autonomous_system_number" : 237,
+        "autonomous_system_organization" : "Merit Network Inc."
+     }
+  },
+  {
+     "2800:8000::/17" : {
+        "autonomous_system_number" : 237,
+        "autonomous_system_organization" : "Merit Network Inc."
+     }
+  },
+  {
+     "2801::/16" : {
+        "autonomous_system_number" : 237,
+        "autonomous_system_organization" : "Merit Network Inc."
+     }
+  },
+  {
+     "2802::/15" : {
+        "autonomous_system_number" : 237,
+        "autonomous_system_organization" : "Merit Network Inc."
+     }
+  },
+  {
+     "2804::/15" : {
+        "autonomous_system_number" : 237,
+        "autonomous_system_organization" : "Merit Network Inc."
+     }
+  },
+  {
+     "2806::/20" : {
+        "autonomous_system_number" : 237,
+        "autonomous_system_organization" : "Merit Network Inc."
+     }
+  },
+  {
+     "2806:1000::/24" : {
+        "autonomous_system_number" : 8151,
+        "autonomous_system_organization" : "Uninet S.A. de C.V."
+     }
+  },
+  {
+     "2806:1100::/24" : {
+        "autonomous_system_number" : 237,
+        "autonomous_system_organization" : "Merit Network Inc."
+     }
+  },
+  {
+     "2806:1200::/23" : {
+        "autonomous_system_number" : 237,
+        "autonomous_system_organization" : "Merit Network Inc."
+     }
+  },
+  {
+     "2806:1400::/22" : {
+        "autonomous_system_number" : 237,
+        "autonomous_system_organization" : "Merit Network Inc."
+     }
+  },
+  {
+     "2806:1800::/21" : {
+        "autonomous_system_number" : 237,
+        "autonomous_system_organization" : "Merit Network Inc."
+     }
+  },
+  {
+     "2806:2000::/19" : {
+        "autonomous_system_number" : 237,
+        "autonomous_system_organization" : "Merit Network Inc."
+     }
+  },
+  {
+     "2806:4000::/18" : {
+        "autonomous_system_number" : 237,
+        "autonomous_system_organization" : "Merit Network Inc."
+     }
+  },
+  {
+     "2806:8000::/17" : {
+        "autonomous_system_number" : 237,
+        "autonomous_system_organization" : "Merit Network Inc."
+     }
+  },
+  {
+     "2807::/16" : {
+        "autonomous_system_number" : 237,
+        "autonomous_system_organization" : "Merit Network Inc."
+     }
+  },
+  {
+     "2808::/13" : {
+        "autonomous_system_number" : 237,
+        "autonomous_system_organization" : "Merit Network Inc."
+     }
+  },
+  {
+     "2a00::/22" : {
+        "autonomous_system_number" : 3209,
+        "autonomous_system_organization" : "Vodafone GmbH"
+     }
+  },
+  {
+     "2a00:800::/25" : {
+        "autonomous_system_number" : 1257,
+        "autonomous_system_organization" : "TELE2"
+     }
+  },
+  {
+     "2a00:2000::/23" : {
+        "autonomous_system_number" : 5400,
+        "autonomous_system_organization" : "British Telecommunications plc"
+     }
+  },
+  {
+     "2a00:2200::/24" : {
+        "autonomous_system_number" : 5400,
+        "autonomous_system_organization" : "British Telecommunications plc"
+     }
+  },
+  {
+     "2a00:2300::/25" : {
+        "autonomous_system_number" : 5400,
+        "autonomous_system_organization" : "British Telecommunications plc"
+     }
+  },
+  {
+     "2a00:2380::/25" : {
+        "autonomous_system_number" : 2856,
+        "autonomous_system_organization" : "BTnet UK Regional network"
+     }
+  },
+  {
+     "2a01:2e0::/28" : {
+        "autonomous_system_number" : 8374,
+        "autonomous_system_organization" : "Polkomtel Sp. z o.o."
+     }
+  },
+  {
+     "2a01:800::/24" : {
+        "autonomous_system_number" : 3209,
+        "autonomous_system_organization" : "Vodafone GmbH"
+     }
+  },
+  {
+     "2a01:c00::/26" : {
+        "autonomous_system_number" : 13184,
+        "autonomous_system_organization" : "Telefonica Germany GmbH & Co.OHG"
+     }
+  },
+  {
+     "2a01:e00::/26" : {
+        "autonomous_system_number" : 12322,
+        "autonomous_system_organization" : "Free SAS"
+     }
+  },
+  {
+     "2a01:1000::/21" : {
+        "autonomous_system_number" : 5617,
+        "autonomous_system_organization" : "Telekomunikacja Polska S.A."
+     }
+  },
+  {
+     "2a01:2000::/20" : {
+        "autonomous_system_number" : 3269,
+        "autonomous_system_organization" : "Telecom Italia S.p.a."
+     }
+  },
+  {
+     "2a01:c000::/19" : {
+        "autonomous_system_number" : 5511,
+        "autonomous_system_organization" : "Orange S.A."
+     }
+  },
+  {
+     "2a02:1200::/27" : {
+        "autonomous_system_number" : 3303,
+        "autonomous_system_organization" : "Swisscom (Switzerland) Ltd"
+     }
+  },
+  {
+     "2a02:1400::/26" : {
+        "autonomous_system_number" : 2119,
+        "autonomous_system_organization" : "Telenor Norge AS"
+     }
+  },
+  {
+     "2a02:1800::/24" : {
+        "autonomous_system_number" : 6848,
+        "autonomous_system_organization" : "Telenet N.V."
+     }
+  },
+  {
+     "2a02:2e00::/27" : {
+        "autonomous_system_number" : 12715,
+        "autonomous_system_organization" : "Jazz Telecom S.A."
+     }
+  },
+  {
+     "2a02:3000::/23" : {
+        "autonomous_system_number" : 6805,
+        "autonomous_system_organization" : "Telefonica Germany GmbH & Co.OHG"
+     }
+  },
+  {
+     "2a02:8100::/27" : {
+        "autonomous_system_number" : 31334,
+        "autonomous_system_organization" : "Kabel Deutschland Vertrieb und Service GmbH"
+     }
+  },
+  {
+     "2a02:8200::/27" : {
+        "autonomous_system_number" : 9145,
+        "autonomous_system_organization" : "EWE TEL GmbH"
+     }
+  },
+  {
+     "2a02:8400::/25" : {
+        "autonomous_system_number" : 15557,
+        "autonomous_system_organization" : "Societe Francaise du Radiotelephone S.A"
+     }
+  },
+  {
+     "2a02:9000::/23" : {
+        "autonomous_system_number" : 3352,
+        "autonomous_system_organization" : "TELEFONICA DE ESPANA"
+     }
+  },
+  {
+     "2a02:a000::/26" : {
+        "autonomous_system_number" : 5432,
+        "autonomous_system_organization" : "Belgacom regional ASN"
+     }
+  },
+  {
+     "2a02:a200::/27" : {
+        "autonomous_system_number" : 6830,
+        "autonomous_system_organization" : "Liberty Global Operations B.V."
+     }
+  },
+  {
+     "2a02:a300::/27" : {
+        "autonomous_system_number" : 6830,
+        "autonomous_system_organization" : "Liberty Global Operations B.V."
+     }
+  },
+  {
+     "2a02:a400::/26" : {
+        "autonomous_system_number" : 1136,
+        "autonomous_system_organization" : "KPN Internet Solutions"
+     }
+  },
+  {
+     "2a02:a440::/27" : {
+        "autonomous_system_number" : 8737,
+        "autonomous_system_organization" : "Koninklijke KPN N.V."
+     }
+  },
+  {
+     "2a02:a460::/27" : {
+        "autonomous_system_number" : 8737,
+        "autonomous_system_organization" : "Koninklijke KPN N.V."
+     }
+  },
+  {
+     "2a02:a800::/26" : {
+        "autonomous_system_number" : 6739,
+        "autonomous_system_organization" : "Cableuropa - ONO"
+     }
+  },
+  {
+     "2a02:aa00::/27" : {
+        "autonomous_system_number" : 6830,
+        "autonomous_system_organization" : "Liberty Global Operations B.V."
+     }
+  },
+  {
+     "2a04:2400::/27" : {
+        "autonomous_system_number" : 6830,
+        "autonomous_system_organization" : "Liberty Global Operations B.V."
+     }
+  },
+  {
+     "2c00::/13" : {
+        "autonomous_system_number" : 237,
+        "autonomous_system_organization" : "Merit Network Inc."
+     }
+  },
+  {
+     "2c08::/14" : {
+        "autonomous_system_number" : 237,
+        "autonomous_system_organization" : "Merit Network Inc."
+     }
+  },
+  {
+     "2c0c::/15" : {
+        "autonomous_system_number" : 237,
+        "autonomous_system_organization" : "Merit Network Inc."
+     }
+  },
+  {
+     "2c0e::/20" : {
+        "autonomous_system_number" : 24863,
+        "autonomous_system_organization" : "LINKdotNET"
+     }
+  },
+  {
+     "2c0e:1000::/20" : {
+        "autonomous_system_number" : 237,
+        "autonomous_system_organization" : "Merit Network Inc."
+     }
+  },
+  {
+     "2c0e:2000::/19" : {
+        "autonomous_system_number" : 237,
+        "autonomous_system_organization" : "Merit Network Inc."
+     }
+  },
+  {
+     "2c0e:4000::/18" : {
+        "autonomous_system_number" : 237,
+        "autonomous_system_organization" : "Merit Network Inc."
+     }
+  },
+  {
+     "2c0e:8000::/17" : {
+        "autonomous_system_number" : 237,
+        "autonomous_system_organization" : "Merit Network Inc."
+     }
+  },
+  {
+     "2c0f::/17" : {
+        "autonomous_system_number" : 237,
+        "autonomous_system_organization" : "Merit Network Inc."
+     }
+  },
+  {
+     "2c0f:8000::/18" : {
+        "autonomous_system_number" : 237,
+        "autonomous_system_organization" : "Merit Network Inc."
+     }
+  },
+  {
+     "2c0f:c000::/19" : {
+        "autonomous_system_number" : 237,
+        "autonomous_system_organization" : "Merit Network Inc."
+     }
+  },
+  {
+     "2c0f:e000::/20" : {
+        "autonomous_system_number" : 237,
+        "autonomous_system_organization" : "Merit Network Inc."
+     }
+  },
+  {
+     "2c0f:f000::/21" : {
+        "autonomous_system_number" : 237,
+        "autonomous_system_organization" : "Merit Network Inc."
+     }
+  },
+  {
+     "2c0f:f800::/22" : {
+        "autonomous_system_number" : 237,
+        "autonomous_system_organization" : "Merit Network Inc."
+     }
+  },
+  {
+     "2c0f:fc00::/27" : {
+        "autonomous_system_number" : 3741,
+        "autonomous_system_organization" : "IS"
+     }
+  },
+  {
+     "2c0f:fc20::/27" : {
+        "autonomous_system_number" : 237,
+        "autonomous_system_organization" : "Merit Network Inc."
+     }
+  },
+  {
+     "2c0f:fc40::/26" : {
+        "autonomous_system_number" : 237,
+        "autonomous_system_organization" : "Merit Network Inc."
+     }
+  },
+  {
+     "2c0f:fc80::/25" : {
+        "autonomous_system_number" : 237,
+        "autonomous_system_organization" : "Merit Network Inc."
+     }
+  },
+  {
+     "2c0f:fd00::/24" : {
+        "autonomous_system_number" : 237,
+        "autonomous_system_organization" : "Merit Network Inc."
+     }
+  },
+  {
+     "2c0f:fe00::/24" : {
+        "autonomous_system_number" : 237,
+        "autonomous_system_organization" : "Merit Network Inc."
+     }
+  },
+  {
+     "2c0f:ff00::/26" : {
+        "autonomous_system_number" : 237,
+        "autonomous_system_organization" : "Merit Network Inc."
+     }
+  },
+  {
+     "2c0f:ff40::/26" : {
+        "autonomous_system_number" : 10474,
+        "autonomous_system_organization" : "MWEB-10474"
+     }
+  },
+  {
+     "2c0f:ff80::/25" : {
+        "autonomous_system_number" : 237,
+        "autonomous_system_organization" : "Merit Network Inc."
+     }
+  }
+]
