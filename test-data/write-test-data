@@ -8,7 +8,8 @@ use utf8;
 use Carp qw( croak );
 use Cwd qw( abs_path );
 use File::Basename qw( dirname );
-use JSON::XS;
+use File::Slurp qw( read_file );
+use JSON::XS qw( decode_json );
 use Math::Int128 qw( uint128 );
 use MaxMind::DB::Writer::Serializer 0.050000;
 use MaxMind::DB::Writer::Tree 0.050000;
@@ -65,12 +66,12 @@ sub main {
     write_decoder_test_db();
     write_deeply_nested_structures_db();
 
-    write_geoip2_city_db();
+    write_geoip2_dbs();
     write_broken_geoip2_city_db();
 
     write_no_ipv4_tree_db();
 
-    write_no_map_db(\@ipv4_subnets);
+    write_no_map_db( \@ipv4_subnets );
 
     write_test_serialization_data();
 }
@@ -84,7 +85,7 @@ sub write_broken_pointers_test_db {
     # to point outside the database.
     local *MaxMind::DB::Writer::Serializer::store_data = sub {
         my $data_pointer = shift->$orig_store_data(@_);
-        my $value = $_[1];
+        my $value        = $_[1];
         if (   ref($value) eq 'HASH'
             && exists $value->{ip}
             && $value->{ip} eq '1.1.1.32' ) {
@@ -300,8 +301,10 @@ sub write_test_db {
     }
 }
 
-sub write_geoip2_city_db {
-    _write_geoip2_city_db('Test');
+sub write_geoip2_dbs {
+    for my $type ( 'City', 'Connection-Type', 'Domain', 'ISP', ) {
+        _write_geoip2_db( $type, 'Test' );
+    }
 }
 
 sub write_broken_geoip2_city_db {
@@ -318,64 +321,75 @@ sub write_broken_geoip2_city_db {
         $self->_simple_encode( double => $value );
     };
 
-    _write_geoip2_city_db('Test Broken Double Format');
+    _write_geoip2_db( 'City', 'Test Broken Double Format' );
 }
 
 {
     my %type_map = (
-        cellular              => 'uint16',
-        city                  => 'map',
-        continent             => 'map',
-        country               => 'map',
-        geoname_id            => 'uint32',
-        is_anonymous_proxy    => 'boolean',
-        is_satellite_provider => 'boolean',
-        latitude              => 'double',
-        location              => 'map',
-        longitude             => 'double',
-        metro_code            => 'uint16',
-        names                 => 'map',
-        postal                => 'map',
-        registered_country    => 'map',
-        represented_country   => 'map',
-        subdivisions          => [ 'array', 'map' ],
-        traits                => 'map',
+        autonomous_system_number       => 'uint32',
+        autonomous_system_organization => 'utf8_string',
+        cellular                       => 'uint16',
+        city                           => 'map',
+        continent                      => 'map',
+        country                        => 'map',
+        geoname_id                     => 'uint32',
+        is_anonymous_proxy             => 'boolean',
+        isp                            => 'utf8_string',
+        is_satellite_provider          => 'boolean',
+        latitude                       => 'double',
+        location                       => 'map',
+        longitude                      => 'double',
+        metro_code                     => 'uint16',
+        names                          => 'map',
+        organization                   => 'utf8_string',
+        postal                         => 'map',
+        registered_country             => 'map',
+        represented_country            => 'map',
+        subdivisions                   => [ 'array', 'map' ],
+        traits                         => 'map',
     );
 
     my $type_cb = sub { $type_map{ $_[0] } // 'utf8_string' };
 
-    sub _write_geoip2_city_db {
+    sub _write_geoip2_db {
+        my $type        = shift;
         my $description = shift;
 
         my $writer = MaxMind::DB::Writer::Tree->new(
             ip_version    => 6,
             record_size   => 28,
             ip_version    => 6,
-            database_type => 'GeoIP2 City',
-            languages     => [ 'en', 'zh' ],
+            database_type => "GeoIP2 $type",
+            languages     => [ 'en', $type eq 'City' ? ('zh') : () ],
             description   => {
                 en =>
-                    "GeoIP2 City $description Database (a small sample of real GeoIP2 data)",
-                zh => '小型数据库',
+                    "GeoIP2 $type $description Database (a small sample of real GeoIP2 data)",
+                $type eq 'City' ? ( zh => '小型数据库' ) : (),
             },
             alias_ipv6_to_ipv4    => 1,
             map_key_type_callback => $type_cb,
         );
 
-        my $json = JSON::XS->new()->utf8();
+        my $nodes = decode_json(
+            read_file(
+                "$Dir/../source-data/GeoIP2-$type-Test.json",
+                binmode => ':raw'
+            )
+        );
 
-        open my $source_fh, '<', "$Dir/../source-data/GeoIP2-City-Test.json";
-        while (<$source_fh>) {
-            my ( $network, $record ) = @{ $json->decode($_) };
-            $writer->insert_network(
-                Net::Works::Network->new_from_string( string => $network ),
-                $record
-            );
+        for my $node (@$nodes) {
+            for my $network ( keys %$node ) {
+                $writer->insert_network(
+                    Net::Works::Network->new_from_string(
+                        string => $network
+                    ),
+                    $node->{$network}
+                );
+            }
         }
-        close $source_fh;
 
         my $suffix = $description =~ s/ /-/gr;
-        open my $output_fh, '>', "$Dir/GeoIP2-City-$suffix.mmdb";
+        open my $output_fh, '>', "$Dir/GeoIP2-$type-$suffix.mmdb";
         $writer->write_tree($output_fh);
         close $output_fh;
 
@@ -408,7 +422,6 @@ sub write_no_ipv4_tree_db {
     return;
 }
 
-
 # The point of this database is to provide something where we can test looking
 # up a single value. In other words, each IP address points to a non-compound
 # value, a string rather than a map or array.
@@ -427,7 +440,7 @@ sub write_no_map_db {
         root_data_type => 'utf8_string',
     );
 
-    for my $subnet (@{$subnets}) {
+    for my $subnet ( @{$subnets} ) {
         $writer->insert_network( $subnet, $subnet->as_string() );
     }
 

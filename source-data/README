@@ -1,0 +1,5 @@
+All of these but the City file are JSON dumps of the databases
+created by the GeoIP2 build integration tests 
+(TestFor::MM::Integration::GeoIP2::Build).
+
+The City file is of unknown origin.
