@@ -302,7 +302,7 @@ sub write_test_db {
 }
 
 sub write_geoip2_dbs {
-    for my $type ( 'City', 'Connection-Type', 'Domain', 'ISP-Org', ) {
+    for my $type ( 'City', 'Connection-Type', 'Domain', 'ISP', ) {
         _write_geoip2_db( $type, 'Test' );
     }
 }
