@@ -207,31 +207,33 @@ the start of the file.
 In order to determine where in the data section we should start looking, we use
 the following formula:
 
-    $data_section_offset = ( $record_value - $node_count )
-                           - 16 (data section separator size)
+    $data_section_offset = ( $record_value - $node_count ) - 16
+
+The `16` is the size of the data section separator (see below for details).
 
 The reason that we subtract the `$node_count` is best demonstrated by an example.
 
 Let's assume we have a 24-bit tree with 1,000 nodes. Each node contains 48
-bits, or 6 bytes. The size of the tree in bytes is 6,000.
+bits, or 6 bytes. The size of the tree is 6,000 bytes.
 
-When a record in the tree contains a number that is <= 1,000, this is a *node
-number*, and we look up that node. If a record contains a value >= 1,017, we
+When a record in the tree contains a number that is < 1,000, this is a *node
+number*, and we look up that node. If a record contains a value >= 1,016, we
 know that it is a data section value. We subtract the node count (1,000) and
-then subtract 16 for the data section separator, giving us the number 1.
+then subtract 16 for the data section separator, giving us the number 0, the
+first byte of the data section.
 
-If a record contained the value 6,000, the formula would give us an offset of
-5,000.
+If a record contained the value 6,000, this formula would give us an offset of
+4,084 into the data section.
 
 In order to determine where in the file this offset really points to, we also
 need to know where the data section starts. This can be calculated by
 determining the size of the search tree in bytes and then adding an additional
-16 bytes for the data section separator (see below).
+16 bytes for the data section separator.
 
 So the final formula to determine the offset in the file is:
 
     $offset_in_file = ( $record_value - $node_count )
-                      + $search_tree_size_in_bytes
+                      + $search_tree_size_in_bytes + 16
 
 ### IPv4 addresses in an IPv6 tree
 
