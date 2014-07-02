@@ -518,6 +518,14 @@ are ignored.
 This means that we are limited to 4GB of address space for pointers, so the
 data section size for the database is limited to 4GB.
 
+## Authors
+
+This specification was created by the following authors:
+
+* Greg Oschwald \<goschwald@maxmind.com\>
+* Dave Rolsky \<drolsky@maxmind.com\>
+* Boris Zentner \<bzentner@maxmind.com\>
+
 ## License
 
 This work is licensed under the Creative Commons Attribution-ShareAlike 3.0
