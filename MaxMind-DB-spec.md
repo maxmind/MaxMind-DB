@@ -230,8 +230,8 @@ determining the size of the search tree in bytes and then adding an additional
 
 So the final formula to determine the offset in the file is:
 
-   $offset_in_file = ( $record_value - $node_count )
-                     + $search_tree_size_in_bytes
+    $offset_in_file = ( $record_value - $node_count )
+                      + $search_tree_size_in_bytes
 
 ### IPv4 addresses in an IPv6 tree
 
