@@ -264,7 +264,7 @@ section. This separator exists in order to make it possible for a verification
 tool to distinguish between the two sections.
 
 This separator is not considered part of the data section itself. In other
-words, the data section starts at `$size_of_search_tree + 16" bytes in the
+words, the data section starts at `$size\_of\_search_tree + 16" bytes in the
 file.
 
 ## Output Data Section
