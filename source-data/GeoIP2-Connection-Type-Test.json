@@ -1,387 +1,387 @@
 [
-  {
-    "::1.0.0.0/120": {
-      "connection_type": "Dialup"
-    }
-  },
-  {
-    "::1.0.1.0/120": {
-      "connection_type": "Cable/DSL"
-    }
-  },
-  {
-    "::1.0.2.0/119": {
-      "connection_type": "Dialup"
-    }
-  },
-  {
-    "::1.0.4.0/118": {
-      "connection_type": "Dialup"
-    }
-  },
-  {
-    "::1.0.8.0/117": {
-      "connection_type": "Dialup"
-    }
-  },
-  {
-    "::1.0.16.0/116": {
-      "connection_type": "Dialup"
-    }
-  },
-  {
-    "::1.0.32.0/115": {
-      "connection_type": "Dialup"
-    }
-  },
-  {
-    "::1.0.64.0/114": {
-      "connection_type": "Dialup"
-    }
-  },
-  {
-    "::1.0.128.0/113": {
-      "connection_type": "Dialup"
-    }
-  },
-  {
-    "::80.214.0.0/116": {
-      "connection_type": "Cellular"
-    }
-  },
-  {
-    "::96.1.0.0/112": {
-      "connection_type": "Cable/DSL"
-    }
-  },
-  {
-    "::96.10.0.0/111": {
-      "connection_type": "Cable/DSL"
-    }
-  },
-  {
-    "::96.69.0.0/112": {
-      "connection_type": "Cable/DSL"
-    }
-  },
-  {
-    "::96.94.0.0/111": {
-      "connection_type": "Cable/DSL"
-    }
-  },
-  {
-    "::108.96.0.0/107": {
-      "connection_type": "Cellular"
-    }
-  },
-  {
-    "::175.16.199.0/120": {
-      "connection_type": "Dialup"
-    }
-  },
-  {
-    "::187.156.138.0/120": {
-      "connection_type": "Cable/DSL"
-    }
-  },
-  {
-    "::201.243.200.0/120": {
-      "connection_type": "Corporate"
-    }
-  },
-  {
-    "::207.179.48.0/116": {
-      "connection_type": "Cellular"
-    }
-  },
-  {
-    "::ffff:1.0.0.0/120": {
-      "connection_type": "Dialup"
-    }
-  },
-  {
-    "::ffff:1.0.1.0/120": {
-      "connection_type": "Cable/DSL"
-    }
-  },
-  {
-    "::ffff:1.0.2.0/119": {
-      "connection_type": "Dialup"
-    }
-  },
-  {
-    "::ffff:1.0.4.0/118": {
-      "connection_type": "Dialup"
-    }
-  },
-  {
-    "::ffff:1.0.8.0/117": {
-      "connection_type": "Dialup"
-    }
-  },
-  {
-    "::ffff:1.0.16.0/116": {
-      "connection_type": "Dialup"
-    }
-  },
-  {
-    "::ffff:1.0.32.0/115": {
-      "connection_type": "Dialup"
-    }
-  },
-  {
-    "::ffff:1.0.64.0/114": {
-      "connection_type": "Dialup"
-    }
-  },
-  {
-    "::ffff:1.0.128.0/113": {
-      "connection_type": "Dialup"
-    }
-  },
-  {
-    "::ffff:80.214.0.0/116": {
-      "connection_type": "Cellular"
-    }
-  },
-  {
-    "::ffff:96.1.0.0/112": {
-      "connection_type": "Cable/DSL"
-    }
-  },
-  {
-    "::ffff:96.10.0.0/111": {
-      "connection_type": "Cable/DSL"
-    }
-  },
-  {
-    "::ffff:96.69.0.0/112": {
-      "connection_type": "Cable/DSL"
-    }
-  },
-  {
-    "::ffff:96.94.0.0/111": {
-      "connection_type": "Cable/DSL"
-    }
-  },
-  {
-    "::ffff:108.96.0.0/107": {
-      "connection_type": "Cellular"
-    }
-  },
-  {
-    "::ffff:175.16.199.0/120": {
-      "connection_type": "Dialup"
-    }
-  },
-  {
-    "::ffff:187.156.138.0/120": {
-      "connection_type": "Cable/DSL"
-    }
-  },
-  {
-    "::ffff:201.243.200.0/120": {
-      "connection_type": "Corporate"
-    }
-  },
-  {
-    "::ffff:207.179.48.0/116": {
-      "connection_type": "Cellular"
-    }
-  },
-  {
-    "2001:0:100::/56": {
-      "connection_type": "Dialup"
-    }
-  },
-  {
-    "2001:0:100:100::/56": {
-      "connection_type": "Cable/DSL"
-    }
-  },
-  {
-    "2001:0:100:200::/55": {
-      "connection_type": "Dialup"
-    }
-  },
-  {
-    "2001:0:100:400::/54": {
-      "connection_type": "Dialup"
-    }
-  },
-  {
-    "2001:0:100:800::/53": {
-      "connection_type": "Dialup"
-    }
-  },
-  {
-    "2001:0:100:1000::/52": {
-      "connection_type": "Dialup"
-    }
-  },
-  {
-    "2001:0:100:2000::/51": {
-      "connection_type": "Dialup"
-    }
-  },
-  {
-    "2001:0:100:4000::/50": {
-      "connection_type": "Dialup"
-    }
-  },
-  {
-    "2001:0:100:8000::/49": {
-      "connection_type": "Dialup"
-    }
-  },
-  {
-    "2001:0:50d6::/52": {
-      "connection_type": "Cellular"
-    }
-  },
-  {
-    "2001:0:6001::/48": {
-      "connection_type": "Cable/DSL"
-    }
-  },
-  {
-    "2001:0:600a::/47": {
-      "connection_type": "Cable/DSL"
-    }
-  },
-  {
-    "2001:0:6045::/48": {
-      "connection_type": "Cable/DSL"
-    }
-  },
-  {
-    "2001:0:605e::/47": {
-      "connection_type": "Cable/DSL"
-    }
-  },
-  {
-    "2001:0:6c60::/43": {
-      "connection_type": "Cellular"
-    }
-  },
-  {
-    "2001:0:af10:c700::/56": {
-      "connection_type": "Dialup"
-    }
-  },
-  {
-    "2001:0:bb9c:8a00::/56": {
-      "connection_type": "Cable/DSL"
-    }
-  },
-  {
-    "2001:0:c9f3:c800::/56": {
-      "connection_type": "Corporate"
-    }
-  },
-  {
-    "2001:0:cfb3:3000::/52": {
-      "connection_type": "Cellular"
-    }
-  },
-  {
-    "2002:100::/40": {
-      "connection_type": "Dialup"
-    }
-  },
-  {
-    "2002:100:100::/40": {
-      "connection_type": "Cable/DSL"
-    }
-  },
-  {
-    "2002:100:200::/39": {
-      "connection_type": "Dialup"
-    }
-  },
-  {
-    "2002:100:400::/38": {
-      "connection_type": "Dialup"
-    }
-  },
-  {
-    "2002:100:800::/37": {
-      "connection_type": "Dialup"
-    }
-  },
-  {
-    "2002:100:1000::/36": {
-      "connection_type": "Dialup"
-    }
-  },
-  {
-    "2002:100:2000::/35": {
-      "connection_type": "Dialup"
-    }
-  },
-  {
-    "2002:100:4000::/34": {
-      "connection_type": "Dialup"
-    }
-  },
-  {
-    "2002:100:8000::/33": {
-      "connection_type": "Dialup"
-    }
-  },
-  {
-    "2002:50d6::/36": {
-      "connection_type": "Cellular"
-    }
-  },
-  {
-    "2002:6001::/32": {
-      "connection_type": "Cable/DSL"
-    }
-  },
-  {
-    "2002:600a::/31": {
-      "connection_type": "Cable/DSL"
-    }
-  },
-  {
-    "2002:6045::/32": {
-      "connection_type": "Cable/DSL"
-    }
-  },
-  {
-    "2002:605e::/31": {
-      "connection_type": "Cable/DSL"
-    }
-  },
-  {
-    "2002:6c60::/27": {
-      "connection_type": "Cellular"
-    }
-  },
-  {
-    "2002:af10:c700::/40": {
-      "connection_type": "Dialup"
-    }
-  },
-  {
-    "2002:bb9c:8a00::/40": {
-      "connection_type": "Cable/DSL"
-    }
-  },
-  {
-    "2002:c9f3:c800::/40": {
-      "connection_type": "Corporate"
-    }
-  },
-  {
-    "2002:cfb3:3000::/36": {
-      "connection_type": "Cellular"
-    }
-  },
-  {
-    "2003::/24": {
-      "connection_type": "Cable/DSL"
-    }
-  }
+   {
+      "::1.0.0.0/120" : {
+         "connection_type" : "Dialup"
+      }
+   },
+   {
+      "::1.0.1.0/120" : {
+         "connection_type" : "Cable/DSL"
+      }
+   },
+   {
+      "::1.0.2.0/119" : {
+         "connection_type" : "Dialup"
+      }
+   },
+   {
+      "::1.0.4.0/118" : {
+         "connection_type" : "Dialup"
+      }
+   },
+   {
+      "::1.0.8.0/117" : {
+         "connection_type" : "Dialup"
+      }
+   },
+   {
+      "::1.0.16.0/116" : {
+         "connection_type" : "Dialup"
+      }
+   },
+   {
+      "::1.0.32.0/115" : {
+         "connection_type" : "Dialup"
+      }
+   },
+   {
+      "::1.0.64.0/114" : {
+         "connection_type" : "Dialup"
+      }
+   },
+   {
+      "::1.0.128.0/113" : {
+         "connection_type" : "Dialup"
+      }
+   },
+   {
+      "::80.214.0.0/116" : {
+         "connection_type" : "Cellular"
+      }
+   },
+   {
+      "::96.1.0.0/112" : {
+         "connection_type" : "Cable/DSL"
+      }
+   },
+   {
+      "::96.10.0.0/111" : {
+         "connection_type" : "Cable/DSL"
+      }
+   },
+   {
+      "::96.69.0.0/112" : {
+         "connection_type" : "Cable/DSL"
+      }
+   },
+   {
+      "::96.94.0.0/111" : {
+         "connection_type" : "Cable/DSL"
+      }
+   },
+   {
+      "::108.96.0.0/107" : {
+         "connection_type" : "Cellular"
+      }
+   },
+   {
+      "::175.16.199.0/120" : {
+         "connection_type" : "Dialup"
+      }
+   },
+   {
+      "::187.156.138.0/120" : {
+         "connection_type" : "Cable/DSL"
+      }
+   },
+   {
+      "::201.243.200.0/120" : {
+         "connection_type" : "Corporate"
+      }
+   },
+   {
+      "::207.179.48.0/116" : {
+         "connection_type" : "Cellular"
+      }
+   },
+   {
+      "::ffff:1.0.0.0/120" : {
+         "connection_type" : "Dialup"
+      }
+   },
+   {
+      "::ffff:1.0.1.0/120" : {
+         "connection_type" : "Cable/DSL"
+      }
+   },
+   {
+      "::ffff:1.0.2.0/119" : {
+         "connection_type" : "Dialup"
+      }
+   },
+   {
+      "::ffff:1.0.4.0/118" : {
+         "connection_type" : "Dialup"
+      }
+   },
+   {
+      "::ffff:1.0.8.0/117" : {
+         "connection_type" : "Dialup"
+      }
+   },
+   {
+      "::ffff:1.0.16.0/116" : {
+         "connection_type" : "Dialup"
+      }
+   },
+   {
+      "::ffff:1.0.32.0/115" : {
+         "connection_type" : "Dialup"
+      }
+   },
+   {
+      "::ffff:1.0.64.0/114" : {
+         "connection_type" : "Dialup"
+      }
+   },
+   {
+      "::ffff:1.0.128.0/113" : {
+         "connection_type" : "Dialup"
+      }
+   },
+   {
+      "::ffff:80.214.0.0/116" : {
+         "connection_type" : "Cellular"
+      }
+   },
+   {
+      "::ffff:96.1.0.0/112" : {
+         "connection_type" : "Cable/DSL"
+      }
+   },
+   {
+      "::ffff:96.10.0.0/111" : {
+         "connection_type" : "Cable/DSL"
+      }
+   },
+   {
+      "::ffff:96.69.0.0/112" : {
+         "connection_type" : "Cable/DSL"
+      }
+   },
+   {
+      "::ffff:96.94.0.0/111" : {
+         "connection_type" : "Cable/DSL"
+      }
+   },
+   {
+      "::ffff:108.96.0.0/107" : {
+         "connection_type" : "Cellular"
+      }
+   },
+   {
+      "::ffff:175.16.199.0/120" : {
+         "connection_type" : "Dialup"
+      }
+   },
+   {
+      "::ffff:187.156.138.0/120" : {
+         "connection_type" : "Cable/DSL"
+      }
+   },
+   {
+      "::ffff:201.243.200.0/120" : {
+         "connection_type" : "Corporate"
+      }
+   },
+   {
+      "::ffff:207.179.48.0/116" : {
+         "connection_type" : "Cellular"
+      }
+   },
+   {
+      "2001:0:100::/56" : {
+         "connection_type" : "Dialup"
+      }
+   },
+   {
+      "2001:0:100:100::/56" : {
+         "connection_type" : "Cable/DSL"
+      }
+   },
+   {
+      "2001:0:100:200::/55" : {
+         "connection_type" : "Dialup"
+      }
+   },
+   {
+      "2001:0:100:400::/54" : {
+         "connection_type" : "Dialup"
+      }
+   },
+   {
+      "2001:0:100:800::/53" : {
+         "connection_type" : "Dialup"
+      }
+   },
+   {
+      "2001:0:100:1000::/52" : {
+         "connection_type" : "Dialup"
+      }
+   },
+   {
+      "2001:0:100:2000::/51" : {
+         "connection_type" : "Dialup"
+      }
+   },
+   {
+      "2001:0:100:4000::/50" : {
+         "connection_type" : "Dialup"
+      }
+   },
+   {
+      "2001:0:100:8000::/49" : {
+         "connection_type" : "Dialup"
+      }
+   },
+   {
+      "2001:0:50d6::/52" : {
+         "connection_type" : "Cellular"
+      }
+   },
+   {
+      "2001:0:6001::/48" : {
+         "connection_type" : "Cable/DSL"
+      }
+   },
+   {
+      "2001:0:600a::/47" : {
+         "connection_type" : "Cable/DSL"
+      }
+   },
+   {
+      "2001:0:6045::/48" : {
+         "connection_type" : "Cable/DSL"
+      }
+   },
+   {
+      "2001:0:605e::/47" : {
+         "connection_type" : "Cable/DSL"
+      }
+   },
+   {
+      "2001:0:6c60::/43" : {
+         "connection_type" : "Cellular"
+      }
+   },
+   {
+      "2001:0:af10:c700::/56" : {
+         "connection_type" : "Dialup"
+      }
+   },
+   {
+      "2001:0:bb9c:8a00::/56" : {
+         "connection_type" : "Cable/DSL"
+      }
+   },
+   {
+      "2001:0:c9f3:c800::/56" : {
+         "connection_type" : "Corporate"
+      }
+   },
+   {
+      "2001:0:cfb3:3000::/52" : {
+         "connection_type" : "Cellular"
+      }
+   },
+   {
+      "2002:100::/40" : {
+         "connection_type" : "Dialup"
+      }
+   },
+   {
+      "2002:100:100::/40" : {
+         "connection_type" : "Cable/DSL"
+      }
+   },
+   {
+      "2002:100:200::/39" : {
+         "connection_type" : "Dialup"
+      }
+   },
+   {
+      "2002:100:400::/38" : {
+         "connection_type" : "Dialup"
+      }
+   },
+   {
+      "2002:100:800::/37" : {
+         "connection_type" : "Dialup"
+      }
+   },
+   {
+      "2002:100:1000::/36" : {
+         "connection_type" : "Dialup"
+      }
+   },
+   {
+      "2002:100:2000::/35" : {
+         "connection_type" : "Dialup"
+      }
+   },
+   {
+      "2002:100:4000::/34" : {
+         "connection_type" : "Dialup"
+      }
+   },
+   {
+      "2002:100:8000::/33" : {
+         "connection_type" : "Dialup"
+      }
+   },
+   {
+      "2002:50d6::/36" : {
+         "connection_type" : "Cellular"
+      }
+   },
+   {
+      "2002:6001::/32" : {
+         "connection_type" : "Cable/DSL"
+      }
+   },
+   {
+      "2002:600a::/31" : {
+         "connection_type" : "Cable/DSL"
+      }
+   },
+   {
+      "2002:6045::/32" : {
+         "connection_type" : "Cable/DSL"
+      }
+   },
+   {
+      "2002:605e::/31" : {
+         "connection_type" : "Cable/DSL"
+      }
+   },
+   {
+      "2002:6c60::/27" : {
+         "connection_type" : "Cellular"
+      }
+   },
+   {
+      "2002:af10:c700::/40" : {
+         "connection_type" : "Dialup"
+      }
+   },
+   {
+      "2002:bb9c:8a00::/40" : {
+         "connection_type" : "Cable/DSL"
+      }
+   },
+   {
+      "2002:c9f3:c800::/40" : {
+         "connection_type" : "Corporate"
+      }
+   },
+   {
+      "2002:cfb3:3000::/36" : {
+         "connection_type" : "Cellular"
+      }
+   },
+   {
+      "2003::/24" : {
+         "connection_type" : "Cable/DSL"
+      }
+   }
 ]
