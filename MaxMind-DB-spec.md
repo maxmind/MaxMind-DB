@@ -5,6 +5,11 @@ version: v2.0
 ---
 # MaxMind DB File Format Specification
 
+## Description
+
+The MaxMind DB file format is a database format that maps IPv4 and IPv6
+addresses to data records using an efficient binary search tree.
+
 ## Version
 
 This spec documents **version 2.0** of the MaxMind DB binary format.
@@ -519,6 +524,21 @@ are ignored.
 
 This means that we are limited to 4GB of address space for pointers, so the
 data section size for the database is limited to 4GB.
+
+## Reference Implementations
+
+### Writer
+
+* [Perl](https://github.com/maxmind/MaxMind-DB-Writer-perl)
+
+### Reader
+
+* [C](https://github.com/maxmind/libmaxminddb)
+* [C#](https://github.com/maxmind/MaxMind-DB-Reader-dotnet)
+* [Java](https://github.com/maxmind/MaxMind-DB-Reader-java)
+* [Perl](https://github.com/maxmind/MaxMind-DB-Reader-perl)
+* [PHP](https://github.com/maxmind/MaxMind-DB-Reader-php)
+* [Python](https://github.com/maxmind/MaxMind-DB-Reader-python)
 
 ## Authors
 
