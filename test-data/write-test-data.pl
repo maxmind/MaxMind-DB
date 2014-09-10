@@ -359,7 +359,7 @@ sub write_broken_geoip2_city_db {
             ip_version    => 6,
             record_size   => 28,
             ip_version    => 6,
-            database_type => "GeoIP2 $type",
+            database_type => "GeoIP2-$type",
             languages     => [ 'en', $type eq 'City' ? ('zh') : () ],
             description   => {
                 en =>
