@@ -366,8 +366,8 @@ sub write_broken_geoip2_city_db {
                     "GeoIP2 $type $description Database (a small sample of real GeoIP2 data)",
                 $type eq 'City' ? ( zh => '小型数据库' ) : (),
             },
-            alias_ipv6_to_ipv4      => 1,
-            map_key_type_callback   => $type_cb,
+            alias_ipv6_to_ipv4    => 1,
+            map_key_type_callback => $type_cb,
         );
 
         my $nodes = decode_json(
