@@ -18,7 +18,7 @@
       }
    },
    {
-      "::ffff:65.23.96.0/109" : {
+      "::65.0.0.0/109" : {
          "is_anonymous" : true,
          "is_tor_exit_node": true
       }
