@@ -302,9 +302,15 @@ sub write_test_db {
 }
 
 sub write_geoip2_dbs {
-    for my $type ( 'City', 'Connection-Type', 'Country', 'Domain', 'ISP', ) {
-        _write_geoip2_db( $type, 'Test' );
-    }
+    _write_geoip2_db( @{$_}, 'Test' )
+        for (
+        [ 'Anonymous-IP',    1 ],
+        [ 'City',            0 ],
+        [ 'Connection-Type', 0 ],
+        [ 'Country',         0 ],
+        [ 'Domain',          0 ],
+        [ 'ISP',             0 ],
+        );
 }
 
 sub write_broken_geoip2_city_db {
@@ -321,7 +327,7 @@ sub write_broken_geoip2_city_db {
         $self->_simple_encode( double => $value );
     };
 
-    _write_geoip2_db( 'City', 'Test Broken Double Format' );
+    _write_geoip2_db( 'City', 0, 'Test Broken Double Format' );
 }
 
 {
@@ -333,9 +339,7 @@ sub write_broken_geoip2_city_db {
         continent                      => 'map',
         country                        => 'map',
         geoname_id                     => 'uint32',
-        is_anonymous_proxy             => 'boolean',
         isp                            => 'utf8_string',
-        is_satellite_provider          => 'boolean',
         latitude                       => 'double',
         location                       => 'map',
         longitude                      => 'double',
@@ -349,11 +353,15 @@ sub write_broken_geoip2_city_db {
         traits                         => 'map',
     );
 
-    my $type_cb = sub { $type_map{ $_[0] } // 'utf8_string' };
+    my $type_cb = sub {
+        return 'boolean' if $_[0] =~ /^is_/;
+        return $type_map{ $_[0] } // 'utf8_string';
+    };
 
     sub _write_geoip2_db {
-        my $type        = shift;
-        my $description = shift;
+        my $type                  = shift;
+        my $populate_all_networks = shift;
+        my $description           = shift;
 
         my $writer = MaxMind::DB::Writer::Tree->new(
             ip_version    => 6,
@@ -369,6 +377,8 @@ sub write_broken_geoip2_city_db {
             alias_ipv6_to_ipv4    => 1,
             map_key_type_callback => $type_cb,
         );
+
+        _populate_all_networks($writer) if $populate_all_networks;
 
         my $nodes = decode_json(
             read_file(
@@ -394,6 +404,26 @@ sub write_broken_geoip2_city_db {
         close $output_fh;
 
         return;
+    }
+}
+
+sub _populate_all_networks {
+    my $writer = shift;
+
+    my $max_uint128 = uint128(0) - 1;
+    my @networks    = Net::Works::Network->range_as_subnets(
+        Net::Works::Address->new_from_integer(
+            integer => 0,
+            version => 6,
+        ),
+        Net::Works::Address->new_from_integer(
+            integer => $max_uint128,
+            version => 6,
+        ),
+    );
+
+    for my $network (@networks) {
+        $writer->insert_network( $network => {} );
     }
 }
 
