@@ -374,8 +374,8 @@ sub write_broken_geoip2_city_db {
                     "GeoIP2 $type $description Database (a small sample of real GeoIP2 data)",
                 $type eq 'City' ? ( zh => '小型数据库' ) : (),
             },
-            alias_ipv6_to_ipv4      => 1,
-            map_key_type_callback   => $type_cb,
+            alias_ipv6_to_ipv4    => 1,
+            map_key_type_callback => $type_cb,
         );
 
         _populate_all_networks($writer) if $populate_all_networks;
@@ -408,10 +408,10 @@ sub write_broken_geoip2_city_db {
 }
 
 sub _populate_all_networks {
-    my $writer      = shift;
+    my $writer = shift;
 
     my $max_uint128 = uint128(0) - 1;
-    my @networks = Net::Works::Network->range_as_subnets(
+    my @networks    = Net::Works::Network->range_as_subnets(
         Net::Works::Address->new_from_integer(
             integer => 0,
             version => 6,
