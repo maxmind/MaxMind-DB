@@ -15,56 +15,6 @@
       }
    },
    {
-      "::ffff:1.2.0.0/112" : {
-         "domain" : "maxmind.com"
-      }
-   },
-   {
-      "::ffff:65.23.96.0/109" : {
-         "domain" : "nuvox.net"
-      }
-   },
-   {
-      "::ffff:71.160.223.0/120" : {
-         "domain" : "verizon.net"
-      }
-   },
-   {
-      "::ffff:186.30.236.0/120" : {
-         "domain" : "replaced.com"
-      }
-   },
-   {
-      "2001:0:102::/48" : {
-         "domain" : "maxmind.com"
-      }
-   },
-   {
-      "2001:0:47a0:df00::/56" : {
-         "domain" : "verizon.net"
-      }
-   },
-   {
-      "2001:0:ba1e:ec00::/56" : {
-         "domain" : "replaced.com"
-      }
-   },
-   {
-      "2002:102::/32" : {
-         "domain" : "maxmind.com"
-      }
-   },
-   {
-      "2002:47a0:df00::/40" : {
-         "domain" : "verizon.net"
-      }
-   },
-   {
-      "2002:ba1e:ec00::/40" : {
-         "domain" : "replaced.com"
-      }
-   },
-   {
       "2a02:2770:3::/64" : {
          "domain" : "sgotti.org"
       }
