@@ -4,4 +4,5 @@ created by the GeoIP2 build integration tests
 
 Additional data was added to match our legacy test databases.
 
-The City file is of unknown origin.
+The City file is of unknown origin. The Precision City file is the City file
+plus some additional markers to differentiate the two.

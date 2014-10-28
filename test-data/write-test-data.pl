@@ -310,6 +310,7 @@ sub write_geoip2_dbs {
         [ 'Country',         0 ],
         [ 'Domain',          0 ],
         [ 'ISP',             0 ],
+        [ 'Precision-City', 0],
         );
 }
 
