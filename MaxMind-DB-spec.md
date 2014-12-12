@@ -407,7 +407,7 @@ about the field's data type and payload size.
 
 The first three bits of the control byte tell you what type the field is. If
 these bits are all 0, then this is an "extended" type, which means that the
-*next* byte contains the actual type. Otherwise, the first three bytes will
+*next* byte contains the actual type. Otherwise, the first three bits will
 contain a number from 1 to 7, the actual type for the field.
 
 We've tried to assign the most commonly used types as numbers 1-7 as an
