@@ -86,10 +86,10 @@ trademark anyway).
 
 ### languages
 
-An array of strings, each of which is a language code. A given record may
+An array of strings, each of which is a locale code. A given record may
 contain data items that have been localized to some or all of these
-languages. Records should not contain localized data for languages not
-included in this array.
+locales. Records should not contain localized data for locales not included in
+this array.
 
 This is an optional key, as this may not be relevant for all types of data.
 
