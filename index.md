@@ -86,10 +86,10 @@ trademark anyway).
 
 ### languages
 
-An array of strings, each of which is a language code. A given record may
+An array of strings, each of which is a locale code. A given record may
 contain data items that have been localized to some or all of these
-languages. Records should not contain localized data for languages not
-included in this array.
+locales. Records should not contain localized data for locales not included in
+this array.
 
 This is an optional key, as this may not be relevant for all types of data.
 
@@ -407,7 +407,7 @@ about the field's data type and payload size.
 
 The first three bits of the control byte tell you what type the field is. If
 these bits are all 0, then this is an "extended" type, which means that the
-*next* byte contains the actual type. Otherwise, the first three bytes will
+*next* byte contains the actual type. Otherwise, the first three bits will
 contain a number from 1 to 7, the actual type for the field.
 
 We've tried to assign the most commonly used types as numbers 1-7 as an
