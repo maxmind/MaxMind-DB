@@ -8,7 +8,7 @@ use utf8;
 use Carp qw( croak );
 use Cwd qw( abs_path );
 use File::Basename qw( dirname );
-use File::Slurp qw( read_file );
+use File::Slurp qw( read_file write_file );
 use JSON::XS qw( decode_json );
 use Math::Int128 qw( uint128 );
 use MaxMind::DB::Writer::Serializer 0.050000;
@@ -37,6 +37,13 @@ sub main {
         \@ipv4_subnets,
         { ip_version => 4 },
         'broken-pointers',
+    );
+
+    write_broken_search_tree_db(
+        24,
+        \@ipv4_subnets,
+        { ip_version => 4 },
+        'broken-search-tree',
     );
 
     my @ipv6_subnets = Net::Works::Network->range_as_subnets(
@@ -115,6 +122,21 @@ sub write_broken_pointers_test_db {
     };
 
     write_test_db(@_);
+
+    return;
+}
+
+sub write_broken_search_tree_db {
+    my $filename = ( write_test_db(@_) )[1];
+
+    my $content = read_file( $filename, { binmode => ':raw' } );
+    # This causes the right record of the first node to be 0, meaning it
+    # points back to the top of the tree. This should never happen in a
+    # database that follows the spec.
+    substr( $content, 5, 1 ) = "\0";
+    write_file( $filename, $content, { binmode => ':raw' } );
+
+    return;
 }
 
 sub write_test_db {
@@ -440,7 +462,8 @@ sub write_no_ipv4_tree_db {
         description   => {
             en => 'MaxMind DB No IPv4 Search Tree',
         },
-        root_data_type => 'utf8_string',
+        root_data_type        => 'utf8_string',
+        map_key_type_callback => sub { {} },
     );
 
     my $subnet = Net::Works::Network->new_from_string( string => '::/64' );
@@ -468,7 +491,8 @@ sub write_no_map_db {
             en =>
                 'MaxMind DB String Value Entries (no maps or arrays as values)',
         },
-        root_data_type => 'utf8_string',
+        root_data_type        => 'utf8_string',
+        map_key_type_callback => sub { {} },
     );
 
     for my $subnet ( @{$subnets} ) {
