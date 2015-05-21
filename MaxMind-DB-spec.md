@@ -228,7 +228,7 @@ then subtract 16 for the data section separator, giving us the number 0, the
 first byte of the data section.
 
 If a record contained the value 6,000, this formula would give us an offset of
-4,084 into the data section.
+4,984 into the data section.
 
 In order to determine where in the file this offset really points to, we also
 need to know where the data section starts. This can be calculated by
