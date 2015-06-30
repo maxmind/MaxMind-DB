@@ -130,6 +130,7 @@ sub write_broken_search_tree_db {
     my $filename = ( write_test_db(@_) )[1];
 
     my $content = read_file( $filename, { binmode => ':raw' } );
+
     # This causes the right record of the first node to be 0, meaning it
     # points back to the top of the tree. This should never happen in a
     # database that follows the spec.
