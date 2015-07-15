@@ -107,7 +107,7 @@ sub write_broken_pointers_test_db {
     # value. It's value will be a pointer that resolves to an offset outside
     # the database.
 
-    my $key_to_poison = key_for_data({ip =>'1.1.1.16'});
+    my $key_to_poison = key_for_data( { ip => '1.1.1.16' } );
 
     my $orig_position_for_data
         = MaxMind::DB::Writer::Serializer->can('_position_for_data');
@@ -131,6 +131,7 @@ sub write_broken_search_tree_db {
     my $filename = ( write_test_db(@_) )[1];
 
     my $content = read_file( $filename, { binmode => ':raw' } );
+
     # This causes the right record of the first node to be 0, meaning it
     # points back to the top of the tree. This should never happen in a
     # database that follows the spec.
