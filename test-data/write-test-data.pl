@@ -13,6 +13,7 @@ use JSON::XS qw( decode_json );
 use Math::Int128 qw( uint128 );
 use MaxMind::DB::Writer::Serializer 0.050000;
 use MaxMind::DB::Writer::Tree 0.050000;
+use MaxMind::DB::Writer::Util qw( key_for_data );
 use Net::Works::Network;
 use Test::MaxMind::DB::Common::Util qw( standard_test_metadata );
 
@@ -106,7 +107,7 @@ sub write_broken_pointers_test_db {
     # value. It's value will be a pointer that resolves to an offset outside
     # the database.
 
-    my $key_to_poison = 'evbclUZX3mjlqxDihL+JNr+276s';
+    my $key_to_poison = key_for_data({ip =>'1.1.1.16'});
 
     my $orig_position_for_data
         = MaxMind::DB::Writer::Serializer->can('_position_for_data');
