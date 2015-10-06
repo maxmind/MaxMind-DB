@@ -118,7 +118,7 @@ The codes may include additional information such as script or country
 identifiers, like "zh-TW" or "mn-Cyrl-MN". The additional identifiers will be
 separated by a dash character ("-").
 
-This is key is optional. However, creators of databases are strongly
+This key is optional. However, creators of databases are strongly
 encouraged to include a description in at least one language.
 
 ### Calculating the Search Tree Section Size
