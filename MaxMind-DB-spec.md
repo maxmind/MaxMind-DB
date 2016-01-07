@@ -138,7 +138,7 @@ database. For example, the city database needs many more small netblocks than
 the country database.
 
 The top most node is always located at the beginning of the search tree
-section's address space.
+section's address space. The top node is node 0.
 
 Each node consists of two records, each of which is a pointer to an address in
 the file.
