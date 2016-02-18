@@ -333,6 +333,7 @@ sub write_geoip2_dbs {
         [ 'Connection-Type', 0 ],
         [ 'Country',         0 ],
         [ 'Domain',          0 ],
+        [ 'Enterprise',      0 ],
         [ 'ISP',             0 ],
         [ 'Precision-City',  0 ],
         [ 'Precision-ISP',   0 ]
@@ -358,10 +359,12 @@ sub write_broken_geoip2_city_db {
 
 {
     my %type_map = (
+        accuracy_radius                => 'uint16',
         autonomous_system_number       => 'uint32',
         autonomous_system_organization => 'utf8_string',
         cellular                       => 'uint16',
         city                           => 'map',
+        confidence                     => 'uint16',
         continent                      => 'map',
         country                        => 'map',
         geoname_id                     => 'uint32',
