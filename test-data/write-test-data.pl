@@ -400,7 +400,7 @@ sub write_broken_geoip2_city_db {
             languages     => [ 'en', $type eq 'City' ? ('zh') : () ],
             description   => {
                 en =>
-                    "GeoIP2 $type $description Database (a small sample of real GeoIP2 data)",
+                    "GeoIP2 $type $description Database (fake GeoIP2 data, for example purposes only)",
                 $type eq 'City' ? ( zh => '小型数据库' ) : (),
             },
             alias_ipv6_to_ipv4    => 1,
