@@ -194,7 +194,7 @@ sub write_test_db {
         map         => {
             mapX => {
                 utf8_stringX => 'hello',
-                arrayX       => [ 7, 8, 9 ],
+                arrayX => [ 7, 8, 9 ],
             },
         },
         boolean => 1,
@@ -468,7 +468,7 @@ sub write_no_ipv4_tree_db {
         description   => {
             en => 'MaxMind DB No IPv4 Search Tree',
         },
-        root_data_type        => 'utf8_string',
+        root_data_type => 'utf8_string',
         map_key_type_callback => sub { {} },
     );
 
@@ -497,7 +497,7 @@ sub write_no_map_db {
             en =>
                 'MaxMind DB String Value Entries (no maps or arrays as values)',
         },
-        root_data_type        => 'utf8_string',
+        root_data_type => 'utf8_string',
         map_key_type_callback => sub { {} },
     );
 
