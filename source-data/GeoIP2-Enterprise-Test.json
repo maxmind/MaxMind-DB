@@ -82,7 +82,7 @@
          "traits" : {
             "autonomous_system_number" : "14671",
             "autonomous_system_organization" : "FairPoint Communications",
-            "connection_type" : "residential",
+            "connection_type" : "Cable/DSL",
             "domain" : "frpt.net",
             "is_anonymous_proxy" : true,
             "is_legitimate_proxy" : true,
