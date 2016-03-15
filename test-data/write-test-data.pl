@@ -196,7 +196,7 @@ sub write_test_db {
         map         => {
             mapX => {
                 utf8_stringX => 'hello',
-                arrayX => [ 7, 8, 9 ],
+                arrayX       => [ 7, 8, 9 ],
             },
         },
         boolean => 1,
@@ -470,7 +470,7 @@ sub write_no_ipv4_tree_db {
         description   => {
             en => 'MaxMind DB No IPv4 Search Tree',
         },
-        root_data_type => 'utf8_string',
+        root_data_type        => 'utf8_string',
         map_key_type_callback => sub { {} },
     );
 
@@ -499,7 +499,7 @@ sub write_no_map_db {
             en =>
                 'MaxMind DB String Value Entries (no maps or arrays as values)',
         },
-        root_data_type => 'utf8_string',
+        root_data_type        => 'utf8_string',
         map_key_type_callback => sub { {} },
     );
 
@@ -533,16 +533,15 @@ sub write_test_serialization_data {
     return;
 }
 
-
 sub write_db_with_metadata_pointers {
     my $repeated_string = 'Lots of pointers in metadata';
-    my $writer = MaxMind::DB::Writer::Tree->new(
-        ip_version         => 6,
-        record_size        => 24,
+    my $writer          = MaxMind::DB::Writer::Tree->new(
+        ip_version            => 6,
+        record_size           => 24,
         map_key_type_callback => sub { 'utf8_string' },
-       database_type => $repeated_string,
-        languages     => [ 'en', 'es', 'zh' ],
-        description   => {
+        database_type         => $repeated_string,
+        languages             => [ 'en', 'es', 'zh' ],
+        description           => {
             en => $repeated_string,
             es => $repeated_string,
             zh => $repeated_string,
