@@ -76,6 +76,7 @@ sub main {
 
     write_geoip2_dbs();
     write_broken_geoip2_city_db();
+    write_invalid_node_count();
 
     write_no_ipv4_tree_db();
 
@@ -357,6 +358,13 @@ sub write_broken_geoip2_city_db {
     };
 
     _write_geoip2_db( 'City', 0, 'Test Broken Double Format' );
+}
+
+sub write_invalid_node_count {
+    no warnings 'redefine';
+    local *MaxMind::DB::Writer::Tree::node_count = sub { 100000 };
+
+    _write_geoip2_db( 'City', 0, 'Test Invalid Node Count' );
 }
 
 {
