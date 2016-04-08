@@ -1,3 +1,2 @@
 safe:        true
-markdown:    redcarpet
 permalink:   /:title.html
