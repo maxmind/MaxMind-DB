@@ -11845,7 +11845,7 @@
             }
          },
          "location" : {
-            "accuracy_radius" : 5,
+            "accuracy_radius" : 100,
             "latitude" : "51.7500",
             "longitude" : "-1.2500",
             "time_zone" : "Europe/London"
@@ -12232,7 +12232,7 @@
             }
          },
          "location" : {
-            "accuracy_radius" : 100,
+            "accuracy_radius" : 22,
             "latitude" : "47.2513",
             "longitude" : "-122.3149",
             "metro_code" : "819",
@@ -12312,7 +12312,7 @@
             }
          },
          "location" : {
-            "accuracy_radius" : 100,
+            "accuracy_radius" : 76,
             "latitude" : "58.4167",
             "longitude" : "15.6167",
             "time_zone" : "Europe/Stockholm"
@@ -12384,7 +12384,7 @@
             }
          },
          "location" : {
-            "accuracy_radius" : 100,
+            "accuracy_radius" : 76,
             "latitude" : "58.4167",
             "longitude" : "15.6167",
             "time_zone" : "Europe/Stockholm"
@@ -12446,7 +12446,7 @@
             }
          },
          "location" : {
-            "accuracy_radius" : 100,
+            "accuracy_radius" : 534,
             "latitude" : "27.5000",
             "longitude" : "90.5000",
             "time_zone" : "Asia/Thimphu"
@@ -12501,7 +12501,7 @@
             }
          },
          "location" : {
-            "accuracy_radius" : 100,
+            "accuracy_radius" : 121,
             "latitude" : "13",
             "longitude" : "122",
             "time_zone" : "Asia/Manila"
