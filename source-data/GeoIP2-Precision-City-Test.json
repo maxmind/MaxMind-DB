@@ -16,6 +16,7 @@
             }
          },
          "country" : {
+            "confidence" : 95,
             "geoname_id" : 1861060,
             "iso_code" : "JP",
             "names" : {
@@ -68,6 +69,7 @@
             }
          },
          "country" : {
+            "confidence" : 95,
             "geoname_id" : 1835841,
             "iso_code" : "KR",
             "names" : {
@@ -120,6 +122,7 @@
             }
          },
          "country" : {
+            "confidence" : 95,
             "geoname_id" : 1835841,
             "iso_code" : "KR",
             "names" : {
@@ -172,6 +175,7 @@
             }
          },
          "country" : {
+            "confidence" : 95,
             "geoname_id" : 1668284,
             "iso_code" : "TW",
             "names" : {
@@ -224,6 +228,7 @@
             }
          },
          "country" : {
+            "confidence" : 95,
             "geoname_id" : 1861060,
             "iso_code" : "JP",
             "names" : {
@@ -276,6 +281,7 @@
             }
          },
          "country" : {
+            "confidence" : 95,
             "geoname_id" : 1814991,
             "iso_code" : "CN",
             "names" : {
@@ -327,6 +333,7 @@
             }
          },
          "country" : {
+            "confidence" : 95,
             "geoname_id" : 1814991,
             "iso_code" : "CN",
             "names" : {
@@ -378,6 +385,7 @@
             }
          },
          "country" : {
+            "confidence" : 95,
             "geoname_id" : 1814991,
             "iso_code" : "CN",
             "names" : {
@@ -429,6 +437,7 @@
             }
          },
          "country" : {
+            "confidence" : 95,
             "geoname_id" : 1814991,
             "iso_code" : "CN",
             "names" : {
@@ -480,6 +489,7 @@
             }
          },
          "country" : {
+            "confidence" : 95,
             "geoname_id" : 1861060,
             "iso_code" : "JP",
             "names" : {
@@ -532,6 +542,7 @@
             }
          },
          "country" : {
+            "confidence" : 95,
             "geoname_id" : 1861060,
             "iso_code" : "JP",
             "names" : {
@@ -584,6 +595,7 @@
             }
          },
          "country" : {
+            "confidence" : 95,
             "geoname_id" : 1861060,
             "iso_code" : "JP",
             "names" : {
@@ -636,6 +648,7 @@
             }
          },
          "country" : {
+            "confidence" : 95,
             "geoname_id" : 1835841,
             "iso_code" : "KR",
             "names" : {
@@ -688,6 +701,7 @@
             }
          },
          "country" : {
+            "confidence" : 95,
             "geoname_id" : 1861060,
             "iso_code" : "JP",
             "names" : {
@@ -740,6 +754,7 @@
             }
          },
          "country" : {
+            "confidence" : 95,
             "geoname_id" : 1835841,
             "iso_code" : "KR",
             "names" : {
@@ -792,6 +807,7 @@
             }
          },
          "country" : {
+            "confidence" : 95,
             "geoname_id" : 1668284,
             "iso_code" : "TW",
             "names" : {
@@ -844,6 +860,7 @@
             }
          },
          "country" : {
+            "confidence" : 95,
             "geoname_id" : 1835841,
             "iso_code" : "KR",
             "names" : {
@@ -896,6 +913,7 @@
             }
          },
          "country" : {
+            "confidence" : 95,
             "geoname_id" : 1861060,
             "iso_code" : "JP",
             "names" : {
@@ -948,6 +966,7 @@
             }
          },
          "country" : {
+            "confidence" : 95,
             "geoname_id" : 1861060,
             "iso_code" : "JP",
             "names" : {
@@ -1000,6 +1019,7 @@
             }
          },
          "country" : {
+            "confidence" : 95,
             "geoname_id" : 1861060,
             "iso_code" : "JP",
             "names" : {
@@ -1052,6 +1072,7 @@
             }
          },
          "country" : {
+            "confidence" : 95,
             "geoname_id" : 1835841,
             "iso_code" : "KR",
             "names" : {
@@ -1104,6 +1125,7 @@
             }
          },
          "country" : {
+            "confidence" : 95,
             "geoname_id" : 1835841,
             "iso_code" : "KR",
             "names" : {
@@ -1156,6 +1178,7 @@
             }
          },
          "country" : {
+            "confidence" : 95,
             "geoname_id" : 1861060,
             "iso_code" : "JP",
             "names" : {
@@ -1208,6 +1231,7 @@
             }
          },
          "country" : {
+            "confidence" : 95,
             "geoname_id" : 1861060,
             "iso_code" : "JP",
             "names" : {
@@ -1260,6 +1284,7 @@
             }
          },
          "country" : {
+            "confidence" : 95,
             "geoname_id" : 1835841,
             "iso_code" : "KR",
             "names" : {
@@ -1312,6 +1337,7 @@
             }
          },
          "country" : {
+            "confidence" : 95,
             "geoname_id" : 1819730,
             "iso_code" : "HK",
             "names" : {
@@ -1364,6 +1390,7 @@
             }
          },
          "country" : {
+            "confidence" : 95,
             "geoname_id" : 1861060,
             "iso_code" : "JP",
             "names" : {
@@ -1416,6 +1443,7 @@
             }
          },
          "country" : {
+            "confidence" : 95,
             "geoname_id" : 1861060,
             "iso_code" : "JP",
             "names" : {
@@ -1468,6 +1496,7 @@
             }
          },
          "country" : {
+            "confidence" : 95,
             "geoname_id" : 1861060,
             "iso_code" : "JP",
             "names" : {
@@ -1520,6 +1549,7 @@
             }
          },
          "country" : {
+            "confidence" : 95,
             "geoname_id" : 3144096,
             "iso_code" : "NO",
             "names" : {
@@ -1572,6 +1602,7 @@
             }
          },
          "country" : {
+            "confidence" : 95,
             "geoname_id" : 294640,
             "iso_code" : "IL",
             "names" : {
@@ -1624,6 +1655,7 @@
             }
          },
          "country" : {
+            "confidence" : 95,
             "geoname_id" : 3017382,
             "iso_code" : "FR",
             "names" : {
@@ -1676,6 +1708,7 @@
             }
          },
          "country" : {
+            "confidence" : 95,
             "geoname_id" : 2658434,
             "iso_code" : "CH",
             "names" : {
@@ -1728,6 +1761,7 @@
             }
          },
          "country" : {
+            "confidence" : 95,
             "geoname_id" : 2661886,
             "iso_code" : "SE",
             "names" : {
@@ -1780,6 +1814,7 @@
             }
          },
          "country" : {
+            "confidence" : 95,
             "geoname_id" : 290291,
             "iso_code" : "BH",
             "names" : {
@@ -1832,6 +1867,7 @@
             }
          },
          "country" : {
+            "confidence" : 95,
             "geoname_id" : 2017370,
             "iso_code" : "RU",
             "names" : {
@@ -1883,6 +1919,7 @@
             }
          },
          "country" : {
+            "confidence" : 95,
             "geoname_id" : 798544,
             "iso_code" : "PL",
             "names" : {
@@ -1935,6 +1972,7 @@
             }
          },
          "country" : {
+            "confidence" : 95,
             "geoname_id" : 3144096,
             "iso_code" : "NO",
             "names" : {
@@ -1987,6 +2025,7 @@
             }
          },
          "country" : {
+            "confidence" : 95,
             "geoname_id" : 2921044,
             "iso_code" : "DE",
             "names" : {
@@ -2039,6 +2078,7 @@
             }
          },
          "country" : {
+            "confidence" : 95,
             "geoname_id" : 3175395,
             "iso_code" : "IT",
             "names" : {
@@ -2091,6 +2131,7 @@
             }
          },
          "country" : {
+            "confidence" : 95,
             "geoname_id" : 660013,
             "iso_code" : "FI",
             "names" : {
@@ -2143,6 +2184,7 @@
             }
          },
          "country" : {
+            "confidence" : 95,
             "geoname_id" : 630336,
             "iso_code" : "BY",
             "names" : {
@@ -2195,6 +2237,7 @@
             }
          },
          "country" : {
+            "confidence" : 95,
             "geoname_id" : 3077311,
             "iso_code" : "CZ",
             "names" : {
@@ -2247,6 +2290,7 @@
             }
          },
          "country" : {
+            "confidence" : 95,
             "geoname_id" : 130758,
             "iso_code" : "IR",
             "names" : {
@@ -2299,6 +2343,7 @@
             }
          },
          "country" : {
+            "confidence" : 95,
             "geoname_id" : 690791,
             "iso_code" : "UA",
             "names" : {
@@ -2350,6 +2395,7 @@
             }
          },
          "country" : {
+            "confidence" : 95,
             "geoname_id" : 3017382,
             "iso_code" : "FR",
             "names" : {
@@ -2402,6 +2448,7 @@
             }
          },
          "country" : {
+            "confidence" : 95,
             "geoname_id" : 130758,
             "iso_code" : "IR",
             "names" : {
@@ -2454,6 +2501,7 @@
             }
          },
          "country" : {
+            "confidence" : 95,
             "geoname_id" : 2635167,
             "iso_code" : "GB",
             "names" : {
@@ -2506,6 +2554,7 @@
             }
          },
          "country" : {
+            "confidence" : 95,
             "geoname_id" : 719819,
             "iso_code" : "HU",
             "names" : {
@@ -2558,6 +2607,7 @@
             }
          },
          "country" : {
+            "confidence" : 95,
             "geoname_id" : 2661886,
             "iso_code" : "SE",
             "names" : {
@@ -2610,6 +2660,7 @@
             }
          },
          "country" : {
+            "confidence" : 95,
             "geoname_id" : 2921044,
             "iso_code" : "DE",
             "names" : {
@@ -2662,6 +2713,7 @@
             }
          },
          "country" : {
+            "confidence" : 95,
             "geoname_id" : 660013,
             "iso_code" : "FI",
             "names" : {
@@ -2714,6 +2766,7 @@
             }
          },
          "country" : {
+            "confidence" : 95,
             "geoname_id" : 2921044,
             "iso_code" : "DE",
             "names" : {
@@ -2790,6 +2843,7 @@
             }
          },
          "country" : {
+            "confidence" : 95,
             "geoname_id" : 2635167,
             "iso_code" : "GB",
             "names" : {
@@ -2842,6 +2896,7 @@
             }
          },
          "country" : {
+            "confidence" : 95,
             "geoname_id" : 3017382,
             "iso_code" : "FR",
             "names" : {
@@ -2894,6 +2949,7 @@
             }
          },
          "country" : {
+            "confidence" : 95,
             "geoname_id" : 2510769,
             "iso_code" : "ES",
             "names" : {
@@ -2945,6 +3001,7 @@
             }
          },
          "country" : {
+            "confidence" : 95,
             "geoname_id" : 2921044,
             "iso_code" : "DE",
             "names" : {
@@ -2997,6 +3054,7 @@
             }
          },
          "country" : {
+            "confidence" : 95,
             "geoname_id" : 3017382,
             "iso_code" : "FR",
             "names" : {
@@ -3049,6 +3107,7 @@
             }
          },
          "country" : {
+            "confidence" : 95,
             "geoname_id" : 2635167,
             "iso_code" : "GB",
             "names" : {
@@ -3101,6 +3160,7 @@
             }
          },
          "country" : {
+            "confidence" : 95,
             "geoname_id" : 2921044,
             "iso_code" : "DE",
             "names" : {
@@ -3153,6 +3213,7 @@
             }
          },
          "country" : {
+            "confidence" : 95,
             "geoname_id" : 732800,
             "iso_code" : "BG",
             "names" : {
@@ -3205,6 +3266,7 @@
             }
          },
          "country" : {
+            "confidence" : 95,
             "geoname_id" : 2921044,
             "iso_code" : "DE",
             "names" : {
@@ -3257,6 +3319,7 @@
             }
          },
          "country" : {
+            "confidence" : 95,
             "geoname_id" : 2658434,
             "iso_code" : "CH",
             "names" : {
@@ -3309,6 +3372,7 @@
             }
          },
          "country" : {
+            "confidence" : 95,
             "geoname_id" : 130758,
             "iso_code" : "IR",
             "names" : {
@@ -3361,6 +3425,7 @@
             }
          },
          "country" : {
+            "confidence" : 95,
             "geoname_id" : 3017382,
             "iso_code" : "FR",
             "names" : {
@@ -3413,6 +3478,7 @@
             }
          },
          "country" : {
+            "confidence" : 95,
             "geoname_id" : 798549,
             "iso_code" : "RO",
             "names" : {
@@ -3465,6 +3531,7 @@
             }
          },
          "country" : {
+            "confidence" : 95,
             "geoname_id" : 2017370,
             "iso_code" : "RU",
             "names" : {
@@ -3516,6 +3583,7 @@
             }
          },
          "country" : {
+            "confidence" : 95,
             "geoname_id" : 2017370,
             "iso_code" : "RU",
             "names" : {
@@ -3567,6 +3635,7 @@
             }
          },
          "country" : {
+            "confidence" : 95,
             "geoname_id" : 3144096,
             "iso_code" : "NO",
             "names" : {
@@ -3619,6 +3688,7 @@
             }
          },
          "country" : {
+            "confidence" : 95,
             "geoname_id" : 2661886,
             "iso_code" : "SE",
             "names" : {
@@ -3671,6 +3741,7 @@
             }
          },
          "country" : {
+            "confidence" : 95,
             "geoname_id" : 2802361,
             "iso_code" : "BE",
             "names" : {
@@ -3723,6 +3794,7 @@
             }
          },
          "country" : {
+            "confidence" : 95,
             "geoname_id" : 298795,
             "iso_code" : "TR",
             "names" : {
@@ -3775,6 +3847,7 @@
             }
          },
          "country" : {
+            "confidence" : 95,
             "geoname_id" : 298795,
             "iso_code" : "TR",
             "names" : {
@@ -3827,6 +3900,7 @@
             }
          },
          "country" : {
+            "confidence" : 95,
             "geoname_id" : 2921044,
             "iso_code" : "DE",
             "names" : {
@@ -3879,6 +3953,7 @@
             }
          },
          "country" : {
+            "confidence" : 95,
             "geoname_id" : 2635167,
             "iso_code" : "GB",
             "names" : {
@@ -3931,6 +4006,7 @@
             }
          },
          "country" : {
+            "confidence" : 95,
             "geoname_id" : 2782113,
             "iso_code" : "AT",
             "names" : {
@@ -3983,6 +4059,7 @@
             }
          },
          "country" : {
+            "confidence" : 95,
             "geoname_id" : 2017370,
             "iso_code" : "RU",
             "names" : {
@@ -4034,6 +4111,7 @@
             }
          },
          "country" : {
+            "confidence" : 95,
             "geoname_id" : 2921044,
             "iso_code" : "DE",
             "names" : {
@@ -4086,6 +4164,7 @@
             }
          },
          "country" : {
+            "confidence" : 95,
             "geoname_id" : 798549,
             "iso_code" : "RO",
             "names" : {
@@ -4138,6 +4217,7 @@
             }
          },
          "country" : {
+            "confidence" : 95,
             "geoname_id" : 2017370,
             "iso_code" : "RU",
             "names" : {
@@ -4189,6 +4269,7 @@
             }
          },
          "country" : {
+            "confidence" : 95,
             "geoname_id" : 2017370,
             "iso_code" : "RU",
             "names" : {
@@ -4240,6 +4321,7 @@
             }
          },
          "country" : {
+            "confidence" : 95,
             "geoname_id" : 2017370,
             "iso_code" : "RU",
             "names" : {
@@ -4291,6 +4373,7 @@
             }
          },
          "country" : {
+            "confidence" : 95,
             "geoname_id" : 298795,
             "iso_code" : "TR",
             "names" : {
@@ -4343,6 +4426,7 @@
             }
          },
          "country" : {
+            "confidence" : 95,
             "geoname_id" : 2017370,
             "iso_code" : "RU",
             "names" : {
@@ -4394,6 +4478,7 @@
             }
          },
          "country" : {
+            "confidence" : 95,
             "geoname_id" : 690791,
             "iso_code" : "UA",
             "names" : {
@@ -4445,6 +4530,7 @@
             }
          },
          "country" : {
+            "confidence" : 95,
             "geoname_id" : 783754,
             "iso_code" : "AL",
             "names" : {
@@ -4497,6 +4583,7 @@
             }
          },
          "country" : {
+            "confidence" : 95,
             "geoname_id" : 2635167,
             "iso_code" : "GB",
             "names" : {
@@ -4549,6 +4636,7 @@
             }
          },
          "country" : {
+            "confidence" : 95,
             "geoname_id" : 2661886,
             "iso_code" : "SE",
             "names" : {
@@ -4601,6 +4689,7 @@
             }
          },
          "country" : {
+            "confidence" : 95,
             "geoname_id" : 2017370,
             "iso_code" : "RU",
             "names" : {
@@ -4652,6 +4741,7 @@
             }
          },
          "country" : {
+            "confidence" : 95,
             "geoname_id" : 2017370,
             "iso_code" : "RU",
             "names" : {
@@ -4703,6 +4793,7 @@
             }
          },
          "country" : {
+            "confidence" : 95,
             "geoname_id" : 294640,
             "iso_code" : "IL",
             "names" : {
@@ -4755,6 +4846,7 @@
             }
          },
          "country" : {
+            "confidence" : 95,
             "geoname_id" : 2017370,
             "iso_code" : "RU",
             "names" : {
@@ -4806,6 +4898,7 @@
             }
          },
          "country" : {
+            "confidence" : 95,
             "geoname_id" : 272103,
             "iso_code" : "LB",
             "names" : {
@@ -4858,6 +4951,7 @@
             }
          },
          "country" : {
+            "confidence" : 95,
             "geoname_id" : 130758,
             "iso_code" : "IR",
             "names" : {
@@ -4910,6 +5004,7 @@
             }
          },
          "country" : {
+            "confidence" : 95,
             "geoname_id" : 298795,
             "iso_code" : "TR",
             "names" : {
@@ -4962,6 +5057,7 @@
             }
          },
          "country" : {
+            "confidence" : 95,
             "geoname_id" : 2635167,
             "iso_code" : "GB",
             "names" : {
@@ -5014,6 +5110,7 @@
             }
          },
          "country" : {
+            "confidence" : 95,
             "geoname_id" : 130758,
             "iso_code" : "IR",
             "names" : {
@@ -5066,6 +5163,7 @@
             }
          },
          "country" : {
+            "confidence" : 95,
             "geoname_id" : 3017382,
             "iso_code" : "FR",
             "names" : {
@@ -5118,6 +5216,7 @@
             }
          },
          "country" : {
+            "confidence" : 95,
             "geoname_id" : 2750405,
             "iso_code" : "NL",
             "names" : {
@@ -5170,6 +5269,7 @@
             }
          },
          "country" : {
+            "confidence" : 95,
             "geoname_id" : 285570,
             "iso_code" : "KW",
             "names" : {
@@ -5222,6 +5322,7 @@
             }
          },
          "country" : {
+            "confidence" : 95,
             "geoname_id" : 2658434,
             "iso_code" : "CH",
             "names" : {
@@ -5274,6 +5375,7 @@
             }
          },
          "country" : {
+            "confidence" : 95,
             "geoname_id" : 2635167,
             "iso_code" : "GB",
             "names" : {
@@ -5326,6 +5428,7 @@
             }
          },
          "country" : {
+            "confidence" : 95,
             "geoname_id" : 798544,
             "iso_code" : "PL",
             "names" : {
@@ -5378,6 +5481,7 @@
             }
          },
          "country" : {
+            "confidence" : 95,
             "geoname_id" : 2635167,
             "iso_code" : "GB",
             "names" : {
@@ -5430,6 +5534,7 @@
             }
          },
          "country" : {
+            "confidence" : 95,
             "geoname_id" : 2750405,
             "iso_code" : "NL",
             "names" : {
@@ -5482,6 +5587,7 @@
             }
          },
          "country" : {
+            "confidence" : 95,
             "geoname_id" : 2782113,
             "iso_code" : "AT",
             "names" : {
@@ -5534,6 +5640,7 @@
             }
          },
          "country" : {
+            "confidence" : 95,
             "geoname_id" : 102358,
             "iso_code" : "SA",
             "names" : {
@@ -5586,6 +5693,7 @@
             }
          },
          "country" : {
+            "confidence" : 95,
             "geoname_id" : 2921044,
             "iso_code" : "DE",
             "names" : {
@@ -5638,6 +5746,7 @@
             }
          },
          "country" : {
+            "confidence" : 95,
             "geoname_id" : 2921044,
             "iso_code" : "DE",
             "names" : {
@@ -5690,6 +5799,7 @@
             }
          },
          "country" : {
+            "confidence" : 95,
             "geoname_id" : 3175395,
             "iso_code" : "IT",
             "names" : {
@@ -5742,6 +5852,7 @@
             }
          },
          "country" : {
+            "confidence" : 95,
             "geoname_id" : 630336,
             "iso_code" : "BY",
             "names" : {
@@ -5794,6 +5905,7 @@
             }
          },
          "country" : {
+            "confidence" : 95,
             "geoname_id" : 3144096,
             "iso_code" : "NO",
             "names" : {
@@ -5846,6 +5958,7 @@
             }
          },
          "country" : {
+            "confidence" : 95,
             "geoname_id" : 3175395,
             "iso_code" : "IT",
             "names" : {
@@ -5898,6 +6011,7 @@
             }
          },
          "country" : {
+            "confidence" : 95,
             "geoname_id" : 3017382,
             "iso_code" : "FR",
             "names" : {
@@ -5950,6 +6064,7 @@
             }
          },
          "country" : {
+            "confidence" : 95,
             "geoname_id" : 2661886,
             "iso_code" : "SE",
             "names" : {
@@ -6002,6 +6117,7 @@
             }
          },
          "country" : {
+            "confidence" : 95,
             "geoname_id" : 2921044,
             "iso_code" : "DE",
             "names" : {
@@ -6054,6 +6170,7 @@
             }
          },
          "country" : {
+            "confidence" : 95,
             "geoname_id" : 2017370,
             "iso_code" : "RU",
             "names" : {
@@ -6105,6 +6222,7 @@
             }
          },
          "country" : {
+            "confidence" : 95,
             "geoname_id" : 2750405,
             "iso_code" : "NL",
             "names" : {
@@ -6157,6 +6275,7 @@
             }
          },
          "country" : {
+            "confidence" : 95,
             "geoname_id" : 3017382,
             "iso_code" : "FR",
             "names" : {
@@ -6209,6 +6328,7 @@
             }
          },
          "country" : {
+            "confidence" : 95,
             "geoname_id" : 6290252,
             "iso_code" : "RS",
             "names" : {
@@ -6261,6 +6381,7 @@
             }
          },
          "country" : {
+            "confidence" : 95,
             "geoname_id" : 3144096,
             "iso_code" : "NO",
             "names" : {
@@ -6313,6 +6434,7 @@
             }
          },
          "country" : {
+            "confidence" : 95,
             "geoname_id" : 2017370,
             "iso_code" : "RU",
             "names" : {
@@ -6364,6 +6486,7 @@
             }
          },
          "country" : {
+            "confidence" : 95,
             "geoname_id" : 3017382,
             "iso_code" : "FR",
             "names" : {
@@ -6416,6 +6539,7 @@
             }
          },
          "country" : {
+            "confidence" : 95,
             "geoname_id" : 2017370,
             "iso_code" : "RU",
             "names" : {
@@ -6467,6 +6591,7 @@
             }
          },
          "country" : {
+            "confidence" : 95,
             "geoname_id" : 3017382,
             "iso_code" : "FR",
             "names" : {
@@ -6519,6 +6644,7 @@
             }
          },
          "country" : {
+            "confidence" : 95,
             "geoname_id" : 248816,
             "iso_code" : "JO",
             "names" : {
@@ -6571,6 +6697,7 @@
             }
          },
          "country" : {
+            "confidence" : 95,
             "geoname_id" : 2017370,
             "iso_code" : "RU",
             "names" : {
@@ -6622,6 +6749,7 @@
             }
          },
          "country" : {
+            "confidence" : 95,
             "geoname_id" : 2215636,
             "iso_code" : "LY",
             "names" : {
@@ -6674,6 +6802,7 @@
             }
          },
          "country" : {
+            "confidence" : 95,
             "geoname_id" : 2921044,
             "iso_code" : "DE",
             "names" : {
@@ -6726,6 +6855,7 @@
             }
          },
          "country" : {
+            "confidence" : 95,
             "geoname_id" : 298795,
             "iso_code" : "TR",
             "names" : {
@@ -6778,6 +6908,7 @@
             }
          },
          "country" : {
+            "confidence" : 95,
             "geoname_id" : 798544,
             "iso_code" : "PL",
             "names" : {
@@ -6830,6 +6961,7 @@
             }
          },
          "country" : {
+            "confidence" : 95,
             "geoname_id" : 2921044,
             "iso_code" : "DE",
             "names" : {
@@ -6882,6 +7014,7 @@
             }
          },
          "country" : {
+            "confidence" : 95,
             "geoname_id" : 2017370,
             "iso_code" : "RU",
             "names" : {
@@ -6933,6 +7066,7 @@
             }
          },
          "country" : {
+            "confidence" : 95,
             "geoname_id" : 2017370,
             "iso_code" : "RU",
             "names" : {
@@ -6984,6 +7118,7 @@
             }
          },
          "country" : {
+            "confidence" : 95,
             "geoname_id" : 2963597,
             "iso_code" : "IE",
             "names" : {
@@ -7036,6 +7171,7 @@
             }
          },
          "country" : {
+            "confidence" : 95,
             "geoname_id" : 798549,
             "iso_code" : "RO",
             "names" : {
@@ -7088,6 +7224,7 @@
             }
          },
          "country" : {
+            "confidence" : 95,
             "geoname_id" : 294640,
             "iso_code" : "IL",
             "names" : {
@@ -7140,6 +7277,7 @@
             }
          },
          "country" : {
+            "confidence" : 95,
             "geoname_id" : 2661886,
             "iso_code" : "SE",
             "names" : {
@@ -7192,6 +7330,7 @@
             }
          },
          "country" : {
+            "confidence" : 95,
             "geoname_id" : 2658434,
             "iso_code" : "CH",
             "names" : {
@@ -7244,6 +7383,7 @@
             }
          },
          "country" : {
+            "confidence" : 95,
             "geoname_id" : 2635167,
             "iso_code" : "GB",
             "names" : {
@@ -7296,6 +7436,7 @@
             }
          },
          "country" : {
+            "confidence" : 95,
             "geoname_id" : 798544,
             "iso_code" : "PL",
             "names" : {
@@ -7348,6 +7489,7 @@
             }
          },
          "country" : {
+            "confidence" : 95,
             "geoname_id" : 798544,
             "iso_code" : "PL",
             "names" : {
@@ -7400,6 +7542,7 @@
             }
          },
          "country" : {
+            "confidence" : 95,
             "geoname_id" : 2017370,
             "iso_code" : "RU",
             "names" : {
@@ -7451,6 +7594,7 @@
             }
          },
          "country" : {
+            "confidence" : 95,
             "geoname_id" : 2635167,
             "iso_code" : "GB",
             "names" : {
@@ -7503,6 +7647,7 @@
             }
          },
          "country" : {
+            "confidence" : 95,
             "geoname_id" : 2017370,
             "iso_code" : "RU",
             "names" : {
@@ -7554,6 +7699,7 @@
             }
          },
          "country" : {
+            "confidence" : 95,
             "geoname_id" : 3017382,
             "iso_code" : "FR",
             "names" : {
@@ -7606,6 +7752,7 @@
             }
          },
          "country" : {
+            "confidence" : 95,
             "geoname_id" : 3017382,
             "iso_code" : "FR",
             "names" : {
@@ -7658,6 +7805,7 @@
             }
          },
          "country" : {
+            "confidence" : 95,
             "geoname_id" : 2017370,
             "iso_code" : "RU",
             "names" : {
@@ -7733,6 +7881,7 @@
             }
          },
          "country" : {
+            "confidence" : 95,
             "geoname_id" : 587116,
             "iso_code" : "AZ",
             "names" : {
@@ -7785,6 +7934,7 @@
             }
          },
          "country" : {
+            "confidence" : 95,
             "geoname_id" : 3144096,
             "iso_code" : "NO",
             "names" : {
@@ -7837,6 +7987,7 @@
             }
          },
          "country" : {
+            "confidence" : 95,
             "geoname_id" : 298795,
             "iso_code" : "TR",
             "names" : {
@@ -7889,6 +8040,7 @@
             }
          },
          "country" : {
+            "confidence" : 95,
             "geoname_id" : 2921044,
             "iso_code" : "DE",
             "names" : {
@@ -7941,6 +8093,7 @@
             }
          },
          "country" : {
+            "confidence" : 95,
             "geoname_id" : 102358,
             "iso_code" : "SA",
             "names" : {
@@ -7993,6 +8146,7 @@
             }
          },
          "country" : {
+            "confidence" : 95,
             "geoname_id" : 690791,
             "iso_code" : "UA",
             "names" : {
@@ -8044,6 +8198,7 @@
             }
          },
          "country" : {
+            "confidence" : 95,
             "geoname_id" : 2017370,
             "iso_code" : "RU",
             "names" : {
@@ -8095,6 +8250,7 @@
             }
          },
          "country" : {
+            "confidence" : 95,
             "geoname_id" : 2750405,
             "iso_code" : "NL",
             "names" : {
@@ -8147,6 +8303,7 @@
             }
          },
          "country" : {
+            "confidence" : 95,
             "geoname_id" : 2661886,
             "iso_code" : "SE",
             "names" : {
@@ -8199,6 +8356,7 @@
             }
          },
          "country" : {
+            "confidence" : 95,
             "geoname_id" : 2017370,
             "iso_code" : "RU",
             "names" : {
@@ -8250,6 +8408,7 @@
             }
          },
          "country" : {
+            "confidence" : 95,
             "geoname_id" : 2017370,
             "iso_code" : "RU",
             "names" : {
@@ -8301,6 +8460,7 @@
             }
          },
          "country" : {
+            "confidence" : 95,
             "geoname_id" : 298795,
             "iso_code" : "TR",
             "names" : {
@@ -8353,6 +8513,7 @@
             }
          },
          "country" : {
+            "confidence" : 95,
             "geoname_id" : 2017370,
             "iso_code" : "RU",
             "names" : {
@@ -8404,6 +8565,7 @@
             }
          },
          "country" : {
+            "confidence" : 95,
             "geoname_id" : 3077311,
             "iso_code" : "CZ",
             "names" : {
@@ -8456,6 +8618,7 @@
             }
          },
          "country" : {
+            "confidence" : 95,
             "geoname_id" : 290291,
             "iso_code" : "BH",
             "names" : {
@@ -8508,6 +8671,7 @@
             }
          },
          "country" : {
+            "confidence" : 95,
             "geoname_id" : 690791,
             "iso_code" : "UA",
             "names" : {
@@ -8559,6 +8723,7 @@
             }
          },
          "country" : {
+            "confidence" : 95,
             "geoname_id" : 2635167,
             "iso_code" : "GB",
             "names" : {
@@ -8611,6 +8776,7 @@
             }
          },
          "country" : {
+            "confidence" : 95,
             "geoname_id" : 248816,
             "iso_code" : "JO",
             "names" : {
@@ -8663,6 +8829,7 @@
             }
          },
          "country" : {
+            "confidence" : 95,
             "geoname_id" : 2635167,
             "iso_code" : "GB",
             "names" : {
@@ -8715,6 +8882,7 @@
             }
          },
          "country" : {
+            "confidence" : 95,
             "geoname_id" : 2921044,
             "iso_code" : "DE",
             "names" : {
@@ -8767,6 +8935,7 @@
             }
          },
          "country" : {
+            "confidence" : 95,
             "geoname_id" : 3017382,
             "iso_code" : "FR",
             "names" : {
@@ -8819,6 +8988,7 @@
             }
          },
          "country" : {
+            "confidence" : 95,
             "geoname_id" : 690791,
             "iso_code" : "UA",
             "names" : {
@@ -8870,6 +9040,7 @@
             }
          },
          "country" : {
+            "confidence" : 95,
             "geoname_id" : 2921044,
             "iso_code" : "DE",
             "names" : {
@@ -8922,6 +9093,7 @@
             }
          },
          "country" : {
+            "confidence" : 95,
             "geoname_id" : 130758,
             "iso_code" : "IR",
             "names" : {
@@ -8974,6 +9146,7 @@
             }
          },
          "country" : {
+            "confidence" : 95,
             "geoname_id" : 3017382,
             "iso_code" : "FR",
             "names" : {
@@ -9026,6 +9199,7 @@
             }
          },
          "country" : {
+            "confidence" : 95,
             "geoname_id" : 2017370,
             "iso_code" : "RU",
             "names" : {
@@ -9077,6 +9251,7 @@
             }
          },
          "country" : {
+            "confidence" : 95,
             "geoname_id" : 3144096,
             "iso_code" : "NO",
             "names" : {
@@ -9129,6 +9304,7 @@
             }
          },
          "country" : {
+            "confidence" : 95,
             "geoname_id" : 2921044,
             "iso_code" : "DE",
             "names" : {
@@ -9181,6 +9357,7 @@
             }
          },
          "country" : {
+            "confidence" : 95,
             "geoname_id" : 2635167,
             "iso_code" : "GB",
             "names" : {
@@ -9233,6 +9410,7 @@
             }
          },
          "country" : {
+            "confidence" : 95,
             "geoname_id" : 798544,
             "iso_code" : "PL",
             "names" : {
@@ -9285,6 +9463,7 @@
             }
          },
          "country" : {
+            "confidence" : 95,
             "geoname_id" : 290557,
             "iso_code" : "AE",
             "names" : {
@@ -9337,6 +9516,7 @@
             }
          },
          "country" : {
+            "confidence" : 95,
             "geoname_id" : 2635167,
             "iso_code" : "GB",
             "names" : {
@@ -9389,6 +9569,7 @@
             }
          },
          "country" : {
+            "confidence" : 95,
             "geoname_id" : 3144096,
             "iso_code" : "NO",
             "names" : {
@@ -9441,6 +9622,7 @@
             }
          },
          "country" : {
+            "confidence" : 95,
             "geoname_id" : 2510769,
             "iso_code" : "ES",
             "names" : {
@@ -9492,6 +9674,7 @@
             }
          },
          "country" : {
+            "confidence" : 95,
             "geoname_id" : 2017370,
             "iso_code" : "RU",
             "names" : {
@@ -9543,6 +9726,7 @@
             }
          },
          "country" : {
+            "confidence" : 95,
             "geoname_id" : 2635167,
             "iso_code" : "GB",
             "names" : {
@@ -9595,6 +9779,7 @@
             }
          },
          "country" : {
+            "confidence" : 95,
             "geoname_id" : 2017370,
             "iso_code" : "RU",
             "names" : {
@@ -9646,6 +9831,7 @@
             }
          },
          "country" : {
+            "confidence" : 95,
             "geoname_id" : 174982,
             "iso_code" : "AM",
             "names" : {
@@ -9698,6 +9884,7 @@
             }
          },
          "country" : {
+            "confidence" : 95,
             "geoname_id" : 2750405,
             "iso_code" : "NL",
             "names" : {
@@ -9750,6 +9937,7 @@
             }
          },
          "country" : {
+            "confidence" : 95,
             "geoname_id" : 2750405,
             "iso_code" : "NL",
             "names" : {
@@ -9802,6 +9990,7 @@
             }
          },
          "country" : {
+            "confidence" : 95,
             "geoname_id" : 2750405,
             "iso_code" : "NL",
             "names" : {
@@ -9854,6 +10043,7 @@
             }
          },
          "country" : {
+            "confidence" : 95,
             "geoname_id" : 2017370,
             "iso_code" : "RU",
             "names" : {
@@ -9905,6 +10095,7 @@
             }
          },
          "country" : {
+            "confidence" : 95,
             "geoname_id" : 2017370,
             "iso_code" : "RU",
             "names" : {
@@ -9956,6 +10147,7 @@
             }
          },
          "country" : {
+            "confidence" : 95,
             "geoname_id" : 272103,
             "iso_code" : "LB",
             "names" : {
@@ -10008,6 +10200,7 @@
             }
          },
          "country" : {
+            "confidence" : 95,
             "geoname_id" : 798544,
             "iso_code" : "PL",
             "names" : {
@@ -10060,6 +10253,7 @@
             }
          },
          "country" : {
+            "confidence" : 95,
             "geoname_id" : 2661886,
             "iso_code" : "SE",
             "names" : {
@@ -10112,6 +10306,7 @@
             }
          },
          "country" : {
+            "confidence" : 95,
             "geoname_id" : 798544,
             "iso_code" : "PL",
             "names" : {
@@ -10164,6 +10359,7 @@
             }
          },
          "country" : {
+            "confidence" : 95,
             "geoname_id" : 2017370,
             "iso_code" : "RU",
             "names" : {
@@ -10215,6 +10411,7 @@
             }
          },
          "country" : {
+            "confidence" : 95,
             "geoname_id" : 2750405,
             "iso_code" : "NL",
             "names" : {
@@ -10267,6 +10464,7 @@
             }
          },
          "country" : {
+            "confidence" : 95,
             "geoname_id" : 2921044,
             "iso_code" : "DE",
             "names" : {
@@ -10319,6 +10517,7 @@
             }
          },
          "country" : {
+            "confidence" : 95,
             "geoname_id" : 798544,
             "iso_code" : "PL",
             "names" : {
@@ -10371,6 +10570,7 @@
             }
          },
          "country" : {
+            "confidence" : 95,
             "geoname_id" : 130758,
             "iso_code" : "IR",
             "names" : {
@@ -10423,6 +10623,7 @@
             }
          },
          "country" : {
+            "confidence" : 95,
             "geoname_id" : 719819,
             "iso_code" : "HU",
             "names" : {
@@ -10475,6 +10676,7 @@
             }
          },
          "country" : {
+            "confidence" : 95,
             "geoname_id" : 2635167,
             "iso_code" : "GB",
             "names" : {
@@ -10527,6 +10729,7 @@
             }
          },
          "country" : {
+            "confidence" : 95,
             "geoname_id" : 2635167,
             "iso_code" : "GB",
             "names" : {
@@ -10579,6 +10782,7 @@
             }
          },
          "country" : {
+            "confidence" : 95,
             "geoname_id" : 102358,
             "iso_code" : "SA",
             "names" : {
@@ -10631,6 +10835,7 @@
             }
          },
          "country" : {
+            "confidence" : 95,
             "geoname_id" : 298795,
             "iso_code" : "TR",
             "names" : {
@@ -10683,6 +10888,7 @@
             }
          },
          "country" : {
+            "confidence" : 95,
             "geoname_id" : 2921044,
             "iso_code" : "DE",
             "names" : {
@@ -10735,6 +10941,7 @@
             }
          },
          "country" : {
+            "confidence" : 95,
             "geoname_id" : 798544,
             "iso_code" : "PL",
             "names" : {
@@ -10787,6 +10994,7 @@
             }
          },
          "country" : {
+            "confidence" : 95,
             "geoname_id" : 2921044,
             "iso_code" : "DE",
             "names" : {
@@ -10839,6 +11047,7 @@
             }
          },
          "country" : {
+            "confidence" : 95,
             "geoname_id" : 2635167,
             "iso_code" : "GB",
             "names" : {
@@ -10891,6 +11100,7 @@
             }
          },
          "country" : {
+            "confidence" : 95,
             "geoname_id" : 3175395,
             "iso_code" : "IT",
             "names" : {
@@ -10943,6 +11153,7 @@
             }
          },
          "country" : {
+            "confidence" : 95,
             "geoname_id" : 798544,
             "iso_code" : "PL",
             "names" : {
@@ -10995,6 +11206,7 @@
             }
          },
          "country" : {
+            "confidence" : 95,
             "geoname_id" : 2661886,
             "iso_code" : "SE",
             "names" : {
@@ -11047,6 +11259,7 @@
             }
          },
          "country" : {
+            "confidence" : 95,
             "geoname_id" : 2623032,
             "iso_code" : "DK",
             "names" : {
@@ -11099,6 +11312,7 @@
             }
          },
          "country" : {
+            "confidence" : 95,
             "geoname_id" : 3144096,
             "iso_code" : "NO",
             "names" : {
@@ -11151,6 +11365,7 @@
             }
          },
          "country" : {
+            "confidence" : 95,
             "geoname_id" : 2635167,
             "iso_code" : "GB",
             "names" : {
@@ -11203,6 +11418,7 @@
             }
          },
          "country" : {
+            "confidence" : 95,
             "geoname_id" : 2921044,
             "iso_code" : "DE",
             "names" : {
@@ -11255,6 +11471,7 @@
             }
          },
          "country" : {
+            "confidence" : 95,
             "geoname_id" : 3175395,
             "iso_code" : "IT",
             "names" : {
@@ -11307,6 +11524,7 @@
             }
          },
          "country" : {
+            "confidence" : 95,
             "geoname_id" : 2623032,
             "iso_code" : "DK",
             "names" : {
@@ -11359,6 +11577,7 @@
             }
          },
          "country" : {
+            "confidence" : 95,
             "geoname_id" : 2782113,
             "iso_code" : "AT",
             "names" : {
@@ -11411,6 +11630,7 @@
             }
          },
          "country" : {
+            "confidence" : 95,
             "geoname_id" : 2750405,
             "iso_code" : "NL",
             "names" : {
@@ -11463,6 +11683,7 @@
             }
          },
          "country" : {
+            "confidence" : 95,
             "geoname_id" : 2635167,
             "iso_code" : "GB",
             "names" : {
@@ -11515,6 +11736,7 @@
             }
          },
          "country" : {
+            "confidence" : 95,
             "geoname_id" : 3175395,
             "iso_code" : "IT",
             "names" : {
@@ -11567,6 +11789,7 @@
             }
          },
          "country" : {
+            "confidence" : 95,
             "geoname_id" : 2635167,
             "iso_code" : "GB",
             "names" : {
@@ -11619,6 +11842,7 @@
             }
          },
          "country" : {
+            "confidence" : 95,
             "geoname_id" : 3175395,
             "iso_code" : "IT",
             "names" : {
@@ -11671,6 +11895,7 @@
             }
          },
          "country" : {
+            "confidence" : 95,
             "geoname_id" : 3042225,
             "iso_code" : "IM",
             "names" : {
@@ -11723,6 +11948,7 @@
             }
          },
          "country" : {
+            "confidence" : 95,
             "geoname_id" : 2921044,
             "iso_code" : "DE",
             "names" : {
@@ -11775,6 +12001,7 @@
             }
          },
          "country" : {
+            "confidence" : 95,
             "geoname_id" : 2411586,
             "iso_code" : "GI",
             "names" : {
@@ -11811,6 +12038,7 @@
    {
       "::2.125.160.216/125" : {
          "city" : {
+            "confidence" : 50,
             "geoname_id" : "2655045",
             "names" : {
                "en" : "Boxford"
@@ -11831,6 +12059,7 @@
             }
          },
          "country" : {
+            "confidence" : 95,
             "geoname_id" : 2635167,
             "iso_code" : "GB",
             "names" : {
@@ -11851,7 +12080,8 @@
             "time_zone" : "Europe/London"
          },
          "postal" : {
-            "code" : "OX1"
+            "code" : "OX1",
+            "confidence" : 20
          },
          "registered_country" : {
             "geoname_id" : 3017382,
@@ -11869,6 +12099,7 @@
          },
          "subdivisions" : [
             {
+         "confidence": 70,
                "geoname_id" : 6269131,
                "iso_code" : "ENG",
                "names" : {
@@ -11893,6 +12124,7 @@
    {
       "::81.2.69.142/127" : {
          "city" : {
+            "confidence" : 50,
             "geoname_id" : "2643743",
             "names" : {
                "de" : "London",
@@ -11919,6 +12151,7 @@
             }
          },
          "country" : {
+            "confidence" : 95,
             "geoname_id" : 2635167,
             "iso_code" : "GB",
             "names" : {
@@ -11954,6 +12187,7 @@
          },
          "subdivisions" : [
             {
+               "confidence" : 70,
                "geoname_id" : 6269131,
                "iso_code" : "ENG",
                "names" : {
@@ -11969,6 +12203,7 @@
    {
       "::81.2.69.144/124" : {
          "city" : {
+            "confidence" : 50,
             "geoname_id" : "2643743",
             "names" : {
                "de" : "London",
@@ -11995,6 +12230,7 @@
             }
          },
          "country" : {
+            "confidence" : 95,
             "geoname_id" : 2635167,
             "iso_code" : "GB",
             "names" : {
@@ -12030,6 +12266,7 @@
          },
          "subdivisions" : [
             {
+               "confidence" : 70,
                "geoname_id" : 6269131,
                "iso_code" : "ENG",
                "names" : {
@@ -12045,6 +12282,7 @@
    {
       "::81.2.69.160/123" : {
          "city" : {
+            "confidence" : 42,
             "geoname_id" : "2643743",
             "names" : {
                "de" : "London",
@@ -12071,6 +12309,7 @@
             }
          },
          "country" : {
+            "confidence" : 99,
             "geoname_id" : 2635167,
             "iso_code" : "GB",
             "names" : {
@@ -12106,6 +12345,7 @@
          },
          "subdivisions" : [
             {
+               "confidence" : 42,
                "geoname_id" : 6269131,
                "iso_code" : "ENG",
                "names" : {
@@ -12121,6 +12361,7 @@
    {
       "::81.2.69.192/124" : {
          "city" : {
+            "confidence" : 50,
             "geoname_id" : "2643743",
             "names" : {
                "de" : "London",
@@ -12147,6 +12388,7 @@
             }
          },
          "country" : {
+            "confidence" : 95,
             "geoname_id" : 2635167,
             "iso_code" : "GB",
             "names" : {
@@ -12182,6 +12424,7 @@
          },
          "subdivisions" : [
             {
+               "confidence" : 70,
                "geoname_id" : 6269131,
                "iso_code" : "ENG",
                "names" : {
@@ -12197,6 +12440,7 @@
    {
       "::216.160.83.56/125" : {
          "city" : {
+            "confidence" : 40,
             "geoname_id" : "5803556",
             "names" : {
                "en" : "Milton",
@@ -12218,6 +12462,7 @@
             }
          },
          "country" : {
+            "confidence" : 99,
             "geoname_id" : 6252001,
             "iso_code" : "US",
             "names" : {
@@ -12239,7 +12484,8 @@
             "time_zone" : "America/Los_Angeles"
          },
          "postal" : {
-            "code" : "98354"
+            "code" : "98354",
+            "confidence" : 40
          },
          "registered_country" : {
             "geoname_id" : 2635167,
@@ -12257,6 +12503,7 @@
          },
          "subdivisions" : [
             {
+               "confidence" : 99,
                "geoname_id" : 5815135,
                "iso_code" : "WA",
                "names" : {
@@ -12274,6 +12521,7 @@
    {
       "::89.160.20.112/124" : {
          "city" : {
+            "confidence" : 51,
             "geoname_id" : "2694762",
             "names" : {
                "de" : "Linköping",
@@ -12298,6 +12546,7 @@
             }
          },
          "country" : {
+            "confidence" : 99,
             "geoname_id" : 2661886,
             "iso_code" : "SE",
             "names" : {
@@ -12333,6 +12582,7 @@
          },
          "subdivisions" : [
             {
+               "confidence" : 51,
                "geoname_id" : 2685867,
                "iso_code" : "E",
                "names" : {
@@ -12346,6 +12596,7 @@
    {
       "::89.160.20.128/121" : {
          "city" : {
+            "confidence" : 50,
             "geoname_id" : "2694762",
             "names" : {
                "de" : "Linköping",
@@ -12370,6 +12621,7 @@
             }
          },
          "country" : {
+            "confidence" : 95,
             "geoname_id" : 2661886,
             "iso_code" : "SE",
             "names" : {
@@ -12405,6 +12657,7 @@
          },
          "subdivisions" : [
             {
+               "confidence" : 70,
                "geoname_id" : 2685867,
                "iso_code" : "E",
                "names" : {
@@ -12432,6 +12685,7 @@
             }
          },
          "country" : {
+            "confidence" : 99,
             "geoname_id" : 1252634,
             "iso_code" : "BT",
             "names" : {
@@ -12487,6 +12741,7 @@
             }
          },
          "country" : {
+            "confidence" : 95,
             "geoname_id" : 1694008,
             "iso_code" : "PH",
             "names" : {
@@ -12507,7 +12762,8 @@
             "time_zone" : "Asia/Manila"
          },
          "postal" : {
-            "code" : "34021"
+            "code" : "34021",
+            "confidence" : 20
          },
          "registered_country" : {
             "geoname_id" : 1694008,
@@ -12543,6 +12799,7 @@
    {
       "::175.16.199.0/120" : {
          "city" : {
+            "confidence" : 50,
             "geoname_id" : 2038180,
             "names" : {
                "de" : "Chángchūn",
@@ -12568,6 +12825,7 @@
             }
          },
          "country" : {
+            "confidence" : 95,
             "geoname_id" : 1814991,
             "iso_code" : "CN",
             "names" : {
@@ -12603,6 +12861,7 @@
          },
          "subdivisions" : [
             {
+               "confidence" : 70,
                "geoname_id" : 2036500,
                "iso_code" : "22",
                "names" : {
@@ -12616,6 +12875,7 @@
    {
       "::128.101.101.101/128" : {
          "city" : {
+            "confidence" : 50,
             "geoname_id" : 5037649,
             "names" : {
                "de" : "Minneapolis",
@@ -12643,6 +12903,7 @@
             }
          },
          "country" : {
+            "confidence" : 95,
             "geoname_id" : 6252001,
             "iso_code" : "US",
             "names" : {
@@ -12664,7 +12925,8 @@
             "time_zone" : "America/Chicago"
          },
          "postal" : {
-            "code" : "55414"
+            "code" : "55414",
+            "confidence" : 20
          },
          "registered_country" : {
             "geoname_id" : 6252001,
@@ -12682,6 +12944,7 @@
          },
          "subdivisions" : [
             {
+               "confidence" : 70,
                "geoname_id" : 5037779,
                "iso_code" : "MN",
                "names" : {
