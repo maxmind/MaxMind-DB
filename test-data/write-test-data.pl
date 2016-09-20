@@ -436,8 +436,7 @@ Unknown tree key '$key'.
 
 The universal_map_key_type_callback doesn't know what type to use for the passed
 key.  If you are adding a new key that will be used in a frozen tree / mmdb then
-you should update the mapping in MM::GeoIP2::Util to provide a type for that
-value.
+you should update the mapping in both our internal code and here.
 ERROR
     };
 
