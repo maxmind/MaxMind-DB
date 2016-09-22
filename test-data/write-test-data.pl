@@ -335,6 +335,7 @@ sub write_geoip2_dbs {
         [ 'City',            0 ],
         [ 'Connection-Type', 0 ],
         [ 'Country',         0 ],
+        [ 'DensityIncome',   0 ],
         [ 'Domain',          0 ],
         [ 'Enterprise',      0 ],
         [ 'ISP',             0 ],
@@ -367,17 +368,41 @@ sub write_invalid_node_count {
     _write_geoip2_db( 'City', 0, 'Test Invalid Node Count' );
 }
 
-{
-    my %type_map = (
+sub _universal_map_key_type_callback {
+    my $map = {
+
+        # languages
+        de      => 'utf8_string',
+        en      => 'utf8_string',
+        es      => 'utf8_string',
+        fr      => 'utf8_string',
+        ja      => 'utf8_string',
+        'pt-BR' => 'utf8_string',
+        ru      => 'utf8_string',
+        'zh-CN' => 'utf8_string',
+
+        # production
         accuracy_radius                => 'uint16',
         autonomous_system_number       => 'uint32',
         autonomous_system_organization => 'utf8_string',
-        cellular                       => 'uint16',
+        average_income                 => 'uint32',
         city                           => 'map',
+        code                           => 'utf8_string',
         confidence                     => 'uint16',
+        connection_type                => 'utf8_string',
         continent                      => 'map',
         country                        => 'map',
+        domain                         => 'utf8_string',
         geoname_id                     => 'uint32',
+        is_anonymous                   => 'boolean',
+        is_anonymous_proxy             => 'boolean',
+        is_anonymous_vpn               => 'boolean',
+        is_hosting_provider            => 'boolean',
+        is_legitimate_proxy            => 'boolean',
+        is_public_proxy                => 'boolean',
+        is_satellite_provider          => 'boolean',
+        is_tor_exit_node               => 'boolean',
+        iso_code                       => 'utf8_string',
         isp                            => 'utf8_string',
         latitude                       => 'double',
         location                       => 'map',
@@ -385,65 +410,83 @@ sub write_invalid_node_count {
         metro_code                     => 'uint16',
         names                          => 'map',
         organization                   => 'utf8_string',
+        population_density             => 'uint32',
         postal                         => 'map',
         registered_country             => 'map',
         represented_country            => 'map',
         subdivisions                   => [ 'array', 'map' ],
+        time_zone                      => 'utf8_string',
         traits                         => 'map',
-    );
+        traits                         => 'map',
+        type                           => 'utf8_string',
+        user_type                      => 'utf8_string',
 
-    my $type_cb = sub {
-        return 'boolean' if $_[0] =~ /^is_/;
-        return $type_map{ $_[0] } // 'utf8_string';
+        # for testing only
+        foo       => 'utf8_string',
+        bar       => 'utf8_string',
+        buzz      => 'utf8_string',
+        our_value => 'utf8_string',
     };
 
-    sub _write_geoip2_db {
-        my $type                  = shift;
-        my $populate_all_networks = shift;
-        my $description           = shift;
+    my $callback = sub {
+        my $key = shift;
 
-        my $writer = MaxMind::DB::Writer::Tree->new(
-            ip_version    => 6,
-            record_size   => 28,
-            ip_version    => 6,
-            database_type => "GeoIP2-$type",
-            languages     => [ 'en', $type eq 'City' ? ('zh') : () ],
-            description   => {
-                en =>
-                    "GeoIP2 $type $description Database (fake GeoIP2 data, for example purposes only)",
-                $type eq 'City' ? ( zh => '小型数据库' ) : (),
-            },
-            alias_ipv6_to_ipv4    => 1,
-            map_key_type_callback => $type_cb,
-        );
+        return $map->{$key} || die <<"ERROR";
+Unknown tree key '$key'.
 
-        _populate_all_networks($writer) if $populate_all_networks;
+The universal_map_key_type_callback doesn't know what type to use for the passed
+key.  If you are adding a new key that will be used in a frozen tree / mmdb then
+you should update the mapping in both our internal code and here.
+ERROR
+    };
 
-        my $nodes = decode_json(
-            read_file(
-                "$Dir/../source-data/GeoIP2-$type-Test.json",
-                binmode => ':raw'
-            )
-        );
+    return $callback;
+}
 
-        for my $node (@$nodes) {
-            for my $network ( keys %$node ) {
-                $writer->insert_network(
-                    Net::Works::Network->new_from_string(
-                        string => $network
-                    ),
-                    $node->{$network}
-                );
-            }
+sub _write_geoip2_db {
+    my $type                  = shift;
+    my $populate_all_networks = shift;
+    my $description           = shift;
+
+    my $writer = MaxMind::DB::Writer::Tree->new(
+        ip_version    => 6,
+        record_size   => 28,
+        ip_version    => 6,
+        database_type => "GeoIP2-$type",
+        languages     => [ 'en', $type eq 'City' ? ('zh') : () ],
+        description   => {
+            en =>
+                "GeoIP2 $type $description Database (fake GeoIP2 data, for example purposes only)",
+            $type eq 'City' ? ( zh => '小型数据库' ) : (),
+        },
+        alias_ipv6_to_ipv4    => 1,
+        map_key_type_callback => _universal_map_key_type_callback(),
+    );
+
+    _populate_all_networks($writer) if $populate_all_networks;
+
+    my $nodes = decode_json(
+        read_file(
+            "$Dir/../source-data/GeoIP2-$type-Test.json",
+            binmode => ':raw'
+        )
+    );
+
+    for my $node (@$nodes) {
+        for my $network ( keys %$node ) {
+            $writer->insert_network(
+                Net::Works::Network->new_from_string( string => $network ),
+                $node->{$network}
+            );
         }
-
-        my $suffix = $description =~ s/ /-/gr;
-        open my $output_fh, '>', "$Dir/GeoIP2-$type-$suffix.mmdb";
-        $writer->write_tree($output_fh);
-        close $output_fh;
-
-        return;
     }
+
+    my $suffix = $description =~ s/ /-/gr;
+    open my $output_fh, '>', "$Dir/GeoIP2-$type-$suffix.mmdb";
+    $writer->write_tree($output_fh);
+    close $output_fh;
+
+    return;
 }
 
 sub _populate_all_networks {

@@ -12099,7 +12099,7 @@
          },
          "subdivisions" : [
             {
-         "confidence": 70,
+               "confidence" : 70,
                "geoname_id" : 6269131,
                "iso_code" : "ENG",
                "names" : {
@@ -12666,6 +12666,27 @@
                }
             }
          ]
+      }
+   },
+   {
+      "::5.83.124.0/118" : {
+         "registered_country" : {
+            "geoname_id" : 798549,
+            "iso_code" : "RO",
+            "names" : {
+               "de" : "Rumänien",
+               "en" : "Romania",
+               "es" : "Rumanía",
+               "fr" : "Roumanie",
+               "ja" : "ルーマニア",
+               "pt-BR" : "Romênia",
+               "ru" : "Румыния",
+               "zh-CN" : "罗马尼亚"
+            }
+         },
+         "traits" : {
+            "is_anonymous_proxy" : 1
+         }
       }
    },
    {
