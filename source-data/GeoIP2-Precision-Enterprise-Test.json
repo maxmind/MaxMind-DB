@@ -86,6 +86,28 @@
       }
    },
    {
+      "::5.83.124.0/118" : {
+         "registered_country" : {
+            "geoname_id" : 798549,
+            "iso_code" : "RO",
+            "names" : {
+               "de" : "Rumänien",
+               "en" : "Romania",
+               "es" : "Rumanía",
+               "fr" : "Roumanie",
+               "ja" : "ルーマニア",
+               "pt-BR" : "Romênia",
+               "ru" : "Румыния",
+               "zh-CN" : "罗马尼亚"
+            }
+         },
+         "traits" : {
+            "is_anonymous_proxy" : true,
+            "isp" : "WifiNetCom"
+         }
+      }
+   },
+   {
       "::67.43.156.0/120" : {
          "continent" : {
             "code" : "AS",
@@ -407,6 +429,97 @@
             "isp" : "Bredband2 AB",
             "organization" : "Bevtec",
             "user_type" : "government"
+         }
+      }
+   },
+   {
+      "::128.101.101.101/128" : {
+         "city" : {
+            "confidence" : 50,
+            "geoname_id" : 5037649,
+            "names" : {
+               "de" : "Minneapolis",
+               "en" : "Minneapolis",
+               "es" : "Mineápolis",
+               "fr" : "Minneapolis",
+               "ja" : "ミネアポリス",
+               "pt-BR" : "Minneapolis",
+               "ru" : "Миннеаполис",
+               "zh-CN" : "明尼阿波利斯"
+            }
+         },
+         "continent" : {
+            "code" : "NA",
+            "geoname_id" : 6255149,
+            "names" : {
+               "de" : "Nordamerika",
+               "en" : "North America",
+               "es" : "Norteamérica",
+               "fr" : "Amérique du Nord",
+               "ja" : "北アメリカ",
+               "pt-BR" : "América do Norte",
+               "ru" : "Северная Америка",
+               "zh-CN" : "北美洲"
+            }
+         },
+         "country" : {
+            "confidence" : 95,
+            "geoname_id" : 6252001,
+            "iso_code" : "US",
+            "names" : {
+               "de" : "USA",
+               "en" : "United States",
+               "es" : "Estados Unidos",
+               "fr" : "États-Unis",
+               "ja" : "アメリカ合衆国",
+               "pt-BR" : "Estados Unidos",
+               "ru" : "Сша",
+               "zh-CN" : "美国"
+            }
+         },
+         "location" : {
+            "accuracy_radius" : 3,
+            "latitude" : 44.9759,
+            "longitude" : -93.2166,
+            "metro_code" : 613,
+            "time_zone" : "America/Chicago"
+         },
+         "postal" : {
+            "code" : "55414",
+            "confidence" : 20
+         },
+         "registered_country" : {
+            "geoname_id" : 6252001,
+            "iso_code" : "US",
+            "names" : {
+               "de" : "USA",
+               "en" : "United States",
+               "es" : "Estados Unidos",
+               "fr" : "États-Unis",
+               "ja" : "アメリカ合衆国",
+               "pt-BR" : "Estados Unidos",
+               "ru" : "Сша",
+               "zh-CN" : "美国"
+            }
+         },
+         "subdivisions" : [
+            {
+               "confidence" : 70,
+               "geoname_id" : 5037779,
+               "iso_code" : "MN",
+               "names" : {
+                  "en" : "Minnesota",
+                  "es" : "Minnesota",
+                  "ja" : "ミネソタ州",
+                  "ru" : "Миннесота"
+               }
+            }
+         ],
+         "traits" : {
+            "autonomous_system_number" : 2313,
+            "autonomous_system_organization" : "Precision AS Org",
+            "isp" : "Precision ISP",
+            "organization" : "Precision Org"
          }
       }
    },
