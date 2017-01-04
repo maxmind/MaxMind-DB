@@ -331,16 +331,17 @@ sub write_test_db {
 sub write_geoip2_dbs {
     _write_geoip2_db( @{$_}, 'Test' )
         for (
-        [ 'Anonymous-IP',    1 ],
-        [ 'City',            0 ],
-        [ 'Connection-Type', 0 ],
-        [ 'Country',         0 ],
-        [ 'DensityIncome',   0 ],
-        [ 'Domain',          0 ],
-        [ 'Enterprise',      0 ],
-        [ 'ISP',             0 ],
-        [ 'Precision-City',  0 ],
-        [ 'Precision-ISP',   0 ]
+        [ 'Anonymous-IP',         1 ],
+        [ 'City',                 0 ],
+        [ 'Connection-Type',      0 ],
+        [ 'Country',              0 ],
+        [ 'DensityIncome',        0 ],
+        [ 'Domain',               0 ],
+        [ 'Enterprise',           0 ],
+        [ 'ISP',                  0 ],
+        [ 'Precision-City',       0 ],
+        [ 'Precision-Enterprise', 0 ],
+        [ 'Precision-ISP',        0 ]
         );
 }
 
