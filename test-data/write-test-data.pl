@@ -339,9 +339,7 @@ sub write_geoip2_dbs {
         [ 'Domain',               0 ],
         [ 'Enterprise',           0 ],
         [ 'ISP',                  0 ],
-        [ 'Precision-City',       0 ],
         [ 'Precision-Enterprise', 0 ],
-        [ 'Precision-ISP',        0 ]
         );
 }
 
