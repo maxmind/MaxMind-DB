@@ -648,5 +648,19 @@
             "user_type" : "government"
          }
       }
+   },
+   {
+      "::212.47.235.81/128" : {
+         "traits" : {
+            "is_anonymous_proxy" : true
+         }
+      }
+   },
+   {
+      "::212.47.235.82/128" : {
+         "traits" : {
+            "is_satellite_provider" : true
+         }
+      }
    }
 ]
