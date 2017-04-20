@@ -331,15 +331,16 @@ sub write_test_db {
 sub write_geoip2_dbs {
     _write_geoip2_db( @{$_}, 'Test' )
         for (
-        [ 'Anonymous-IP',         1 ],
-        [ 'City',                 0 ],
-        [ 'Connection-Type',      0 ],
-        [ 'Country',              0 ],
-        [ 'DensityIncome',        0 ],
-        [ 'Domain',               0 ],
-        [ 'Enterprise',           0 ],
-        [ 'ISP',                  0 ],
-        [ 'Precision-Enterprise', 0 ],
+        [ 'GeoIP2-Anonymous-IP',         1 ],
+        [ 'GeoIP2-City',                 0 ],
+        [ 'GeoIP2-Connection-Type',      0 ],
+        [ 'GeoIP2-Country',              0 ],
+        [ 'GeoIP2-DensityIncome',        0 ],
+        [ 'GeoIP2-Domain',               0 ],
+        [ 'GeoIP2-Enterprise',           0 ],
+        [ 'GeoIP2-ISP',                  0 ],
+        [ 'GeoIP2-Precision-Enterprise', 0 ],
+        [ 'GeoLite2-ASN',                  0 ],
         );
 }
 
@@ -357,14 +358,14 @@ sub write_broken_geoip2_city_db {
         $self->_simple_encode( double => $value );
     };
 
-    _write_geoip2_db( 'City', 0, 'Test Broken Double Format' );
+    _write_geoip2_db( 'GeoIP2-City', 0, 'Test Broken Double Format' );
 }
 
 sub write_invalid_node_count {
     no warnings 'redefine';
     local *MaxMind::DB::Writer::Tree::node_count = sub { 100000 };
 
-    _write_geoip2_db( 'City', 0, 'Test Invalid Node Count' );
+    _write_geoip2_db( 'GeoIP2-City', 0, 'Test Invalid Node Count' );
 }
 
 sub _universal_map_key_type_callback {
@@ -451,12 +452,12 @@ sub _write_geoip2_db {
         ip_version    => 6,
         record_size   => 28,
         ip_version    => 6,
-        database_type => "GeoIP2-$type",
-        languages     => [ 'en', $type eq 'City' ? ('zh') : () ],
+        database_type => $type,
+        languages     => [ 'en', $type eq 'GeoIP2-City' ? ('zh') : () ],
         description   => {
             en =>
-                "GeoIP2 $type $description Database (fake GeoIP2 data, for example purposes only)",
-            $type eq 'City' ? ( zh => '小型数据库' ) : (),
+                ($type =~ s/-/ /gr) . " $description Database (fake GeoIP2 data, for example purposes only)",
+            $type eq 'GeoIP2-City' ? ( zh => '小型数据库' ) : (),
         },
         alias_ipv6_to_ipv4    => 1,
         map_key_type_callback => _universal_map_key_type_callback(),
@@ -466,7 +467,7 @@ sub _write_geoip2_db {
 
     my $nodes = decode_json(
         read_file(
-            "$Dir/../source-data/GeoIP2-$type-Test.json",
+            "$Dir/../source-data/$type-Test.json",
             binmode => ':raw'
         )
     );
@@ -481,7 +482,7 @@ sub _write_geoip2_db {
     }
 
     my $suffix = $description =~ s/ /-/gr;
-    open my $output_fh, '>', "$Dir/GeoIP2-$type-$suffix.mmdb";
+    open my $output_fh, '>', "$Dir/$type-$suffix.mmdb";
     $writer->write_tree($output_fh);
     close $output_fh;
 
