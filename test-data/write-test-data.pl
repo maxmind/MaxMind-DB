@@ -229,12 +229,13 @@ sub write_test_db {
                 en =>
                     'MaxMind DB Decoder Test database - contains every MaxMind DB data type',
             },
-            alias_ipv6_to_ipv4    => 1,
-            map_key_type_callback => sub {
+            alias_ipv6_to_ipv4       => 1,
+            remove_reserved_networks => 0,
+            map_key_type_callback    => sub {
                 my $key = $_[0];
                 $key =~ s/X$//;
                 return $key eq 'array' ? [ 'array', 'uint32' ] : $key;
-            }
+            },
         );
 
         my @subnets
@@ -340,7 +341,7 @@ sub write_geoip2_dbs {
         [ 'GeoIP2-Enterprise',           0 ],
         [ 'GeoIP2-ISP',                  0 ],
         [ 'GeoIP2-Precision-Enterprise', 0 ],
-        [ 'GeoLite2-ASN',                  0 ],
+        [ 'GeoLite2-ASN',                0 ],
         );
 }
 
@@ -455,8 +456,8 @@ sub _write_geoip2_db {
         database_type => $type,
         languages     => [ 'en', $type eq 'GeoIP2-City' ? ('zh') : () ],
         description   => {
-            en =>
-                ($type =~ s/-/ /gr) . " $description Database (fake GeoIP2 data, for example purposes only)",
+            en => ( $type =~ s/-/ /gr )
+                . " $description Database (fake GeoIP2 data, for example purposes only)",
             $type eq 'GeoIP2-City' ? ( zh => '小型数据库' ) : (),
         },
         alias_ipv6_to_ipv4    => 1,
@@ -521,8 +522,9 @@ sub write_no_ipv4_tree_db {
         description   => {
             en => 'MaxMind DB No IPv4 Search Tree',
         },
-        root_data_type        => 'utf8_string',
-        map_key_type_callback => sub { {} },
+        remove_reserved_networks => 0,
+        root_data_type           => 'utf8_string',
+        map_key_type_callback    => sub { {} },
     );
 
     my $subnet = Net::Works::Network->new_from_string( string => '::/64' );
