@@ -341,7 +341,7 @@ sub write_geoip2_dbs {
         ['GeoIP2-Enterprise'],
         ['GeoIP2-ISP'],
         ['GeoIP2-Precision-Enterprise'],
-        [ 'GeoIP2-User-Count', { user_count => 0 } ],
+        ['GeoIP2-User-Count'],
         ['GeoLite2-ASN'],
         );
 }
@@ -396,6 +396,11 @@ sub _universal_map_key_type_callback {
         country                        => 'map',
         domain                         => 'utf8_string',
         geoname_id                     => 'uint32',
+        ipv4_24                        => 'uint32',
+        ipv4_32                        => 'uint32',
+        ipv6_32                        => 'uint32',
+        ipv6_48                        => 'uint32',
+        ipv6_64                        => 'uint32',
         is_anonymous                   => 'boolean',
         is_anonymous_proxy             => 'boolean',
         is_anonymous_vpn               => 'boolean',
@@ -421,7 +426,6 @@ sub _universal_map_key_type_callback {
         traits                         => 'map',
         traits                         => 'map',
         type                           => 'utf8_string',
-        user_count                     => 'uint32',
         user_type                      => 'utf8_string',
 
         # for testing only
