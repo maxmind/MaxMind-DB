@@ -431,7 +431,6 @@
             }
          ],
          "traits" : {
-            "connection_type" : "Corporate",
             "domain" : "in-addr.arpa",
             "isp" : "Andrews & Arnold Ltd",
             "organization" : "STONEHOUSE office network",
