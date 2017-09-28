@@ -10,7 +10,7 @@ pointers to map keys and values, as well as to the whole map.
 
 There are several ways to figure out what IP addresses are actually in the
 test databases. You can take a look at the
-[souce-data directory](https://github.com/maxmind/MaxMind-DB/tree/master/source-data)
+[source-data directory](https://github.com/maxmind/MaxMind-DB/tree/master/source-data)
 in this repository. This directory contains JSON files which are used to
 generate many (but not all) of the database files.
 
