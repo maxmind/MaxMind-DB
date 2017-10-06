@@ -1030,5 +1030,12 @@
             "is_satellite_provider" : true
          }
       }
+   },
+   {
+      "::1.9.127.107/128" : {
+         "traits" : {
+            "user_type": "business"
+         }
+      }
    }
 ]
