@@ -8,8 +8,8 @@ use utf8;
 use Carp qw( croak );
 use Cwd qw( abs_path );
 use File::Basename qw( dirname );
-use File::Slurp qw( read_file write_file );
-use JSON::XS qw( decode_json );
+use File::Slurper qw( read_binary write_binary );
+use Cpanel::JSON::XS qw( decode_json );
 use Math::Int128 qw( uint128 );
 use MaxMind::DB::Writer::Serializer 0.100004;
 use MaxMind::DB::Writer::Tree 0.100004;
@@ -133,13 +133,13 @@ sub write_broken_pointers_test_db {
 sub write_broken_search_tree_db {
     my $filename = ( write_test_db(@_) )[1];
 
-    my $content = read_file( $filename, { binmode => ':raw' } );
+    my $content = read_binary($filename);
 
     # This causes the right record of the first node to be 0, meaning it
     # points back to the top of the tree. This should never happen in a
     # database that follows the spec.
     substr( $content, 5, 1 ) = "\0";
-    write_file( $filename, $content, { binmode => ':raw' } );
+    write_binary($filename, $content);
 
     return;
 }
@@ -474,12 +474,8 @@ sub _write_geoip2_db {
         if $populate_all_networks_with_data;
 
     my $value = shift;
-    my $nodes = decode_json(
-        read_file(
-            "$Dir/../source-data/$type-Test.json",
-            binmode => ':raw'
-        )
-    );
+    my $nodes
+        = decode_json( read_binary("$Dir/../source-data/$type-Test.json") );
 
     for my $node (@$nodes) {
         for my $network ( keys %$node ) {
