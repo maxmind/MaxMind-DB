@@ -6,6 +6,15 @@
       }
    },
    {
+      "::81.2.69.0/120": {
+         "is_anonymous" : true,
+         "is_anonymous_vpn" : true,
+         "is_hosting_provider" : true,
+         "is_public_proxy" : true,
+         "is_tor_exit_node" : true
+      }
+   },
+   {
       "::71.160.223.0/120" : {
          "is_anonymous" : true,
          "is_hosting_provider" : true
