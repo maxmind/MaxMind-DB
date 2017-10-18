@@ -221,11 +221,11 @@ The reason that we subtract the `$node_count` is best demonstrated by an example
 Let's assume we have a 24-bit tree with 1,000 nodes. Each node contains 48
 bits, or 6 bytes. The size of the tree is 6,000 bytes.
 
-When a record in the tree contains a number that is &lt; 1,000, this is a *node
-number*, and we look up that node. If a record contains a value >= 1,016, we
-know that it is a data section value. We subtract the node count (1,000) and
-then subtract 16 for the data section separator, giving us the number 0, the
-first byte of the data section.
+When a record in the tree contains a number that is less than 1,000, this
+is a *node number*, and we look up that node. If a record contains a value
+greater than or equal to 1,016, we know that it is a data section value. We
+subtract the node count (1,000) and then subtract 16 for the data section
+separator, giving us the number 0, the first byte of the data section.
 
 If a record contained the value 6,000, this formula would give us an offset of
 4,984 into the data section.
