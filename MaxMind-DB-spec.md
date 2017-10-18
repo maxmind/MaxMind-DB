@@ -221,7 +221,7 @@ The reason that we subtract the `$node_count` is best demonstrated by an example
 Let's assume we have a 24-bit tree with 1,000 nodes. Each node contains 48
 bits, or 6 bytes. The size of the tree is 6,000 bytes.
 
-When a record in the tree contains a number that is < 1,000, this is a *node
+When a record in the tree contains a number that is &lt; 1,000, this is a *node
 number*, and we look up that node. If a record contains a value >= 1,016, we
 know that it is a data section value. We subtract the node count (1,000) and
 then subtract 16 for the data section separator, giving us the number 0, the
@@ -271,7 +271,7 @@ section. This separator exists in order to make it possible for a verification
 tool to distinguish between the two sections.
 
 This separator is not considered part of the data section itself. In other
-words, the data section starts at `$size\_of\_search_tree + 16" bytes in the
+words, the data section starts at `$size\_of\_search_tree + 16` bytes in the
 file.
 
 ## Output Data Section
