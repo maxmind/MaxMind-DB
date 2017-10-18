@@ -368,7 +368,7 @@ data. For example, instead of repeating the string "United States" over and
 over in the database, we store it in the cache container and use pointers
 *into* this container instead.
 
-Nothing in the database will ever contain a pointer to the this field
+Nothing in the database will ever contain a pointer to this field
 itself. Instead, various fields will point into the container.
 
 The primary reason for making this a separate data type versus simply inlining
