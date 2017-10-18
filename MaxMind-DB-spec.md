@@ -50,7 +50,7 @@ starts the metadata, is 128kb.
 
 The metadata is stored as a map data structure. This structure is described
 later in the spec. Changing a key's data type or removing a key would
-consistute a major version change for this spec.
+constitute a major version change for this spec.
 
 Except where otherwise specified, each key listed is required for the database
 to be considered valid.
@@ -159,7 +159,7 @@ relevant to the given netblock.
 Each node in the search tree consists of two records, each of which is a
 pointer. The record size varies by database, but inside a single database node
 records are always the same size. A record may be anywhere from 24 to 128 bits
-long, dependending on the number of nodes in the tree. These pointers are
+long, depending on the number of nodes in the tree. These pointers are
 stored in big-endian format (most significant byte first).
 
 Here are some examples of how the records are laid out in a node for 24, 28,
@@ -502,7 +502,7 @@ and payload.
 Pointers use the last five bits in the control byte to calculate the pointer
 value.
 
-To calculate the pointer value, we start by subdiving the five bits into two
+To calculate the pointer value, we start by subdividing the five bits into two
 groups. The first two bits indicate the size, and the next three bits are part
 of the value, so we end up with a control byte breaking down like this:
 001SSVVV.
