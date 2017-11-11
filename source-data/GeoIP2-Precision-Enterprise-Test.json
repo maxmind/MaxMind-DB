@@ -184,6 +184,197 @@
       }
    },
    {
+      "::65.116.3.80/126" : {
+         "city" : {
+            "confidence" : 40,
+            "geoname_id" : 4699066,
+            "names" : {
+               "en" : "Houston",
+               "fr" : "Houston",
+               "ja" : "ヒューストン",
+               "pt-BR" : "Houston",
+               "ru" : "Хьюстон",
+               "zh-CN" : "休斯敦"
+            }
+         },
+         "continent" : {
+            "code" : "NA",
+            "geoname_id" : 6255149,
+            "names" : {
+               "de" : "Nordamerika",
+               "en" : "North America",
+               "es" : "Norteamérica",
+               "fr" : "Amérique du Nord",
+               "ja" : "北アメリカ",
+               "pt-BR" : "América do Norte",
+               "ru" : "Северная Америка",
+               "zh-CN" : "北美洲"
+            }
+         },
+         "country" : {
+            "confidence" : 99,
+            "geoname_id" : 6252001,
+            "iso_code" : "US",
+            "names" : {
+               "de" : "USA",
+               "en" : "United States",
+               "es" : "Estados Unidos",
+               "fr" : "États-Unis",
+               "ja" : "アメリカ合衆国",
+               "pt-BR" : "Estados Unidos",
+               "ru" : "США",
+               "zh-CN" : "美国"
+            }
+         },
+         "location" : {
+            "accuracy_radius" : 500,
+            "latitude" : 29.7702,
+            "longitude" : -95.3628,
+            "metro_code" : 618,
+            "time_zone" : "America/Chicago"
+         },
+         "postal" : {
+            "code" : "77002",
+            "confidence" : 1
+         },
+         "registered_country" : {
+            "geoname_id" : 6252001,
+            "iso_code" : "US",
+            "names" : {
+               "de" : "USA",
+               "en" : "United States",
+               "es" : "Estados Unidos",
+               "fr" : "États-Unis",
+               "ja" : "アメリカ合衆国",
+               "pt-BR" : "Estados Unidos",
+               "ru" : "США",
+               "zh-CN" : "美国"
+            }
+         },
+         "subdivisions" : [
+            {
+               "confidence" : 90,
+               "geoname_id" : 4736286,
+               "iso_code" : "TX",
+               "names" : {
+                  "en" : "Texas",
+                  "es" : "Texas",
+                  "fr" : "Texas",
+                  "ja" : "テキサス州",
+                  "ru" : "Техас",
+                  "zh-CN" : "德克萨斯州"
+               }
+            }
+         ],
+         "traits" : {
+            "autonomous_system_number" : 209,
+            "autonomous_system_organization" : "Qwest Communications Company, LLC",
+            "connection_type" : "Cable/DSL",
+            "domain" : "qwest.net",
+            "isp" : "CenturyLink",
+            "organization" : "CenturyLink",
+            "user_type" : "residential"
+         }
+      }
+   },
+   {
+      "::66.92.181.240/124" : {
+         "city" : {
+            "confidence" : 20,
+            "geoname_id" : 5392171,
+            "names" : {
+               "de" : "San José",
+               "en" : "San Jose",
+               "es" : "San José",
+               "fr" : "San José",
+               "ja" : "サンノゼ",
+               "pt-BR" : "San José",
+               "ru" : "Сан-Хосе"
+            }
+         },
+         "continent" : {
+            "code" : "NA",
+            "geoname_id" : 6255149,
+            "names" : {
+               "de" : "Nordamerika",
+               "en" : "North America",
+               "es" : "Norteamérica",
+               "fr" : "Amérique du Nord",
+               "ja" : "北アメリカ",
+               "pt-BR" : "América do Norte",
+               "ru" : "Северная Америка",
+               "zh-CN" : "北美洲"
+            }
+         },
+         "country" : {
+            "confidence" : 99,
+            "geoname_id" : 6252001,
+            "iso_code" : "US",
+            "names" : {
+               "de" : "USA",
+               "en" : "United States",
+               "es" : "Estados Unidos",
+               "fr" : "États-Unis",
+               "ja" : "アメリカ合衆国",
+               "pt-BR" : "Estados Unidos",
+               "ru" : "США",
+               "zh-CN" : "美国"
+            }
+         },
+         "location" : {
+            "accuracy_radius" : 1000,
+            "latitude" : 37.3874,
+            "longitude" : -121.9024,
+            "metro_code" : 807,
+            "time_zone" : "America/Los_Angeles"
+         },
+         "postal" : {
+            "code" : "95131",
+            "confidence" : 10
+         },
+         "registered_country" : {
+            "geoname_id" : 6252001,
+            "iso_code" : "US",
+            "names" : {
+               "de" : "USA",
+               "en" : "United States",
+               "es" : "Estados Unidos",
+               "fr" : "États-Unis",
+               "ja" : "アメリカ合衆国",
+               "pt-BR" : "Estados Unidos",
+               "ru" : "США",
+               "zh-CN" : "美国"
+            }
+         },
+         "subdivisions" : [
+            {
+               "confidence" : 60,
+               "geoname_id" : 5332921,
+               "iso_code" : "CA",
+               "names" : {
+                  "de" : "Kalifornien",
+                  "en" : "California",
+                  "es" : "California",
+                  "fr" : "Californie",
+                  "ja" : "カリフォルニア州",
+                  "pt-BR" : "Califórnia",
+                  "ru" : "Калифорния",
+                  "zh-CN" : "加利福尼亚州"
+               }
+            }
+         ],
+         "traits" : {
+            "autonomous_system_number" : 18566,
+            "autonomous_system_organization" : "MegaPath Corporation",
+            "connection_type" : "Cable/DSL",
+            "domain" : "speakeasy.net",
+            "isp" : "Speakeasy",
+            "organization" : "Vikco Insurance",
+            "user_type" : "government"
+         }
+      }
+   },
+   {
       "::67.43.156.0/120" : {
          "continent" : {
             "code" : "AS",
@@ -681,6 +872,98 @@
       }
    },
    {
+      "::143.217.214.0/120" : {
+         "city" : {
+            "confidence" : 50,
+            "geoname_id" : 1566083,
+            "names" : {
+               "de" : "Ho-Chi-Minh-Stadt",
+               "en" : "Ho Chi Minh City",
+               "es" : "Ciudad Ho Chi Minh",
+               "fr" : "HCMV",
+               "ja" : "ホーチミン市",
+               "pt-BR" : "Cidade de Ho Chi Minh",
+               "ru" : "Хошимин",
+               "zh-CN" : "胡志明市"
+            }
+         },
+         "continent" : {
+            "code" : "AS",
+            "geoname_id" : 6255147,
+            "names" : {
+               "de" : "Asien",
+               "en" : "Asia",
+               "es" : "Asia",
+               "fr" : "Asie",
+               "ja" : "アジア",
+               "pt-BR" : "Ásia",
+               "ru" : "Азия",
+               "zh-CN" : "亚洲"
+            }
+         },
+         "country" : {
+            "confidence" : 99,
+            "geoname_id" : 1562822,
+            "iso_code" : "VN",
+            "names" : {
+               "de" : "Vietnam",
+               "en" : "Vietnam",
+               "es" : "Vietnam",
+               "fr" : "Vietnam",
+               "ja" : "ベトナム",
+               "pt-BR" : "Vietnã",
+               "ru" : "Вьетнам",
+               "zh-CN" : "越南"
+            }
+         },
+         "location" : {
+            "accuracy_radius" : 500,
+            "latitude" : 10.8142,
+            "longitude" : 106.6438,
+            "time_zone" : "Asia/Ho_Chi_Minh"
+         },
+         "registered_country" : {
+            "geoname_id" : 1562822,
+            "iso_code" : "VN",
+            "names" : {
+               "de" : "Vietnam",
+               "en" : "Vietnam",
+               "es" : "Vietnam",
+               "fr" : "Vietnam",
+               "ja" : "ベトナム",
+               "pt-BR" : "Vietnã",
+               "ru" : "Вьетнам",
+               "zh-CN" : "越南"
+            }
+         },
+         "subdivisions" : [
+            {
+               "confidence" : 60,
+               "geoname_id" : 1580578,
+               "iso_code" : "SG",
+               "names" : {
+                  "de" : "Ho-Chi-Minh-Stadt",
+                  "en" : "Ho Chi Minh City",
+                  "es" : "Ciudad Ho Chi Minh",
+                  "fr" : "Saigon",
+                  "ja" : "ホーチミン市",
+                  "pt-BR" : "Cidade de Ho Chi Minh",
+                  "ru" : "Хо Ши Мин",
+                  "zh-CN" : "胡志明市"
+               }
+            }
+         ],
+         "traits" : {
+            "autonomous_system_number" : 18403,
+            "autonomous_system_organization" : "The Corporation for Financing & Promoting Technology",
+            "connection_type" : "Cable/DSL",
+            "isp" : "The Corporation for Financing and Promoting Techno",
+            "organization" : "FPT Telecom Company",
+            "user_type" : "business"
+         }
+      }
+   },
+   {
       "::175.16.199.0/120" : {
          "city" : {
             "confidence" : 50,
@@ -835,6 +1118,98 @@
                "zh-CN" : "美国"
             },
             "type" : "military"
+         }
+      }
+   },
+   {
+      "::208.110.217.113/128" : {
+         "city" : {
+            "confidence" : 20,
+            "geoname_id" : 4734825,
+            "names" : {
+               "en" : "Sugar Land",
+               "ja" : "シュガーランド",
+               "pt-BR" : "Sugar Land",
+               "ru" : "Шугар-Ленд"
+            }
+         },
+         "continent" : {
+            "code" : "NA",
+            "geoname_id" : 6255149,
+            "names" : {
+               "de" : "Nordamerika",
+               "en" : "North America",
+               "es" : "Norteamérica",
+               "fr" : "Amérique du Nord",
+               "ja" : "北アメリカ",
+               "pt-BR" : "América do Norte",
+               "ru" : "Северная Америка",
+               "zh-CN" : "北美洲"
+            }
+         },
+         "country" : {
+            "confidence" : 99,
+            "geoname_id" : 6252001,
+            "iso_code" : "US",
+            "names" : {
+               "de" : "USA",
+               "en" : "United States",
+               "es" : "Estados Unidos",
+               "fr" : "États-Unis",
+               "ja" : "アメリカ合衆国",
+               "pt-BR" : "Estados Unidos",
+               "ru" : "США",
+               "zh-CN" : "美国"
+            }
+         },
+         "location" : {
+            "accuracy_radius" : 1000,
+            "latitude" : 29.6197,
+            "longitude" : -95.635,
+            "metro_code" : 618,
+            "time_zone" : "America/Chicago"
+         },
+         "postal" : {
+            "code" : "77487",
+            "confidence" : 1
+         },
+         "registered_country" : {
+            "geoname_id" : 6252001,
+            "iso_code" : "US",
+            "names" : {
+               "de" : "USA",
+               "en" : "United States",
+               "es" : "Estados Unidos",
+               "fr" : "États-Unis",
+               "ja" : "アメリカ合衆国",
+               "pt-BR" : "Estados Unidos",
+               "ru" : "США",
+               "zh-CN" : "美国"
+            }
+         },
+         "subdivisions" : [
+            {
+               "confidence" : 60,
+               "geoname_id" : 4736286,
+               "iso_code" : "TX",
+               "names" : {
+                  "en" : "Texas",
+                  "es" : "Texas",
+                  "fr" : "Texas",
+                  "ja" : "テキサス州",
+                  "ru" : "Техас",
+                  "zh-CN" : "德克萨斯州"
+               }
+            }
+         ],
+         "traits" : {
+            "autonomous_system_number" : 11025,
+            "autonomous_system_organization" : "Comcast Cable Communications, LLC",
+            "connection_type" : "Cable/DSL",
+            "domain" : "comcastbusiness.net",
+            "isp" : "Comcast Business",
+            "organization" : "Comcast Business",
+            "user_type" : "business"
          }
       }
    },
