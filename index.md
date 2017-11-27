@@ -46,11 +46,11 @@ could contain these values. This is why you need to find the last occurrence
 of this sequence.
 
 The maximum allowable size for the metadata section, including the marker that
-starts the metadata, is 128kb.
+starts the metadata, is 128KiB.
 
 The metadata is stored as a map data structure. This structure is described
 later in the spec. Changing a key's data type or removing a key would
-consistute a major version change for this spec.
+constitute a major version change for this spec.
 
 Except where otherwise specified, each key listed is required for the database
 to be considered valid.
@@ -118,7 +118,7 @@ The codes may include additional information such as script or country
 identifiers, like "zh-TW" or "mn-Cyrl-MN". The additional identifiers will be
 separated by a dash character ("-").
 
-This is key is optional. However, creators of databases are strongly
+This key is optional. However, creators of databases are strongly
 encouraged to include a description in at least one language.
 
 ### Calculating the Search Tree Section Size
@@ -138,7 +138,7 @@ database. For example, the city database needs many more small netblocks than
 the country database.
 
 The top most node is always located at the beginning of the search tree
-section's address space.
+section's address space. The top node is node 0.
 
 Each node consists of two records, each of which is a pointer to an address in
 the file.
@@ -159,7 +159,7 @@ relevant to the given netblock.
 Each node in the search tree consists of two records, each of which is a
 pointer. The record size varies by database, but inside a single database node
 records are always the same size. A record may be anywhere from 24 to 128 bits
-long, dependending on the number of nodes in the tree. These pointers are
+long, depending on the number of nodes in the tree. These pointers are
 stored in big-endian format (most significant byte first).
 
 Here are some examples of how the records are laid out in a node for 24, 28,
@@ -221,14 +221,14 @@ The reason that we subtract the `$node_count` is best demonstrated by an example
 Let's assume we have a 24-bit tree with 1,000 nodes. Each node contains 48
 bits, or 6 bytes. The size of the tree is 6,000 bytes.
 
-When a record in the tree contains a number that is < 1,000, this is a *node
-number*, and we look up that node. If a record contains a value >= 1,016, we
-know that it is a data section value. We subtract the node count (1,000) and
-then subtract 16 for the data section separator, giving us the number 0, the
-first byte of the data section.
+When a record in the tree contains a number that is less than 1,000, this
+is a *node number*, and we look up that node. If a record contains a value
+greater than or equal to 1,016, we know that it is a data section value. We
+subtract the node count (1,000) and then subtract 16 for the data section
+separator, giving us the number 0, the first byte of the data section.
 
 If a record contained the value 6,000, this formula would give us an offset of
-4,084 into the data section.
+4,984 into the data section.
 
 In order to determine where in the file this offset really points to, we also
 need to know where the data section starts. This can be calculated by
@@ -238,7 +238,7 @@ determining the size of the search tree in bytes and then adding an additional
 So the final formula to determine the offset in the file is:
 
     $offset_in_file = ( $record_value - $node_count )
-                      + $search_tree_size_in_bytes + 16
+                      + $search_tree_size_in_bytes
 
 ### IPv4 addresses in an IPv6 tree
 
@@ -271,7 +271,7 @@ section. This separator exists in order to make it possible for a verification
 tool to distinguish between the two sections.
 
 This separator is not considered part of the data section itself. In other
-words, the data section starts at `$size\_of\_search_tree + 16" bytes in the
+words, the data section starts at `$size\_of\_search_tree + 16` bytes in the
 file.
 
 ## Output Data Section
@@ -368,7 +368,7 @@ data. For example, instead of repeating the string "United States" over and
 over in the database, we store it in the cache container and use pointers
 *into* this container instead.
 
-Nothing in the database will ever contain a pointer to the this field
+Nothing in the database will ever contain a pointer to this field
 itself. Instead, various fields will point into the container.
 
 The primary reason for making this a separate data type versus simply inlining
@@ -422,7 +422,7 @@ tell us the type:
 
     001XXXXX          pointer
     010XXXXX          UTF-8 string
-    010XXXXX          unsigned 32-bit int (ASCII)
+    110XXXXX          unsigned 32-bit int (ASCII)
     000XXXXX 00000011 unsigned 128-bit int (binary)
     000XXXXX 00000100 array
     000XXXXX 00000110 end marker
@@ -502,7 +502,7 @@ and payload.
 Pointers use the last five bits in the control byte to calculate the pointer
 value.
 
-To calculate the pointer value, we start by subdiving the five bits into two
+To calculate the pointer value, we start by subdividing the five bits into two
 groups. The first two bits indicate the size, and the next three bits are part
 of the value, so we end up with a control byte breaking down like this:
 001SSVVV.
