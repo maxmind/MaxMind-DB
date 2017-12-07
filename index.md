@@ -413,9 +413,9 @@ contain a number from 1 to 7, the actual type for the field.
 We've tried to assign the most commonly used types as numbers 1-7 as an
 optimization.
 
-With an extended type, the type number in the second byte is the number minus
-7. In other words, an array (type 11) will be stored with a 0 for the type in
-the first byte and a 4 in the second.
+With an extended type, the type number in the second byte is the number
+minus 7. In other words, an array (type 11) will be stored with a 0 for the
+type in the first byte and a 4 in the second.
 
 Here is an example of how the control byte may combine with the next byte to
 tell us the type:
