@@ -139,7 +139,7 @@ sub write_broken_search_tree_db {
     # points back to the top of the tree. This should never happen in a
     # database that follows the spec.
     substr( $content, 5, 1 ) = "\0";
-    write_binary($filename, $content);
+    write_binary( $filename, $content );
 
     return;
 }
@@ -405,6 +405,7 @@ sub _universal_map_key_type_callback {
         is_anonymous_proxy             => 'boolean',
         is_anonymous_vpn               => 'boolean',
         is_hosting_provider            => 'boolean',
+        is_in_european_union           => 'boolean',
         is_legitimate_proxy            => 'boolean',
         is_public_proxy                => 'boolean',
         is_satellite_provider          => 'boolean',
