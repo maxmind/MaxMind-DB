@@ -1490,5 +1490,12 @@
             "user_type" : "business"
          }
       }
+   },
+   {
+      "::102.35.19.0/128" : {
+         "traits" : {
+            "user_type" : "cellular"
+         }
+      }
    }
 ]
