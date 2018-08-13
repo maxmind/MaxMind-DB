@@ -207,17 +207,22 @@ have any data for the IP address, and the search ends here.
 
 If the record value is *greater* than the number of nodes in the search tree,
 then it is an actual pointer value pointing into the data section. The value
-of the pointer is calculated from the start of the data section, *not* from
-the start of the file.
+of the pointer is relative to the start of the data section, *not* the
+start of the file.
 
 In order to determine where in the data section we should start looking, we use
 the following formula:
 
     $data_section_offset = ( $record_value - $node_count ) - 16
 
-The `16` is the size of the data section separator (see below for details).
+The 16 is the size of the data section separator. We subtract it because we
+want to permit pointing to the first byte of the data section. Recall that
+the record value cannot equal the node count as that means there is no
+data. Instead, we choose to start values that go to the data section at
+`$node_count + 16`. (This has the side effect that record values
+`$node_count + 1` through `$node_count + 15` inclusive are not valid).
 
-The reason that we subtract the `$node_count` is best demonstrated by an example.
+This is best demonstrated by an example:
 
 Let's assume we have a 24-bit tree with 1,000 nodes. Each node contains 48
 bits, or 6 bytes. The size of the tree is 6,000 bytes.
@@ -234,9 +239,14 @@ If a record contained the value 6,000, this formula would give us an offset of
 In order to determine where in the file this offset really points to, we also
 need to know where the data section starts. This can be calculated by
 determining the size of the search tree in bytes and then adding an additional
-16 bytes for the data section separator.
+16 bytes for the data section separator:
 
-So the final formula to determine the offset in the file is:
+    $offset_in_file = $data_section_offset
+                      + $search_tree_size_in_bytes
+                      + 16
+
+Since we subtract and then add 16, the final formula to determine the
+offset in the file can be simplified to:
 
     $offset_in_file = ( $record_value - $node_count )
                       + $search_tree_size_in_bytes
