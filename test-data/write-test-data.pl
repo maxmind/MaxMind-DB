@@ -10,7 +10,7 @@ use Cwd qw( abs_path );
 use File::Basename qw( dirname );
 use File::Slurper qw( read_binary write_binary );
 use Cpanel::JSON::XS qw( decode_json );
-use Math::Int128 qw( uint128 );
+use Math::Int128 qw( MAX_UINT128 string_to_uint128 uint128 );
 use MaxMind::DB::Writer::Serializer 0.100004;
 use MaxMind::DB::Writer::Tree 0.100004;
 use MaxMind::DB::Writer::Util qw( key_for_data );
@@ -219,6 +219,19 @@ sub write_test_db {
         float       => 0,
     );
 
+
+    # We limit this to numeric types as the other types would generate
+    # very large databases
+    my %numeric_types_max = (
+        double      => 'Inf',
+        float       => 'Inf',
+        int32       => 0x7fffffff,
+        uint16      => 0xffff,
+        uint32      => string_to_uint128( '0xffff_ffff'),
+        uint64      => string_to_uint128( '0xffff_ffff_ffff_ffff'),
+        uint128     => MAX_UINT128,
+    );
+
     sub write_decoder_test_db {
         my $writer = MaxMind::DB::Writer::Tree->new(
             ip_version    => 6,
@@ -259,6 +272,11 @@ sub write_test_db {
         $writer->insert_network(
             Net::Works::Network->new_from_string( string => '::0.0.0.0/128' ),
             \%all_types_0,
+        );
+
+        $writer->insert_network(
+            Net::Works::Network->new_from_string( string => '::255.255.255.255/128' ),
+            \%numeric_types_max,
         );
 
         open my $fh, '>', "$Dir/MaxMind-DB-test-decoder.mmdb";
