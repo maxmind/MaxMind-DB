@@ -550,6 +550,7 @@ data section size for the database is limited to 4GB.
 * [Perl](https://github.com/maxmind/MaxMind-DB-Reader-perl)
 * [PHP](https://github.com/maxmind/MaxMind-DB-Reader-php)
 * [Python](https://github.com/maxmind/MaxMind-DB-Reader-python)
+* [Ruby](https://github.com/maxmind/MaxMind-DB-Reader-ruby)
 
 ## Authors
 
