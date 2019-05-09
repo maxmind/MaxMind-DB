@@ -1594,5 +1594,96 @@
             "user_type" : "cellular"
          }
       }
+   },
+   {
+      "2001:219::/32" : {
+         "city" : {
+            "confidence" : 51,
+            "geoname_id" : "2694762",
+            "names" : {
+               "de" : "Linköping",
+               "en" : "Linköping",
+               "fr" : "Linköping",
+               "ja" : "リンシェーピング",
+               "zh-CN" : "林雪平"
+            }
+         },
+         "continent" : {
+            "code" : "EU",
+            "geoname_id" : 6255148,
+            "names" : {
+               "de" : "Europa",
+               "en" : "Europe",
+               "es" : "Europa",
+               "fr" : "Europe",
+               "ja" : "ヨーロッパ",
+               "pt-BR" : "Europa",
+               "ru" : "Европа",
+               "zh-CN" : "欧洲"
+            }
+         },
+         "country" : {
+            "confidence" : 99,
+            "geoname_id" : 2661886,
+            "is_in_european_union" : true,
+            "iso_code" : "SE",
+            "names" : {
+               "de" : "Schweden",
+               "en" : "Sweden",
+               "es" : "Suecia",
+               "fr" : "Suède",
+               "ja" : "スウェーデン王国",
+               "pt-BR" : "Suécia",
+               "ru" : "Швеция",
+               "zh-CN" : "瑞典"
+            }
+         },
+         "location" : {
+            "accuracy_radius" : 76,
+            "latitude" : "58.4167",
+            "longitude" : "15.6167",
+            "metro_code": 4,
+            "time_zone" : "Europe/Stockholm"
+         },
+         "postal" : {
+            "code" : "138 20",
+            "confidence" : 20
+         },
+         "registered_country" : {
+            "geoname_id" : 2921044,
+            "is_in_european_union" : true,
+            "iso_code" : "DE",
+            "names" : {
+               "de" : "Deutschland",
+               "en" : "Germany",
+               "es" : "Alemania",
+               "fr" : "Allemagne",
+               "ja" : "ドイツ連邦共和国",
+               "pt-BR" : "Alemanha",
+               "ru" : "Германия",
+               "zh-CN" : "德国"
+            }
+         },
+         "subdivisions" : [
+            {
+               "confidence" : 51,
+               "geoname_id" : 2685867,
+               "iso_code" : "E",
+               "names" : {
+                  "en" : "Östergötland County",
+                  "fr" : "Comté d'Östergötland"
+               }
+            }
+         ],
+         "traits" : {
+            "autonomous_system_number" : 29518,
+            "autonomous_system_organization" : "Bredband2 AB",
+            "connection_type" : "Corporate",
+            "domain" : "bredband2.com",
+            "isp" : "Bredband2 AB",
+            "organization" : "Bevtec",
+            "user_type" : "government"
+         }
+      }
    }
 ]

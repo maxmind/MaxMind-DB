@@ -403,6 +403,14 @@
       }
    },
    {
+      "::23.32.32.1/128" : {
+         "autonomous_system_number" : 262589,
+         "autonomous_system_organization" : "INTERNEXA Brasil Operadora de Telecomunicações S.A",
+         "isp" : "INTERNEXA Brasil Operadora de Telecomunicações S.A",
+         "organization" : "INTERNEXA Brasil Operadora de Telecomunicações S.A"
+      }
+   },
+   {
       "::23.192.0.0/107" : {
          "autonomous_system_number" : 35994,
          "autonomous_system_organization" : "Akamai Technologies, Inc.",
