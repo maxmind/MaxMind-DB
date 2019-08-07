@@ -1,5 +1,149 @@
 [
    {
+      "::1.124.213.0/120" : {
+         "continent" : {
+            "code" : "AS",
+            "geoname_id" : 6255147,
+            "names" : {
+               "de" : "Asien",
+               "en" : "Asia",
+               "es" : "Asia",
+               "fr" : "Asie",
+               "ja" : "アジア",
+               "pt-BR" : "Ásia",
+               "ru" : "Азия",
+               "zh-CN" : "亚洲"
+            }
+         },
+         "country" : {
+            "confidence" : 99,
+            "geoname_id" : 130758,
+            "iso_code" : "IR",
+            "names" : {
+               "de" : "Iran (Islamische Republik)",
+               "en" : "Iran",
+               "es" : "Irán",
+               "fr" : "Iran",
+               "ja" : "イラン・イスラム共和国",
+               "pt-BR" : "Irã",
+               "ru" : "Иран",
+               "zh-CN" : "伊朗伊斯兰共和国"
+            }
+         },
+         "location" : {
+            "accuracy_radius" : 50,
+            "latitude" : 35.6961,
+            "longitude" : 51.4231,
+            "time_zone" : "Asia/Tehran"
+         },
+         "registered_country" : {
+            "geoname_id" : 130758,
+            "iso_code" : "IR",
+            "names" : {
+               "de" : "Iran (Islamische Republik)",
+               "en" : "Iran",
+               "es" : "Irán",
+               "fr" : "Iran",
+               "ja" : "イラン・イスラム共和国",
+               "pt-BR" : "Irã",
+               "ru" : "Иран",
+               "zh-CN" : "伊朗伊斯兰共和国"
+            }
+         },
+         "traits" : {
+            "autonomous_system_number" : 44244,
+            "autonomous_system_organization" : "Iran Cell Service and Communication Company",
+            "connection_type" : "Cellular",
+            "isp" : "Iran Cell Service and Communication Company",
+            "organization" : "Iran Cell Service and Communication Company",
+            "user_type" : "cellular"
+         }
+      }
+   },
+   {
+      "::1.231.232.0/120" : {
+         "city" : {
+            "confidence" : 60,
+            "geoname_id" : 709334,
+            "names" : {
+               "de" : "Dschankoj",
+               "en" : "Dzhankoy",
+               "ru" : "Джанкой"
+            }
+         },
+         "continent" : {
+            "code" : "EU",
+            "geoname_id" : 6255148,
+            "names" : {
+               "de" : "Europa",
+               "en" : "Europe",
+               "es" : "Europa",
+               "fr" : "Europe",
+               "ja" : "ヨーロッパ",
+               "pt-BR" : "Europa",
+               "ru" : "Европа",
+               "zh-CN" : "欧洲"
+            }
+         },
+         "country" : {
+            "confidence" : 80,
+            "geoname_id" : 690791,
+            "iso_code" : "UA",
+            "names" : {
+               "de" : "Ukraine",
+               "en" : "Ukraine",
+               "es" : "Ucrania",
+               "fr" : "Ukraine",
+               "ja" : "ウクライナ共和国",
+               "pt-BR" : "Ucrânia",
+               "ru" : "Украина",
+               "zh-CN" : "乌克兰"
+            }
+         },
+         "location" : {
+            "accuracy_radius" : 200,
+            "latitude" : 45.7117,
+            "longitude" : 34.3927,
+            "time_zone" : "Europe/Simferopol"
+         },
+         "registered_country" : {
+            "geoname_id" : 690791,
+            "iso_code" : "UA",
+            "names" : {
+               "de" : "Ukraine",
+               "en" : "Ukraine",
+               "es" : "Ucrania",
+               "fr" : "Ukraine",
+               "ja" : "ウクライナ共和国",
+               "pt-BR" : "Ucrânia",
+               "ru" : "Украина",
+               "zh-CN" : "乌克兰"
+            }
+         },
+         "subdivisions" : [
+            {
+               "confidence" : 70,
+               "geoname_id" : 703883,
+               "iso_code" : "43",
+               "names" : {
+                  "de" : "Krim",
+                  "en" : "Autonomous Republic of Crimea",
+                  "fr" : "République autonome de Crimée",
+                  "ru" : "Республика Крым"
+               }
+            }
+         ],
+         "traits" : {
+            "autonomous_system_number" : 28761,
+            "autonomous_system_organization" : "CrimeaCom South LLC",
+            "connection_type" : "Cable/DSL",
+            "isp" : "CrimeaCom South LLC",
+            "organization" : "CrimeaCom South LLC",
+            "user_type" : "residential"
+         }
+      }
+   },
+   {
       "::2.125.160.216/125" : {
          "city" : {
             "confidence" : 50,
@@ -1642,7 +1786,7 @@
             "accuracy_radius" : 76,
             "latitude" : "58.4167",
             "longitude" : "15.6167",
-            "metro_code": 4,
+            "metro_code" : 4,
             "time_zone" : "Europe/Stockholm"
          },
          "postal" : {
