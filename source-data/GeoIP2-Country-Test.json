@@ -10758,6 +10758,57 @@
       }
    },
    {
+      "::74.209.24.0/116" : {
+         "continent" : {
+            "code" : "NA",
+            "geoname_id" : "6255149",
+            "names" : {
+               "de" : "Nordamerika",
+               "en" : "North America",
+               "es" : "Norteamérica",
+               "fr" : "Amérique du Nord",
+               "ja" : "北アメリカ",
+               "pt-BR" : "América do Norte",
+               "ru" : "Северная Америка",
+               "zh-CN" : "北美洲"
+            }
+         },
+         "country" : {
+            "confidence" : "99",
+            "geoname_id" : "6252001",
+            "iso_code" : "US",
+            "names" : {
+               "de" : "USA",
+               "en" : "United States",
+               "es" : "Estados Unidos",
+               "fr" : "États-Unis",
+               "ja" : "アメリカ合衆国",
+               "pt-BR" : "Estados Unidos",
+               "ru" : "США",
+               "zh-CN" : "美国"
+            }
+         },
+         "registered_country" : {
+            "geoname_id" : "6252001",
+            "iso_code" : "US",
+            "names" : {
+               "de" : "USA",
+               "en" : "United States",
+               "es" : "Estados Unidos",
+               "fr" : "États-Unis",
+               "ja" : "アメリカ合衆国",
+               "pt-BR" : "Estados Unidos",
+               "ru" : "США",
+               "zh-CN" : "美国"
+            }
+         },
+         "traits" : {
+            "is_anonymous_proxy" : true,
+            "is_satellite_provider": true
+         }
+      }
+   },
+   {
       "::81.2.69.142/127" : {
          "continent" : {
             "code" : "EU",
@@ -11242,6 +11293,67 @@
                "ru" : "Китай",
                "zh-CN" : "中国"
             }
+         }
+      }
+   },
+   {
+      "::175.16.199.0/120" : {
+         "continent" : {
+            "code" : "AS",
+            "geoname_id" : 6255147,
+            "names" : {
+               "de" : "Asien",
+               "en" : "Asia",
+               "es" : "Asia",
+               "fr" : "Asie",
+               "ja" : "アジア",
+               "pt-BR" : "Ásia",
+               "ru" : "Азия",
+               "zh-CN" : "亚洲"
+            }
+         },
+         "country" : {
+            "confidence" : 95,
+            "geoname_id" : 1814991,
+            "iso_code" : "CN",
+            "names" : {
+               "de" : "China",
+               "en" : "China",
+               "es" : "China",
+               "fr" : "Chine",
+               "ja" : "中国",
+               "pt-BR" : "China",
+               "ru" : "Китай",
+               "zh-CN" : "中国"
+            }
+         },
+         "registered_country" : {
+            "geoname_id" : 1814991,
+            "iso_code" : "CN",
+            "names" : {
+               "de" : "China",
+               "en" : "China",
+               "es" : "China",
+               "fr" : "Chine",
+               "ja" : "中国",
+               "pt-BR" : "China",
+               "ru" : "Китай",
+               "zh-CN" : "中国"
+            }
+         }
+      }
+   },
+   {
+      "::212.47.235.81/128" : {
+         "traits" : {
+            "is_anonymous_proxy" : true
+         }
+      }
+   },
+   {
+      "::212.47.235.82/128" : {
+         "traits" : {
+            "is_satellite_provider" : true
          }
       }
    },
