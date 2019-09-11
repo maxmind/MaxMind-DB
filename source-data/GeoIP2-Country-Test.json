@@ -92,6 +92,55 @@
       }
    },
    {
+      "2001:220::/128" : {
+         "continent" : {
+            "code" : "EU",
+            "geoname_id" : 6255148,
+            "names" : {
+               "de" : "Europa",
+               "en" : "Europe",
+               "es" : "Europa",
+               "fr" : "Europe",
+               "ja" : "ヨーロッパ",
+               "pt-BR" : "Europa",
+               "ru" : "Европа",
+               "zh-CN" : "欧洲"
+            }
+         },
+         "country" : {
+            "confidence" : 99,
+            "geoname_id" : 2661886,
+            "is_in_european_union" : true,
+            "iso_code" : "SE",
+            "names" : {
+               "de" : "Schweden",
+               "en" : "Sweden",
+               "es" : "Suecia",
+               "fr" : "Suède",
+               "ja" : "スウェーデン王国",
+               "pt-BR" : "Suécia",
+               "ru" : "Швеция",
+               "zh-CN" : "瑞典"
+            }
+         },
+         "registered_country" : {
+            "geoname_id" : 2921044,
+            "is_in_european_union" : true,
+            "iso_code" : "DE",
+            "names" : {
+               "de" : "Deutschland",
+               "en" : "Germany",
+               "es" : "Alemania",
+               "fr" : "Allemagne",
+               "ja" : "ドイツ連邦共和国",
+               "pt-BR" : "Alemanha",
+               "ru" : "Германия",
+               "zh-CN" : "德国"
+            }
+         }
+      }
+   },
+   {
       "2001:230::/32" : {
          "continent" : {
             "code" : "AS",
@@ -10805,6 +10854,57 @@
          "traits" : {
             "is_anonymous_proxy" : true,
             "is_satellite_provider": true
+         }
+      }
+   },
+   {
+      "::75.209.24.0/128" : {
+         "continent" : {
+            "code" : "NA",
+            "geoname_id" : "6255149",
+            "names" : {
+               "de" : "Nordamerika",
+               "en" : "North America",
+               "es" : "Norteamérica",
+               "fr" : "Amérique du Nord",
+               "ja" : "北アメリカ",
+               "pt-BR" : "América do Norte",
+               "ru" : "Северная Америка",
+               "zh-CN" : "北美洲"
+            }
+         },
+         "country" : {
+            "confidence" : "99",
+            "geoname_id" : "6252001",
+            "iso_code" : "US",
+            "names" : {
+               "de" : "USA",
+               "en" : "United States",
+               "es" : "Estados Unidos",
+               "fr" : "États-Unis",
+               "ja" : "アメリカ合衆国",
+               "pt-BR" : "Estados Unidos",
+               "ru" : "США",
+               "zh-CN" : "美国"
+            }
+         },
+         "registered_country" : {
+            "geoname_id" : "6252001",
+            "iso_code" : "US",
+            "names" : {
+               "de" : "USA",
+               "en" : "United States",
+               "es" : "Estados Unidos",
+               "fr" : "États-Unis",
+               "ja" : "アメリカ合衆国",
+               "pt-BR" : "Estados Unidos",
+               "ru" : "США",
+               "zh-CN" : "美国"
+            }
+         },
+         "traits" : {
+            "is_anonymous_proxy" : true,
+            "is_satellite_provider" : true
          }
       }
    },
