@@ -5,7 +5,6 @@ use warnings;
 use autodie;
 use utf8;
 
-use Carp qw( croak );
 use Cwd qw( abs_path );
 use File::Basename qw( dirname );
 use File::Slurper qw( read_binary write_binary );
@@ -14,7 +13,7 @@ use Math::Int128 qw( MAX_UINT128 string_to_uint128 uint128 );
 use MaxMind::DB::Writer::Serializer 0.100004;
 use MaxMind::DB::Writer::Tree 0.100004;
 use MaxMind::DB::Writer::Util qw( key_for_data );
-use Net::Works::Network;
+use Net::Works::Network ();
 use Test::MaxMind::DB::Common::Util qw( standard_test_metadata );
 
 my $Dir = dirname( abs_path($0) );
