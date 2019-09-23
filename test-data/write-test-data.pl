@@ -358,6 +358,7 @@ sub write_geoip2_dbs {
         ['GeoIP2-Enterprise'],
         ['GeoIP2-ISP'],
         ['GeoIP2-Precision-Enterprise'],
+        ['GeoIP2-Static-IP-Score'],
         ['GeoIP2-User-Count'],
         ['GeoLite2-ASN'],
         );
@@ -439,6 +440,7 @@ sub _universal_map_key_type_callback {
         postal                         => 'map',
         registered_country             => 'map',
         represented_country            => 'map',
+        score                          => 'double',
         subdivisions                   => [ 'array', 'map' ],
         time_zone                      => 'utf8_string',
         traits                         => 'map',
