@@ -5,7 +5,6 @@ use warnings;
 use autodie;
 use utf8;
 
-use Carp qw( croak );
 use Cwd qw( abs_path );
 use File::Basename qw( dirname );
 use File::Slurper qw( read_binary write_binary );
@@ -14,7 +13,7 @@ use Math::Int128 qw( MAX_UINT128 string_to_uint128 uint128 );
 use MaxMind::DB::Writer::Serializer 0.100004;
 use MaxMind::DB::Writer::Tree 0.100004;
 use MaxMind::DB::Writer::Util qw( key_for_data );
-use Net::Works::Network;
+use Net::Works::Network ();
 use Test::MaxMind::DB::Common::Util qw( standard_test_metadata );
 
 my $Dir = dirname( abs_path($0) );
@@ -359,6 +358,7 @@ sub write_geoip2_dbs {
         ['GeoIP2-Enterprise'],
         ['GeoIP2-ISP'],
         ['GeoIP2-Precision-Enterprise'],
+        ['GeoIP2-Static-IP-Score'],
         ['GeoIP2-User-Count'],
         ['GeoLite2-ASN'],
         );
@@ -440,6 +440,7 @@ sub _universal_map_key_type_callback {
         postal                         => 'map',
         registered_country             => 'map',
         represented_country            => 'map',
+        score                          => 'double',
         subdivisions                   => [ 'array', 'map' ],
         time_zone                      => 'utf8_string',
         traits                         => 'map',
