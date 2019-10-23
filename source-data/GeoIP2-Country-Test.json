@@ -11285,7 +11285,7 @@
             }
          },
          "traits" : {
-            "is_anonymous_proxy" : 1
+            "is_anonymous_proxy" : true
          }
       }
    },
