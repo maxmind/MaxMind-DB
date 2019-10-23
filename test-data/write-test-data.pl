@@ -19,7 +19,7 @@ use Test::MaxMind::DB::Common::Util qw( standard_test_metadata );
 my $Dir = dirname( abs_path($0) );
 
 sub main {
-    my @sizes = ( 24, 28, 32 );
+    my @sizes      = ( 24,        28, 32 );
     my @ipv4_range = ( '1.1.1.1', '1.1.1.32' );
 
     my @ipv4_subnets = Net::Works::Network->range_as_subnets(@ipv4_range);
@@ -150,9 +150,9 @@ sub write_test_db {
     my $ip_version_name = shift;
 
     my $writer = MaxMind::DB::Writer::Tree->new(
-        ip_version         => $subnets->[0]->version(),
-        record_size        => $record_size,
-        alias_ipv6_to_ipv4 => ( $subnets->[0]->version() == 6 ? 1 : 0 ),
+        ip_version            => $subnets->[0]->version(),
+        record_size           => $record_size,
+        alias_ipv6_to_ipv4    => ( $subnets->[0]->version() == 6 ? 1 : 0 ),
         map_key_type_callback => sub { 'utf8_string' },
         standard_test_metadata(),
         %{$metadata},
@@ -218,17 +218,16 @@ sub write_test_db {
         float       => 0,
     );
 
-
     # We limit this to numeric types as the other types would generate
     # very large databases
     my %numeric_types_max = (
-        double      => 'Inf',
-        float       => 'Inf',
-        int32       => 0x7fffffff,
-        uint16      => 0xffff,
-        uint32      => string_to_uint128( '0xffff_ffff'),
-        uint64      => string_to_uint128( '0xffff_ffff_ffff_ffff'),
-        uint128     => MAX_UINT128,
+        double  => 'Inf',
+        float   => 'Inf',
+        int32   => 0x7fffffff,
+        uint16  => 0xffff,
+        uint32  => string_to_uint128('0xffff_ffff'),
+        uint64  => string_to_uint128('0xffff_ffff_ffff_ffff'),
+        uint128 => MAX_UINT128,
     );
 
     sub write_decoder_test_db {
@@ -274,7 +273,9 @@ sub write_test_db {
         );
 
         $writer->insert_network(
-            Net::Works::Network->new_from_string( string => '::255.255.255.255/128' ),
+            Net::Works::Network->new_from_string(
+                string => '::255.255.255.255/128'
+            ),
             \%numeric_types_max,
         );
 
@@ -314,7 +315,7 @@ sub write_test_db {
             map_key_type_callback => sub {
                 my $key = shift;
                 return
-                      $key =~ /^map/ ? 'map'
+                      $key =~ /^map/  ? 'map'
                     : $key eq 'array' ? [ 'array', 'map' ]
                     :                   'uint32';
             }

@@ -13,7 +13,7 @@
       }
    },
    {
-      "::81.2.69.0/120": {
+      "::81.2.69.0/120" : {
          "is_anonymous" : true,
          "is_anonymous_vpn" : true,
          "is_hosting_provider" : true,

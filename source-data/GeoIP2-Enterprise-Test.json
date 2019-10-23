@@ -40,8 +40,8 @@
          },
          "location" : {
             "accuracy_radius" : 100,
-            "latitude" : 51.7500,
-            "longitude" : -1.2500,
+            "latitude" : 51.75,
+            "longitude" : -1.25,
             "time_zone" : "Europe/London"
          },
          "postal" : {
@@ -120,8 +120,8 @@
          },
          "location" : {
             "accuracy_radius" : 534,
-            "latitude" : 27.5000,
-            "longitude" : 90.5000,
+            "latitude" : 27.5,
+            "longitude" : 90.5,
             "time_zone" : "Asia/Thimphu"
          },
          "registered_country" : {
@@ -189,8 +189,8 @@
          },
          "location" : {
             "accuracy_radius" : 27,
-            "latitude" : 42.347800,
-            "longitude" : -73.554900,
+            "latitude" : 42.3478,
+            "longitude" : -73.5549,
             "metro_code" : 532,
             "time_zone" : "America/New_York"
          },
