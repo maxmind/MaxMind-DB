@@ -2531,8 +2531,8 @@
             }
          },
          "location" : {
-            "latitude" : "48.69096",
-            "longitude" : "9.14062",
+            "latitude" : 48.69096,
+            "longitude" : 9.14062,
             "time_zone" : "Europe/Vaduz"
          }
       }
@@ -7026,8 +7026,8 @@
             }
          },
          "location" : {
-            "latitude" : "48.69096",
-            "longitude" : "9.14062",
+            "latitude" : 48.69096,
+            "longitude" : 9.14062,
             "time_zone" : "Europe/Vaduz"
          }
       }
@@ -10810,7 +10810,7 @@
       "::74.209.24.0/116" : {
          "continent" : {
             "code" : "NA",
-            "geoname_id" : "6255149",
+            "geoname_id" : 6255149,
             "names" : {
                "de" : "Nordamerika",
                "en" : "North America",
@@ -10823,8 +10823,8 @@
             }
          },
          "country" : {
-            "confidence" : "99",
-            "geoname_id" : "6252001",
+            "confidence" : 99,
+            "geoname_id" : 6252001,
             "iso_code" : "US",
             "names" : {
                "de" : "USA",
@@ -10838,7 +10838,7 @@
             }
          },
          "registered_country" : {
-            "geoname_id" : "6252001",
+            "geoname_id" : 6252001,
             "iso_code" : "US",
             "names" : {
                "de" : "USA",
@@ -10861,7 +10861,7 @@
       "::75.209.24.0/128" : {
          "continent" : {
             "code" : "NA",
-            "geoname_id" : "6255149",
+            "geoname_id" : 6255149,
             "names" : {
                "de" : "Nordamerika",
                "en" : "North America",
@@ -10874,8 +10874,8 @@
             }
          },
          "country" : {
-            "confidence" : "99",
-            "geoname_id" : "6252001",
+            "confidence" : 99,
+            "geoname_id" : 6252001,
             "iso_code" : "US",
             "names" : {
                "de" : "USA",
@@ -10889,7 +10889,7 @@
             }
          },
          "registered_country" : {
-            "geoname_id" : "6252001",
+            "geoname_id" : 6252001,
             "iso_code" : "US",
             "names" : {
                "de" : "USA",
