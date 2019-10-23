@@ -46,7 +46,4377 @@
       }
    },
    {
-      "2001:220::/32" : {
+      "2001:220::1/128" : {
+         "continent" : {
+            "code" : "AS",
+            "geoname_id" : 6255147,
+            "names" : {
+               "de" : "Asien",
+               "en" : "Asia",
+               "es" : "Asia",
+               "fr" : "Asie",
+               "ja" : "アジア",
+               "pt-BR" : "Ásia",
+               "ru" : "Азия",
+               "zh-CN" : "亚洲"
+            }
+         },
+         "country" : {
+            "geoname_id" : 1835841,
+            "iso_code" : "KR",
+            "names" : {
+               "de" : "Republik Korea",
+               "en" : "South Korea",
+               "es" : "Corea, República de",
+               "fr" : "Corée du Sud",
+               "ja" : "大韓民国",
+               "pt-BR" : "Coréia, República da",
+               "ru" : "Южная Корея",
+               "zh-CN" : "韩国"
+            }
+         },
+         "registered_country" : {
+            "geoname_id" : 1835841,
+            "iso_code" : "KR",
+            "names" : {
+               "de" : "Republik Korea",
+               "en" : "South Korea",
+               "es" : "Corea, República de",
+               "fr" : "Corée du Sud",
+               "ja" : "大韓民国",
+               "pt-BR" : "Coréia, República da",
+               "ru" : "Южная Корея",
+               "zh-CN" : "韩国"
+            }
+         }
+      }
+   },
+   {
+      "2001:220::2/127" : {
+         "continent" : {
+            "code" : "AS",
+            "geoname_id" : 6255147,
+            "names" : {
+               "de" : "Asien",
+               "en" : "Asia",
+               "es" : "Asia",
+               "fr" : "Asie",
+               "ja" : "アジア",
+               "pt-BR" : "Ásia",
+               "ru" : "Азия",
+               "zh-CN" : "亚洲"
+            }
+         },
+         "country" : {
+            "geoname_id" : 1835841,
+            "iso_code" : "KR",
+            "names" : {
+               "de" : "Republik Korea",
+               "en" : "South Korea",
+               "es" : "Corea, República de",
+               "fr" : "Corée du Sud",
+               "ja" : "大韓民国",
+               "pt-BR" : "Coréia, República da",
+               "ru" : "Южная Корея",
+               "zh-CN" : "韩国"
+            }
+         },
+         "registered_country" : {
+            "geoname_id" : 1835841,
+            "iso_code" : "KR",
+            "names" : {
+               "de" : "Republik Korea",
+               "en" : "South Korea",
+               "es" : "Corea, República de",
+               "fr" : "Corée du Sud",
+               "ja" : "大韓民国",
+               "pt-BR" : "Coréia, República da",
+               "ru" : "Южная Корея",
+               "zh-CN" : "韩国"
+            }
+         }
+      }
+   },
+   {
+      "2001:220::4/126" : {
+         "continent" : {
+            "code" : "AS",
+            "geoname_id" : 6255147,
+            "names" : {
+               "de" : "Asien",
+               "en" : "Asia",
+               "es" : "Asia",
+               "fr" : "Asie",
+               "ja" : "アジア",
+               "pt-BR" : "Ásia",
+               "ru" : "Азия",
+               "zh-CN" : "亚洲"
+            }
+         },
+         "country" : {
+            "geoname_id" : 1835841,
+            "iso_code" : "KR",
+            "names" : {
+               "de" : "Republik Korea",
+               "en" : "South Korea",
+               "es" : "Corea, República de",
+               "fr" : "Corée du Sud",
+               "ja" : "大韓民国",
+               "pt-BR" : "Coréia, República da",
+               "ru" : "Южная Корея",
+               "zh-CN" : "韩国"
+            }
+         },
+         "registered_country" : {
+            "geoname_id" : 1835841,
+            "iso_code" : "KR",
+            "names" : {
+               "de" : "Republik Korea",
+               "en" : "South Korea",
+               "es" : "Corea, República de",
+               "fr" : "Corée du Sud",
+               "ja" : "大韓民国",
+               "pt-BR" : "Coréia, República da",
+               "ru" : "Южная Корея",
+               "zh-CN" : "韩国"
+            }
+         }
+      }
+   },
+   {
+      "2001:220::8/125" : {
+         "continent" : {
+            "code" : "AS",
+            "geoname_id" : 6255147,
+            "names" : {
+               "de" : "Asien",
+               "en" : "Asia",
+               "es" : "Asia",
+               "fr" : "Asie",
+               "ja" : "アジア",
+               "pt-BR" : "Ásia",
+               "ru" : "Азия",
+               "zh-CN" : "亚洲"
+            }
+         },
+         "country" : {
+            "geoname_id" : 1835841,
+            "iso_code" : "KR",
+            "names" : {
+               "de" : "Republik Korea",
+               "en" : "South Korea",
+               "es" : "Corea, República de",
+               "fr" : "Corée du Sud",
+               "ja" : "大韓民国",
+               "pt-BR" : "Coréia, República da",
+               "ru" : "Южная Корея",
+               "zh-CN" : "韩国"
+            }
+         },
+         "registered_country" : {
+            "geoname_id" : 1835841,
+            "iso_code" : "KR",
+            "names" : {
+               "de" : "Republik Korea",
+               "en" : "South Korea",
+               "es" : "Corea, República de",
+               "fr" : "Corée du Sud",
+               "ja" : "大韓民国",
+               "pt-BR" : "Coréia, República da",
+               "ru" : "Южная Корея",
+               "zh-CN" : "韩国"
+            }
+         }
+      }
+   },
+   {
+      "2001:220::10/124" : {
+         "continent" : {
+            "code" : "AS",
+            "geoname_id" : 6255147,
+            "names" : {
+               "de" : "Asien",
+               "en" : "Asia",
+               "es" : "Asia",
+               "fr" : "Asie",
+               "ja" : "アジア",
+               "pt-BR" : "Ásia",
+               "ru" : "Азия",
+               "zh-CN" : "亚洲"
+            }
+         },
+         "country" : {
+            "geoname_id" : 1835841,
+            "iso_code" : "KR",
+            "names" : {
+               "de" : "Republik Korea",
+               "en" : "South Korea",
+               "es" : "Corea, República de",
+               "fr" : "Corée du Sud",
+               "ja" : "大韓民国",
+               "pt-BR" : "Coréia, República da",
+               "ru" : "Южная Корея",
+               "zh-CN" : "韩国"
+            }
+         },
+         "registered_country" : {
+            "geoname_id" : 1835841,
+            "iso_code" : "KR",
+            "names" : {
+               "de" : "Republik Korea",
+               "en" : "South Korea",
+               "es" : "Corea, República de",
+               "fr" : "Corée du Sud",
+               "ja" : "大韓民国",
+               "pt-BR" : "Coréia, República da",
+               "ru" : "Южная Корея",
+               "zh-CN" : "韩国"
+            }
+         }
+      }
+   },
+   {
+      "2001:220::20/123" : {
+         "continent" : {
+            "code" : "AS",
+            "geoname_id" : 6255147,
+            "names" : {
+               "de" : "Asien",
+               "en" : "Asia",
+               "es" : "Asia",
+               "fr" : "Asie",
+               "ja" : "アジア",
+               "pt-BR" : "Ásia",
+               "ru" : "Азия",
+               "zh-CN" : "亚洲"
+            }
+         },
+         "country" : {
+            "geoname_id" : 1835841,
+            "iso_code" : "KR",
+            "names" : {
+               "de" : "Republik Korea",
+               "en" : "South Korea",
+               "es" : "Corea, República de",
+               "fr" : "Corée du Sud",
+               "ja" : "大韓民国",
+               "pt-BR" : "Coréia, República da",
+               "ru" : "Южная Корея",
+               "zh-CN" : "韩国"
+            }
+         },
+         "registered_country" : {
+            "geoname_id" : 1835841,
+            "iso_code" : "KR",
+            "names" : {
+               "de" : "Republik Korea",
+               "en" : "South Korea",
+               "es" : "Corea, República de",
+               "fr" : "Corée du Sud",
+               "ja" : "大韓民国",
+               "pt-BR" : "Coréia, República da",
+               "ru" : "Южная Корея",
+               "zh-CN" : "韩国"
+            }
+         }
+      }
+   },
+   {
+      "2001:220::40/122" : {
+         "continent" : {
+            "code" : "AS",
+            "geoname_id" : 6255147,
+            "names" : {
+               "de" : "Asien",
+               "en" : "Asia",
+               "es" : "Asia",
+               "fr" : "Asie",
+               "ja" : "アジア",
+               "pt-BR" : "Ásia",
+               "ru" : "Азия",
+               "zh-CN" : "亚洲"
+            }
+         },
+         "country" : {
+            "geoname_id" : 1835841,
+            "iso_code" : "KR",
+            "names" : {
+               "de" : "Republik Korea",
+               "en" : "South Korea",
+               "es" : "Corea, República de",
+               "fr" : "Corée du Sud",
+               "ja" : "大韓民国",
+               "pt-BR" : "Coréia, República da",
+               "ru" : "Южная Корея",
+               "zh-CN" : "韩国"
+            }
+         },
+         "registered_country" : {
+            "geoname_id" : 1835841,
+            "iso_code" : "KR",
+            "names" : {
+               "de" : "Republik Korea",
+               "en" : "South Korea",
+               "es" : "Corea, República de",
+               "fr" : "Corée du Sud",
+               "ja" : "大韓民国",
+               "pt-BR" : "Coréia, República da",
+               "ru" : "Южная Корея",
+               "zh-CN" : "韩国"
+            }
+         }
+      }
+   },
+   {
+      "2001:220::80/121" : {
+         "continent" : {
+            "code" : "AS",
+            "geoname_id" : 6255147,
+            "names" : {
+               "de" : "Asien",
+               "en" : "Asia",
+               "es" : "Asia",
+               "fr" : "Asie",
+               "ja" : "アジア",
+               "pt-BR" : "Ásia",
+               "ru" : "Азия",
+               "zh-CN" : "亚洲"
+            }
+         },
+         "country" : {
+            "geoname_id" : 1835841,
+            "iso_code" : "KR",
+            "names" : {
+               "de" : "Republik Korea",
+               "en" : "South Korea",
+               "es" : "Corea, República de",
+               "fr" : "Corée du Sud",
+               "ja" : "大韓民国",
+               "pt-BR" : "Coréia, República da",
+               "ru" : "Южная Корея",
+               "zh-CN" : "韩国"
+            }
+         },
+         "registered_country" : {
+            "geoname_id" : 1835841,
+            "iso_code" : "KR",
+            "names" : {
+               "de" : "Republik Korea",
+               "en" : "South Korea",
+               "es" : "Corea, República de",
+               "fr" : "Corée du Sud",
+               "ja" : "大韓民国",
+               "pt-BR" : "Coréia, República da",
+               "ru" : "Южная Корея",
+               "zh-CN" : "韩国"
+            }
+         }
+      }
+   },
+   {
+      "2001:220::100/120" : {
+         "continent" : {
+            "code" : "AS",
+            "geoname_id" : 6255147,
+            "names" : {
+               "de" : "Asien",
+               "en" : "Asia",
+               "es" : "Asia",
+               "fr" : "Asie",
+               "ja" : "アジア",
+               "pt-BR" : "Ásia",
+               "ru" : "Азия",
+               "zh-CN" : "亚洲"
+            }
+         },
+         "country" : {
+            "geoname_id" : 1835841,
+            "iso_code" : "KR",
+            "names" : {
+               "de" : "Republik Korea",
+               "en" : "South Korea",
+               "es" : "Corea, República de",
+               "fr" : "Corée du Sud",
+               "ja" : "大韓民国",
+               "pt-BR" : "Coréia, República da",
+               "ru" : "Южная Корея",
+               "zh-CN" : "韩国"
+            }
+         },
+         "registered_country" : {
+            "geoname_id" : 1835841,
+            "iso_code" : "KR",
+            "names" : {
+               "de" : "Republik Korea",
+               "en" : "South Korea",
+               "es" : "Corea, República de",
+               "fr" : "Corée du Sud",
+               "ja" : "大韓民国",
+               "pt-BR" : "Coréia, República da",
+               "ru" : "Южная Корея",
+               "zh-CN" : "韩国"
+            }
+         }
+      }
+   },
+   {
+      "2001:220::200/119" : {
+         "continent" : {
+            "code" : "AS",
+            "geoname_id" : 6255147,
+            "names" : {
+               "de" : "Asien",
+               "en" : "Asia",
+               "es" : "Asia",
+               "fr" : "Asie",
+               "ja" : "アジア",
+               "pt-BR" : "Ásia",
+               "ru" : "Азия",
+               "zh-CN" : "亚洲"
+            }
+         },
+         "country" : {
+            "geoname_id" : 1835841,
+            "iso_code" : "KR",
+            "names" : {
+               "de" : "Republik Korea",
+               "en" : "South Korea",
+               "es" : "Corea, República de",
+               "fr" : "Corée du Sud",
+               "ja" : "大韓民国",
+               "pt-BR" : "Coréia, República da",
+               "ru" : "Южная Корея",
+               "zh-CN" : "韩国"
+            }
+         },
+         "registered_country" : {
+            "geoname_id" : 1835841,
+            "iso_code" : "KR",
+            "names" : {
+               "de" : "Republik Korea",
+               "en" : "South Korea",
+               "es" : "Corea, República de",
+               "fr" : "Corée du Sud",
+               "ja" : "大韓民国",
+               "pt-BR" : "Coréia, República da",
+               "ru" : "Южная Корея",
+               "zh-CN" : "韩国"
+            }
+         }
+      }
+   },
+   {
+      "2001:220::400/118" : {
+         "continent" : {
+            "code" : "AS",
+            "geoname_id" : 6255147,
+            "names" : {
+               "de" : "Asien",
+               "en" : "Asia",
+               "es" : "Asia",
+               "fr" : "Asie",
+               "ja" : "アジア",
+               "pt-BR" : "Ásia",
+               "ru" : "Азия",
+               "zh-CN" : "亚洲"
+            }
+         },
+         "country" : {
+            "geoname_id" : 1835841,
+            "iso_code" : "KR",
+            "names" : {
+               "de" : "Republik Korea",
+               "en" : "South Korea",
+               "es" : "Corea, República de",
+               "fr" : "Corée du Sud",
+               "ja" : "大韓民国",
+               "pt-BR" : "Coréia, República da",
+               "ru" : "Южная Корея",
+               "zh-CN" : "韩国"
+            }
+         },
+         "registered_country" : {
+            "geoname_id" : 1835841,
+            "iso_code" : "KR",
+            "names" : {
+               "de" : "Republik Korea",
+               "en" : "South Korea",
+               "es" : "Corea, República de",
+               "fr" : "Corée du Sud",
+               "ja" : "大韓民国",
+               "pt-BR" : "Coréia, República da",
+               "ru" : "Южная Корея",
+               "zh-CN" : "韩国"
+            }
+         }
+      }
+   },
+   {
+      "2001:220::800/117" : {
+         "continent" : {
+            "code" : "AS",
+            "geoname_id" : 6255147,
+            "names" : {
+               "de" : "Asien",
+               "en" : "Asia",
+               "es" : "Asia",
+               "fr" : "Asie",
+               "ja" : "アジア",
+               "pt-BR" : "Ásia",
+               "ru" : "Азия",
+               "zh-CN" : "亚洲"
+            }
+         },
+         "country" : {
+            "geoname_id" : 1835841,
+            "iso_code" : "KR",
+            "names" : {
+               "de" : "Republik Korea",
+               "en" : "South Korea",
+               "es" : "Corea, República de",
+               "fr" : "Corée du Sud",
+               "ja" : "大韓民国",
+               "pt-BR" : "Coréia, República da",
+               "ru" : "Южная Корея",
+               "zh-CN" : "韩国"
+            }
+         },
+         "registered_country" : {
+            "geoname_id" : 1835841,
+            "iso_code" : "KR",
+            "names" : {
+               "de" : "Republik Korea",
+               "en" : "South Korea",
+               "es" : "Corea, República de",
+               "fr" : "Corée du Sud",
+               "ja" : "大韓民国",
+               "pt-BR" : "Coréia, República da",
+               "ru" : "Южная Корея",
+               "zh-CN" : "韩国"
+            }
+         }
+      }
+   },
+   {
+      "2001:220::1000/116" : {
+         "continent" : {
+            "code" : "AS",
+            "geoname_id" : 6255147,
+            "names" : {
+               "de" : "Asien",
+               "en" : "Asia",
+               "es" : "Asia",
+               "fr" : "Asie",
+               "ja" : "アジア",
+               "pt-BR" : "Ásia",
+               "ru" : "Азия",
+               "zh-CN" : "亚洲"
+            }
+         },
+         "country" : {
+            "geoname_id" : 1835841,
+            "iso_code" : "KR",
+            "names" : {
+               "de" : "Republik Korea",
+               "en" : "South Korea",
+               "es" : "Corea, República de",
+               "fr" : "Corée du Sud",
+               "ja" : "大韓民国",
+               "pt-BR" : "Coréia, República da",
+               "ru" : "Южная Корея",
+               "zh-CN" : "韩国"
+            }
+         },
+         "registered_country" : {
+            "geoname_id" : 1835841,
+            "iso_code" : "KR",
+            "names" : {
+               "de" : "Republik Korea",
+               "en" : "South Korea",
+               "es" : "Corea, República de",
+               "fr" : "Corée du Sud",
+               "ja" : "大韓民国",
+               "pt-BR" : "Coréia, República da",
+               "ru" : "Южная Корея",
+               "zh-CN" : "韩国"
+            }
+         }
+      }
+   },
+   {
+      "2001:220::2000/115" : {
+         "continent" : {
+            "code" : "AS",
+            "geoname_id" : 6255147,
+            "names" : {
+               "de" : "Asien",
+               "en" : "Asia",
+               "es" : "Asia",
+               "fr" : "Asie",
+               "ja" : "アジア",
+               "pt-BR" : "Ásia",
+               "ru" : "Азия",
+               "zh-CN" : "亚洲"
+            }
+         },
+         "country" : {
+            "geoname_id" : 1835841,
+            "iso_code" : "KR",
+            "names" : {
+               "de" : "Republik Korea",
+               "en" : "South Korea",
+               "es" : "Corea, República de",
+               "fr" : "Corée du Sud",
+               "ja" : "大韓民国",
+               "pt-BR" : "Coréia, República da",
+               "ru" : "Южная Корея",
+               "zh-CN" : "韩国"
+            }
+         },
+         "registered_country" : {
+            "geoname_id" : 1835841,
+            "iso_code" : "KR",
+            "names" : {
+               "de" : "Republik Korea",
+               "en" : "South Korea",
+               "es" : "Corea, República de",
+               "fr" : "Corée du Sud",
+               "ja" : "大韓民国",
+               "pt-BR" : "Coréia, República da",
+               "ru" : "Южная Корея",
+               "zh-CN" : "韩国"
+            }
+         }
+      }
+   },
+   {
+      "2001:220::4000/114" : {
+         "continent" : {
+            "code" : "AS",
+            "geoname_id" : 6255147,
+            "names" : {
+               "de" : "Asien",
+               "en" : "Asia",
+               "es" : "Asia",
+               "fr" : "Asie",
+               "ja" : "アジア",
+               "pt-BR" : "Ásia",
+               "ru" : "Азия",
+               "zh-CN" : "亚洲"
+            }
+         },
+         "country" : {
+            "geoname_id" : 1835841,
+            "iso_code" : "KR",
+            "names" : {
+               "de" : "Republik Korea",
+               "en" : "South Korea",
+               "es" : "Corea, República de",
+               "fr" : "Corée du Sud",
+               "ja" : "大韓民国",
+               "pt-BR" : "Coréia, República da",
+               "ru" : "Южная Корея",
+               "zh-CN" : "韩国"
+            }
+         },
+         "registered_country" : {
+            "geoname_id" : 1835841,
+            "iso_code" : "KR",
+            "names" : {
+               "de" : "Republik Korea",
+               "en" : "South Korea",
+               "es" : "Corea, República de",
+               "fr" : "Corée du Sud",
+               "ja" : "大韓民国",
+               "pt-BR" : "Coréia, República da",
+               "ru" : "Южная Корея",
+               "zh-CN" : "韩国"
+            }
+         }
+      }
+   },
+   {
+      "2001:220::8000/113" : {
+         "continent" : {
+            "code" : "AS",
+            "geoname_id" : 6255147,
+            "names" : {
+               "de" : "Asien",
+               "en" : "Asia",
+               "es" : "Asia",
+               "fr" : "Asie",
+               "ja" : "アジア",
+               "pt-BR" : "Ásia",
+               "ru" : "Азия",
+               "zh-CN" : "亚洲"
+            }
+         },
+         "country" : {
+            "geoname_id" : 1835841,
+            "iso_code" : "KR",
+            "names" : {
+               "de" : "Republik Korea",
+               "en" : "South Korea",
+               "es" : "Corea, República de",
+               "fr" : "Corée du Sud",
+               "ja" : "大韓民国",
+               "pt-BR" : "Coréia, República da",
+               "ru" : "Южная Корея",
+               "zh-CN" : "韩国"
+            }
+         },
+         "registered_country" : {
+            "geoname_id" : 1835841,
+            "iso_code" : "KR",
+            "names" : {
+               "de" : "Republik Korea",
+               "en" : "South Korea",
+               "es" : "Corea, República de",
+               "fr" : "Corée du Sud",
+               "ja" : "大韓民国",
+               "pt-BR" : "Coréia, República da",
+               "ru" : "Южная Корея",
+               "zh-CN" : "韩国"
+            }
+         }
+      }
+   },
+   {
+      "2001:220::1:0/112" : {
+         "continent" : {
+            "code" : "AS",
+            "geoname_id" : 6255147,
+            "names" : {
+               "de" : "Asien",
+               "en" : "Asia",
+               "es" : "Asia",
+               "fr" : "Asie",
+               "ja" : "アジア",
+               "pt-BR" : "Ásia",
+               "ru" : "Азия",
+               "zh-CN" : "亚洲"
+            }
+         },
+         "country" : {
+            "geoname_id" : 1835841,
+            "iso_code" : "KR",
+            "names" : {
+               "de" : "Republik Korea",
+               "en" : "South Korea",
+               "es" : "Corea, República de",
+               "fr" : "Corée du Sud",
+               "ja" : "大韓民国",
+               "pt-BR" : "Coréia, República da",
+               "ru" : "Южная Корея",
+               "zh-CN" : "韩国"
+            }
+         },
+         "registered_country" : {
+            "geoname_id" : 1835841,
+            "iso_code" : "KR",
+            "names" : {
+               "de" : "Republik Korea",
+               "en" : "South Korea",
+               "es" : "Corea, República de",
+               "fr" : "Corée du Sud",
+               "ja" : "大韓民国",
+               "pt-BR" : "Coréia, República da",
+               "ru" : "Южная Корея",
+               "zh-CN" : "韩国"
+            }
+         }
+      }
+   },
+   {
+      "2001:220::2:0/111" : {
+         "continent" : {
+            "code" : "AS",
+            "geoname_id" : 6255147,
+            "names" : {
+               "de" : "Asien",
+               "en" : "Asia",
+               "es" : "Asia",
+               "fr" : "Asie",
+               "ja" : "アジア",
+               "pt-BR" : "Ásia",
+               "ru" : "Азия",
+               "zh-CN" : "亚洲"
+            }
+         },
+         "country" : {
+            "geoname_id" : 1835841,
+            "iso_code" : "KR",
+            "names" : {
+               "de" : "Republik Korea",
+               "en" : "South Korea",
+               "es" : "Corea, República de",
+               "fr" : "Corée du Sud",
+               "ja" : "大韓民国",
+               "pt-BR" : "Coréia, República da",
+               "ru" : "Южная Корея",
+               "zh-CN" : "韩国"
+            }
+         },
+         "registered_country" : {
+            "geoname_id" : 1835841,
+            "iso_code" : "KR",
+            "names" : {
+               "de" : "Republik Korea",
+               "en" : "South Korea",
+               "es" : "Corea, República de",
+               "fr" : "Corée du Sud",
+               "ja" : "大韓民国",
+               "pt-BR" : "Coréia, República da",
+               "ru" : "Южная Корея",
+               "zh-CN" : "韩国"
+            }
+         }
+      }
+   },
+   {
+      "2001:220::4:0/110" : {
+         "continent" : {
+            "code" : "AS",
+            "geoname_id" : 6255147,
+            "names" : {
+               "de" : "Asien",
+               "en" : "Asia",
+               "es" : "Asia",
+               "fr" : "Asie",
+               "ja" : "アジア",
+               "pt-BR" : "Ásia",
+               "ru" : "Азия",
+               "zh-CN" : "亚洲"
+            }
+         },
+         "country" : {
+            "geoname_id" : 1835841,
+            "iso_code" : "KR",
+            "names" : {
+               "de" : "Republik Korea",
+               "en" : "South Korea",
+               "es" : "Corea, República de",
+               "fr" : "Corée du Sud",
+               "ja" : "大韓民国",
+               "pt-BR" : "Coréia, República da",
+               "ru" : "Южная Корея",
+               "zh-CN" : "韩国"
+            }
+         },
+         "registered_country" : {
+            "geoname_id" : 1835841,
+            "iso_code" : "KR",
+            "names" : {
+               "de" : "Republik Korea",
+               "en" : "South Korea",
+               "es" : "Corea, República de",
+               "fr" : "Corée du Sud",
+               "ja" : "大韓民国",
+               "pt-BR" : "Coréia, República da",
+               "ru" : "Южная Корея",
+               "zh-CN" : "韩国"
+            }
+         }
+      }
+   },
+   {
+      "2001:220::8:0/109" : {
+         "continent" : {
+            "code" : "AS",
+            "geoname_id" : 6255147,
+            "names" : {
+               "de" : "Asien",
+               "en" : "Asia",
+               "es" : "Asia",
+               "fr" : "Asie",
+               "ja" : "アジア",
+               "pt-BR" : "Ásia",
+               "ru" : "Азия",
+               "zh-CN" : "亚洲"
+            }
+         },
+         "country" : {
+            "geoname_id" : 1835841,
+            "iso_code" : "KR",
+            "names" : {
+               "de" : "Republik Korea",
+               "en" : "South Korea",
+               "es" : "Corea, República de",
+               "fr" : "Corée du Sud",
+               "ja" : "大韓民国",
+               "pt-BR" : "Coréia, República da",
+               "ru" : "Южная Корея",
+               "zh-CN" : "韩国"
+            }
+         },
+         "registered_country" : {
+            "geoname_id" : 1835841,
+            "iso_code" : "KR",
+            "names" : {
+               "de" : "Republik Korea",
+               "en" : "South Korea",
+               "es" : "Corea, República de",
+               "fr" : "Corée du Sud",
+               "ja" : "大韓民国",
+               "pt-BR" : "Coréia, República da",
+               "ru" : "Южная Корея",
+               "zh-CN" : "韩国"
+            }
+         }
+      }
+   },
+   {
+      "2001:220::10:0/108" : {
+         "continent" : {
+            "code" : "AS",
+            "geoname_id" : 6255147,
+            "names" : {
+               "de" : "Asien",
+               "en" : "Asia",
+               "es" : "Asia",
+               "fr" : "Asie",
+               "ja" : "アジア",
+               "pt-BR" : "Ásia",
+               "ru" : "Азия",
+               "zh-CN" : "亚洲"
+            }
+         },
+         "country" : {
+            "geoname_id" : 1835841,
+            "iso_code" : "KR",
+            "names" : {
+               "de" : "Republik Korea",
+               "en" : "South Korea",
+               "es" : "Corea, República de",
+               "fr" : "Corée du Sud",
+               "ja" : "大韓民国",
+               "pt-BR" : "Coréia, República da",
+               "ru" : "Южная Корея",
+               "zh-CN" : "韩国"
+            }
+         },
+         "registered_country" : {
+            "geoname_id" : 1835841,
+            "iso_code" : "KR",
+            "names" : {
+               "de" : "Republik Korea",
+               "en" : "South Korea",
+               "es" : "Corea, República de",
+               "fr" : "Corée du Sud",
+               "ja" : "大韓民国",
+               "pt-BR" : "Coréia, República da",
+               "ru" : "Южная Корея",
+               "zh-CN" : "韩国"
+            }
+         }
+      }
+   },
+   {
+      "2001:220::20:0/107" : {
+         "continent" : {
+            "code" : "AS",
+            "geoname_id" : 6255147,
+            "names" : {
+               "de" : "Asien",
+               "en" : "Asia",
+               "es" : "Asia",
+               "fr" : "Asie",
+               "ja" : "アジア",
+               "pt-BR" : "Ásia",
+               "ru" : "Азия",
+               "zh-CN" : "亚洲"
+            }
+         },
+         "country" : {
+            "geoname_id" : 1835841,
+            "iso_code" : "KR",
+            "names" : {
+               "de" : "Republik Korea",
+               "en" : "South Korea",
+               "es" : "Corea, República de",
+               "fr" : "Corée du Sud",
+               "ja" : "大韓民国",
+               "pt-BR" : "Coréia, República da",
+               "ru" : "Южная Корея",
+               "zh-CN" : "韩国"
+            }
+         },
+         "registered_country" : {
+            "geoname_id" : 1835841,
+            "iso_code" : "KR",
+            "names" : {
+               "de" : "Republik Korea",
+               "en" : "South Korea",
+               "es" : "Corea, República de",
+               "fr" : "Corée du Sud",
+               "ja" : "大韓民国",
+               "pt-BR" : "Coréia, República da",
+               "ru" : "Южная Корея",
+               "zh-CN" : "韩国"
+            }
+         }
+      }
+   },
+   {
+      "2001:220::40:0/106" : {
+         "continent" : {
+            "code" : "AS",
+            "geoname_id" : 6255147,
+            "names" : {
+               "de" : "Asien",
+               "en" : "Asia",
+               "es" : "Asia",
+               "fr" : "Asie",
+               "ja" : "アジア",
+               "pt-BR" : "Ásia",
+               "ru" : "Азия",
+               "zh-CN" : "亚洲"
+            }
+         },
+         "country" : {
+            "geoname_id" : 1835841,
+            "iso_code" : "KR",
+            "names" : {
+               "de" : "Republik Korea",
+               "en" : "South Korea",
+               "es" : "Corea, República de",
+               "fr" : "Corée du Sud",
+               "ja" : "大韓民国",
+               "pt-BR" : "Coréia, República da",
+               "ru" : "Южная Корея",
+               "zh-CN" : "韩国"
+            }
+         },
+         "registered_country" : {
+            "geoname_id" : 1835841,
+            "iso_code" : "KR",
+            "names" : {
+               "de" : "Republik Korea",
+               "en" : "South Korea",
+               "es" : "Corea, República de",
+               "fr" : "Corée du Sud",
+               "ja" : "大韓民国",
+               "pt-BR" : "Coréia, República da",
+               "ru" : "Южная Корея",
+               "zh-CN" : "韩国"
+            }
+         }
+      }
+   },
+   {
+      "2001:220::80:0/105" : {
+         "continent" : {
+            "code" : "AS",
+            "geoname_id" : 6255147,
+            "names" : {
+               "de" : "Asien",
+               "en" : "Asia",
+               "es" : "Asia",
+               "fr" : "Asie",
+               "ja" : "アジア",
+               "pt-BR" : "Ásia",
+               "ru" : "Азия",
+               "zh-CN" : "亚洲"
+            }
+         },
+         "country" : {
+            "geoname_id" : 1835841,
+            "iso_code" : "KR",
+            "names" : {
+               "de" : "Republik Korea",
+               "en" : "South Korea",
+               "es" : "Corea, República de",
+               "fr" : "Corée du Sud",
+               "ja" : "大韓民国",
+               "pt-BR" : "Coréia, República da",
+               "ru" : "Южная Корея",
+               "zh-CN" : "韩国"
+            }
+         },
+         "registered_country" : {
+            "geoname_id" : 1835841,
+            "iso_code" : "KR",
+            "names" : {
+               "de" : "Republik Korea",
+               "en" : "South Korea",
+               "es" : "Corea, República de",
+               "fr" : "Corée du Sud",
+               "ja" : "大韓民国",
+               "pt-BR" : "Coréia, República da",
+               "ru" : "Южная Корея",
+               "zh-CN" : "韩国"
+            }
+         }
+      }
+   },
+   {
+      "2001:220::100:0/104" : {
+         "continent" : {
+            "code" : "AS",
+            "geoname_id" : 6255147,
+            "names" : {
+               "de" : "Asien",
+               "en" : "Asia",
+               "es" : "Asia",
+               "fr" : "Asie",
+               "ja" : "アジア",
+               "pt-BR" : "Ásia",
+               "ru" : "Азия",
+               "zh-CN" : "亚洲"
+            }
+         },
+         "country" : {
+            "geoname_id" : 1835841,
+            "iso_code" : "KR",
+            "names" : {
+               "de" : "Republik Korea",
+               "en" : "South Korea",
+               "es" : "Corea, República de",
+               "fr" : "Corée du Sud",
+               "ja" : "大韓民国",
+               "pt-BR" : "Coréia, República da",
+               "ru" : "Южная Корея",
+               "zh-CN" : "韩国"
+            }
+         },
+         "registered_country" : {
+            "geoname_id" : 1835841,
+            "iso_code" : "KR",
+            "names" : {
+               "de" : "Republik Korea",
+               "en" : "South Korea",
+               "es" : "Corea, República de",
+               "fr" : "Corée du Sud",
+               "ja" : "大韓民国",
+               "pt-BR" : "Coréia, República da",
+               "ru" : "Южная Корея",
+               "zh-CN" : "韩国"
+            }
+         }
+      }
+   },
+   {
+      "2001:220::200:0/103" : {
+         "continent" : {
+            "code" : "AS",
+            "geoname_id" : 6255147,
+            "names" : {
+               "de" : "Asien",
+               "en" : "Asia",
+               "es" : "Asia",
+               "fr" : "Asie",
+               "ja" : "アジア",
+               "pt-BR" : "Ásia",
+               "ru" : "Азия",
+               "zh-CN" : "亚洲"
+            }
+         },
+         "country" : {
+            "geoname_id" : 1835841,
+            "iso_code" : "KR",
+            "names" : {
+               "de" : "Republik Korea",
+               "en" : "South Korea",
+               "es" : "Corea, República de",
+               "fr" : "Corée du Sud",
+               "ja" : "大韓民国",
+               "pt-BR" : "Coréia, República da",
+               "ru" : "Южная Корея",
+               "zh-CN" : "韩国"
+            }
+         },
+         "registered_country" : {
+            "geoname_id" : 1835841,
+            "iso_code" : "KR",
+            "names" : {
+               "de" : "Republik Korea",
+               "en" : "South Korea",
+               "es" : "Corea, República de",
+               "fr" : "Corée du Sud",
+               "ja" : "大韓民国",
+               "pt-BR" : "Coréia, República da",
+               "ru" : "Южная Корея",
+               "zh-CN" : "韩国"
+            }
+         }
+      }
+   },
+   {
+      "2001:220::400:0/102" : {
+         "continent" : {
+            "code" : "AS",
+            "geoname_id" : 6255147,
+            "names" : {
+               "de" : "Asien",
+               "en" : "Asia",
+               "es" : "Asia",
+               "fr" : "Asie",
+               "ja" : "アジア",
+               "pt-BR" : "Ásia",
+               "ru" : "Азия",
+               "zh-CN" : "亚洲"
+            }
+         },
+         "country" : {
+            "geoname_id" : 1835841,
+            "iso_code" : "KR",
+            "names" : {
+               "de" : "Republik Korea",
+               "en" : "South Korea",
+               "es" : "Corea, República de",
+               "fr" : "Corée du Sud",
+               "ja" : "大韓民国",
+               "pt-BR" : "Coréia, República da",
+               "ru" : "Южная Корея",
+               "zh-CN" : "韩国"
+            }
+         },
+         "registered_country" : {
+            "geoname_id" : 1835841,
+            "iso_code" : "KR",
+            "names" : {
+               "de" : "Republik Korea",
+               "en" : "South Korea",
+               "es" : "Corea, República de",
+               "fr" : "Corée du Sud",
+               "ja" : "大韓民国",
+               "pt-BR" : "Coréia, República da",
+               "ru" : "Южная Корея",
+               "zh-CN" : "韩国"
+            }
+         }
+      }
+   },
+   {
+      "2001:220::800:0/101" : {
+         "continent" : {
+            "code" : "AS",
+            "geoname_id" : 6255147,
+            "names" : {
+               "de" : "Asien",
+               "en" : "Asia",
+               "es" : "Asia",
+               "fr" : "Asie",
+               "ja" : "アジア",
+               "pt-BR" : "Ásia",
+               "ru" : "Азия",
+               "zh-CN" : "亚洲"
+            }
+         },
+         "country" : {
+            "geoname_id" : 1835841,
+            "iso_code" : "KR",
+            "names" : {
+               "de" : "Republik Korea",
+               "en" : "South Korea",
+               "es" : "Corea, República de",
+               "fr" : "Corée du Sud",
+               "ja" : "大韓民国",
+               "pt-BR" : "Coréia, República da",
+               "ru" : "Южная Корея",
+               "zh-CN" : "韩国"
+            }
+         },
+         "registered_country" : {
+            "geoname_id" : 1835841,
+            "iso_code" : "KR",
+            "names" : {
+               "de" : "Republik Korea",
+               "en" : "South Korea",
+               "es" : "Corea, República de",
+               "fr" : "Corée du Sud",
+               "ja" : "大韓民国",
+               "pt-BR" : "Coréia, República da",
+               "ru" : "Южная Корея",
+               "zh-CN" : "韩国"
+            }
+         }
+      }
+   },
+   {
+      "2001:220::1000:0/100" : {
+         "continent" : {
+            "code" : "AS",
+            "geoname_id" : 6255147,
+            "names" : {
+               "de" : "Asien",
+               "en" : "Asia",
+               "es" : "Asia",
+               "fr" : "Asie",
+               "ja" : "アジア",
+               "pt-BR" : "Ásia",
+               "ru" : "Азия",
+               "zh-CN" : "亚洲"
+            }
+         },
+         "country" : {
+            "geoname_id" : 1835841,
+            "iso_code" : "KR",
+            "names" : {
+               "de" : "Republik Korea",
+               "en" : "South Korea",
+               "es" : "Corea, República de",
+               "fr" : "Corée du Sud",
+               "ja" : "大韓民国",
+               "pt-BR" : "Coréia, República da",
+               "ru" : "Южная Корея",
+               "zh-CN" : "韩国"
+            }
+         },
+         "registered_country" : {
+            "geoname_id" : 1835841,
+            "iso_code" : "KR",
+            "names" : {
+               "de" : "Republik Korea",
+               "en" : "South Korea",
+               "es" : "Corea, República de",
+               "fr" : "Corée du Sud",
+               "ja" : "大韓民国",
+               "pt-BR" : "Coréia, República da",
+               "ru" : "Южная Корея",
+               "zh-CN" : "韩国"
+            }
+         }
+      }
+   },
+   {
+      "2001:220::2000:0/99" : {
+         "continent" : {
+            "code" : "AS",
+            "geoname_id" : 6255147,
+            "names" : {
+               "de" : "Asien",
+               "en" : "Asia",
+               "es" : "Asia",
+               "fr" : "Asie",
+               "ja" : "アジア",
+               "pt-BR" : "Ásia",
+               "ru" : "Азия",
+               "zh-CN" : "亚洲"
+            }
+         },
+         "country" : {
+            "geoname_id" : 1835841,
+            "iso_code" : "KR",
+            "names" : {
+               "de" : "Republik Korea",
+               "en" : "South Korea",
+               "es" : "Corea, República de",
+               "fr" : "Corée du Sud",
+               "ja" : "大韓民国",
+               "pt-BR" : "Coréia, República da",
+               "ru" : "Южная Корея",
+               "zh-CN" : "韩国"
+            }
+         },
+         "registered_country" : {
+            "geoname_id" : 1835841,
+            "iso_code" : "KR",
+            "names" : {
+               "de" : "Republik Korea",
+               "en" : "South Korea",
+               "es" : "Corea, República de",
+               "fr" : "Corée du Sud",
+               "ja" : "大韓民国",
+               "pt-BR" : "Coréia, República da",
+               "ru" : "Южная Корея",
+               "zh-CN" : "韩国"
+            }
+         }
+      }
+   },
+   {
+      "2001:220::4000:0/98" : {
+         "continent" : {
+            "code" : "AS",
+            "geoname_id" : 6255147,
+            "names" : {
+               "de" : "Asien",
+               "en" : "Asia",
+               "es" : "Asia",
+               "fr" : "Asie",
+               "ja" : "アジア",
+               "pt-BR" : "Ásia",
+               "ru" : "Азия",
+               "zh-CN" : "亚洲"
+            }
+         },
+         "country" : {
+            "geoname_id" : 1835841,
+            "iso_code" : "KR",
+            "names" : {
+               "de" : "Republik Korea",
+               "en" : "South Korea",
+               "es" : "Corea, República de",
+               "fr" : "Corée du Sud",
+               "ja" : "大韓民国",
+               "pt-BR" : "Coréia, República da",
+               "ru" : "Южная Корея",
+               "zh-CN" : "韩国"
+            }
+         },
+         "registered_country" : {
+            "geoname_id" : 1835841,
+            "iso_code" : "KR",
+            "names" : {
+               "de" : "Republik Korea",
+               "en" : "South Korea",
+               "es" : "Corea, República de",
+               "fr" : "Corée du Sud",
+               "ja" : "大韓民国",
+               "pt-BR" : "Coréia, República da",
+               "ru" : "Южная Корея",
+               "zh-CN" : "韩国"
+            }
+         }
+      }
+   },
+   {
+      "2001:220::8000:0/97" : {
+         "continent" : {
+            "code" : "AS",
+            "geoname_id" : 6255147,
+            "names" : {
+               "de" : "Asien",
+               "en" : "Asia",
+               "es" : "Asia",
+               "fr" : "Asie",
+               "ja" : "アジア",
+               "pt-BR" : "Ásia",
+               "ru" : "Азия",
+               "zh-CN" : "亚洲"
+            }
+         },
+         "country" : {
+            "geoname_id" : 1835841,
+            "iso_code" : "KR",
+            "names" : {
+               "de" : "Republik Korea",
+               "en" : "South Korea",
+               "es" : "Corea, República de",
+               "fr" : "Corée du Sud",
+               "ja" : "大韓民国",
+               "pt-BR" : "Coréia, República da",
+               "ru" : "Южная Корея",
+               "zh-CN" : "韩国"
+            }
+         },
+         "registered_country" : {
+            "geoname_id" : 1835841,
+            "iso_code" : "KR",
+            "names" : {
+               "de" : "Republik Korea",
+               "en" : "South Korea",
+               "es" : "Corea, República de",
+               "fr" : "Corée du Sud",
+               "ja" : "大韓民国",
+               "pt-BR" : "Coréia, República da",
+               "ru" : "Южная Корея",
+               "zh-CN" : "韩国"
+            }
+         }
+      }
+   },
+   {
+      "2001:220::1:0:0/96" : {
+         "continent" : {
+            "code" : "AS",
+            "geoname_id" : 6255147,
+            "names" : {
+               "de" : "Asien",
+               "en" : "Asia",
+               "es" : "Asia",
+               "fr" : "Asie",
+               "ja" : "アジア",
+               "pt-BR" : "Ásia",
+               "ru" : "Азия",
+               "zh-CN" : "亚洲"
+            }
+         },
+         "country" : {
+            "geoname_id" : 1835841,
+            "iso_code" : "KR",
+            "names" : {
+               "de" : "Republik Korea",
+               "en" : "South Korea",
+               "es" : "Corea, República de",
+               "fr" : "Corée du Sud",
+               "ja" : "大韓民国",
+               "pt-BR" : "Coréia, República da",
+               "ru" : "Южная Корея",
+               "zh-CN" : "韩国"
+            }
+         },
+         "registered_country" : {
+            "geoname_id" : 1835841,
+            "iso_code" : "KR",
+            "names" : {
+               "de" : "Republik Korea",
+               "en" : "South Korea",
+               "es" : "Corea, República de",
+               "fr" : "Corée du Sud",
+               "ja" : "大韓民国",
+               "pt-BR" : "Coréia, República da",
+               "ru" : "Южная Корея",
+               "zh-CN" : "韩国"
+            }
+         }
+      }
+   },
+   {
+      "2001:220::2:0:0/95" : {
+         "continent" : {
+            "code" : "AS",
+            "geoname_id" : 6255147,
+            "names" : {
+               "de" : "Asien",
+               "en" : "Asia",
+               "es" : "Asia",
+               "fr" : "Asie",
+               "ja" : "アジア",
+               "pt-BR" : "Ásia",
+               "ru" : "Азия",
+               "zh-CN" : "亚洲"
+            }
+         },
+         "country" : {
+            "geoname_id" : 1835841,
+            "iso_code" : "KR",
+            "names" : {
+               "de" : "Republik Korea",
+               "en" : "South Korea",
+               "es" : "Corea, República de",
+               "fr" : "Corée du Sud",
+               "ja" : "大韓民国",
+               "pt-BR" : "Coréia, República da",
+               "ru" : "Южная Корея",
+               "zh-CN" : "韩国"
+            }
+         },
+         "registered_country" : {
+            "geoname_id" : 1835841,
+            "iso_code" : "KR",
+            "names" : {
+               "de" : "Republik Korea",
+               "en" : "South Korea",
+               "es" : "Corea, República de",
+               "fr" : "Corée du Sud",
+               "ja" : "大韓民国",
+               "pt-BR" : "Coréia, República da",
+               "ru" : "Южная Корея",
+               "zh-CN" : "韩国"
+            }
+         }
+      }
+   },
+   {
+      "2001:220::4:0:0/94" : {
+         "continent" : {
+            "code" : "AS",
+            "geoname_id" : 6255147,
+            "names" : {
+               "de" : "Asien",
+               "en" : "Asia",
+               "es" : "Asia",
+               "fr" : "Asie",
+               "ja" : "アジア",
+               "pt-BR" : "Ásia",
+               "ru" : "Азия",
+               "zh-CN" : "亚洲"
+            }
+         },
+         "country" : {
+            "geoname_id" : 1835841,
+            "iso_code" : "KR",
+            "names" : {
+               "de" : "Republik Korea",
+               "en" : "South Korea",
+               "es" : "Corea, República de",
+               "fr" : "Corée du Sud",
+               "ja" : "大韓民国",
+               "pt-BR" : "Coréia, República da",
+               "ru" : "Южная Корея",
+               "zh-CN" : "韩国"
+            }
+         },
+         "registered_country" : {
+            "geoname_id" : 1835841,
+            "iso_code" : "KR",
+            "names" : {
+               "de" : "Republik Korea",
+               "en" : "South Korea",
+               "es" : "Corea, República de",
+               "fr" : "Corée du Sud",
+               "ja" : "大韓民国",
+               "pt-BR" : "Coréia, República da",
+               "ru" : "Южная Корея",
+               "zh-CN" : "韩国"
+            }
+         }
+      }
+   },
+   {
+      "2001:220::8:0:0/93" : {
+         "continent" : {
+            "code" : "AS",
+            "geoname_id" : 6255147,
+            "names" : {
+               "de" : "Asien",
+               "en" : "Asia",
+               "es" : "Asia",
+               "fr" : "Asie",
+               "ja" : "アジア",
+               "pt-BR" : "Ásia",
+               "ru" : "Азия",
+               "zh-CN" : "亚洲"
+            }
+         },
+         "country" : {
+            "geoname_id" : 1835841,
+            "iso_code" : "KR",
+            "names" : {
+               "de" : "Republik Korea",
+               "en" : "South Korea",
+               "es" : "Corea, República de",
+               "fr" : "Corée du Sud",
+               "ja" : "大韓民国",
+               "pt-BR" : "Coréia, República da",
+               "ru" : "Южная Корея",
+               "zh-CN" : "韩国"
+            }
+         },
+         "registered_country" : {
+            "geoname_id" : 1835841,
+            "iso_code" : "KR",
+            "names" : {
+               "de" : "Republik Korea",
+               "en" : "South Korea",
+               "es" : "Corea, República de",
+               "fr" : "Corée du Sud",
+               "ja" : "大韓民国",
+               "pt-BR" : "Coréia, República da",
+               "ru" : "Южная Корея",
+               "zh-CN" : "韩国"
+            }
+         }
+      }
+   },
+   {
+      "2001:220::10:0:0/92" : {
+         "continent" : {
+            "code" : "AS",
+            "geoname_id" : 6255147,
+            "names" : {
+               "de" : "Asien",
+               "en" : "Asia",
+               "es" : "Asia",
+               "fr" : "Asie",
+               "ja" : "アジア",
+               "pt-BR" : "Ásia",
+               "ru" : "Азия",
+               "zh-CN" : "亚洲"
+            }
+         },
+         "country" : {
+            "geoname_id" : 1835841,
+            "iso_code" : "KR",
+            "names" : {
+               "de" : "Republik Korea",
+               "en" : "South Korea",
+               "es" : "Corea, República de",
+               "fr" : "Corée du Sud",
+               "ja" : "大韓民国",
+               "pt-BR" : "Coréia, República da",
+               "ru" : "Южная Корея",
+               "zh-CN" : "韩国"
+            }
+         },
+         "registered_country" : {
+            "geoname_id" : 1835841,
+            "iso_code" : "KR",
+            "names" : {
+               "de" : "Republik Korea",
+               "en" : "South Korea",
+               "es" : "Corea, República de",
+               "fr" : "Corée du Sud",
+               "ja" : "大韓民国",
+               "pt-BR" : "Coréia, República da",
+               "ru" : "Южная Корея",
+               "zh-CN" : "韩国"
+            }
+         }
+      }
+   },
+   {
+      "2001:220::20:0:0/91" : {
+         "continent" : {
+            "code" : "AS",
+            "geoname_id" : 6255147,
+            "names" : {
+               "de" : "Asien",
+               "en" : "Asia",
+               "es" : "Asia",
+               "fr" : "Asie",
+               "ja" : "アジア",
+               "pt-BR" : "Ásia",
+               "ru" : "Азия",
+               "zh-CN" : "亚洲"
+            }
+         },
+         "country" : {
+            "geoname_id" : 1835841,
+            "iso_code" : "KR",
+            "names" : {
+               "de" : "Republik Korea",
+               "en" : "South Korea",
+               "es" : "Corea, República de",
+               "fr" : "Corée du Sud",
+               "ja" : "大韓民国",
+               "pt-BR" : "Coréia, República da",
+               "ru" : "Южная Корея",
+               "zh-CN" : "韩国"
+            }
+         },
+         "registered_country" : {
+            "geoname_id" : 1835841,
+            "iso_code" : "KR",
+            "names" : {
+               "de" : "Republik Korea",
+               "en" : "South Korea",
+               "es" : "Corea, República de",
+               "fr" : "Corée du Sud",
+               "ja" : "大韓民国",
+               "pt-BR" : "Coréia, República da",
+               "ru" : "Южная Корея",
+               "zh-CN" : "韩国"
+            }
+         }
+      }
+   },
+   {
+      "2001:220::40:0:0/90" : {
+         "continent" : {
+            "code" : "AS",
+            "geoname_id" : 6255147,
+            "names" : {
+               "de" : "Asien",
+               "en" : "Asia",
+               "es" : "Asia",
+               "fr" : "Asie",
+               "ja" : "アジア",
+               "pt-BR" : "Ásia",
+               "ru" : "Азия",
+               "zh-CN" : "亚洲"
+            }
+         },
+         "country" : {
+            "geoname_id" : 1835841,
+            "iso_code" : "KR",
+            "names" : {
+               "de" : "Republik Korea",
+               "en" : "South Korea",
+               "es" : "Corea, República de",
+               "fr" : "Corée du Sud",
+               "ja" : "大韓民国",
+               "pt-BR" : "Coréia, República da",
+               "ru" : "Южная Корея",
+               "zh-CN" : "韩国"
+            }
+         },
+         "registered_country" : {
+            "geoname_id" : 1835841,
+            "iso_code" : "KR",
+            "names" : {
+               "de" : "Republik Korea",
+               "en" : "South Korea",
+               "es" : "Corea, República de",
+               "fr" : "Corée du Sud",
+               "ja" : "大韓民国",
+               "pt-BR" : "Coréia, República da",
+               "ru" : "Южная Корея",
+               "zh-CN" : "韩国"
+            }
+         }
+      }
+   },
+   {
+      "2001:220::80:0:0/89" : {
+         "continent" : {
+            "code" : "AS",
+            "geoname_id" : 6255147,
+            "names" : {
+               "de" : "Asien",
+               "en" : "Asia",
+               "es" : "Asia",
+               "fr" : "Asie",
+               "ja" : "アジア",
+               "pt-BR" : "Ásia",
+               "ru" : "Азия",
+               "zh-CN" : "亚洲"
+            }
+         },
+         "country" : {
+            "geoname_id" : 1835841,
+            "iso_code" : "KR",
+            "names" : {
+               "de" : "Republik Korea",
+               "en" : "South Korea",
+               "es" : "Corea, República de",
+               "fr" : "Corée du Sud",
+               "ja" : "大韓民国",
+               "pt-BR" : "Coréia, República da",
+               "ru" : "Южная Корея",
+               "zh-CN" : "韩国"
+            }
+         },
+         "registered_country" : {
+            "geoname_id" : 1835841,
+            "iso_code" : "KR",
+            "names" : {
+               "de" : "Republik Korea",
+               "en" : "South Korea",
+               "es" : "Corea, República de",
+               "fr" : "Corée du Sud",
+               "ja" : "大韓民国",
+               "pt-BR" : "Coréia, República da",
+               "ru" : "Южная Корея",
+               "zh-CN" : "韩国"
+            }
+         }
+      }
+   },
+   {
+      "2001:220::100:0:0/88" : {
+         "continent" : {
+            "code" : "AS",
+            "geoname_id" : 6255147,
+            "names" : {
+               "de" : "Asien",
+               "en" : "Asia",
+               "es" : "Asia",
+               "fr" : "Asie",
+               "ja" : "アジア",
+               "pt-BR" : "Ásia",
+               "ru" : "Азия",
+               "zh-CN" : "亚洲"
+            }
+         },
+         "country" : {
+            "geoname_id" : 1835841,
+            "iso_code" : "KR",
+            "names" : {
+               "de" : "Republik Korea",
+               "en" : "South Korea",
+               "es" : "Corea, República de",
+               "fr" : "Corée du Sud",
+               "ja" : "大韓民国",
+               "pt-BR" : "Coréia, República da",
+               "ru" : "Южная Корея",
+               "zh-CN" : "韩国"
+            }
+         },
+         "registered_country" : {
+            "geoname_id" : 1835841,
+            "iso_code" : "KR",
+            "names" : {
+               "de" : "Republik Korea",
+               "en" : "South Korea",
+               "es" : "Corea, República de",
+               "fr" : "Corée du Sud",
+               "ja" : "大韓民国",
+               "pt-BR" : "Coréia, República da",
+               "ru" : "Южная Корея",
+               "zh-CN" : "韩国"
+            }
+         }
+      }
+   },
+   {
+      "2001:220::200:0:0/87" : {
+         "continent" : {
+            "code" : "AS",
+            "geoname_id" : 6255147,
+            "names" : {
+               "de" : "Asien",
+               "en" : "Asia",
+               "es" : "Asia",
+               "fr" : "Asie",
+               "ja" : "アジア",
+               "pt-BR" : "Ásia",
+               "ru" : "Азия",
+               "zh-CN" : "亚洲"
+            }
+         },
+         "country" : {
+            "geoname_id" : 1835841,
+            "iso_code" : "KR",
+            "names" : {
+               "de" : "Republik Korea",
+               "en" : "South Korea",
+               "es" : "Corea, República de",
+               "fr" : "Corée du Sud",
+               "ja" : "大韓民国",
+               "pt-BR" : "Coréia, República da",
+               "ru" : "Южная Корея",
+               "zh-CN" : "韩国"
+            }
+         },
+         "registered_country" : {
+            "geoname_id" : 1835841,
+            "iso_code" : "KR",
+            "names" : {
+               "de" : "Republik Korea",
+               "en" : "South Korea",
+               "es" : "Corea, República de",
+               "fr" : "Corée du Sud",
+               "ja" : "大韓民国",
+               "pt-BR" : "Coréia, República da",
+               "ru" : "Южная Корея",
+               "zh-CN" : "韩国"
+            }
+         }
+      }
+   },
+   {
+      "2001:220::400:0:0/86" : {
+         "continent" : {
+            "code" : "AS",
+            "geoname_id" : 6255147,
+            "names" : {
+               "de" : "Asien",
+               "en" : "Asia",
+               "es" : "Asia",
+               "fr" : "Asie",
+               "ja" : "アジア",
+               "pt-BR" : "Ásia",
+               "ru" : "Азия",
+               "zh-CN" : "亚洲"
+            }
+         },
+         "country" : {
+            "geoname_id" : 1835841,
+            "iso_code" : "KR",
+            "names" : {
+               "de" : "Republik Korea",
+               "en" : "South Korea",
+               "es" : "Corea, República de",
+               "fr" : "Corée du Sud",
+               "ja" : "大韓民国",
+               "pt-BR" : "Coréia, República da",
+               "ru" : "Южная Корея",
+               "zh-CN" : "韩国"
+            }
+         },
+         "registered_country" : {
+            "geoname_id" : 1835841,
+            "iso_code" : "KR",
+            "names" : {
+               "de" : "Republik Korea",
+               "en" : "South Korea",
+               "es" : "Corea, República de",
+               "fr" : "Corée du Sud",
+               "ja" : "大韓民国",
+               "pt-BR" : "Coréia, República da",
+               "ru" : "Южная Корея",
+               "zh-CN" : "韩国"
+            }
+         }
+      }
+   },
+   {
+      "2001:220::800:0:0/85" : {
+         "continent" : {
+            "code" : "AS",
+            "geoname_id" : 6255147,
+            "names" : {
+               "de" : "Asien",
+               "en" : "Asia",
+               "es" : "Asia",
+               "fr" : "Asie",
+               "ja" : "アジア",
+               "pt-BR" : "Ásia",
+               "ru" : "Азия",
+               "zh-CN" : "亚洲"
+            }
+         },
+         "country" : {
+            "geoname_id" : 1835841,
+            "iso_code" : "KR",
+            "names" : {
+               "de" : "Republik Korea",
+               "en" : "South Korea",
+               "es" : "Corea, República de",
+               "fr" : "Corée du Sud",
+               "ja" : "大韓民国",
+               "pt-BR" : "Coréia, República da",
+               "ru" : "Южная Корея",
+               "zh-CN" : "韩国"
+            }
+         },
+         "registered_country" : {
+            "geoname_id" : 1835841,
+            "iso_code" : "KR",
+            "names" : {
+               "de" : "Republik Korea",
+               "en" : "South Korea",
+               "es" : "Corea, República de",
+               "fr" : "Corée du Sud",
+               "ja" : "大韓民国",
+               "pt-BR" : "Coréia, República da",
+               "ru" : "Южная Корея",
+               "zh-CN" : "韩国"
+            }
+         }
+      }
+   },
+   {
+      "2001:220::1000:0:0/84" : {
+         "continent" : {
+            "code" : "AS",
+            "geoname_id" : 6255147,
+            "names" : {
+               "de" : "Asien",
+               "en" : "Asia",
+               "es" : "Asia",
+               "fr" : "Asie",
+               "ja" : "アジア",
+               "pt-BR" : "Ásia",
+               "ru" : "Азия",
+               "zh-CN" : "亚洲"
+            }
+         },
+         "country" : {
+            "geoname_id" : 1835841,
+            "iso_code" : "KR",
+            "names" : {
+               "de" : "Republik Korea",
+               "en" : "South Korea",
+               "es" : "Corea, República de",
+               "fr" : "Corée du Sud",
+               "ja" : "大韓民国",
+               "pt-BR" : "Coréia, República da",
+               "ru" : "Южная Корея",
+               "zh-CN" : "韩国"
+            }
+         },
+         "registered_country" : {
+            "geoname_id" : 1835841,
+            "iso_code" : "KR",
+            "names" : {
+               "de" : "Republik Korea",
+               "en" : "South Korea",
+               "es" : "Corea, República de",
+               "fr" : "Corée du Sud",
+               "ja" : "大韓民国",
+               "pt-BR" : "Coréia, República da",
+               "ru" : "Южная Корея",
+               "zh-CN" : "韩国"
+            }
+         }
+      }
+   },
+   {
+      "2001:220::2000:0:0/83" : {
+         "continent" : {
+            "code" : "AS",
+            "geoname_id" : 6255147,
+            "names" : {
+               "de" : "Asien",
+               "en" : "Asia",
+               "es" : "Asia",
+               "fr" : "Asie",
+               "ja" : "アジア",
+               "pt-BR" : "Ásia",
+               "ru" : "Азия",
+               "zh-CN" : "亚洲"
+            }
+         },
+         "country" : {
+            "geoname_id" : 1835841,
+            "iso_code" : "KR",
+            "names" : {
+               "de" : "Republik Korea",
+               "en" : "South Korea",
+               "es" : "Corea, República de",
+               "fr" : "Corée du Sud",
+               "ja" : "大韓民国",
+               "pt-BR" : "Coréia, República da",
+               "ru" : "Южная Корея",
+               "zh-CN" : "韩国"
+            }
+         },
+         "registered_country" : {
+            "geoname_id" : 1835841,
+            "iso_code" : "KR",
+            "names" : {
+               "de" : "Republik Korea",
+               "en" : "South Korea",
+               "es" : "Corea, República de",
+               "fr" : "Corée du Sud",
+               "ja" : "大韓民国",
+               "pt-BR" : "Coréia, República da",
+               "ru" : "Южная Корея",
+               "zh-CN" : "韩国"
+            }
+         }
+      }
+   },
+   {
+      "2001:220::4000:0:0/82" : {
+         "continent" : {
+            "code" : "AS",
+            "geoname_id" : 6255147,
+            "names" : {
+               "de" : "Asien",
+               "en" : "Asia",
+               "es" : "Asia",
+               "fr" : "Asie",
+               "ja" : "アジア",
+               "pt-BR" : "Ásia",
+               "ru" : "Азия",
+               "zh-CN" : "亚洲"
+            }
+         },
+         "country" : {
+            "geoname_id" : 1835841,
+            "iso_code" : "KR",
+            "names" : {
+               "de" : "Republik Korea",
+               "en" : "South Korea",
+               "es" : "Corea, República de",
+               "fr" : "Corée du Sud",
+               "ja" : "大韓民国",
+               "pt-BR" : "Coréia, República da",
+               "ru" : "Южная Корея",
+               "zh-CN" : "韩国"
+            }
+         },
+         "registered_country" : {
+            "geoname_id" : 1835841,
+            "iso_code" : "KR",
+            "names" : {
+               "de" : "Republik Korea",
+               "en" : "South Korea",
+               "es" : "Corea, República de",
+               "fr" : "Corée du Sud",
+               "ja" : "大韓民国",
+               "pt-BR" : "Coréia, República da",
+               "ru" : "Южная Корея",
+               "zh-CN" : "韩国"
+            }
+         }
+      }
+   },
+   {
+      "2001:220::8000:0:0/81" : {
+         "continent" : {
+            "code" : "AS",
+            "geoname_id" : 6255147,
+            "names" : {
+               "de" : "Asien",
+               "en" : "Asia",
+               "es" : "Asia",
+               "fr" : "Asie",
+               "ja" : "アジア",
+               "pt-BR" : "Ásia",
+               "ru" : "Азия",
+               "zh-CN" : "亚洲"
+            }
+         },
+         "country" : {
+            "geoname_id" : 1835841,
+            "iso_code" : "KR",
+            "names" : {
+               "de" : "Republik Korea",
+               "en" : "South Korea",
+               "es" : "Corea, República de",
+               "fr" : "Corée du Sud",
+               "ja" : "大韓民国",
+               "pt-BR" : "Coréia, República da",
+               "ru" : "Южная Корея",
+               "zh-CN" : "韩国"
+            }
+         },
+         "registered_country" : {
+            "geoname_id" : 1835841,
+            "iso_code" : "KR",
+            "names" : {
+               "de" : "Republik Korea",
+               "en" : "South Korea",
+               "es" : "Corea, República de",
+               "fr" : "Corée du Sud",
+               "ja" : "大韓民国",
+               "pt-BR" : "Coréia, República da",
+               "ru" : "Южная Корея",
+               "zh-CN" : "韩国"
+            }
+         }
+      }
+   },
+   {
+      "2001:220:0:0:1::/80" : {
+         "continent" : {
+            "code" : "AS",
+            "geoname_id" : 6255147,
+            "names" : {
+               "de" : "Asien",
+               "en" : "Asia",
+               "es" : "Asia",
+               "fr" : "Asie",
+               "ja" : "アジア",
+               "pt-BR" : "Ásia",
+               "ru" : "Азия",
+               "zh-CN" : "亚洲"
+            }
+         },
+         "country" : {
+            "geoname_id" : 1835841,
+            "iso_code" : "KR",
+            "names" : {
+               "de" : "Republik Korea",
+               "en" : "South Korea",
+               "es" : "Corea, República de",
+               "fr" : "Corée du Sud",
+               "ja" : "大韓民国",
+               "pt-BR" : "Coréia, República da",
+               "ru" : "Южная Корея",
+               "zh-CN" : "韩国"
+            }
+         },
+         "registered_country" : {
+            "geoname_id" : 1835841,
+            "iso_code" : "KR",
+            "names" : {
+               "de" : "Republik Korea",
+               "en" : "South Korea",
+               "es" : "Corea, República de",
+               "fr" : "Corée du Sud",
+               "ja" : "大韓民国",
+               "pt-BR" : "Coréia, República da",
+               "ru" : "Южная Корея",
+               "zh-CN" : "韩国"
+            }
+         }
+      }
+   },
+   {
+      "2001:220:0:0:2::/79" : {
+         "continent" : {
+            "code" : "AS",
+            "geoname_id" : 6255147,
+            "names" : {
+               "de" : "Asien",
+               "en" : "Asia",
+               "es" : "Asia",
+               "fr" : "Asie",
+               "ja" : "アジア",
+               "pt-BR" : "Ásia",
+               "ru" : "Азия",
+               "zh-CN" : "亚洲"
+            }
+         },
+         "country" : {
+            "geoname_id" : 1835841,
+            "iso_code" : "KR",
+            "names" : {
+               "de" : "Republik Korea",
+               "en" : "South Korea",
+               "es" : "Corea, República de",
+               "fr" : "Corée du Sud",
+               "ja" : "大韓民国",
+               "pt-BR" : "Coréia, República da",
+               "ru" : "Южная Корея",
+               "zh-CN" : "韩国"
+            }
+         },
+         "registered_country" : {
+            "geoname_id" : 1835841,
+            "iso_code" : "KR",
+            "names" : {
+               "de" : "Republik Korea",
+               "en" : "South Korea",
+               "es" : "Corea, República de",
+               "fr" : "Corée du Sud",
+               "ja" : "大韓民国",
+               "pt-BR" : "Coréia, República da",
+               "ru" : "Южная Корея",
+               "zh-CN" : "韩国"
+            }
+         }
+      }
+   },
+   {
+      "2001:220:0:0:4::/78" : {
+         "continent" : {
+            "code" : "AS",
+            "geoname_id" : 6255147,
+            "names" : {
+               "de" : "Asien",
+               "en" : "Asia",
+               "es" : "Asia",
+               "fr" : "Asie",
+               "ja" : "アジア",
+               "pt-BR" : "Ásia",
+               "ru" : "Азия",
+               "zh-CN" : "亚洲"
+            }
+         },
+         "country" : {
+            "geoname_id" : 1835841,
+            "iso_code" : "KR",
+            "names" : {
+               "de" : "Republik Korea",
+               "en" : "South Korea",
+               "es" : "Corea, República de",
+               "fr" : "Corée du Sud",
+               "ja" : "大韓民国",
+               "pt-BR" : "Coréia, República da",
+               "ru" : "Южная Корея",
+               "zh-CN" : "韩国"
+            }
+         },
+         "registered_country" : {
+            "geoname_id" : 1835841,
+            "iso_code" : "KR",
+            "names" : {
+               "de" : "Republik Korea",
+               "en" : "South Korea",
+               "es" : "Corea, República de",
+               "fr" : "Corée du Sud",
+               "ja" : "大韓民国",
+               "pt-BR" : "Coréia, República da",
+               "ru" : "Южная Корея",
+               "zh-CN" : "韩国"
+            }
+         }
+      }
+   },
+   {
+      "2001:220:0:0:8::/77" : {
+         "continent" : {
+            "code" : "AS",
+            "geoname_id" : 6255147,
+            "names" : {
+               "de" : "Asien",
+               "en" : "Asia",
+               "es" : "Asia",
+               "fr" : "Asie",
+               "ja" : "アジア",
+               "pt-BR" : "Ásia",
+               "ru" : "Азия",
+               "zh-CN" : "亚洲"
+            }
+         },
+         "country" : {
+            "geoname_id" : 1835841,
+            "iso_code" : "KR",
+            "names" : {
+               "de" : "Republik Korea",
+               "en" : "South Korea",
+               "es" : "Corea, República de",
+               "fr" : "Corée du Sud",
+               "ja" : "大韓民国",
+               "pt-BR" : "Coréia, República da",
+               "ru" : "Южная Корея",
+               "zh-CN" : "韩国"
+            }
+         },
+         "registered_country" : {
+            "geoname_id" : 1835841,
+            "iso_code" : "KR",
+            "names" : {
+               "de" : "Republik Korea",
+               "en" : "South Korea",
+               "es" : "Corea, República de",
+               "fr" : "Corée du Sud",
+               "ja" : "大韓民国",
+               "pt-BR" : "Coréia, República da",
+               "ru" : "Южная Корея",
+               "zh-CN" : "韩国"
+            }
+         }
+      }
+   },
+   {
+      "2001:220:0:0:10::/76" : {
+         "continent" : {
+            "code" : "AS",
+            "geoname_id" : 6255147,
+            "names" : {
+               "de" : "Asien",
+               "en" : "Asia",
+               "es" : "Asia",
+               "fr" : "Asie",
+               "ja" : "アジア",
+               "pt-BR" : "Ásia",
+               "ru" : "Азия",
+               "zh-CN" : "亚洲"
+            }
+         },
+         "country" : {
+            "geoname_id" : 1835841,
+            "iso_code" : "KR",
+            "names" : {
+               "de" : "Republik Korea",
+               "en" : "South Korea",
+               "es" : "Corea, República de",
+               "fr" : "Corée du Sud",
+               "ja" : "大韓民国",
+               "pt-BR" : "Coréia, República da",
+               "ru" : "Южная Корея",
+               "zh-CN" : "韩国"
+            }
+         },
+         "registered_country" : {
+            "geoname_id" : 1835841,
+            "iso_code" : "KR",
+            "names" : {
+               "de" : "Republik Korea",
+               "en" : "South Korea",
+               "es" : "Corea, República de",
+               "fr" : "Corée du Sud",
+               "ja" : "大韓民国",
+               "pt-BR" : "Coréia, República da",
+               "ru" : "Южная Корея",
+               "zh-CN" : "韩国"
+            }
+         }
+      }
+   },
+   {
+      "2001:220:0:0:20::/75" : {
+         "continent" : {
+            "code" : "AS",
+            "geoname_id" : 6255147,
+            "names" : {
+               "de" : "Asien",
+               "en" : "Asia",
+               "es" : "Asia",
+               "fr" : "Asie",
+               "ja" : "アジア",
+               "pt-BR" : "Ásia",
+               "ru" : "Азия",
+               "zh-CN" : "亚洲"
+            }
+         },
+         "country" : {
+            "geoname_id" : 1835841,
+            "iso_code" : "KR",
+            "names" : {
+               "de" : "Republik Korea",
+               "en" : "South Korea",
+               "es" : "Corea, República de",
+               "fr" : "Corée du Sud",
+               "ja" : "大韓民国",
+               "pt-BR" : "Coréia, República da",
+               "ru" : "Южная Корея",
+               "zh-CN" : "韩国"
+            }
+         },
+         "registered_country" : {
+            "geoname_id" : 1835841,
+            "iso_code" : "KR",
+            "names" : {
+               "de" : "Republik Korea",
+               "en" : "South Korea",
+               "es" : "Corea, República de",
+               "fr" : "Corée du Sud",
+               "ja" : "大韓民国",
+               "pt-BR" : "Coréia, República da",
+               "ru" : "Южная Корея",
+               "zh-CN" : "韩国"
+            }
+         }
+      }
+   },
+   {
+      "2001:220:0:0:40::/74" : {
+         "continent" : {
+            "code" : "AS",
+            "geoname_id" : 6255147,
+            "names" : {
+               "de" : "Asien",
+               "en" : "Asia",
+               "es" : "Asia",
+               "fr" : "Asie",
+               "ja" : "アジア",
+               "pt-BR" : "Ásia",
+               "ru" : "Азия",
+               "zh-CN" : "亚洲"
+            }
+         },
+         "country" : {
+            "geoname_id" : 1835841,
+            "iso_code" : "KR",
+            "names" : {
+               "de" : "Republik Korea",
+               "en" : "South Korea",
+               "es" : "Corea, República de",
+               "fr" : "Corée du Sud",
+               "ja" : "大韓民国",
+               "pt-BR" : "Coréia, República da",
+               "ru" : "Южная Корея",
+               "zh-CN" : "韩国"
+            }
+         },
+         "registered_country" : {
+            "geoname_id" : 1835841,
+            "iso_code" : "KR",
+            "names" : {
+               "de" : "Republik Korea",
+               "en" : "South Korea",
+               "es" : "Corea, República de",
+               "fr" : "Corée du Sud",
+               "ja" : "大韓民国",
+               "pt-BR" : "Coréia, República da",
+               "ru" : "Южная Корея",
+               "zh-CN" : "韩国"
+            }
+         }
+      }
+   },
+   {
+      "2001:220:0:0:80::/73" : {
+         "continent" : {
+            "code" : "AS",
+            "geoname_id" : 6255147,
+            "names" : {
+               "de" : "Asien",
+               "en" : "Asia",
+               "es" : "Asia",
+               "fr" : "Asie",
+               "ja" : "アジア",
+               "pt-BR" : "Ásia",
+               "ru" : "Азия",
+               "zh-CN" : "亚洲"
+            }
+         },
+         "country" : {
+            "geoname_id" : 1835841,
+            "iso_code" : "KR",
+            "names" : {
+               "de" : "Republik Korea",
+               "en" : "South Korea",
+               "es" : "Corea, República de",
+               "fr" : "Corée du Sud",
+               "ja" : "大韓民国",
+               "pt-BR" : "Coréia, República da",
+               "ru" : "Южная Корея",
+               "zh-CN" : "韩国"
+            }
+         },
+         "registered_country" : {
+            "geoname_id" : 1835841,
+            "iso_code" : "KR",
+            "names" : {
+               "de" : "Republik Korea",
+               "en" : "South Korea",
+               "es" : "Corea, República de",
+               "fr" : "Corée du Sud",
+               "ja" : "大韓民国",
+               "pt-BR" : "Coréia, República da",
+               "ru" : "Южная Корея",
+               "zh-CN" : "韩国"
+            }
+         }
+      }
+   },
+   {
+      "2001:220:0:0:100::/72" : {
+         "continent" : {
+            "code" : "AS",
+            "geoname_id" : 6255147,
+            "names" : {
+               "de" : "Asien",
+               "en" : "Asia",
+               "es" : "Asia",
+               "fr" : "Asie",
+               "ja" : "アジア",
+               "pt-BR" : "Ásia",
+               "ru" : "Азия",
+               "zh-CN" : "亚洲"
+            }
+         },
+         "country" : {
+            "geoname_id" : 1835841,
+            "iso_code" : "KR",
+            "names" : {
+               "de" : "Republik Korea",
+               "en" : "South Korea",
+               "es" : "Corea, República de",
+               "fr" : "Corée du Sud",
+               "ja" : "大韓民国",
+               "pt-BR" : "Coréia, República da",
+               "ru" : "Южная Корея",
+               "zh-CN" : "韩国"
+            }
+         },
+         "registered_country" : {
+            "geoname_id" : 1835841,
+            "iso_code" : "KR",
+            "names" : {
+               "de" : "Republik Korea",
+               "en" : "South Korea",
+               "es" : "Corea, República de",
+               "fr" : "Corée du Sud",
+               "ja" : "大韓民国",
+               "pt-BR" : "Coréia, República da",
+               "ru" : "Южная Корея",
+               "zh-CN" : "韩国"
+            }
+         }
+      }
+   },
+   {
+      "2001:220:0:0:200::/71" : {
+         "continent" : {
+            "code" : "AS",
+            "geoname_id" : 6255147,
+            "names" : {
+               "de" : "Asien",
+               "en" : "Asia",
+               "es" : "Asia",
+               "fr" : "Asie",
+               "ja" : "アジア",
+               "pt-BR" : "Ásia",
+               "ru" : "Азия",
+               "zh-CN" : "亚洲"
+            }
+         },
+         "country" : {
+            "geoname_id" : 1835841,
+            "iso_code" : "KR",
+            "names" : {
+               "de" : "Republik Korea",
+               "en" : "South Korea",
+               "es" : "Corea, República de",
+               "fr" : "Corée du Sud",
+               "ja" : "大韓民国",
+               "pt-BR" : "Coréia, República da",
+               "ru" : "Южная Корея",
+               "zh-CN" : "韩国"
+            }
+         },
+         "registered_country" : {
+            "geoname_id" : 1835841,
+            "iso_code" : "KR",
+            "names" : {
+               "de" : "Republik Korea",
+               "en" : "South Korea",
+               "es" : "Corea, República de",
+               "fr" : "Corée du Sud",
+               "ja" : "大韓民国",
+               "pt-BR" : "Coréia, República da",
+               "ru" : "Южная Корея",
+               "zh-CN" : "韩国"
+            }
+         }
+      }
+   },
+   {
+      "2001:220:0:0:400::/70" : {
+         "continent" : {
+            "code" : "AS",
+            "geoname_id" : 6255147,
+            "names" : {
+               "de" : "Asien",
+               "en" : "Asia",
+               "es" : "Asia",
+               "fr" : "Asie",
+               "ja" : "アジア",
+               "pt-BR" : "Ásia",
+               "ru" : "Азия",
+               "zh-CN" : "亚洲"
+            }
+         },
+         "country" : {
+            "geoname_id" : 1835841,
+            "iso_code" : "KR",
+            "names" : {
+               "de" : "Republik Korea",
+               "en" : "South Korea",
+               "es" : "Corea, República de",
+               "fr" : "Corée du Sud",
+               "ja" : "大韓民国",
+               "pt-BR" : "Coréia, República da",
+               "ru" : "Южная Корея",
+               "zh-CN" : "韩国"
+            }
+         },
+         "registered_country" : {
+            "geoname_id" : 1835841,
+            "iso_code" : "KR",
+            "names" : {
+               "de" : "Republik Korea",
+               "en" : "South Korea",
+               "es" : "Corea, República de",
+               "fr" : "Corée du Sud",
+               "ja" : "大韓民国",
+               "pt-BR" : "Coréia, República da",
+               "ru" : "Южная Корея",
+               "zh-CN" : "韩国"
+            }
+         }
+      }
+   },
+   {
+      "2001:220:0:0:800::/69" : {
+         "continent" : {
+            "code" : "AS",
+            "geoname_id" : 6255147,
+            "names" : {
+               "de" : "Asien",
+               "en" : "Asia",
+               "es" : "Asia",
+               "fr" : "Asie",
+               "ja" : "アジア",
+               "pt-BR" : "Ásia",
+               "ru" : "Азия",
+               "zh-CN" : "亚洲"
+            }
+         },
+         "country" : {
+            "geoname_id" : 1835841,
+            "iso_code" : "KR",
+            "names" : {
+               "de" : "Republik Korea",
+               "en" : "South Korea",
+               "es" : "Corea, República de",
+               "fr" : "Corée du Sud",
+               "ja" : "大韓民国",
+               "pt-BR" : "Coréia, República da",
+               "ru" : "Южная Корея",
+               "zh-CN" : "韩国"
+            }
+         },
+         "registered_country" : {
+            "geoname_id" : 1835841,
+            "iso_code" : "KR",
+            "names" : {
+               "de" : "Republik Korea",
+               "en" : "South Korea",
+               "es" : "Corea, República de",
+               "fr" : "Corée du Sud",
+               "ja" : "大韓民国",
+               "pt-BR" : "Coréia, República da",
+               "ru" : "Южная Корея",
+               "zh-CN" : "韩国"
+            }
+         }
+      }
+   },
+   {
+      "2001:220:0:0:1000::/68" : {
+         "continent" : {
+            "code" : "AS",
+            "geoname_id" : 6255147,
+            "names" : {
+               "de" : "Asien",
+               "en" : "Asia",
+               "es" : "Asia",
+               "fr" : "Asie",
+               "ja" : "アジア",
+               "pt-BR" : "Ásia",
+               "ru" : "Азия",
+               "zh-CN" : "亚洲"
+            }
+         },
+         "country" : {
+            "geoname_id" : 1835841,
+            "iso_code" : "KR",
+            "names" : {
+               "de" : "Republik Korea",
+               "en" : "South Korea",
+               "es" : "Corea, República de",
+               "fr" : "Corée du Sud",
+               "ja" : "大韓民国",
+               "pt-BR" : "Coréia, República da",
+               "ru" : "Южная Корея",
+               "zh-CN" : "韩国"
+            }
+         },
+         "registered_country" : {
+            "geoname_id" : 1835841,
+            "iso_code" : "KR",
+            "names" : {
+               "de" : "Republik Korea",
+               "en" : "South Korea",
+               "es" : "Corea, República de",
+               "fr" : "Corée du Sud",
+               "ja" : "大韓民国",
+               "pt-BR" : "Coréia, República da",
+               "ru" : "Южная Корея",
+               "zh-CN" : "韩国"
+            }
+         }
+      }
+   },
+   {
+      "2001:220:0:0:2000::/67" : {
+         "continent" : {
+            "code" : "AS",
+            "geoname_id" : 6255147,
+            "names" : {
+               "de" : "Asien",
+               "en" : "Asia",
+               "es" : "Asia",
+               "fr" : "Asie",
+               "ja" : "アジア",
+               "pt-BR" : "Ásia",
+               "ru" : "Азия",
+               "zh-CN" : "亚洲"
+            }
+         },
+         "country" : {
+            "geoname_id" : 1835841,
+            "iso_code" : "KR",
+            "names" : {
+               "de" : "Republik Korea",
+               "en" : "South Korea",
+               "es" : "Corea, República de",
+               "fr" : "Corée du Sud",
+               "ja" : "大韓民国",
+               "pt-BR" : "Coréia, República da",
+               "ru" : "Южная Корея",
+               "zh-CN" : "韩国"
+            }
+         },
+         "registered_country" : {
+            "geoname_id" : 1835841,
+            "iso_code" : "KR",
+            "names" : {
+               "de" : "Republik Korea",
+               "en" : "South Korea",
+               "es" : "Corea, República de",
+               "fr" : "Corée du Sud",
+               "ja" : "大韓民国",
+               "pt-BR" : "Coréia, República da",
+               "ru" : "Южная Корея",
+               "zh-CN" : "韩国"
+            }
+         }
+      }
+   },
+   {
+      "2001:220:0:0:4000::/66" : {
+         "continent" : {
+            "code" : "AS",
+            "geoname_id" : 6255147,
+            "names" : {
+               "de" : "Asien",
+               "en" : "Asia",
+               "es" : "Asia",
+               "fr" : "Asie",
+               "ja" : "アジア",
+               "pt-BR" : "Ásia",
+               "ru" : "Азия",
+               "zh-CN" : "亚洲"
+            }
+         },
+         "country" : {
+            "geoname_id" : 1835841,
+            "iso_code" : "KR",
+            "names" : {
+               "de" : "Republik Korea",
+               "en" : "South Korea",
+               "es" : "Corea, República de",
+               "fr" : "Corée du Sud",
+               "ja" : "大韓民国",
+               "pt-BR" : "Coréia, República da",
+               "ru" : "Южная Корея",
+               "zh-CN" : "韩国"
+            }
+         },
+         "registered_country" : {
+            "geoname_id" : 1835841,
+            "iso_code" : "KR",
+            "names" : {
+               "de" : "Republik Korea",
+               "en" : "South Korea",
+               "es" : "Corea, República de",
+               "fr" : "Corée du Sud",
+               "ja" : "大韓民国",
+               "pt-BR" : "Coréia, República da",
+               "ru" : "Южная Корея",
+               "zh-CN" : "韩国"
+            }
+         }
+      }
+   },
+   {
+      "2001:220:0:0:8000::/65" : {
+         "continent" : {
+            "code" : "AS",
+            "geoname_id" : 6255147,
+            "names" : {
+               "de" : "Asien",
+               "en" : "Asia",
+               "es" : "Asia",
+               "fr" : "Asie",
+               "ja" : "アジア",
+               "pt-BR" : "Ásia",
+               "ru" : "Азия",
+               "zh-CN" : "亚洲"
+            }
+         },
+         "country" : {
+            "geoname_id" : 1835841,
+            "iso_code" : "KR",
+            "names" : {
+               "de" : "Republik Korea",
+               "en" : "South Korea",
+               "es" : "Corea, República de",
+               "fr" : "Corée du Sud",
+               "ja" : "大韓民国",
+               "pt-BR" : "Coréia, República da",
+               "ru" : "Южная Корея",
+               "zh-CN" : "韩国"
+            }
+         },
+         "registered_country" : {
+            "geoname_id" : 1835841,
+            "iso_code" : "KR",
+            "names" : {
+               "de" : "Republik Korea",
+               "en" : "South Korea",
+               "es" : "Corea, República de",
+               "fr" : "Corée du Sud",
+               "ja" : "大韓民国",
+               "pt-BR" : "Coréia, República da",
+               "ru" : "Южная Корея",
+               "zh-CN" : "韩国"
+            }
+         }
+      }
+   },
+   {
+      "2001:220:0:1::/64" : {
+         "continent" : {
+            "code" : "AS",
+            "geoname_id" : 6255147,
+            "names" : {
+               "de" : "Asien",
+               "en" : "Asia",
+               "es" : "Asia",
+               "fr" : "Asie",
+               "ja" : "アジア",
+               "pt-BR" : "Ásia",
+               "ru" : "Азия",
+               "zh-CN" : "亚洲"
+            }
+         },
+         "country" : {
+            "geoname_id" : 1835841,
+            "iso_code" : "KR",
+            "names" : {
+               "de" : "Republik Korea",
+               "en" : "South Korea",
+               "es" : "Corea, República de",
+               "fr" : "Corée du Sud",
+               "ja" : "大韓民国",
+               "pt-BR" : "Coréia, República da",
+               "ru" : "Южная Корея",
+               "zh-CN" : "韩国"
+            }
+         },
+         "registered_country" : {
+            "geoname_id" : 1835841,
+            "iso_code" : "KR",
+            "names" : {
+               "de" : "Republik Korea",
+               "en" : "South Korea",
+               "es" : "Corea, República de",
+               "fr" : "Corée du Sud",
+               "ja" : "大韓民国",
+               "pt-BR" : "Coréia, República da",
+               "ru" : "Южная Корея",
+               "zh-CN" : "韩国"
+            }
+         }
+      }
+   },
+   {
+      "2001:220:0:2::/63" : {
+         "continent" : {
+            "code" : "AS",
+            "geoname_id" : 6255147,
+            "names" : {
+               "de" : "Asien",
+               "en" : "Asia",
+               "es" : "Asia",
+               "fr" : "Asie",
+               "ja" : "アジア",
+               "pt-BR" : "Ásia",
+               "ru" : "Азия",
+               "zh-CN" : "亚洲"
+            }
+         },
+         "country" : {
+            "geoname_id" : 1835841,
+            "iso_code" : "KR",
+            "names" : {
+               "de" : "Republik Korea",
+               "en" : "South Korea",
+               "es" : "Corea, República de",
+               "fr" : "Corée du Sud",
+               "ja" : "大韓民国",
+               "pt-BR" : "Coréia, República da",
+               "ru" : "Южная Корея",
+               "zh-CN" : "韩国"
+            }
+         },
+         "registered_country" : {
+            "geoname_id" : 1835841,
+            "iso_code" : "KR",
+            "names" : {
+               "de" : "Republik Korea",
+               "en" : "South Korea",
+               "es" : "Corea, República de",
+               "fr" : "Corée du Sud",
+               "ja" : "大韓民国",
+               "pt-BR" : "Coréia, República da",
+               "ru" : "Южная Корея",
+               "zh-CN" : "韩国"
+            }
+         }
+      }
+   },
+   {
+      "2001:220:0:4::/62" : {
+         "continent" : {
+            "code" : "AS",
+            "geoname_id" : 6255147,
+            "names" : {
+               "de" : "Asien",
+               "en" : "Asia",
+               "es" : "Asia",
+               "fr" : "Asie",
+               "ja" : "アジア",
+               "pt-BR" : "Ásia",
+               "ru" : "Азия",
+               "zh-CN" : "亚洲"
+            }
+         },
+         "country" : {
+            "geoname_id" : 1835841,
+            "iso_code" : "KR",
+            "names" : {
+               "de" : "Republik Korea",
+               "en" : "South Korea",
+               "es" : "Corea, República de",
+               "fr" : "Corée du Sud",
+               "ja" : "大韓民国",
+               "pt-BR" : "Coréia, República da",
+               "ru" : "Южная Корея",
+               "zh-CN" : "韩国"
+            }
+         },
+         "registered_country" : {
+            "geoname_id" : 1835841,
+            "iso_code" : "KR",
+            "names" : {
+               "de" : "Republik Korea",
+               "en" : "South Korea",
+               "es" : "Corea, República de",
+               "fr" : "Corée du Sud",
+               "ja" : "大韓民国",
+               "pt-BR" : "Coréia, República da",
+               "ru" : "Южная Корея",
+               "zh-CN" : "韩国"
+            }
+         }
+      }
+   },
+   {
+      "2001:220:0:8::/61" : {
+         "continent" : {
+            "code" : "AS",
+            "geoname_id" : 6255147,
+            "names" : {
+               "de" : "Asien",
+               "en" : "Asia",
+               "es" : "Asia",
+               "fr" : "Asie",
+               "ja" : "アジア",
+               "pt-BR" : "Ásia",
+               "ru" : "Азия",
+               "zh-CN" : "亚洲"
+            }
+         },
+         "country" : {
+            "geoname_id" : 1835841,
+            "iso_code" : "KR",
+            "names" : {
+               "de" : "Republik Korea",
+               "en" : "South Korea",
+               "es" : "Corea, República de",
+               "fr" : "Corée du Sud",
+               "ja" : "大韓民国",
+               "pt-BR" : "Coréia, República da",
+               "ru" : "Южная Корея",
+               "zh-CN" : "韩国"
+            }
+         },
+         "registered_country" : {
+            "geoname_id" : 1835841,
+            "iso_code" : "KR",
+            "names" : {
+               "de" : "Republik Korea",
+               "en" : "South Korea",
+               "es" : "Corea, República de",
+               "fr" : "Corée du Sud",
+               "ja" : "大韓民国",
+               "pt-BR" : "Coréia, República da",
+               "ru" : "Южная Корея",
+               "zh-CN" : "韩国"
+            }
+         }
+      }
+   },
+   {
+      "2001:220:0:10::/60" : {
+         "continent" : {
+            "code" : "AS",
+            "geoname_id" : 6255147,
+            "names" : {
+               "de" : "Asien",
+               "en" : "Asia",
+               "es" : "Asia",
+               "fr" : "Asie",
+               "ja" : "アジア",
+               "pt-BR" : "Ásia",
+               "ru" : "Азия",
+               "zh-CN" : "亚洲"
+            }
+         },
+         "country" : {
+            "geoname_id" : 1835841,
+            "iso_code" : "KR",
+            "names" : {
+               "de" : "Republik Korea",
+               "en" : "South Korea",
+               "es" : "Corea, República de",
+               "fr" : "Corée du Sud",
+               "ja" : "大韓民国",
+               "pt-BR" : "Coréia, República da",
+               "ru" : "Южная Корея",
+               "zh-CN" : "韩国"
+            }
+         },
+         "registered_country" : {
+            "geoname_id" : 1835841,
+            "iso_code" : "KR",
+            "names" : {
+               "de" : "Republik Korea",
+               "en" : "South Korea",
+               "es" : "Corea, República de",
+               "fr" : "Corée du Sud",
+               "ja" : "大韓民国",
+               "pt-BR" : "Coréia, República da",
+               "ru" : "Южная Корея",
+               "zh-CN" : "韩国"
+            }
+         }
+      }
+   },
+   {
+      "2001:220:0:20::/59" : {
+         "continent" : {
+            "code" : "AS",
+            "geoname_id" : 6255147,
+            "names" : {
+               "de" : "Asien",
+               "en" : "Asia",
+               "es" : "Asia",
+               "fr" : "Asie",
+               "ja" : "アジア",
+               "pt-BR" : "Ásia",
+               "ru" : "Азия",
+               "zh-CN" : "亚洲"
+            }
+         },
+         "country" : {
+            "geoname_id" : 1835841,
+            "iso_code" : "KR",
+            "names" : {
+               "de" : "Republik Korea",
+               "en" : "South Korea",
+               "es" : "Corea, República de",
+               "fr" : "Corée du Sud",
+               "ja" : "大韓民国",
+               "pt-BR" : "Coréia, República da",
+               "ru" : "Южная Корея",
+               "zh-CN" : "韩国"
+            }
+         },
+         "registered_country" : {
+            "geoname_id" : 1835841,
+            "iso_code" : "KR",
+            "names" : {
+               "de" : "Republik Korea",
+               "en" : "South Korea",
+               "es" : "Corea, República de",
+               "fr" : "Corée du Sud",
+               "ja" : "大韓民国",
+               "pt-BR" : "Coréia, República da",
+               "ru" : "Южная Корея",
+               "zh-CN" : "韩国"
+            }
+         }
+      }
+   },
+   {
+      "2001:220:0:40::/58" : {
+         "continent" : {
+            "code" : "AS",
+            "geoname_id" : 6255147,
+            "names" : {
+               "de" : "Asien",
+               "en" : "Asia",
+               "es" : "Asia",
+               "fr" : "Asie",
+               "ja" : "アジア",
+               "pt-BR" : "Ásia",
+               "ru" : "Азия",
+               "zh-CN" : "亚洲"
+            }
+         },
+         "country" : {
+            "geoname_id" : 1835841,
+            "iso_code" : "KR",
+            "names" : {
+               "de" : "Republik Korea",
+               "en" : "South Korea",
+               "es" : "Corea, República de",
+               "fr" : "Corée du Sud",
+               "ja" : "大韓民国",
+               "pt-BR" : "Coréia, República da",
+               "ru" : "Южная Корея",
+               "zh-CN" : "韩国"
+            }
+         },
+         "registered_country" : {
+            "geoname_id" : 1835841,
+            "iso_code" : "KR",
+            "names" : {
+               "de" : "Republik Korea",
+               "en" : "South Korea",
+               "es" : "Corea, República de",
+               "fr" : "Corée du Sud",
+               "ja" : "大韓民国",
+               "pt-BR" : "Coréia, República da",
+               "ru" : "Южная Корея",
+               "zh-CN" : "韩国"
+            }
+         }
+      }
+   },
+   {
+      "2001:220:0:80::/57" : {
+         "continent" : {
+            "code" : "AS",
+            "geoname_id" : 6255147,
+            "names" : {
+               "de" : "Asien",
+               "en" : "Asia",
+               "es" : "Asia",
+               "fr" : "Asie",
+               "ja" : "アジア",
+               "pt-BR" : "Ásia",
+               "ru" : "Азия",
+               "zh-CN" : "亚洲"
+            }
+         },
+         "country" : {
+            "geoname_id" : 1835841,
+            "iso_code" : "KR",
+            "names" : {
+               "de" : "Republik Korea",
+               "en" : "South Korea",
+               "es" : "Corea, República de",
+               "fr" : "Corée du Sud",
+               "ja" : "大韓民国",
+               "pt-BR" : "Coréia, República da",
+               "ru" : "Южная Корея",
+               "zh-CN" : "韩国"
+            }
+         },
+         "registered_country" : {
+            "geoname_id" : 1835841,
+            "iso_code" : "KR",
+            "names" : {
+               "de" : "Republik Korea",
+               "en" : "South Korea",
+               "es" : "Corea, República de",
+               "fr" : "Corée du Sud",
+               "ja" : "大韓民国",
+               "pt-BR" : "Coréia, República da",
+               "ru" : "Южная Корея",
+               "zh-CN" : "韩国"
+            }
+         }
+      }
+   },
+   {
+      "2001:220:0:100::/56" : {
+         "continent" : {
+            "code" : "AS",
+            "geoname_id" : 6255147,
+            "names" : {
+               "de" : "Asien",
+               "en" : "Asia",
+               "es" : "Asia",
+               "fr" : "Asie",
+               "ja" : "アジア",
+               "pt-BR" : "Ásia",
+               "ru" : "Азия",
+               "zh-CN" : "亚洲"
+            }
+         },
+         "country" : {
+            "geoname_id" : 1835841,
+            "iso_code" : "KR",
+            "names" : {
+               "de" : "Republik Korea",
+               "en" : "South Korea",
+               "es" : "Corea, República de",
+               "fr" : "Corée du Sud",
+               "ja" : "大韓民国",
+               "pt-BR" : "Coréia, República da",
+               "ru" : "Южная Корея",
+               "zh-CN" : "韩国"
+            }
+         },
+         "registered_country" : {
+            "geoname_id" : 1835841,
+            "iso_code" : "KR",
+            "names" : {
+               "de" : "Republik Korea",
+               "en" : "South Korea",
+               "es" : "Corea, República de",
+               "fr" : "Corée du Sud",
+               "ja" : "大韓民国",
+               "pt-BR" : "Coréia, República da",
+               "ru" : "Южная Корея",
+               "zh-CN" : "韩国"
+            }
+         }
+      }
+   },
+   {
+      "2001:220:0:200::/55" : {
+         "continent" : {
+            "code" : "AS",
+            "geoname_id" : 6255147,
+            "names" : {
+               "de" : "Asien",
+               "en" : "Asia",
+               "es" : "Asia",
+               "fr" : "Asie",
+               "ja" : "アジア",
+               "pt-BR" : "Ásia",
+               "ru" : "Азия",
+               "zh-CN" : "亚洲"
+            }
+         },
+         "country" : {
+            "geoname_id" : 1835841,
+            "iso_code" : "KR",
+            "names" : {
+               "de" : "Republik Korea",
+               "en" : "South Korea",
+               "es" : "Corea, República de",
+               "fr" : "Corée du Sud",
+               "ja" : "大韓民国",
+               "pt-BR" : "Coréia, República da",
+               "ru" : "Южная Корея",
+               "zh-CN" : "韩国"
+            }
+         },
+         "registered_country" : {
+            "geoname_id" : 1835841,
+            "iso_code" : "KR",
+            "names" : {
+               "de" : "Republik Korea",
+               "en" : "South Korea",
+               "es" : "Corea, República de",
+               "fr" : "Corée du Sud",
+               "ja" : "大韓民国",
+               "pt-BR" : "Coréia, República da",
+               "ru" : "Южная Корея",
+               "zh-CN" : "韩国"
+            }
+         }
+      }
+   },
+   {
+      "2001:220:0:400::/54" : {
+         "continent" : {
+            "code" : "AS",
+            "geoname_id" : 6255147,
+            "names" : {
+               "de" : "Asien",
+               "en" : "Asia",
+               "es" : "Asia",
+               "fr" : "Asie",
+               "ja" : "アジア",
+               "pt-BR" : "Ásia",
+               "ru" : "Азия",
+               "zh-CN" : "亚洲"
+            }
+         },
+         "country" : {
+            "geoname_id" : 1835841,
+            "iso_code" : "KR",
+            "names" : {
+               "de" : "Republik Korea",
+               "en" : "South Korea",
+               "es" : "Corea, República de",
+               "fr" : "Corée du Sud",
+               "ja" : "大韓民国",
+               "pt-BR" : "Coréia, República da",
+               "ru" : "Южная Корея",
+               "zh-CN" : "韩国"
+            }
+         },
+         "registered_country" : {
+            "geoname_id" : 1835841,
+            "iso_code" : "KR",
+            "names" : {
+               "de" : "Republik Korea",
+               "en" : "South Korea",
+               "es" : "Corea, República de",
+               "fr" : "Corée du Sud",
+               "ja" : "大韓民国",
+               "pt-BR" : "Coréia, República da",
+               "ru" : "Южная Корея",
+               "zh-CN" : "韩国"
+            }
+         }
+      }
+   },
+   {
+      "2001:220:0:800::/53" : {
+         "continent" : {
+            "code" : "AS",
+            "geoname_id" : 6255147,
+            "names" : {
+               "de" : "Asien",
+               "en" : "Asia",
+               "es" : "Asia",
+               "fr" : "Asie",
+               "ja" : "アジア",
+               "pt-BR" : "Ásia",
+               "ru" : "Азия",
+               "zh-CN" : "亚洲"
+            }
+         },
+         "country" : {
+            "geoname_id" : 1835841,
+            "iso_code" : "KR",
+            "names" : {
+               "de" : "Republik Korea",
+               "en" : "South Korea",
+               "es" : "Corea, República de",
+               "fr" : "Corée du Sud",
+               "ja" : "大韓民国",
+               "pt-BR" : "Coréia, República da",
+               "ru" : "Южная Корея",
+               "zh-CN" : "韩国"
+            }
+         },
+         "registered_country" : {
+            "geoname_id" : 1835841,
+            "iso_code" : "KR",
+            "names" : {
+               "de" : "Republik Korea",
+               "en" : "South Korea",
+               "es" : "Corea, República de",
+               "fr" : "Corée du Sud",
+               "ja" : "大韓民国",
+               "pt-BR" : "Coréia, República da",
+               "ru" : "Южная Корея",
+               "zh-CN" : "韩国"
+            }
+         }
+      }
+   },
+   {
+      "2001:220:0:1000::/52" : {
+         "continent" : {
+            "code" : "AS",
+            "geoname_id" : 6255147,
+            "names" : {
+               "de" : "Asien",
+               "en" : "Asia",
+               "es" : "Asia",
+               "fr" : "Asie",
+               "ja" : "アジア",
+               "pt-BR" : "Ásia",
+               "ru" : "Азия",
+               "zh-CN" : "亚洲"
+            }
+         },
+         "country" : {
+            "geoname_id" : 1835841,
+            "iso_code" : "KR",
+            "names" : {
+               "de" : "Republik Korea",
+               "en" : "South Korea",
+               "es" : "Corea, República de",
+               "fr" : "Corée du Sud",
+               "ja" : "大韓民国",
+               "pt-BR" : "Coréia, República da",
+               "ru" : "Южная Корея",
+               "zh-CN" : "韩国"
+            }
+         },
+         "registered_country" : {
+            "geoname_id" : 1835841,
+            "iso_code" : "KR",
+            "names" : {
+               "de" : "Republik Korea",
+               "en" : "South Korea",
+               "es" : "Corea, República de",
+               "fr" : "Corée du Sud",
+               "ja" : "大韓民国",
+               "pt-BR" : "Coréia, República da",
+               "ru" : "Южная Корея",
+               "zh-CN" : "韩国"
+            }
+         }
+      }
+   },
+   {
+      "2001:220:0:2000::/51" : {
+         "continent" : {
+            "code" : "AS",
+            "geoname_id" : 6255147,
+            "names" : {
+               "de" : "Asien",
+               "en" : "Asia",
+               "es" : "Asia",
+               "fr" : "Asie",
+               "ja" : "アジア",
+               "pt-BR" : "Ásia",
+               "ru" : "Азия",
+               "zh-CN" : "亚洲"
+            }
+         },
+         "country" : {
+            "geoname_id" : 1835841,
+            "iso_code" : "KR",
+            "names" : {
+               "de" : "Republik Korea",
+               "en" : "South Korea",
+               "es" : "Corea, República de",
+               "fr" : "Corée du Sud",
+               "ja" : "大韓民国",
+               "pt-BR" : "Coréia, República da",
+               "ru" : "Южная Корея",
+               "zh-CN" : "韩国"
+            }
+         },
+         "registered_country" : {
+            "geoname_id" : 1835841,
+            "iso_code" : "KR",
+            "names" : {
+               "de" : "Republik Korea",
+               "en" : "South Korea",
+               "es" : "Corea, República de",
+               "fr" : "Corée du Sud",
+               "ja" : "大韓民国",
+               "pt-BR" : "Coréia, República da",
+               "ru" : "Южная Корея",
+               "zh-CN" : "韩国"
+            }
+         }
+      }
+   },
+   {
+      "2001:220:0:4000::/50" : {
+         "continent" : {
+            "code" : "AS",
+            "geoname_id" : 6255147,
+            "names" : {
+               "de" : "Asien",
+               "en" : "Asia",
+               "es" : "Asia",
+               "fr" : "Asie",
+               "ja" : "アジア",
+               "pt-BR" : "Ásia",
+               "ru" : "Азия",
+               "zh-CN" : "亚洲"
+            }
+         },
+         "country" : {
+            "geoname_id" : 1835841,
+            "iso_code" : "KR",
+            "names" : {
+               "de" : "Republik Korea",
+               "en" : "South Korea",
+               "es" : "Corea, República de",
+               "fr" : "Corée du Sud",
+               "ja" : "大韓民国",
+               "pt-BR" : "Coréia, República da",
+               "ru" : "Южная Корея",
+               "zh-CN" : "韩国"
+            }
+         },
+         "registered_country" : {
+            "geoname_id" : 1835841,
+            "iso_code" : "KR",
+            "names" : {
+               "de" : "Republik Korea",
+               "en" : "South Korea",
+               "es" : "Corea, República de",
+               "fr" : "Corée du Sud",
+               "ja" : "大韓民国",
+               "pt-BR" : "Coréia, República da",
+               "ru" : "Южная Корея",
+               "zh-CN" : "韩国"
+            }
+         }
+      }
+   },
+   {
+      "2001:220:0:8000::/49" : {
+         "continent" : {
+            "code" : "AS",
+            "geoname_id" : 6255147,
+            "names" : {
+               "de" : "Asien",
+               "en" : "Asia",
+               "es" : "Asia",
+               "fr" : "Asie",
+               "ja" : "アジア",
+               "pt-BR" : "Ásia",
+               "ru" : "Азия",
+               "zh-CN" : "亚洲"
+            }
+         },
+         "country" : {
+            "geoname_id" : 1835841,
+            "iso_code" : "KR",
+            "names" : {
+               "de" : "Republik Korea",
+               "en" : "South Korea",
+               "es" : "Corea, República de",
+               "fr" : "Corée du Sud",
+               "ja" : "大韓民国",
+               "pt-BR" : "Coréia, República da",
+               "ru" : "Южная Корея",
+               "zh-CN" : "韩国"
+            }
+         },
+         "registered_country" : {
+            "geoname_id" : 1835841,
+            "iso_code" : "KR",
+            "names" : {
+               "de" : "Republik Korea",
+               "en" : "South Korea",
+               "es" : "Corea, República de",
+               "fr" : "Corée du Sud",
+               "ja" : "大韓民国",
+               "pt-BR" : "Coréia, República da",
+               "ru" : "Южная Корея",
+               "zh-CN" : "韩国"
+            }
+         }
+      }
+   },
+   {
+      "2001:220:1::/48" : {
+         "continent" : {
+            "code" : "AS",
+            "geoname_id" : 6255147,
+            "names" : {
+               "de" : "Asien",
+               "en" : "Asia",
+               "es" : "Asia",
+               "fr" : "Asie",
+               "ja" : "アジア",
+               "pt-BR" : "Ásia",
+               "ru" : "Азия",
+               "zh-CN" : "亚洲"
+            }
+         },
+         "country" : {
+            "geoname_id" : 1835841,
+            "iso_code" : "KR",
+            "names" : {
+               "de" : "Republik Korea",
+               "en" : "South Korea",
+               "es" : "Corea, República de",
+               "fr" : "Corée du Sud",
+               "ja" : "大韓民国",
+               "pt-BR" : "Coréia, República da",
+               "ru" : "Южная Корея",
+               "zh-CN" : "韩国"
+            }
+         },
+         "registered_country" : {
+            "geoname_id" : 1835841,
+            "iso_code" : "KR",
+            "names" : {
+               "de" : "Republik Korea",
+               "en" : "South Korea",
+               "es" : "Corea, República de",
+               "fr" : "Corée du Sud",
+               "ja" : "大韓民国",
+               "pt-BR" : "Coréia, República da",
+               "ru" : "Южная Корея",
+               "zh-CN" : "韩国"
+            }
+         }
+      }
+   },
+   {
+      "2001:220:2::/47" : {
+         "continent" : {
+            "code" : "AS",
+            "geoname_id" : 6255147,
+            "names" : {
+               "de" : "Asien",
+               "en" : "Asia",
+               "es" : "Asia",
+               "fr" : "Asie",
+               "ja" : "アジア",
+               "pt-BR" : "Ásia",
+               "ru" : "Азия",
+               "zh-CN" : "亚洲"
+            }
+         },
+         "country" : {
+            "geoname_id" : 1835841,
+            "iso_code" : "KR",
+            "names" : {
+               "de" : "Republik Korea",
+               "en" : "South Korea",
+               "es" : "Corea, República de",
+               "fr" : "Corée du Sud",
+               "ja" : "大韓民国",
+               "pt-BR" : "Coréia, República da",
+               "ru" : "Южная Корея",
+               "zh-CN" : "韩国"
+            }
+         },
+         "registered_country" : {
+            "geoname_id" : 1835841,
+            "iso_code" : "KR",
+            "names" : {
+               "de" : "Republik Korea",
+               "en" : "South Korea",
+               "es" : "Corea, República de",
+               "fr" : "Corée du Sud",
+               "ja" : "大韓民国",
+               "pt-BR" : "Coréia, República da",
+               "ru" : "Южная Корея",
+               "zh-CN" : "韩国"
+            }
+         }
+      }
+   },
+   {
+      "2001:220:4::/46" : {
+         "continent" : {
+            "code" : "AS",
+            "geoname_id" : 6255147,
+            "names" : {
+               "de" : "Asien",
+               "en" : "Asia",
+               "es" : "Asia",
+               "fr" : "Asie",
+               "ja" : "アジア",
+               "pt-BR" : "Ásia",
+               "ru" : "Азия",
+               "zh-CN" : "亚洲"
+            }
+         },
+         "country" : {
+            "geoname_id" : 1835841,
+            "iso_code" : "KR",
+            "names" : {
+               "de" : "Republik Korea",
+               "en" : "South Korea",
+               "es" : "Corea, República de",
+               "fr" : "Corée du Sud",
+               "ja" : "大韓民国",
+               "pt-BR" : "Coréia, República da",
+               "ru" : "Южная Корея",
+               "zh-CN" : "韩国"
+            }
+         },
+         "registered_country" : {
+            "geoname_id" : 1835841,
+            "iso_code" : "KR",
+            "names" : {
+               "de" : "Republik Korea",
+               "en" : "South Korea",
+               "es" : "Corea, República de",
+               "fr" : "Corée du Sud",
+               "ja" : "大韓民国",
+               "pt-BR" : "Coréia, República da",
+               "ru" : "Южная Корея",
+               "zh-CN" : "韩国"
+            }
+         }
+      }
+   },
+   {
+      "2001:220:8::/45" : {
+         "continent" : {
+            "code" : "AS",
+            "geoname_id" : 6255147,
+            "names" : {
+               "de" : "Asien",
+               "en" : "Asia",
+               "es" : "Asia",
+               "fr" : "Asie",
+               "ja" : "アジア",
+               "pt-BR" : "Ásia",
+               "ru" : "Азия",
+               "zh-CN" : "亚洲"
+            }
+         },
+         "country" : {
+            "geoname_id" : 1835841,
+            "iso_code" : "KR",
+            "names" : {
+               "de" : "Republik Korea",
+               "en" : "South Korea",
+               "es" : "Corea, República de",
+               "fr" : "Corée du Sud",
+               "ja" : "大韓民国",
+               "pt-BR" : "Coréia, República da",
+               "ru" : "Южная Корея",
+               "zh-CN" : "韩国"
+            }
+         },
+         "registered_country" : {
+            "geoname_id" : 1835841,
+            "iso_code" : "KR",
+            "names" : {
+               "de" : "Republik Korea",
+               "en" : "South Korea",
+               "es" : "Corea, República de",
+               "fr" : "Corée du Sud",
+               "ja" : "大韓民国",
+               "pt-BR" : "Coréia, República da",
+               "ru" : "Южная Корея",
+               "zh-CN" : "韩国"
+            }
+         }
+      }
+   },
+   {
+      "2001:220:10::/44" : {
+         "continent" : {
+            "code" : "AS",
+            "geoname_id" : 6255147,
+            "names" : {
+               "de" : "Asien",
+               "en" : "Asia",
+               "es" : "Asia",
+               "fr" : "Asie",
+               "ja" : "アジア",
+               "pt-BR" : "Ásia",
+               "ru" : "Азия",
+               "zh-CN" : "亚洲"
+            }
+         },
+         "country" : {
+            "geoname_id" : 1835841,
+            "iso_code" : "KR",
+            "names" : {
+               "de" : "Republik Korea",
+               "en" : "South Korea",
+               "es" : "Corea, República de",
+               "fr" : "Corée du Sud",
+               "ja" : "大韓民国",
+               "pt-BR" : "Coréia, República da",
+               "ru" : "Южная Корея",
+               "zh-CN" : "韩国"
+            }
+         },
+         "registered_country" : {
+            "geoname_id" : 1835841,
+            "iso_code" : "KR",
+            "names" : {
+               "de" : "Republik Korea",
+               "en" : "South Korea",
+               "es" : "Corea, República de",
+               "fr" : "Corée du Sud",
+               "ja" : "大韓民国",
+               "pt-BR" : "Coréia, República da",
+               "ru" : "Южная Корея",
+               "zh-CN" : "韩国"
+            }
+         }
+      }
+   },
+   {
+      "2001:220:20::/43" : {
+         "continent" : {
+            "code" : "AS",
+            "geoname_id" : 6255147,
+            "names" : {
+               "de" : "Asien",
+               "en" : "Asia",
+               "es" : "Asia",
+               "fr" : "Asie",
+               "ja" : "アジア",
+               "pt-BR" : "Ásia",
+               "ru" : "Азия",
+               "zh-CN" : "亚洲"
+            }
+         },
+         "country" : {
+            "geoname_id" : 1835841,
+            "iso_code" : "KR",
+            "names" : {
+               "de" : "Republik Korea",
+               "en" : "South Korea",
+               "es" : "Corea, República de",
+               "fr" : "Corée du Sud",
+               "ja" : "大韓民国",
+               "pt-BR" : "Coréia, República da",
+               "ru" : "Южная Корея",
+               "zh-CN" : "韩国"
+            }
+         },
+         "registered_country" : {
+            "geoname_id" : 1835841,
+            "iso_code" : "KR",
+            "names" : {
+               "de" : "Republik Korea",
+               "en" : "South Korea",
+               "es" : "Corea, República de",
+               "fr" : "Corée du Sud",
+               "ja" : "大韓民国",
+               "pt-BR" : "Coréia, República da",
+               "ru" : "Южная Корея",
+               "zh-CN" : "韩国"
+            }
+         }
+      }
+   },
+   {
+      "2001:220:40::/42" : {
+         "continent" : {
+            "code" : "AS",
+            "geoname_id" : 6255147,
+            "names" : {
+               "de" : "Asien",
+               "en" : "Asia",
+               "es" : "Asia",
+               "fr" : "Asie",
+               "ja" : "アジア",
+               "pt-BR" : "Ásia",
+               "ru" : "Азия",
+               "zh-CN" : "亚洲"
+            }
+         },
+         "country" : {
+            "geoname_id" : 1835841,
+            "iso_code" : "KR",
+            "names" : {
+               "de" : "Republik Korea",
+               "en" : "South Korea",
+               "es" : "Corea, República de",
+               "fr" : "Corée du Sud",
+               "ja" : "大韓民国",
+               "pt-BR" : "Coréia, República da",
+               "ru" : "Южная Корея",
+               "zh-CN" : "韩国"
+            }
+         },
+         "registered_country" : {
+            "geoname_id" : 1835841,
+            "iso_code" : "KR",
+            "names" : {
+               "de" : "Republik Korea",
+               "en" : "South Korea",
+               "es" : "Corea, República de",
+               "fr" : "Corée du Sud",
+               "ja" : "大韓民国",
+               "pt-BR" : "Coréia, República da",
+               "ru" : "Южная Корея",
+               "zh-CN" : "韩国"
+            }
+         }
+      }
+   },
+   {
+      "2001:220:80::/41" : {
+         "continent" : {
+            "code" : "AS",
+            "geoname_id" : 6255147,
+            "names" : {
+               "de" : "Asien",
+               "en" : "Asia",
+               "es" : "Asia",
+               "fr" : "Asie",
+               "ja" : "アジア",
+               "pt-BR" : "Ásia",
+               "ru" : "Азия",
+               "zh-CN" : "亚洲"
+            }
+         },
+         "country" : {
+            "geoname_id" : 1835841,
+            "iso_code" : "KR",
+            "names" : {
+               "de" : "Republik Korea",
+               "en" : "South Korea",
+               "es" : "Corea, República de",
+               "fr" : "Corée du Sud",
+               "ja" : "大韓民国",
+               "pt-BR" : "Coréia, República da",
+               "ru" : "Южная Корея",
+               "zh-CN" : "韩国"
+            }
+         },
+         "registered_country" : {
+            "geoname_id" : 1835841,
+            "iso_code" : "KR",
+            "names" : {
+               "de" : "Republik Korea",
+               "en" : "South Korea",
+               "es" : "Corea, República de",
+               "fr" : "Corée du Sud",
+               "ja" : "大韓民国",
+               "pt-BR" : "Coréia, República da",
+               "ru" : "Южная Корея",
+               "zh-CN" : "韩国"
+            }
+         }
+      }
+   },
+   {
+      "2001:220:100::/40" : {
+         "continent" : {
+            "code" : "AS",
+            "geoname_id" : 6255147,
+            "names" : {
+               "de" : "Asien",
+               "en" : "Asia",
+               "es" : "Asia",
+               "fr" : "Asie",
+               "ja" : "アジア",
+               "pt-BR" : "Ásia",
+               "ru" : "Азия",
+               "zh-CN" : "亚洲"
+            }
+         },
+         "country" : {
+            "geoname_id" : 1835841,
+            "iso_code" : "KR",
+            "names" : {
+               "de" : "Republik Korea",
+               "en" : "South Korea",
+               "es" : "Corea, República de",
+               "fr" : "Corée du Sud",
+               "ja" : "大韓民国",
+               "pt-BR" : "Coréia, República da",
+               "ru" : "Южная Корея",
+               "zh-CN" : "韩国"
+            }
+         },
+         "registered_country" : {
+            "geoname_id" : 1835841,
+            "iso_code" : "KR",
+            "names" : {
+               "de" : "Republik Korea",
+               "en" : "South Korea",
+               "es" : "Corea, República de",
+               "fr" : "Corée du Sud",
+               "ja" : "大韓民国",
+               "pt-BR" : "Coréia, República da",
+               "ru" : "Южная Корея",
+               "zh-CN" : "韩国"
+            }
+         }
+      }
+   },
+   {
+      "2001:220:200::/39" : {
+         "continent" : {
+            "code" : "AS",
+            "geoname_id" : 6255147,
+            "names" : {
+               "de" : "Asien",
+               "en" : "Asia",
+               "es" : "Asia",
+               "fr" : "Asie",
+               "ja" : "アジア",
+               "pt-BR" : "Ásia",
+               "ru" : "Азия",
+               "zh-CN" : "亚洲"
+            }
+         },
+         "country" : {
+            "geoname_id" : 1835841,
+            "iso_code" : "KR",
+            "names" : {
+               "de" : "Republik Korea",
+               "en" : "South Korea",
+               "es" : "Corea, República de",
+               "fr" : "Corée du Sud",
+               "ja" : "大韓民国",
+               "pt-BR" : "Coréia, República da",
+               "ru" : "Южная Корея",
+               "zh-CN" : "韩国"
+            }
+         },
+         "registered_country" : {
+            "geoname_id" : 1835841,
+            "iso_code" : "KR",
+            "names" : {
+               "de" : "Republik Korea",
+               "en" : "South Korea",
+               "es" : "Corea, República de",
+               "fr" : "Corée du Sud",
+               "ja" : "大韓民国",
+               "pt-BR" : "Coréia, República da",
+               "ru" : "Южная Корея",
+               "zh-CN" : "韩国"
+            }
+         }
+      }
+   },
+   {
+      "2001:220:400::/38" : {
+         "continent" : {
+            "code" : "AS",
+            "geoname_id" : 6255147,
+            "names" : {
+               "de" : "Asien",
+               "en" : "Asia",
+               "es" : "Asia",
+               "fr" : "Asie",
+               "ja" : "アジア",
+               "pt-BR" : "Ásia",
+               "ru" : "Азия",
+               "zh-CN" : "亚洲"
+            }
+         },
+         "country" : {
+            "geoname_id" : 1835841,
+            "iso_code" : "KR",
+            "names" : {
+               "de" : "Republik Korea",
+               "en" : "South Korea",
+               "es" : "Corea, República de",
+               "fr" : "Corée du Sud",
+               "ja" : "大韓民国",
+               "pt-BR" : "Coréia, República da",
+               "ru" : "Южная Корея",
+               "zh-CN" : "韩国"
+            }
+         },
+         "registered_country" : {
+            "geoname_id" : 1835841,
+            "iso_code" : "KR",
+            "names" : {
+               "de" : "Republik Korea",
+               "en" : "South Korea",
+               "es" : "Corea, República de",
+               "fr" : "Corée du Sud",
+               "ja" : "大韓民国",
+               "pt-BR" : "Coréia, República da",
+               "ru" : "Южная Корея",
+               "zh-CN" : "韩国"
+            }
+         }
+      }
+   },
+   {
+      "2001:220:800::/37" : {
+         "continent" : {
+            "code" : "AS",
+            "geoname_id" : 6255147,
+            "names" : {
+               "de" : "Asien",
+               "en" : "Asia",
+               "es" : "Asia",
+               "fr" : "Asie",
+               "ja" : "アジア",
+               "pt-BR" : "Ásia",
+               "ru" : "Азия",
+               "zh-CN" : "亚洲"
+            }
+         },
+         "country" : {
+            "geoname_id" : 1835841,
+            "iso_code" : "KR",
+            "names" : {
+               "de" : "Republik Korea",
+               "en" : "South Korea",
+               "es" : "Corea, República de",
+               "fr" : "Corée du Sud",
+               "ja" : "大韓民国",
+               "pt-BR" : "Coréia, República da",
+               "ru" : "Южная Корея",
+               "zh-CN" : "韩国"
+            }
+         },
+         "registered_country" : {
+            "geoname_id" : 1835841,
+            "iso_code" : "KR",
+            "names" : {
+               "de" : "Republik Korea",
+               "en" : "South Korea",
+               "es" : "Corea, República de",
+               "fr" : "Corée du Sud",
+               "ja" : "大韓民国",
+               "pt-BR" : "Coréia, República da",
+               "ru" : "Южная Корея",
+               "zh-CN" : "韩国"
+            }
+         }
+      }
+   },
+   {
+      "2001:220:1000::/36" : {
+         "continent" : {
+            "code" : "AS",
+            "geoname_id" : 6255147,
+            "names" : {
+               "de" : "Asien",
+               "en" : "Asia",
+               "es" : "Asia",
+               "fr" : "Asie",
+               "ja" : "アジア",
+               "pt-BR" : "Ásia",
+               "ru" : "Азия",
+               "zh-CN" : "亚洲"
+            }
+         },
+         "country" : {
+            "geoname_id" : 1835841,
+            "iso_code" : "KR",
+            "names" : {
+               "de" : "Republik Korea",
+               "en" : "South Korea",
+               "es" : "Corea, República de",
+               "fr" : "Corée du Sud",
+               "ja" : "大韓民国",
+               "pt-BR" : "Coréia, República da",
+               "ru" : "Южная Корея",
+               "zh-CN" : "韩国"
+            }
+         },
+         "registered_country" : {
+            "geoname_id" : 1835841,
+            "iso_code" : "KR",
+            "names" : {
+               "de" : "Republik Korea",
+               "en" : "South Korea",
+               "es" : "Corea, República de",
+               "fr" : "Corée du Sud",
+               "ja" : "大韓民国",
+               "pt-BR" : "Coréia, República da",
+               "ru" : "Южная Корея",
+               "zh-CN" : "韩国"
+            }
+         }
+      }
+   },
+   {
+      "2001:220:2000::/35" : {
+         "continent" : {
+            "code" : "AS",
+            "geoname_id" : 6255147,
+            "names" : {
+               "de" : "Asien",
+               "en" : "Asia",
+               "es" : "Asia",
+               "fr" : "Asie",
+               "ja" : "アジア",
+               "pt-BR" : "Ásia",
+               "ru" : "Азия",
+               "zh-CN" : "亚洲"
+            }
+         },
+         "country" : {
+            "geoname_id" : 1835841,
+            "iso_code" : "KR",
+            "names" : {
+               "de" : "Republik Korea",
+               "en" : "South Korea",
+               "es" : "Corea, República de",
+               "fr" : "Corée du Sud",
+               "ja" : "大韓民国",
+               "pt-BR" : "Coréia, República da",
+               "ru" : "Южная Корея",
+               "zh-CN" : "韩国"
+            }
+         },
+         "registered_country" : {
+            "geoname_id" : 1835841,
+            "iso_code" : "KR",
+            "names" : {
+               "de" : "Republik Korea",
+               "en" : "South Korea",
+               "es" : "Corea, República de",
+               "fr" : "Corée du Sud",
+               "ja" : "大韓民国",
+               "pt-BR" : "Coréia, República da",
+               "ru" : "Южная Корея",
+               "zh-CN" : "韩国"
+            }
+         }
+      }
+   },
+   {
+      "2001:220:4000::/34" : {
+         "continent" : {
+            "code" : "AS",
+            "geoname_id" : 6255147,
+            "names" : {
+               "de" : "Asien",
+               "en" : "Asia",
+               "es" : "Asia",
+               "fr" : "Asie",
+               "ja" : "アジア",
+               "pt-BR" : "Ásia",
+               "ru" : "Азия",
+               "zh-CN" : "亚洲"
+            }
+         },
+         "country" : {
+            "geoname_id" : 1835841,
+            "iso_code" : "KR",
+            "names" : {
+               "de" : "Republik Korea",
+               "en" : "South Korea",
+               "es" : "Corea, República de",
+               "fr" : "Corée du Sud",
+               "ja" : "大韓民国",
+               "pt-BR" : "Coréia, República da",
+               "ru" : "Южная Корея",
+               "zh-CN" : "韩国"
+            }
+         },
+         "registered_country" : {
+            "geoname_id" : 1835841,
+            "iso_code" : "KR",
+            "names" : {
+               "de" : "Republik Korea",
+               "en" : "South Korea",
+               "es" : "Corea, República de",
+               "fr" : "Corée du Sud",
+               "ja" : "大韓民国",
+               "pt-BR" : "Coréia, República da",
+               "ru" : "Южная Корея",
+               "zh-CN" : "韩国"
+            }
+         }
+      }
+   },
+   {
+      "2001:220:8000::/33" : {
          "continent" : {
             "code" : "AS",
             "geoname_id" : 6255147,
@@ -108,7 +4478,6 @@
             }
          },
          "country" : {
-            "confidence" : 99,
             "geoname_id" : 2661886,
             "is_in_european_union" : true,
             "iso_code" : "SE",
@@ -2531,8 +6900,8 @@
             }
          },
          "location" : {
-            "latitude" : "48.69096",
-            "longitude" : "9.14062",
+            "latitude" : 48.69096,
+            "longitude" : 9.14062,
             "time_zone" : "Europe/Vaduz"
          }
       }
@@ -7026,8 +11395,8 @@
             }
          },
          "location" : {
-            "latitude" : "48.69096",
-            "longitude" : "9.14062",
+            "latitude" : 48.69096,
+            "longitude" : 9.14062,
             "time_zone" : "Europe/Vaduz"
          }
       }
@@ -10810,7 +15179,7 @@
       "::74.209.24.0/116" : {
          "continent" : {
             "code" : "NA",
-            "geoname_id" : "6255149",
+            "geoname_id" : 6255149,
             "names" : {
                "de" : "Nordamerika",
                "en" : "North America",
@@ -10823,8 +15192,7 @@
             }
          },
          "country" : {
-            "confidence" : "99",
-            "geoname_id" : "6252001",
+            "geoname_id" : 6252001,
             "iso_code" : "US",
             "names" : {
                "de" : "USA",
@@ -10838,7 +15206,7 @@
             }
          },
          "registered_country" : {
-            "geoname_id" : "6252001",
+            "geoname_id" : 6252001,
             "iso_code" : "US",
             "names" : {
                "de" : "USA",
@@ -10853,7 +15221,7 @@
          },
          "traits" : {
             "is_anonymous_proxy" : true,
-            "is_satellite_provider": true
+            "is_satellite_provider" : true
          }
       }
    },
@@ -10861,7 +15229,7 @@
       "::75.209.24.0/128" : {
          "continent" : {
             "code" : "NA",
-            "geoname_id" : "6255149",
+            "geoname_id" : 6255149,
             "names" : {
                "de" : "Nordamerika",
                "en" : "North America",
@@ -10874,8 +15242,7 @@
             }
          },
          "country" : {
-            "confidence" : "99",
-            "geoname_id" : "6252001",
+            "geoname_id" : 6252001,
             "iso_code" : "US",
             "names" : {
                "de" : "USA",
@@ -10889,7 +15256,7 @@
             }
          },
          "registered_country" : {
-            "geoname_id" : "6252001",
+            "geoname_id" : 6252001,
             "iso_code" : "US",
             "names" : {
                "de" : "USA",
@@ -11285,7 +15652,7 @@
             }
          },
          "traits" : {
-            "is_anonymous_proxy" : 1
+            "is_anonymous_proxy" : true
          }
       }
    },
@@ -11413,7 +15780,6 @@
             }
          },
          "country" : {
-            "confidence" : 95,
             "geoname_id" : 1814991,
             "iso_code" : "CN",
             "names" : {
