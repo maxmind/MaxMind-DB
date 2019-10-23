@@ -10853,7 +10853,7 @@
          },
          "traits" : {
             "is_anonymous_proxy" : true,
-            "is_satellite_provider": true
+            "is_satellite_provider" : true
          }
       }
    },
