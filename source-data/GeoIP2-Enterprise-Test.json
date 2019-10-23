@@ -3,7 +3,7 @@
       "::2.125.160.216/125" : {
          "city" : {
             "confidence" : 50,
-            "geoname_id" : "2655045",
+            "geoname_id" : 2655045,
             "names" : {
                "en" : "Boxford"
             }
@@ -40,8 +40,8 @@
          },
          "location" : {
             "accuracy_radius" : 100,
-            "latitude" : "51.7500",
-            "longitude" : "-1.2500",
+            "latitude" : 51.7500,
+            "longitude" : -1.2500,
             "time_zone" : "Europe/London"
          },
          "postal" : {
@@ -120,8 +120,8 @@
          },
          "location" : {
             "accuracy_radius" : 534,
-            "latitude" : "27.5000",
-            "longitude" : "90.5000",
+            "latitude" : 27.5000,
+            "longitude" : 90.5000,
             "time_zone" : "Asia/Thimphu"
          },
          "registered_country" : {
@@ -152,15 +152,15 @@
    {
       "::74.209.24.0/116" : {
          "city" : {
-            "confidence" : "11",
-            "geoname_id" : "5112335",
+            "confidence" : 11,
+            "geoname_id" : 5112335,
             "names" : {
                "en" : "Chatham"
             }
          },
          "continent" : {
             "code" : "NA",
-            "geoname_id" : "6255149",
+            "geoname_id" : 6255149,
             "names" : {
                "de" : "Nordamerika",
                "en" : "North America",
@@ -173,8 +173,8 @@
             }
          },
          "country" : {
-            "confidence" : "99",
-            "geoname_id" : "6252001",
+            "confidence" : 99,
+            "geoname_id" : 6252001,
             "iso_code" : "US",
             "names" : {
                "de" : "USA",
@@ -188,18 +188,18 @@
             }
          },
          "location" : {
-            "accuracy_radius" : "27",
-            "latitude" : "42.347800",
-            "longitude" : "-73.554900",
-            "metro_code" : "532",
+            "accuracy_radius" : 27,
+            "latitude" : 42.347800,
+            "longitude" : -73.554900,
+            "metro_code" : 532,
             "time_zone" : "America/New_York"
          },
          "postal" : {
             "code" : "12037",
-            "confidence" : "11"
+            "confidence" : 11
          },
          "registered_country" : {
-            "geoname_id" : "6252001",
+            "geoname_id" : 6252001,
             "iso_code" : "US",
             "names" : {
                "de" : "USA",
@@ -214,8 +214,8 @@
          },
          "subdivisions" : [
             {
-               "confidence" : "93",
-               "geoname_id" : "5128638",
+               "confidence" : 93,
+               "geoname_id" : 5128638,
                "iso_code" : "NY",
                "names" : {
                   "de" : "New York",
@@ -230,7 +230,7 @@
             }
          ],
          "traits" : {
-            "autonomous_system_number" : "14671",
+            "autonomous_system_number" : 14671,
             "autonomous_system_organization" : "FairPoint Communications",
             "connection_type" : "Cable/DSL",
             "domain" : "frpt.net",
@@ -247,7 +247,7 @@
       "::81.2.69.160/123" : {
          "city" : {
             "confidence" : 42,
-            "geoname_id" : "2643743",
+            "geoname_id" : 2643743,
             "names" : {
                "de" : "London",
                "en" : "London",
@@ -290,8 +290,8 @@
          },
          "location" : {
             "accuracy_radius" : 100,
-            "latitude" : "51.5142",
-            "longitude" : "-0.0931",
+            "latitude" : 51.5142,
+            "longitude" : -0.0931,
             "time_zone" : "Europe/London"
          },
          "registered_country" : {
@@ -334,7 +334,7 @@
       "::89.160.20.112/124" : {
          "city" : {
             "confidence" : 51,
-            "geoname_id" : "2694762",
+            "geoname_id" : 2694762,
             "names" : {
                "de" : "Linköping",
                "en" : "Linköping",
@@ -375,8 +375,8 @@
          },
          "location" : {
             "accuracy_radius" : 76,
-            "latitude" : "58.4167",
-            "longitude" : "15.6167",
+            "latitude" : 58.4167,
+            "longitude" : 15.6167,
             "time_zone" : "Europe/Stockholm"
          },
          "registered_country" : {
@@ -483,7 +483,7 @@
             {
                "confidence" : 70,
                "geoname_id" : 2036500,
-               "iso_code" : "22",
+               "iso_code" : 22,
                "names" : {
                   "en" : "Jilin Sheng",
                   "zh-CN" : "吉林"
@@ -528,8 +528,8 @@
          },
          "location" : {
             "accuracy_radius" : 121,
-            "latitude" : "13",
-            "longitude" : "122",
+            "latitude" : 13,
+            "longitude" : 122,
             "time_zone" : "Asia/Manila"
          },
          "postal" : {
@@ -571,7 +571,7 @@
       "::216.160.83.56/125" : {
          "city" : {
             "confidence" : 40,
-            "geoname_id" : "5803556",
+            "geoname_id" : 5803556,
             "names" : {
                "en" : "Milton",
                "ru" : "Мильтон"
@@ -608,9 +608,9 @@
          },
          "location" : {
             "accuracy_radius" : 22,
-            "latitude" : "47.2513",
-            "longitude" : "-122.3149",
-            "metro_code" : "819",
+            "latitude" : 47.2513,
+            "longitude" : -122.3149,
+            "metro_code" : 819,
             "time_zone" : "America/Los_Angeles"
          },
          "postal" : {
