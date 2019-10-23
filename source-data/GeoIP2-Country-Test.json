@@ -108,7 +108,6 @@
             }
          },
          "country" : {
-            "confidence" : 99,
             "geoname_id" : 2661886,
             "is_in_european_union" : true,
             "iso_code" : "SE",
@@ -10823,7 +10822,6 @@
             }
          },
          "country" : {
-            "confidence" : 99,
             "geoname_id" : 6252001,
             "iso_code" : "US",
             "names" : {
@@ -10874,7 +10872,6 @@
             }
          },
          "country" : {
-            "confidence" : 99,
             "geoname_id" : 6252001,
             "iso_code" : "US",
             "names" : {
@@ -11413,7 +11410,6 @@
             }
          },
          "country" : {
-            "confidence" : 95,
             "geoname_id" : 1814991,
             "iso_code" : "CN",
             "names" : {
