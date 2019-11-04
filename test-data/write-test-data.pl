@@ -8,7 +8,7 @@ use utf8;
 use Cwd qw( abs_path );
 use File::Basename qw( dirname );
 use File::Slurper qw( read_binary write_binary );
-use Cpanel::JSON::XS qw( decode_json );
+use Cpanel::JSON::XS 4.16 qw( decode_json );
 use Math::Int128 qw( MAX_UINT128 string_to_uint128 uint128 );
 use MaxMind::DB::Writer::Serializer 0.100004;
 use MaxMind::DB::Writer::Tree 0.100004;
