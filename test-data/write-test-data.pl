@@ -442,6 +442,7 @@ sub _universal_map_key_type_callback {
         registered_country             => 'map',
         represented_country            => 'map',
         score                          => 'double',
+        static_ip_score                => 'double',
         subdivisions                   => [ 'array', 'map' ],
         time_zone                      => 'utf8_string',
         traits                         => 'map',
