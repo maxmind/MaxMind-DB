@@ -84,7 +84,10 @@
                   "zh-CN" : "西伯克郡"
                }
             }
-         ]
+         ],
+         "traits" : {
+            "static_ip_score" : 0.27
+         }
       }
    },
    {
@@ -145,6 +148,7 @@
             "is_anonymous_proxy" : true,
             "isp" : "Loud Packet",
             "organization" : "zudoarichikito_",
+            "static_ip_score" : 0.34,
             "user_type" : "search_engine_spider"
          }
       }
@@ -239,6 +243,7 @@
             "is_satellite_provider" : true,
             "isp" : "Fairpoint Communications",
             "organization" : "Fairpoint Communications",
+            "static_ip_score" : 0.34,
             "user_type" : "residential"
          }
       }
@@ -326,6 +331,7 @@
             "domain" : "in-addr.arpa",
             "isp" : "Andrews & Arnold Ltd",
             "organization" : "STONEHOUSE office network",
+            "static_ip_score" : 0.34,
             "user_type" : "government"
          }
       }
@@ -412,6 +418,7 @@
             "domain" : "bredband2.com",
             "isp" : "Bredband2 AB",
             "organization" : "Bevtec",
+            "static_ip_score" : 0.34,
             "user_type" : "government"
          }
       }
@@ -491,6 +498,7 @@
             }
          ],
          "traits" : {
+            "static_ip_score" : 0.63,
             "user_type" : "dialup"
          }
       }
@@ -564,6 +572,9 @@
                "zh-CN" : "美国"
             },
             "type" : "military"
+         },
+         "traits" : {
+            "static_ip_score" : 1.29
          }
       }
    },
@@ -652,6 +663,7 @@
             "connection_type" : "Cable/DSL",
             "isp" : "Century Link",
             "organization" : "Lariat Software",
+            "static_ip_score" : 1.47,
             "user_type" : "government"
          }
       }
@@ -659,14 +671,16 @@
    {
       "::212.47.235.81/128" : {
          "traits" : {
-            "is_anonymous_proxy" : true
+            "is_anonymous_proxy" : true,
+            "static_ip_score" : 1.47
          }
       }
    },
    {
       "::212.47.235.82/128" : {
          "traits" : {
-            "is_satellite_provider" : true
+            "is_satellite_provider" : true,
+            "static_ip_score" : 1.47
          }
       }
    }

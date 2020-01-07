@@ -56,6 +56,7 @@
             "connection_type" : "Cellular",
             "isp" : "Iran Cell Service and Communication Company",
             "organization" : "Iran Cell Service and Communication Company",
+            "static_ip_score" : 0.25,
             "user_type" : "cellular"
          }
       }
@@ -139,6 +140,7 @@
             "connection_type" : "Cable/DSL",
             "isp" : "CrimeaCom South LLC",
             "organization" : "CrimeaCom South LLC",
+            "static_ip_score" : 0.26,
             "user_type" : "residential"
          }
       }
@@ -228,7 +230,10 @@
                   "zh-CN" : "西伯克郡"
                }
             }
-         ]
+         ],
+         "traits" : {
+            "static_ip_score" : 0.27
+         }
       }
    },
    {
@@ -250,7 +255,8 @@
          },
          "traits" : {
             "is_anonymous_proxy" : true,
-            "isp" : "WifiNetCom"
+            "isp" : "WifiNetCom",
+            "static_ip_score" : 0.28
          }
       }
    },
@@ -259,7 +265,8 @@
          "traits" : {
             "autonomous_system_number" : 7018,
             "isp" : "AT&T Services",
-            "organization" : "AT&T Worldnet Services"
+            "organization" : "AT&T Worldnet Services",
+            "static_ip_score" : 0.31
          }
       }
    },
@@ -327,7 +334,10 @@
                   "en" : "Northern Region"
                }
             }
-         ]
+         ],
+         "traits" : {
+            "static_ip_score" : 0.33
+         }
       }
    },
    {
@@ -423,6 +433,7 @@
             "connection_type" : "Corporate",
             "isp" : "Towerstream I",
             "organization" : "Towerstream I",
+            "static_ip_score" : 0.34,
             "user_type" : "business"
          }
       }
@@ -517,6 +528,7 @@
             "domain" : "qwest.net",
             "isp" : "CenturyLink",
             "organization" : "CenturyLink",
+            "static_ip_score" : 0.34,
             "user_type" : "residential"
          }
       }
@@ -614,6 +626,7 @@
             "domain" : "speakeasy.net",
             "isp" : "Speakeasy",
             "organization" : "Vikco Insurance",
+            "static_ip_score" : 0.34,
             "user_type" : "government"
          }
       }
@@ -676,6 +689,7 @@
             "is_anonymous_proxy" : true,
             "isp" : "Loud Packet",
             "organization" : "zudoarichikito_",
+            "static_ip_score" : 0.34,
             "user_type" : "search_engine_spider"
          }
       }
@@ -770,6 +784,7 @@
             "is_satellite_provider" : true,
             "isp" : "Fairpoint Communications",
             "organization" : "Fairpoint Communications",
+            "static_ip_score" : 0.34,
             "user_type" : "residential"
          }
       }
@@ -864,6 +879,7 @@
             "is_satellite_provider" : true,
             "isp" : "Fairpoint Communications",
             "organization" : "Fairpoint Communications",
+            "static_ip_score" : 0.35,
             "user_type" : "residential"
          }
       }
@@ -947,7 +963,8 @@
             }
          ],
          "traits" : {
-            "domain" : "in-addr.arpa"
+            "domain" : "in-addr.arpa",
+            "static_ip_score" : 0.34
          }
       }
    },
@@ -1033,6 +1050,7 @@
             "domain" : "in-addr.arpa",
             "isp" : "Andrews & Arnold Ltd",
             "organization" : "STONEHOUSE office network",
+            "static_ip_score" : 0.34,
             "user_type" : "government"
          }
       }
@@ -1119,6 +1137,7 @@
             "domain" : "bredband2.com",
             "isp" : "Bredband2 AB",
             "organization" : "Bevtec",
+            "static_ip_score" : 0.34,
             "user_type" : "government"
          }
       }
@@ -1210,7 +1229,8 @@
             "autonomous_system_number" : 2313,
             "autonomous_system_organization" : "Precision AS Org",
             "isp" : "Precision ISP",
-            "organization" : "Precision Org"
+            "organization" : "Precision Org",
+            "static_ip_score" : 0.46
          }
       }
    },
@@ -1302,6 +1322,7 @@
             "connection_type" : "Cable/DSL",
             "isp" : "The Corporation for Financing and Promoting Techno",
             "organization" : "FPT Telecom Company",
+            "static_ip_score" : 0.46,
             "user_type" : "business"
          }
       }
@@ -1381,6 +1402,7 @@
             }
          ],
          "traits" : {
+            "static_ip_score" : 0.63,
             "user_type" : "dialup"
          }
       }
@@ -1388,7 +1410,8 @@
    {
       "::188.35.144.0/119" : {
          "traits" : {
-            "organization" : "CityLink Ltd"
+            "organization" : "CityLink Ltd",
+            "static_ip_score" : 0.64
          }
       }
    },
@@ -1461,6 +1484,9 @@
                "zh-CN" : "美国"
             },
             "type" : "military"
+         },
+         "traits" : {
+            "static_ip_score" : 1.29
          }
       }
    },
@@ -1552,6 +1578,7 @@
             "domain" : "comcastbusiness.net",
             "isp" : "Comcast Business",
             "organization" : "Comcast Business",
+            "static_ip_score" : 1.47,
             "user_type" : "business"
          }
       }
@@ -1641,6 +1668,7 @@
             "connection_type" : "Cable/DSL",
             "isp" : "Century Link",
             "organization" : "Lariat Software",
+            "static_ip_score" : 1.47,
             "user_type" : "government"
          }
       }
@@ -1695,6 +1723,9 @@
                "ru" : "Япония",
                "zh-CN" : "日本"
             }
+         },
+         "traits" : {
+            "static_ip_score" : 2.81
          }
       }
    },
@@ -1747,6 +1778,9 @@
                "ru" : "Китай",
                "zh-CN" : "中国"
             }
+         },
+         "traits" : {
+            "static_ip_score" : 2.81
          }
       }
    },
@@ -1802,26 +1836,32 @@
                "ru" : "Чешская Республика",
                "zh-CN" : "捷克共和国"
             }
+         },
+         "traits" : {
+            "static_ip_score" : 4.17
          }
       }
    },
    {
       "::212.47.235.81/128" : {
          "traits" : {
-            "is_anonymous_proxy" : true
+            "is_anonymous_proxy" : true,
+            "static_ip_score" : 1.47
          }
       }
    },
    {
       "::212.47.235.82/128" : {
          "traits" : {
-            "is_satellite_provider" : true
+            "is_satellite_provider" : true,
+            "static_ip_score" : 1.47
          }
       }
    },
    {
       "::1.9.127.107/128" : {
          "traits" : {
+            "static_ip_score" : 0.22,
             "user_type" : "business"
          }
       }
@@ -1829,6 +1869,7 @@
    {
       "::102.35.19.0/128" : {
          "traits" : {
+            "static_ip_score" : 0.4,
             "user_type" : "cellular"
          }
       }
@@ -1920,6 +1961,7 @@
             "domain" : "bredband2.com",
             "isp" : "Bredband2 AB",
             "organization" : "Bevtec",
+            "static_ip_score" : 2.81,
             "user_type" : "government"
          }
       }
@@ -2011,6 +2053,7 @@
             "domain" : "bredband2.com",
             "isp" : "Bredband2 AB",
             "organization" : "Bevtec",
+            "static_ip_score" : 2.82,
             "user_type" : "government"
          }
       }
