@@ -2057,5 +2057,92 @@
             "user_type" : "government"
          }
       }
+   },
+   {
+      "::2.20.32.110/127" : {
+         "city" : {
+            "confidence" : 60,
+            "geoname_id" : 315808,
+            "names" : {
+               "de" : "Elazığ",
+               "en" : "Elâzığ",
+               "fr" : "Elazığ",
+               "ja" : "エラズー",
+               "ru" : "Элязыг",
+               "zh-CN" : "埃拉泽"
+            }
+         },
+         "continent" : {
+            "code" : "AS",
+            "geoname_id" : 6255147,
+            "names" : {
+               "de" : "Asien",
+               "en" : "Asia",
+               "es" : "Asia",
+               "fr" : "Asie",
+               "ja" : "アジア",
+               "pt-BR" : "Ásia",
+               "ru" : "Азия",
+               "zh-CN" : "亚洲"
+            }
+         },
+         "country" : {
+            "confidence" : 90,
+            "geoname_id" : 298795,
+            "iso_code" : "TR",
+            "names" : {
+               "de" : "Türkei",
+               "en" : "Turkey",
+               "es" : "Turquía",
+               "fr" : "Turquie",
+               "ja" : "トルコ共和国",
+               "pt-BR" : "Turquia",
+               "ru" : "Турция",
+               "zh-CN" : "土耳其"
+            }
+         },
+         "location" : {
+            "accuracy_radius" : 50,
+            "latitude" : 38.6229,
+            "longitude" : 39.3217,
+            "time_zone" : "Europe/Istanbul"
+         },
+         "postal" : {
+            "code" : "23100",
+            "confidence" : 30
+         },
+         "registered_country" : {
+            "geoname_id" : 298795,
+            "iso_code" : "TR",
+            "names" : {
+               "de" : "Türkei",
+               "en" : "Turkey",
+               "es" : "Turquía",
+               "fr" : "Turquie",
+               "ja" : "トルコ共和国",
+               "pt-BR" : "Turquia",
+               "ru" : "Турция",
+               "zh-CN" : "土耳其"
+            }
+         },
+         "subdivisions" : [
+            {
+               "confidence" : 60,
+               "geoname_id" : 315807,
+               "iso_code" : "23",
+               "names" : {
+                  "en" : "Elazığ"
+               }
+            }
+         ],
+         "traits" : {
+            "autonomous_system_number" : 8517,
+            "autonomous_system_organization" : "National Academic Network and Information Center",
+            "connection_type" : "Cable/DSL",
+            "isp" : "National Academic Network and Information Center",
+            "organization" : "National Academic Network and Information Center",
+            "user_type" : "business"
+         }
+      }
    }
 ]
