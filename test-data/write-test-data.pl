@@ -19,7 +19,7 @@ use Test::MaxMind::DB::Common::Util qw( standard_test_metadata );
 my $Dir = dirname( abs_path($0) );
 
 sub main {
-    my @sizes      = ( 24,        28, 32 );
+    my @sizes = ( 24, 28, 32 );
     my @ipv4_range = ( '1.1.1.1', '1.1.1.32' );
 
     my @ipv4_subnets = Net::Works::Network->range_as_subnets(@ipv4_range);
@@ -71,6 +71,7 @@ sub main {
     }
 
     write_decoder_test_db();
+    write_pointer_decoder_test_db();
     write_deeply_nested_structures_db();
 
     write_geoip2_dbs();
@@ -231,23 +232,68 @@ sub write_test_db {
     );
 
     sub write_decoder_test_db {
-        my $writer = MaxMind::DB::Writer::Tree->new(
-            ip_version    => 6,
-            record_size   => 24,
-            database_type => 'MaxMind DB Decoder Test',
-            languages     => ['en'],
-            description   => {
-                en =>
-                    'MaxMind DB Decoder Test database - contains every MaxMind DB data type',
-            },
-            alias_ipv6_to_ipv4       => 1,
-            remove_reserved_networks => 0,
-            map_key_type_callback    => sub {
-                my $key = $_[0];
-                $key =~ s/X$//;
-                return $key eq 'array' ? [ 'array', 'uint32' ] : $key;
+        my $writer = _decoder_writer();
+
+        _write_decoder_networks($writer);
+
+        open my $fh, '>', "$Dir/MaxMind-DB-test-decoder.mmdb";
+        $writer->write_tree($fh);
+        close $fh;
+
+        return;
+    }
+
+    sub write_pointer_decoder_test_db {
+
+        # We want to create a database where most values are pointers
+        no warnings 'redefine';
+        local *MaxMind::DB::Writer::Serializer::_should_cache_value
+            = sub { 1 };
+        my $writer = _decoder_writer();
+
+        _write_decoder_networks($writer);
+
+        # We add these slightly different records so that we end up with
+        # pointers for the individual values in the maps, not just pointers
+        # to the map
+        $writer->insert_network(
+            '::1/128',
+            {
+                %all_types,
+                booleanX => 1,
+                arrayX   => [ 1, 2, 3, 4, ],
+                mapXX    => {
+                    utf8_stringX => 'hello',
+                    arrayX       => [ 7, 8, 9, 10 ],
+                    booleanX     => 1,
+                },
             },
         );
+        $writer->insert_network(
+            '::2/128',
+            {
+                %all_types_0,
+                booleanX => 0,
+            },
+        );
+
+        $writer->insert_network(
+            '::2/128',
+            {
+                %numeric_types_max,
+                booleanX => 1,
+            },
+        );
+
+        open my $fh, '>', "$Dir/MaxMind-DB-test-pointer-decoder.mmdb";
+        $writer->write_tree($fh);
+        close $fh;
+
+        return;
+    }
+
+    sub _write_decoder_networks {
+        my $writer = shift;
 
         my @subnets
             = map { Net::Works::Network->new_from_string( string => $_ ) }
@@ -279,11 +325,26 @@ sub write_test_db {
             \%numeric_types_max,
         );
 
-        open my $fh, '>', "$Dir/MaxMind-DB-test-decoder.mmdb";
-        $writer->write_tree($fh);
-        close $fh;
+    }
 
-        return;
+    sub _decoder_writer {
+        return MaxMind::DB::Writer::Tree->new(
+            ip_version    => 6,
+            record_size   => 24,
+            database_type => 'MaxMind DB Decoder Test',
+            languages     => ['en'],
+            description   => {
+                en =>
+                    'MaxMind DB Decoder Test database - contains every MaxMind DB data type',
+            },
+            alias_ipv6_to_ipv4       => 1,
+            remove_reserved_networks => 0,
+            map_key_type_callback    => sub {
+                my $key = $_[0];
+                $key =~ s/X*$//;
+                return $key eq 'array' ? [ 'array', 'uint32' ] : $key;
+            },
+        );
     }
 }
 
