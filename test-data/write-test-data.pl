@@ -234,67 +234,6 @@ sub write_test_db {
     sub write_decoder_test_db {
         my $writer = _decoder_writer();
 
-        _write_decoder_networks($writer);
-
-        open my $fh, '>', "$Dir/MaxMind-DB-test-decoder.mmdb";
-        $writer->write_tree($fh);
-        close $fh;
-
-        return;
-    }
-
-    sub write_pointer_decoder_test_db {
-
-        # We want to create a database where most values are pointers
-        no warnings 'redefine';
-        local *MaxMind::DB::Writer::Serializer::_should_cache_value
-            = sub { 1 };
-        my $writer = _decoder_writer();
-
-        _write_decoder_networks($writer);
-
-        # We add these slightly different records so that we end up with
-        # pointers for the individual values in the maps, not just pointers
-        # to the map
-        $writer->insert_network(
-            '::1/128',
-            {
-                %all_types,
-                booleanX => 1,
-                arrayX   => [ 1, 2, 3, 4, ],
-                mapXX    => {
-                    utf8_stringX => 'hello',
-                    arrayX       => [ 7, 8, 9, 10 ],
-                    booleanX     => 1,
-                },
-            },
-        );
-        $writer->insert_network(
-            '::2/128',
-            {
-                %all_types_0,
-                booleanX => 0,
-            },
-        );
-
-        $writer->insert_network(
-            '::2/128',
-            {
-                %numeric_types_max,
-                booleanX => 1,
-            },
-        );
-
-        open my $fh, '>', "$Dir/MaxMind-DB-test-pointer-decoder.mmdb";
-        $writer->write_tree($fh);
-        close $fh;
-
-        return;
-    }
-
-    sub _write_decoder_networks {
-        my $writer = shift;
-
         my @subnets
             = map { Net::Works::Network->new_from_string( string => $_ ) }
             qw(
@@ -325,6 +264,55 @@ sub write_test_db {
             \%numeric_types_max,
         );
 
+        open my $fh, '>', "$Dir/MaxMind-DB-test-decoder.mmdb";
+        $writer->write_tree($fh);
+        close $fh;
+
+        return;
+    }
+
+    sub write_pointer_decoder_test_db {
+
+        # We want to create a database where most values are pointers
+        no warnings 'redefine';
+        local *MaxMind::DB::Writer::Serializer::_should_cache_value
+            = sub { 1 };
+        my $writer = _decoder_writer();
+
+        # We add these slightly different records so that we end up with
+        # pointers for the individual values in the maps, not just pointers
+        # to the map
+        $writer->insert_network(
+            '1.0.0.0/32',
+            {
+                %all_types,
+                booleanX => 0,
+                arrayX   => [ 1, 2, 3, 4, ],
+                mapXX    => {
+                    utf8_stringX => 'hello',
+                    arrayX       => [ 7, 8, 9, 10 ],
+                    booleanX     => 0,
+                },
+            },
+        );
+
+        $writer->insert_network(
+            '1.1.1.0/32',
+            {
+                %all_types,
+
+                # This has to be 0 rather than 1 as otherwise the buggy
+                # Perl writer will think it is the same as an uint32 value of
+                # 1 and make a pointer to a value of a different type.
+                boolean => 0,
+            },
+        );
+
+        open my $fh, '>', "$Dir/MaxMind-DB-test-pointer-decoder.mmdb";
+        $writer->write_tree($fh);
+        close $fh;
+
+        return;
     }
 
     sub _decoder_writer {
