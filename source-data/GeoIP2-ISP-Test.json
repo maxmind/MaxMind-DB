@@ -12587,7 +12587,9 @@
    {
       "2c0f:ff80::/25" : {
          "autonomous_system_number" : 237,
-         "autonomous_system_organization" : "Merit Network Inc."
+         "autonomous_system_organization" : "Merit Network Inc.",
+         "isp" : "Merit Network Inc.",
+         "organization" : "Merit Network Inc."
       }
    }
 ]
