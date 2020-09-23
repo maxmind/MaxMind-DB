@@ -476,6 +476,7 @@ sub _universal_map_key_type_callback {
         is_in_european_union           => 'boolean',
         is_legitimate_proxy            => 'boolean',
         is_public_proxy                => 'boolean',
+        is_residential_proxy           => 'boolean',
         is_satellite_provider          => 'boolean',
         is_tor_exit_node               => 'boolean',
         iso_code                       => 'utf8_string',
