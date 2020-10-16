@@ -12033,6 +12033,34 @@
       }
    },
    {
+      "::2.2.3.0/120" : {
+         "city" : {
+            "geoname_id" : 2655045,
+            "names" : {
+               "en" : "Boxford"
+            }
+         }
+      }
+   },
+   {
+      "::2.3.3.0/120" : {
+         "continent" : {
+            "code" : "EU",
+            "geoname_id" : 6255148,
+            "names" : {
+               "de" : "Europa",
+               "en" : "Europe",
+               "es" : "Europa",
+               "fr" : "Europe",
+               "ja" : "ヨーロッパ",
+               "pt-BR" : "Europa",
+               "ru" : "Европа",
+               "zh-CN" : "欧洲"
+            }
+         }
+      }
+   },
+   {
       "::2.125.160.216/125" : {
          "city" : {
             "geoname_id" : 2655045,
