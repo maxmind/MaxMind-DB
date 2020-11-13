@@ -12,6 +12,12 @@
       }
    },
    {
+      "::2.125.160.216/126" : {
+         "autonomous_system_number" : 7018,
+         "autonomous_system_organization" : "AT&T Services"
+      }
+   },
+   {
       "::12.81.96.0/115" : {
          "autonomous_system_number" : 7018
       }
