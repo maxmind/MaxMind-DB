@@ -411,6 +411,8 @@ sub write_geoip2_dbs {
         ['GeoIP2-Static-IP-Score'],
         ['GeoIP2-User-Count'],
         ['GeoLite2-ASN'],
+        ['GeoLite2-City'],
+        ['GeoLite2-Country'],
         );
 }
 
