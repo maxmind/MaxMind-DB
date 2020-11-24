@@ -6898,11 +6898,6 @@
                "ru" : "Европа",
                "zh-CN" : "欧洲"
             }
-         },
-         "location" : {
-            "latitude" : 48.69096,
-            "longitude" : 9.14062,
-            "time_zone" : "Europe/Vaduz"
          }
       }
    },
@@ -11393,11 +11388,6 @@
                "ru" : "Европа",
                "zh-CN" : "欧洲"
             }
-         },
-         "location" : {
-            "latitude" : 48.69096,
-            "longitude" : 9.14062,
-            "time_zone" : "Europe/Vaduz"
          }
       }
    },
