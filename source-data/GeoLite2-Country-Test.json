@@ -30,9 +30,6 @@
                "zh-CN" : "英国"
             }
          },
-         "postal" : {
-            "code" : "OX1"
-         },
          "registered_country" : {
             "geoname_id" : 3017382,
             "is_in_european_union" : true,
@@ -506,9 +503,6 @@
                "zh-CN" : "菲律宾"
             }
          },
-         "postal" : {
-            "code" : "34021"
-         },
          "registered_country" : {
             "geoname_id" : 1694008,
             "iso_code" : "PH",
@@ -569,9 +563,6 @@
                "ru" : "США",
                "zh-CN" : "美国"
             }
-         },
-         "postal" : {
-            "code" : "98354"
          },
          "registered_country" : {
             "geoname_id" : 2635167,
@@ -3115,11 +3106,6 @@
                "ru" : "Европа",
                "zh-CN" : "欧洲"
             }
-         },
-         "location" : {
-            "latitude" : 48.69096,
-            "longitude" : 9.14062,
-            "time_zone" : "Europe/Vaduz"
          }
       }
    },
@@ -7610,11 +7596,6 @@
                "ru" : "Европа",
                "zh-CN" : "欧洲"
             }
-         },
-         "location" : {
-            "latitude" : 48.69096,
-            "longitude" : 9.14062,
-            "time_zone" : "Europe/Vaduz"
          }
       }
    },
