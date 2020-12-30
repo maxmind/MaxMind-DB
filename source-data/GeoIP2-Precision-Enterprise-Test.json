@@ -171,7 +171,6 @@
          "country" : {
             "confidence" : 95,
             "geoname_id" : 2635167,
-            "is_in_european_union" : true,
             "iso_code" : "GB",
             "names" : {
                "de" : "Vereinigtes Königreich",
@@ -916,7 +915,6 @@
          "country" : {
             "confidence" : 95,
             "geoname_id" : 2635167,
-            "is_in_european_union" : true,
             "iso_code" : "GB",
             "names" : {
                "de" : "Vereinigtes Königreich",
@@ -1000,7 +998,6 @@
          "country" : {
             "confidence" : 99,
             "geoname_id" : 2635167,
-            "is_in_european_union" : true,
             "iso_code" : "GB",
             "names" : {
                "de" : "Vereinigtes Königreich",
@@ -1635,7 +1632,6 @@
          },
          "registered_country" : {
             "geoname_id" : 2635167,
-            "is_in_european_union" : true,
             "iso_code" : "GB",
             "names" : {
                "de" : "Vereinigtes Königreich",
