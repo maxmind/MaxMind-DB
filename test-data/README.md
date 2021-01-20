@@ -10,17 +10,17 @@ pointers to map keys and values, as well as to the whole map.
 
 There are several ways to figure out what IP addresses are actually in the
 test databases. You can take a look at the
-[source-data directory](https://github.com/maxmind/MaxMind-DB/tree/master/source-data)
+[source-data directory](https://github.com/maxmind/MaxMind-DB/tree/main/source-data)
 in this repository. This directory contains JSON files which are used to
 generate many (but not all) of the database files.
 
 You can also use the
-[mmdb-dump-database script](https://github.com/maxmind/MaxMind-DB-Reader-perl/blob/master/eg/mmdb-dump-database)
+[mmdb-dump-database script](https://github.com/maxmind/MaxMind-DB-Reader-perl/blob/main/eg/mmdb-dump-database)
 in the
 [MaxMind-DB-Reader-perl repository](https://github.com/maxmind/MaxMind-DB-Reader-perl).
 
 Some databases are intentionally broken and cannot be dumped. You can look at
 the
-[script which generates these databases](https://github.com/maxmind/MaxMind-DB/blob/master/test-data/write-test-data.pl)
+[script which generates these databases](https://github.com/maxmind/MaxMind-DB/blob/main/test-data/write-test-data.pl)
 to see what IP addresses they include, which will be necessary for those
 databases which cannot be dumped because they contain intentional errors.
