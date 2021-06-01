@@ -339,8 +339,10 @@ by the length specifier in the control byte. See below for details.
 
 A length of zero always indicates the number 0.
 
-When storing a signed integer, the left-most bit is the sign. A 1 is negative
-and a 0 is positive.
+When storing a signed integer, fields shorter than the maximum byte length
+are always positive. When the field is the maximum length, e.g., 4 bytes for
+32-bit integers, the left-most bit is the sign. A 1 is negative and a 0 is
+positive.
 
 The type numbers for our integer types are:
 
