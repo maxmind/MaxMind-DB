@@ -26,9 +26,10 @@ not be broken by minor version changes to the format.
 The binary database is split into three parts:
 
 1. The binary search tree. Each level of the tree corresponds to a single bit
-in the 128 bit representation of an IPv6 address.
-2. The data section. These are the values returned to the client for a
-specific IP address, e.g. "US", "New York", or a more complex map type made up
+in the prefix of the network the IP address belongs to.
+2. The data section with the values for the networks in the binary search
+tree. These values may be comprised of a single data type, e.g., the string
+"US" or "New York", or they may be a more complex map or array type made up
 of multiple fields.
 3. Database metadata. Information about the database itself.
 
@@ -48,15 +49,15 @@ of this sequence.
 The maximum allowable size for the metadata section, including the marker that
 starts the metadata, is 128KiB.
 
-The metadata is stored as a map data structure. This structure is described
-later in the spec. Changing a key's data type or removing a key would
-constitute a major version change for this spec.
+The metadata is stored as a separate data section comprised of a map data
+structure starting at the beginning of that section. This structure is
+described later in the spec.
 
 Except where otherwise specified, each key listed is required for the database
 to be considered valid.
 
-Adding a key constitutes a minor version change. Removing a key or changing
-its type constitutes a major version change.
+Changing a key's data type or removing a key would constitute a major version
+change for this spec. Adding a key constitutes a minor version change.
 
 The list of known keys for the current version of the format is as follows:
 
@@ -304,7 +305,8 @@ will point to the beginning of a field. It is illegal for a pointer to point
 to another pointer.
 
 Pointer values start from the beginning of the data section, *not* the
-beginning of the file.
+beginning of the file. Pointers in the metadata start from the beginning of
+the metadata section.
 
 ### UTF-8 string - 2
 
