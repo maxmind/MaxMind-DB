@@ -657,7 +657,7 @@ sub write_test_serialization_data {
     $serializer->store_data( map => { long_key  => 'long_value1' } );
     $serializer->store_data( map => { long_key2 => 'long_value2' } );
 
-    open my $fh, '>', 'maps-with-pointers.raw';
+    open my $fh, '>', "$Dir/maps-with-pointers.raw";
     print {$fh} ${ $serializer->buffer() }
         or die "Cannot write to maps-with-pointers.raw: $!";
     close $fh;
@@ -683,7 +683,7 @@ sub write_db_with_metadata_pointers {
 
     _populate_all_networks( $writer, {} );
 
-    open my $fh, '>', 'MaxMind-DB-test-metadata-pointers.mmdb';
+    open my $fh, '>', "$Dir/MaxMind-DB-test-metadata-pointers.mmdb";
 
     $writer->write_tree($fh);
 
