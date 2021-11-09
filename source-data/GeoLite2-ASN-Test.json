@@ -2339,6 +2339,12 @@
       }
    },
    {
+      "149.101.100.0/28" : {
+         "autonomous_system_number" : 6167,
+         "autonomous_system_organization" : "CELLCO-PART"
+      }
+   },
+   {
       "172.128.0.0/10" : {
          "autonomous_system_number" : 1668,
          "autonomous_system_organization" : "AOL Transit Data Network"

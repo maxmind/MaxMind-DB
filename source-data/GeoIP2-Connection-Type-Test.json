@@ -50,6 +50,11 @@
       }
    },
    {
+      "::149.101.100.0/124" : {
+         "connection_type" : "Cellular"
+      }
+   },
+   {
       "::67.43.156.0/120" : {
          "connection_type" : "Cellular"
       }
