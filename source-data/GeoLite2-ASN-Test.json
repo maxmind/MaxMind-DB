@@ -1,5 +1,11 @@
 [
    {
+      "1.0.0.0/24" : {
+         "autonomous_system_number" : 15169,
+         "autonomous_system_organization" : "Google Inc."
+      }
+   },
+   {
       "1.128.0.0/11" : {
          "autonomous_system_number" : 1221,
          "autonomous_system_organization" : "Telstra Pty Ltd"
@@ -1823,6 +1829,12 @@
       "78.26.124.0/23" : {
          "autonomous_system_number" : 28929,
          "autonomous_system_organization" : "ASDASD srl"
+      }
+   },
+   {
+      "78.192.0.0/10" : {
+         "autonomous_system_number" : 12322,
+         "autonomous_system_organization" : "Free SAS"
       }
    },
    {
