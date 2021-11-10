@@ -1,5 +1,11 @@
 [
    {
+      "1.0.0.0/24" : {
+         "autonomous_system_number" : 15169,
+         "autonomous_system_organization" : "Google Inc."
+      }
+   },
+   {
       "1.128.0.0/11" : {
          "autonomous_system_number" : 1221,
          "autonomous_system_organization" : "Telstra Pty Ltd"
@@ -1826,6 +1832,12 @@
       }
    },
    {
+      "78.192.0.0/10" : {
+         "autonomous_system_number" : 12322,
+         "autonomous_system_organization" : "Free SAS"
+      }
+   },
+   {
       "79.192.0.0/10" : {
          "autonomous_system_number" : 3320,
          "autonomous_system_organization" : "Deutsche Telekom AG"
@@ -2336,6 +2348,12 @@
       "145.128.0.0/10" : {
          "autonomous_system_number" : 1103,
          "autonomous_system_organization" : "SURFnet, The Netherlands"
+      }
+   },
+   {
+      "149.101.100.0/28" : {
+         "autonomous_system_number" : 6167,
+         "autonomous_system_organization" : "CELLCO-PART"
       }
    },
    {
