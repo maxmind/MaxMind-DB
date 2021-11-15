@@ -487,6 +487,8 @@ sub _universal_map_key_type_callback {
         location                       => 'map',
         longitude                      => 'double',
         metro_code                     => 'uint16',
+        mobile_country_code            => 'utf8_string',
+        mobile_network_code            => 'utf8_string',
         names                          => 'map',
         organization                   => 'utf8_string',
         population_density             => 'uint32',

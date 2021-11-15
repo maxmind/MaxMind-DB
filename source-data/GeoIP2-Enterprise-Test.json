@@ -422,6 +422,67 @@
       }
    },
    {
+      "::149.101.100.0/124" : {
+         "continent" : {
+            "code" : "NA",
+            "geoname_id" : 6255149,
+            "names" : {
+               "de" : "Nordamerika",
+               "en" : "North America",
+               "es" : "América del Norte",
+               "fr" : "Amérique du Nord",
+               "ja" : "北アメリカ",
+               "pt-BR" : "América do Norte",
+               "ru" : "Северная Америка",
+               "zh-CN" : "北美洲"
+            }
+         },
+         "country" : {
+            "confidence" : 99,
+            "geoname_id" : 6252001,
+            "iso_code" : "US",
+            "names" : {
+               "de" : "USA",
+               "en" : "United States",
+               "es" : "Estados Unidos",
+               "fr" : "États-Unis",
+               "ja" : "アメリカ合衆国",
+               "pt-BR" : "Estados Unidos",
+               "ru" : "США",
+               "zh-CN" : "美国"
+            }
+         },
+         "location" : {
+            "accuracy_radius" : 1000,
+            "latitude" : 37.751,
+            "longitude" : -97.822,
+            "time_zone" : "America/Chicago"
+         },
+         "registered_country" : {
+            "geoname_id" : 2635167,
+            "iso_code" : "GB",
+            "names" : {
+               "de" : "Vereinigtes Königreich",
+               "en" : "United Kingdom",
+               "es" : "Reino Unido",
+               "fr" : "Royaume-Uni",
+               "ja" : "イギリス",
+               "pt-BR" : "Reino Unido",
+               "ru" : "Великобритания",
+               "zh-CN" : "英国"
+            }
+         },
+         "traits" : {
+            "autonomous_system_number" : 6167,
+            "autonomous_system_organization" : "CELLCO-PART",
+            "isp" : "Verizon Wireless",
+            "mobile_country_code" : "310",
+            "mobile_network_code" : "004",
+            "organization" : "Verizon Wireless"
+         }
+      }
+   },
+   {
       "::175.16.199.0/120" : {
          "city" : {
             "confidence" : 50,
