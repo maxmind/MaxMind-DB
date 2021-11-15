@@ -19,7 +19,7 @@ use Test::MaxMind::DB::Common::Util qw( standard_test_metadata );
 my $Dir = dirname( abs_path($0) );
 
 sub main {
-    my @sizes = ( 24, 28, 32 );
+    my @sizes      = ( 24, 28, 32 );
     my @ipv4_range = ( '1.1.1.1', '1.1.1.32' );
 
     my @ipv4_subnets = Net::Works::Network->range_as_subnets(@ipv4_range);
@@ -243,7 +243,7 @@ sub write_test_db {
             ::4.5.6.7/128
             abcd::/64
             1000::1234:0000/112
-        );
+            );
 
         for my $subnet (@subnets) {
             $writer->insert_network(
@@ -379,7 +379,7 @@ sub write_test_db {
             ::4.5.6.7/128
             abcd::/64
             1000::1234:0000/112
-        );
+            );
 
         for my $subnet (@subnets) {
             $writer->insert_network(
