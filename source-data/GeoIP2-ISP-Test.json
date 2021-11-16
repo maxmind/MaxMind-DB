@@ -8770,6 +8770,16 @@
       }
    },
    {
+      "::149.101.100.0/124" : {
+         "autonomous_system_number" : 6167,
+         "autonomous_system_organization" : "CELLCO-PART",
+         "isp" : "Verizon Wireless",
+         "mobile_country_code" : "310",
+         "mobile_network_code" : "004",
+         "organization" : "Verizon Wireless"
+      }
+   },
+   {
       "::154.50.194.0/119" : {
          "organization" : "Wireless Connect Ltd."
       }
