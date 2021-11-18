@@ -15130,7 +15130,7 @@
             "names" : {
                "de" : "Nordamerika",
                "en" : "North America",
-               "es" : "Norteamérica",
+               "es" : "América del Norte",
                "fr" : "Amérique du Nord",
                "ja" : "北アメリカ",
                "pt-BR" : "América do Norte",
@@ -15153,17 +15153,17 @@
             }
          },
          "registered_country" : {
-            "geoname_id" : 6252001,
-            "iso_code" : "US",
+            "geoname_id" : 2635167,
+            "iso_code" : "GB",
             "names" : {
-               "de" : "USA",
-               "en" : "United States",
-               "es" : "Estados Unidos",
-               "fr" : "États-Unis",
-               "ja" : "アメリカ合衆国",
-               "pt-BR" : "Estados Unidos",
-               "ru" : "США",
-               "zh-CN" : "美国"
+               "de" : "Vereinigtes Königreich",
+               "en" : "United Kingdom",
+               "es" : "Reino Unido",
+               "fr" : "Royaume-Uni",
+               "ja" : "イギリス",
+               "pt-BR" : "Reino Unido",
+               "ru" : "Великобритания",
+               "zh-CN" : "英国"
             }
          }
       }
