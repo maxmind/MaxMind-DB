@@ -558,7 +558,7 @@
          ],
          "traits" : {
             "static_ip_score" : 0.63,
-            "user_type" : "dialup"
+            "user_type" : "residential"
          }
       }
    },
