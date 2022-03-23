@@ -12406,6 +12406,153 @@
       }
    },
    {
+      "::81.2.69.208/124" : {
+         "city" : {
+            "geoname_id" : 1880252,
+            "names" : {
+               "de" : "Singapur",
+               "en" : "Singapore",
+               "es" : "Singapur",
+               "fr" : "Singapour",
+               "ja" : "シンガポール",
+               "pt-BR" : "Singapura",
+               "ru" : "Сингапур",
+               "zh-CN" : "新加坡"
+            }
+         },
+         "continent" : {
+            "code" : "AS",
+            "geoname_id" : 6255147,
+            "names" : {
+               "de" : "Asien",
+               "en" : "Asia",
+               "es" : "Asia",
+               "fr" : "Asie",
+               "ja" : "アジア",
+               "pt-BR" : "Ásia",
+               "ru" : "Азия",
+               "zh-CN" : "亚洲"
+            }
+         },
+         "country" : {
+            "geoname_id" : 1880251,
+            "iso_code" : "SG",
+            "names" : {
+               "de" : "Singapur",
+               "en" : "Singapore",
+               "es" : "Singapur",
+               "fr" : "Singapour",
+               "ja" : "シンガポール",
+               "pt-BR" : "Singapura",
+               "ru" : "Сингапур",
+               "zh-CN" : "新加坡"
+            }
+         },
+         "location" : {
+            "accuracy_radius" : 10,
+            "latitude" : 1.336,
+            "longitude" : 103.7716,
+            "time_zone" : "Asia/Singapore"
+         },
+         "postal" : {
+            "code" : "59"
+         },
+         "registered_country" : {
+            "geoname_id" : 1880251,
+            "iso_code" : "SG",
+            "names" : {
+               "de" : "Singapur",
+               "en" : "Singapore",
+               "es" : "Singapur",
+               "fr" : "Singapour",
+               "ja" : "シンガポール",
+               "pt-BR" : "Singapura",
+               "ru" : "Сингапур",
+               "zh-CN" : "新加坡"
+            }
+         }
+      }
+   },
+   {
+      "::81.2.69.224/124" : {
+         "city" : {
+            "geoname_id" : 2158177,
+            "names" : {
+               "de" : "Melbourne",
+               "en" : "Melbourne",
+               "es" : "Melbourne",
+               "fr" : "Melbourne",
+               "ja" : "メルボルン",
+               "pt-BR" : "Melbourne",
+               "ru" : "Мельбурн",
+               "zh-CN" : "墨尔本"
+            }
+         },
+         "continent" : {
+            "code" : "OC",
+            "geoname_id" : 6255151,
+            "names" : {
+               "de" : "Ozeanien",
+               "en" : "Oceania",
+               "es" : "Oceanía",
+               "fr" : "Océanie",
+               "ja" : "オセアニア",
+               "pt-BR" : "Oceania",
+               "ru" : "Океания",
+               "zh-CN" : "大洋洲"
+            }
+         },
+         "country" : {
+            "geoname_id" : 2077456,
+            "iso_code" : "AU",
+            "names" : {
+               "de" : "Australien",
+               "en" : "Australia",
+               "es" : "Australia",
+               "fr" : "Australie",
+               "ja" : "オーストラリア",
+               "pt-BR" : "Austrália",
+               "ru" : "Австралия",
+               "zh-CN" : "澳大利亚"
+            }
+         },
+         "location" : {
+            "accuracy_radius" : 20,
+            "latitude" : -37.8159,
+            "longitude" : 144.9669,
+            "time_zone" : "Australia/Melbourne"
+         },
+         "postal" : {
+            "code" : "3000"
+         },
+         "registered_country" : {
+            "geoname_id" : 2077456,
+            "iso_code" : "AU",
+            "names" : {
+               "de" : "Australien",
+               "en" : "Australia",
+               "es" : "Australia",
+               "fr" : "Australie",
+               "ja" : "オーストラリア",
+               "pt-BR" : "Austrália",
+               "ru" : "Австралия",
+               "zh-CN" : "澳大利亚"
+            }
+         },
+         "subdivisions" : [
+            {
+               "geoname_id" : 2145234,
+               "iso_code" : "VIC",
+               "names" : {
+                  "en" : "Victoria",
+                  "pt-BR" : "Vitória",
+                  "ru" : "Виктория"
+               }
+            }
+         ]
+      }
+   },
+   {
       "::149.101.100.0/124" : {
          "continent" : {
             "code" : "NA",
