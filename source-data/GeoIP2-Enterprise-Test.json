@@ -727,6 +727,58 @@
       }
    },
    {
+      "2001:480::/64" : {
+         "continent" : {
+            "code" : "AS",
+            "geoname_id" : 6255147,
+            "names" : {
+               "de" : "Asien",
+               "en" : "Asia",
+               "es" : "Asia",
+               "fr" : "Asie",
+               "ja" : "アジア",
+               "pt-BR" : "Ásia",
+               "ru" : "Азия",
+               "zh-CN" : "亚洲"
+            }
+         },
+         "country" : {
+            "geoname_id" : 1861060,
+            "iso_code" : "JP",
+            "names" : {
+               "de" : "Japan",
+               "en" : "Japan",
+               "es" : "Japón",
+               "fr" : "Japon",
+               "ja" : "日本",
+               "pt-BR" : "Japão",
+               "ru" : "Япония",
+               "zh-CN" : "日本"
+            }
+         },
+         "location" : {
+            "accuracy_radius" : 100,
+            "latitude" : 35.68536,
+            "longitude" : 139.75309,
+            "time_zone" : "Asia/Tokyo"
+         },
+         "registered_country" : {
+            "geoname_id" : 1861060,
+            "iso_code" : "JP",
+            "names" : {
+               "de" : "Japan",
+               "en" : "Japan",
+               "es" : "Japón",
+               "fr" : "Japon",
+               "ja" : "日本",
+               "pt-BR" : "Japão",
+               "ru" : "Япония",
+               "zh-CN" : "日本"
+            }
+         }
+      }
+   },
+   {
       "::212.47.235.81/128" : {
          "traits" : {
             "is_anonymous_proxy" : true,
