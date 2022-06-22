@@ -395,7 +395,7 @@
       }
    },
    {
-      "::23.32.0.0/107" : {
+      "::23.32.0.0/115" : {
          "autonomous_system_number" : 35994,
          "autonomous_system_organization" : "Akamai Technologies, Inc.",
          "isp" : "Akamai Technologies",
