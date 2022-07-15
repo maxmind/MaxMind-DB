@@ -1940,6 +1940,14 @@
       }
    },
    {
+       "214.214.214.215/32" : {
+         "traits" : {
+            "static_ip_score" : 0.4,
+            "user_type" : "business"
+         }
+      }
+   },
+   {
       "2001:219::/32" : {
          "city" : {
             "confidence" : 51,
