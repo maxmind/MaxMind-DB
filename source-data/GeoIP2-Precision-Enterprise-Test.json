@@ -1227,7 +1227,8 @@
             "autonomous_system_organization" : "Precision AS Org",
             "isp" : "Precision ISP",
             "organization" : "Precision Org",
-            "static_ip_score" : 0.46
+            "static_ip_score" : 0.46,
+            "user_type" : "residential"
          }
       }
    },
