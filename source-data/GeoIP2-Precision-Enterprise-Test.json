@@ -1949,6 +1949,46 @@
       }
    },
    {
+       "214.214.214.216/32" : {
+         "traits" : {
+            "static_ip_score" : 0.4,
+            "user_type" : "traveler"
+         }
+      }
+   },
+   {
+       "214.214.214.217/32" : {
+         "traits" : {
+            "static_ip_score" : 0.4,
+            "user_type" : "traveler"
+         }
+      }
+   },
+   {
+       "214.214.214.218/32" : {
+         "traits" : {
+            "static_ip_score" : 0.4,
+            "user_type" : "business"
+         }
+      }
+   },
+   {
+       "214.214.214.219/32" : {
+         "traits" : {
+            "static_ip_score" : 0.4,
+            "user_type" : "business"
+         }
+      }
+   },
+   {
+       "214.214.214.220/32" : {
+         "traits" : {
+            "static_ip_score" : 0.4,
+            "user_type" : "business"
+         }
+      }
+   },
+   {
       "2001:219::/32" : {
          "city" : {
             "confidence" : 51,
