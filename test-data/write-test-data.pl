@@ -5,15 +5,15 @@ use warnings;
 use autodie;
 use utf8;
 
-use Cwd qw( abs_path );
-use File::Basename qw( dirname );
-use File::Slurper qw( read_binary write_binary );
+use Cwd                   qw( abs_path );
+use File::Basename        qw( dirname );
+use File::Slurper         qw( read_binary write_binary );
 use Cpanel::JSON::XS 4.16 qw( decode_json );
-use Math::Int128 qw( MAX_UINT128 string_to_uint128 uint128 );
+use Math::Int128          qw( MAX_UINT128 string_to_uint128 uint128 );
 use MaxMind::DB::Writer::Serializer 0.100004;
 use MaxMind::DB::Writer::Tree 0.100004;
-use MaxMind::DB::Writer::Util qw( key_for_data );
-use Net::Works::Network ();
+use MaxMind::DB::Writer::Util       qw( key_for_data );
+use Net::Works::Network             ();
 use Test::MaxMind::DB::Common::Util qw( standard_test_metadata );
 
 my $Dir = dirname( abs_path($0) );
@@ -24,40 +24,22 @@ sub main {
 
     my @ipv4_subnets = Net::Works::Network->range_as_subnets(@ipv4_range);
     for my $record_size (@sizes) {
-        write_test_db(
-            $record_size,
-            \@ipv4_subnets,
-            { ip_version => 4 },
-            'ipv4',
-        );
+        write_test_db( $record_size, \@ipv4_subnets, { ip_version => 4 },
+            'ipv4', );
     }
 
-    write_broken_pointers_test_db(
-        24,
-        \@ipv4_subnets,
-        { ip_version => 4 },
-        'broken-pointers',
-    );
+    write_broken_pointers_test_db( 24, \@ipv4_subnets, { ip_version => 4 },
+        'broken-pointers', );
 
-    write_broken_search_tree_db(
-        24,
-        \@ipv4_subnets,
-        { ip_version => 4 },
-        'broken-search-tree',
-    );
+    write_broken_search_tree_db( 24, \@ipv4_subnets, { ip_version => 4 },
+        'broken-search-tree', );
 
-    my @ipv6_subnets = Net::Works::Network->range_as_subnets(
-        '::1:ffff:ffff',
-        '::2:0000:0059'
-    );
+    my @ipv6_subnets =
+      Net::Works::Network->range_as_subnets( '::1:ffff:ffff', '::2:0000:0059' );
 
     for my $record_size (@sizes) {
-        write_test_db(
-            $record_size,
-            \@ipv6_subnets,
-            { ip_version => 6 },
-            'ipv6',
-        );
+        write_test_db( $record_size, \@ipv6_subnets, { ip_version => 6 },
+            'ipv6', );
 
         write_test_db(
             $record_size,
@@ -99,7 +81,8 @@ sub write_broken_pointers_test_db {
         my $value        = $_[1];
         if (   ref($value) eq 'HASH'
             && exists $value->{ip}
-            && $value->{ip} eq '1.1.1.32' ) {
+            && $value->{ip} eq '1.1.1.32' )
+        {
 
             $data_pointer += 100_000;
         }
@@ -112,8 +95,8 @@ sub write_broken_pointers_test_db {
 
     my $key_to_poison = key_for_data( { ip => '1.1.1.16' } );
 
-    my $orig_position_for_data
-        = MaxMind::DB::Writer::Serializer->can('_position_for_data');
+    my $orig_position_for_data =
+      MaxMind::DB::Writer::Serializer->can('_position_for_data');
     local *MaxMind::DB::Writer::Serializer::_position_for_data = sub {
         my $key = $_[1];
 
@@ -160,17 +143,12 @@ sub write_test_db {
     );
 
     for my $subnet ( @{$subnets} ) {
-        $writer->insert_network(
-            $subnet,
-            { ip => $subnet->first()->as_string() }
-        );
+        $writer->insert_network( $subnet,
+            { ip => $subnet->first()->as_string() } );
     }
 
-    my $filename = sprintf(
-        "$Dir/MaxMind-DB-test-%s-%i.mmdb",
-        $ip_version_name,
-        $record_size,
-    );
+    my $filename = sprintf( "$Dir/MaxMind-DB-test-%s-%i.mmdb",
+        $ip_version_name, $record_size, );
     open my $fh, '>', $filename;
 
     $writer->write_tree($fh);
@@ -234,28 +212,24 @@ sub write_test_db {
     sub write_decoder_test_db {
         my $writer = _decoder_writer();
 
-        my @subnets
-            = map { Net::Works::Network->new_from_string( string => $_ ) }
-            qw(
-            ::1.1.1.0/120
-            ::2.2.0.0/112
-            ::3.0.0.0/104
-            ::4.5.6.7/128
-            abcd::/64
-            1000::1234:0000/112
-            );
+        my @subnets =
+          map { Net::Works::Network->new_from_string( string => $_ ) }
+          qw(
+          ::1.1.1.0/120
+          ::2.2.0.0/112
+          ::3.0.0.0/104
+          ::4.5.6.7/128
+          abcd::/64
+          1000::1234:0000/112
+          );
 
         for my $subnet (@subnets) {
-            $writer->insert_network(
-                $subnet,
-                \%all_types,
-            );
+            $writer->insert_network( $subnet, \%all_types, );
         }
 
         $writer->insert_network(
             Net::Works::Network->new_from_string( string => '::0.0.0.0/128' ),
-            \%all_types_0,
-        );
+            \%all_types_0, );
 
         $writer->insert_network(
             Net::Works::Network->new_from_string(
@@ -275,8 +249,7 @@ sub write_test_db {
 
         # We want to create a database where most values are pointers
         no warnings 'redefine';
-        local *MaxMind::DB::Writer::Serializer::_should_cache_value
-            = sub { 1 };
+        local *MaxMind::DB::Writer::Serializer::_should_cache_value = sub { 1 };
         my $writer = _decoder_writer();
 
         # We add these slightly different records so that we end up with
@@ -323,7 +296,7 @@ sub write_test_db {
             languages     => ['en'],
             description   => {
                 en =>
-                    'MaxMind DB Decoder Test database - contains every MaxMind DB data type',
+'MaxMind DB Decoder Test database - contains every MaxMind DB data type',
             },
             alias_ipv6_to_ipv4       => 1,
             remove_reserved_networks => 0,
@@ -358,34 +331,31 @@ sub write_test_db {
             languages     => ['en'],
             description   => {
                 en =>
-                    'MaxMind DB Nested Data Structures Test database - contains deeply nested map/array structures',
+'MaxMind DB Nested Data Structures Test database - contains deeply nested map/array structures',
             },
             alias_ipv6_to_ipv4    => 1,
             map_key_type_callback => sub {
                 my $key = shift;
                 return
-                      $key =~ /^map/  ? 'map'
-                    : $key eq 'array' ? [ 'array', 'map' ]
-                    :                   'uint32';
+                    $key =~ /^map/  ? 'map'
+                  : $key eq 'array' ? [ 'array', 'map' ]
+                  :                   'uint32';
             }
         );
 
-        my @subnets
-            = map { Net::Works::Network->new_from_string( string => $_ ) }
-            qw(
-            ::1.1.1.0/120
-            ::2.2.0.0/112
-            ::3.0.0.0/104
-            ::4.5.6.7/128
-            abcd::/64
-            1000::1234:0000/112
-            );
+        my @subnets =
+          map { Net::Works::Network->new_from_string( string => $_ ) }
+          qw(
+          ::1.1.1.0/120
+          ::2.2.0.0/112
+          ::3.0.0.0/104
+          ::4.5.6.7/128
+          abcd::/64
+          1000::1234:0000/112
+          );
 
         for my $subnet (@subnets) {
-            $writer->insert_network(
-                $subnet,
-                \%nested,
-            );
+            $writer->insert_network( $subnet, \%nested, );
         }
 
         open my $fh, '>', "$Dir/MaxMind-DB-test-nested.mmdb";
@@ -398,7 +368,7 @@ sub write_test_db {
 
 sub write_geoip2_dbs {
     _write_geoip2_db( @{$_}[ 0, 1 ], 'Test' )
-        for (
+      for (
         [ 'GeoIP2-Anonymous-IP', {} ],
         ['GeoIP2-City'],
         ['GeoIP2-Connection-Type'],
@@ -408,12 +378,13 @@ sub write_geoip2_dbs {
         ['GeoIP2-Enterprise'],
         ['GeoIP2-ISP'],
         ['GeoIP2-Precision-Enterprise'],
+        ['GeoIP2-Precision-Enterprise-Sandbox'],
         ['GeoIP2-Static-IP-Score'],
         ['GeoIP2-User-Count'],
         ['GeoLite2-ASN'],
         ['GeoLite2-City'],
         ['GeoLite2-Country'],
-        );
+      );
 }
 
 sub write_broken_geoip2_city_db {
@@ -539,7 +510,7 @@ sub _write_geoip2_db {
         languages     => [ 'en', $type eq 'GeoIP2-City' ? ('zh') : () ],
         description   => {
             en => ( $type =~ s/-/ /gr )
-                . " $description Database (fake GeoIP2 data, for example purposes only)",
+              . " $description Database (fake GeoIP2 data, for example purposes only)",
             $type eq 'GeoIP2-City' ? ( zh => '小型数据库' ) : (),
         },
         alias_ipv6_to_ipv4    => 1,
@@ -547,18 +518,17 @@ sub _write_geoip2_db {
     );
 
     _populate_all_networks( $writer, $populate_all_networks_with_data )
-        if $populate_all_networks_with_data;
+      if $populate_all_networks_with_data;
 
     my $value = shift;
-    my $nodes
-        = decode_json( read_binary("$Dir/../source-data/$type-Test.json") );
+    my $nodes =
+      decode_json( read_binary("$Dir/../source-data/$type-Test.json") );
 
     for my $node (@$nodes) {
         for my $network ( keys %$node ) {
             $writer->insert_network(
                 Net::Works::Network->new_from_string( string => $network ),
-                $node->{$network}
-            );
+                $node->{$network} );
         }
     }
 
@@ -631,7 +601,7 @@ sub write_no_map_db {
         languages     => ['en'],
         description   => {
             en =>
-                'MaxMind DB String Value Entries (no maps or arrays as values)',
+              'MaxMind DB String Value Entries (no maps or arrays as values)',
         },
         root_data_type        => 'utf8_string',
         map_key_type_callback => sub { {} },
@@ -661,7 +631,7 @@ sub write_test_serialization_data {
 
     open my $fh, '>', "$Dir/maps-with-pointers.raw";
     print {$fh} ${ $serializer->buffer() }
-        or die "Cannot write to maps-with-pointers.raw: $!";
+      or die "Cannot write to maps-with-pointers.raw: $!";
     close $fh;
 
     return;
