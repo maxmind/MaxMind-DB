@@ -1,0 +1,26 @@
+[
+   {
+      "::214.2.3.0/126" : {
+         "is_anonymous" : true,
+         "is_anonymous_vpn" : true,
+         "ip_risk" :0.1
+      }
+   },
+   {
+      "::214.2.3.4/128" : {
+         "is_anonymous" : true,
+         "is_anonymous_vpn" : true,
+         "is_tor_exit_node" : true
+      }
+   },
+   {
+      "::214.2.3.5/128" : {
+         "is_anonymous" : true,
+         "is_anonymous_vpn" : true,
+         "is_hosting_provider" : true,
+         "is_public_proxy" : true,
+         "is_residential_proxy" : true,
+         "is_tor_exit_node" : true
+      }
+   }
+]
