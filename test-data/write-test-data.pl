@@ -438,7 +438,7 @@ sub _universal_map_key_type_callback {
         country                        => 'map',
         domain                         => 'utf8_string',
         geoname_id                     => 'uint32',
-        ip_risk                        => 'float',
+        ip_risk                        => 'double',
         ipv4_24                        => 'uint32',
         ipv4_32                        => 'uint32',
         ipv6_32                        => 'uint32',
