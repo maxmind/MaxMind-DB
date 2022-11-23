@@ -1,9 +1,9 @@
 [
    {
       "::214.2.3.0/126" : {
+         "ip_risk" : 0.1,
          "is_anonymous" : true,
-         "is_anonymous_vpn" : true,
-         "ip_risk" :0.1
+         "is_anonymous_vpn" : true
       }
    },
    {
