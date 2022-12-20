@@ -1989,6 +1989,26 @@
       }
    },
    {
+      "214.214.214.230/32" : {
+         "traits" : {
+            "static_ip_score" : 0.4,
+            "user_type" : "cellular",
+           "isp" : "Unexpected Cellular",
+           "organization" : "Unexpected Cellular"
+         }
+      }
+   },
+   {
+      "214.214.214.231/32" : {
+         "traits" : {
+            "static_ip_score" : 0.4,
+            "user_type" : "cellular",
+           "isp" : "Unexpected Cellular Two",
+           "organization" : "Unexpected Cellular Two"
+         }
+      }
+   },
+   {
       "2001:219::/32" : {
          "city" : {
             "confidence" : 51,
