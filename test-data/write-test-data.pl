@@ -379,7 +379,6 @@ sub write_geoip2_dbs {
         ['GeoIP2-IP-Risk'],
         ['GeoIP2-ISP'],
         ['GeoIP2-Precision-Enterprise'],
-        ['GeoIP2-Precision-Enterprise-Sandbox'],
         ['GeoIP2-Static-IP-Score'],
         ['GeoIP2-User-Count'],
         ['GeoLite2-ASN'],
