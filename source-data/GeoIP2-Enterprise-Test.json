@@ -779,6 +779,200 @@
       }
    },
    {
+      "214.78.0.0/23" : {
+         "city" : {
+            "confidence" : 99,
+            "geoname_id" : 5391811,
+            "names" : {
+               "de" : "San Diego",
+               "en" : "San Diego",
+               "es" : "San Diego",
+               "fr" : "San Diego",
+               "ja" : "サンディエゴ",
+               "pt-BR" : "San Diego",
+               "ru" : "Сан-Диего"
+            }
+         },
+         "continent" : {
+            "code" : "NA",
+            "geoname_id" : 6255149,
+            "names" : {
+               "de" : "Nordamerika",
+               "en" : "North America",
+               "es" : "Norteamérica",
+               "fr" : "Amérique du Nord",
+               "ja" : "北アメリカ",
+               "pt-BR" : "América do Norte",
+               "ru" : "Северная Америка",
+               "zh-CN" : "北美洲"
+            }
+         },
+         "country" : {
+            "confidence" : 99,
+            "geoname_id" : 6252001,
+            "iso_code" : "US",
+            "names" : {
+               "de" : "Vereinigte Staaten",
+               "en" : "United States",
+               "es" : "Estados Unidos",
+               "fr" : "États Unis",
+               "ja" : "アメリカ",
+               "pt-BR" : "EUA",
+               "ru" : "США",
+               "zh-CN" : "美国"
+            }
+         },
+         "location" : {
+            "accuracy_radius" : 10,
+            "latitude" : 32.7449,
+            "longitude" : -117.165,
+            "metro_code" : 825,
+            "time_zone" : "America/Los_Angeles"
+         },
+         "postal" : {
+            "code" : "92103",
+            "confidence" : 90
+         },
+         "registered_country" : {
+            "geoname_id" : 6252001,
+            "iso_code" : "US",
+            "names" : {
+               "de" : "Vereinigte Staaten",
+               "en" : "United States",
+               "es" : "Estados Unidos",
+               "fr" : "États Unis",
+               "ja" : "アメリカ",
+               "pt-BR" : "EUA",
+               "ru" : "США",
+               "zh-CN" : "美国"
+            }
+         },
+         "subdivisions" : [
+            {
+               "confidence" : 99,
+               "geoname_id" : 5332921,
+               "iso_code" : "CA",
+               "names" : {
+                  "de" : "Kalifornien",
+                  "en" : "California",
+                  "es" : "California",
+                  "fr" : "Californie",
+                  "ja" : "カリフォルニア州",
+                  "pt-BR" : "Califórnia",
+                  "ru" : "Калифорния",
+                  "zh-CN" : "加州"
+               }
+            }
+         ],
+         "traits" : {
+            "autonomous_system_number" : 5972,
+            "autonomous_system_organization" : "DNIC-ASBLK-05800-06055",
+            "connection_type" : "Cable/DSL",
+            "domain" : "health.mil",
+            "isp" : "US Air Force",
+            "organization" : "US Department of Defense",
+            "user_type" : "military"
+         }
+      }
+   },
+   {
+      "2001:480:10::/49" : {
+         "city" : {
+            "confidence" : 40,
+            "geoname_id" : 5391811,
+            "names" : {
+               "de" : "San Diego",
+               "en" : "San Diego",
+               "es" : "San Diego",
+               "fr" : "San Diego",
+               "ja" : "サンディエゴ",
+               "pt-BR" : "San Diego",
+               "ru" : "Сан-Диего"
+            }
+         },
+         "continent" : {
+            "code" : "NA",
+            "geoname_id" : 6255149,
+            "names" : {
+               "de" : "Nordamerika",
+               "en" : "North America",
+               "es" : "Norteamérica",
+               "fr" : "Amérique du Nord",
+               "ja" : "北アメリカ",
+               "pt-BR" : "América do Norte",
+               "ru" : "Северная Америка",
+               "zh-CN" : "北美洲"
+            }
+         },
+         "country" : {
+            "confidence" : 99,
+            "geoname_id" : 6252001,
+            "iso_code" : "US",
+            "names" : {
+               "de" : "Vereinigte Staaten",
+               "en" : "United States",
+               "es" : "Estados Unidos",
+               "fr" : "États Unis",
+               "ja" : "アメリカ",
+               "pt-BR" : "EUA",
+               "ru" : "США",
+               "zh-CN" : "美国"
+            }
+         },
+         "location" : {
+            "accuracy_radius" : 20,
+            "latitude" : 32.7203,
+            "longitude" : -117.1552,
+            "metro_code" : 825,
+            "time_zone" : "America/Los_Angeles"
+         },
+         "postal" : {
+            "code" : "92101",
+            "confidence" : 1
+         },
+         "registered_country" : {
+            "geoname_id" : 6252001,
+            "iso_code" : "US",
+            "names" : {
+               "de" : "Vereinigte Staaten",
+               "en" : "United States",
+               "es" : "Estados Unidos",
+               "fr" : "États Unis",
+               "ja" : "アメリカ",
+               "pt-BR" : "EUA",
+               "ru" : "США",
+               "zh-CN" : "美国"
+            }
+         },
+         "subdivisions" : [
+            {
+               "confidence" : 70,
+               "geoname_id" : 5332921,
+               "iso_code" : "CA",
+               "names" : {
+                  "de" : "Kalifornien",
+                  "en" : "California",
+                  "es" : "California",
+                  "fr" : "Californie",
+                  "ja" : "カリフォルニア州",
+                  "pt-BR" : "Califórnia",
+                  "ru" : "Калифорния",
+                  "zh-CN" : "加州"
+               }
+            }
+         ],
+         "traits" : {
+            "autonomous_system_number" : 22,
+            "autonomous_system_organization" : "DNIC-AS-00022",
+            "connection_type" : "Cable/DSL",
+            "domain" : "navy.mil",
+            "isp" : "US Department of Defense",
+            "organization" : "DNIC",
+            "user_type" : "military"
+         }
+      }
+   },
+   {
       "::212.47.235.81/128" : {
          "traits" : {
             "is_anonymous_proxy" : true,

@@ -11276,5 +11276,97 @@
             }
          }
       }
+   },
+   {
+      "214.78.0.0/19" : {
+         "continent" : {
+            "code" : "NA",
+            "geoname_id" : 6255149,
+            "names" : {
+               "de" : "Nordamerika",
+               "en" : "North America",
+               "es" : "Norteamérica",
+               "fr" : "Amérique du Nord",
+               "ja" : "北アメリカ",
+               "pt-BR" : "América do Norte",
+               "ru" : "Северная Америка",
+               "zh-CN" : "北美洲"
+            }
+         },
+         "country" : {
+            "geoname_id" : 6252001,
+            "iso_code" : "US",
+            "names" : {
+               "de" : "Vereinigte Staaten",
+               "en" : "United States",
+               "es" : "Estados Unidos",
+               "fr" : "États Unis",
+               "ja" : "アメリカ",
+               "pt-BR" : "EUA",
+               "ru" : "США",
+               "zh-CN" : "美国"
+            }
+         },
+         "registered_country" : {
+            "geoname_id" : 6252001,
+            "iso_code" : "US",
+            "names" : {
+               "de" : "Vereinigte Staaten",
+               "en" : "United States",
+               "es" : "Estados Unidos",
+               "fr" : "États Unis",
+               "ja" : "アメリカ",
+               "pt-BR" : "EUA",
+               "ru" : "США",
+               "zh-CN" : "美国"
+            }
+         }
+      }
+   },
+   {
+      "2001:480::/43" : {
+         "continent" : {
+            "code" : "NA",
+            "geoname_id" : 6255149,
+            "names" : {
+               "de" : "Nordamerika",
+               "en" : "North America",
+               "es" : "Norteamérica",
+               "fr" : "Amérique du Nord",
+               "ja" : "北アメリカ",
+               "pt-BR" : "América do Norte",
+               "ru" : "Северная Америка",
+               "zh-CN" : "北美洲"
+            }
+         },
+         "country" : {
+            "geoname_id" : 6252001,
+            "iso_code" : "US",
+            "names" : {
+               "de" : "Vereinigte Staaten",
+               "en" : "United States",
+               "es" : "Estados Unidos",
+               "fr" : "États Unis",
+               "ja" : "アメリカ",
+               "pt-BR" : "EUA",
+               "ru" : "США",
+               "zh-CN" : "美国"
+            }
+         },
+         "registered_country" : {
+            "geoname_id" : 6252001,
+            "iso_code" : "US",
+            "names" : {
+               "de" : "Vereinigte Staaten",
+               "en" : "United States",
+               "es" : "Estados Unidos",
+               "fr" : "États Unis",
+               "ja" : "アメリカ",
+               "pt-BR" : "EUA",
+               "ru" : "США",
+               "zh-CN" : "美国"
+            }
+         }
+      }
    }
 ]
