@@ -2084,20 +2084,20 @@
    {
       "214.214.214.230/32" : {
          "traits" : {
+            "isp" : "Unexpected Cellular",
+            "organization" : "Unexpected Cellular",
             "static_ip_score" : 0.4,
-            "user_type" : "cellular",
-           "isp" : "Unexpected Cellular",
-           "organization" : "Unexpected Cellular"
+            "user_type" : "cellular"
          }
       }
    },
    {
       "214.214.214.231/32" : {
          "traits" : {
+            "isp" : "Unexpected Cellular Two",
+            "organization" : "Unexpected Cellular Two",
             "static_ip_score" : 0.4,
-            "user_type" : "cellular",
-           "isp" : "Unexpected Cellular Two",
-           "organization" : "Unexpected Cellular Two"
+            "user_type" : "cellular"
          }
       }
    },
