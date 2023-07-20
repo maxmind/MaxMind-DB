@@ -1550,6 +1550,99 @@
       }
    },
    {
+      "214.248.0.0/29" : {
+         "city" : {
+            "confidence" : 20,
+            "geoname_id" : 4734825,
+            "names" : {
+               "en" : "Sugar Land",
+               "ja" : "シュガーランド",
+               "pt-BR" : "Sugar Land",
+               "ru" : "Шугар-Ленд"
+            }
+         },
+         "continent" : {
+            "code" : "NA",
+            "geoname_id" : 6255149,
+            "names" : {
+               "de" : "Nordamerika",
+               "en" : "North America",
+               "es" : "Norteamérica",
+               "fr" : "Amérique du Nord",
+               "ja" : "北アメリカ",
+               "pt-BR" : "América do Norte",
+               "ru" : "Северная Америка",
+               "zh-CN" : "北美洲"
+            }
+         },
+         "country" : {
+            "confidence" : 99,
+            "geoname_id" : 6252001,
+            "iso_code" : "US",
+            "names" : {
+               "de" : "USA",
+               "en" : "United States",
+               "es" : "Estados Unidos",
+               "fr" : "États-Unis",
+               "ja" : "アメリカ合衆国",
+               "pt-BR" : "Estados Unidos",
+               "ru" : "США",
+               "zh-CN" : "美国"
+            }
+         },
+         "location" : {
+            "accuracy_radius" : 1000,
+            "latitude" : 29.6197,
+            "longitude" : -95.635,
+            "metro_code" : 618,
+            "time_zone" : "America/Chicago"
+         },
+         "postal" : {
+            "code" : "77487",
+            "confidence" : 1
+         },
+         "registered_country" : {
+            "geoname_id" : 6252001,
+            "iso_code" : "US",
+            "names" : {
+               "de" : "USA",
+               "en" : "United States",
+               "es" : "Estados Unidos",
+               "fr" : "États-Unis",
+               "ja" : "アメリカ合衆国",
+               "pt-BR" : "Estados Unidos",
+               "ru" : "США",
+               "zh-CN" : "美国"
+            }
+         },
+         "subdivisions" : [
+            {
+               "confidence" : 60,
+               "geoname_id" : 4736286,
+               "iso_code" : "TX",
+               "names" : {
+                  "en" : "Texas",
+                  "es" : "Texas",
+                  "fr" : "Texas",
+                  "ja" : "テキサス州",
+                  "ru" : "Техас",
+                  "zh-CN" : "德克萨斯州"
+               }
+            }
+         ],
+         "traits" : {
+            "autonomous_system_number" : 11025,
+            "autonomous_system_organization" : "Comcast Cable Communications, LLC",
+            "connection_type" : "Cable/DSL",
+            "domain" : "comcastbusiness.net",
+            "isp" : "Comcast Business",
+            "organization" : "Comcast Business",
+            "static_ip_score" : 1.47,
+            "user_type" : "hosting"
+         }
+      }
+   },
+   {
       "::208.110.217.113/128" : {
          "city" : {
             "confidence" : 20,
@@ -1991,20 +2084,20 @@
    {
       "214.214.214.230/32" : {
          "traits" : {
+            "isp" : "Unexpected Cellular",
+            "organization" : "Unexpected Cellular",
             "static_ip_score" : 0.4,
-            "user_type" : "cellular",
-           "isp" : "Unexpected Cellular",
-           "organization" : "Unexpected Cellular"
+            "user_type" : "cellular"
          }
       }
    },
    {
       "214.214.214.231/32" : {
          "traits" : {
+            "isp" : "Unexpected Cellular Two",
+            "organization" : "Unexpected Cellular Two",
             "static_ip_score" : 0.4,
-            "user_type" : "cellular",
-           "isp" : "Unexpected Cellular Two",
-           "organization" : "Unexpected Cellular Two"
+            "user_type" : "cellular"
          }
       }
    },
