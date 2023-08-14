@@ -110,6 +110,11 @@
       }
    },
    {
+      "::214.78.120.0/118" : {
+         "connection_type" : "Satellite"
+      }
+   },
+   {
       "::216.160.83.56/125" : {
          "connection_type" : "Corporate"
       }
