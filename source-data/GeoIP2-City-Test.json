@@ -12569,7 +12569,6 @@
             }
          },
          "country" : {
-            "confidence" : 99,
             "geoname_id" : 6252001,
             "iso_code" : "US",
             "names" : {
