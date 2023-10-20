@@ -46,13 +46,12 @@ func (w *Writer) WriteGeoIP2TestDB() error {
 
 		dbWriter, err := mmdbwriter.New(
 			mmdbwriter.Options{
-				DatabaseType:            dbType,
-				Description:             description,
-				DisableIPv4Aliasing:     false,
-				DisableMetadataPointers: true,
-				IPVersion:               6,
-				Languages:               languages,
-				RecordSize:              28,
+				DatabaseType:        dbType,
+				Description:         description,
+				DisableIPv4Aliasing: false,
+				IPVersion:           6,
+				Languages:           languages,
+				RecordSize:          28,
 			},
 		)
 		if err != nil {
@@ -130,7 +129,7 @@ func toMMDBType(key string, value any) (mmdbtype.DataType, error) {
 		for innerKey, val := range v {
 			innerVal, err := toMMDBType(innerKey, val)
 			if err != nil {
-				return nil, fmt.Errorf("parsing mmdbtype.Map: %w", err)
+				return nil, fmt.Errorf("parsing mmdbtype.Map for key %q: %w", key, err)
 			}
 			m[mmdbtype.String(innerKey)] = innerVal
 		}
@@ -140,7 +139,7 @@ func toMMDBType(key string, value any) (mmdbtype.DataType, error) {
 		for _, val := range v {
 			innerVal, err := toMMDBType(key, val)
 			if err != nil {
-				return nil, fmt.Errorf("parsing mmdbtype.Slice: %w", err)
+				return nil, fmt.Errorf("parsing mmdbtype.Slice for key %q: %w", key, err)
 			}
 			s = append(s, innerVal)
 		}
@@ -157,10 +156,10 @@ func toMMDBType(key string, value any) (mmdbtype.DataType, error) {
 			"static_ip_score":
 			return mmdbtype.Float64(v), nil
 		default:
-			return mmdbtype.Float64(v), nil
+			return nil, fmt.Errorf("unsupported numberic type for key %q: %T", key, value)
 		}
 	default:
-		return nil, fmt.Errorf("unsupported type: %T", value)
+		return nil, fmt.Errorf("unsupported type for key %q: %T", key, value)
 	}
 }
 

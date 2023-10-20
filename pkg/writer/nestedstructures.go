@@ -18,7 +18,6 @@ func (w *Writer) WriteDeeplyNestedStructuresTestDB() error {
 				"en": "MaxMind DB Nested Data Structures Test database - contains deeply nested map/array structures",
 			},
 			DisableIPv4Aliasing:     false,
-			DisableMetadataPointers: true,
 			IncludeReservedNetworks: true,
 			IPVersion:               6,
 			Languages:               []string{"en"},

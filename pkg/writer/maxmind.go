@@ -97,13 +97,12 @@ func (w *Writer) writeMaxMindTestDB(
 
 	dbWriter, err := mmdbwriter.New(
 		mmdbwriter.Options{
-			DatabaseType:            "Test",
-			Description:             metadata,
-			DisableIPv4Aliasing:     ipVersion == 4,
-			DisableMetadataPointers: true,
-			IPVersion:               ipVersion,
-			Languages:               []string{"en", "zh"},
-			RecordSize:              recordSize,
+			DatabaseType:        "Test",
+			Description:         metadata,
+			DisableIPv4Aliasing: ipVersion == 4,
+			IPVersion:           ipVersion,
+			Languages:           []string{"en", "zh"},
+			RecordSize:          recordSize,
 		},
 	)
 	if err != nil {
@@ -146,7 +145,6 @@ func (w *Writer) WriteNoIPv4TestDB() error {
 				"en": "MaxMind DB No IPv4 Search Tree",
 			},
 			DisableIPv4Aliasing:     true,
-			DisableMetadataPointers: true,
 			IncludeReservedNetworks: true,
 			IPVersion:               6,
 			Languages:               []string{"en"},
@@ -185,10 +183,9 @@ func (w *Writer) WriteNoMapTestDB() error {
 			Description: map[string]string{
 				"en": "MaxMind DB String Value Entries (no maps or arrays as values)",
 			},
-			DisableMetadataPointers: true,
-			IPVersion:               4,
-			Languages:               []string{"en"},
-			RecordSize:              24,
+			IPVersion:  4,
+			Languages:  []string{"en"},
+			RecordSize: 24,
 		},
 	)
 	if err != nil {
@@ -227,11 +224,10 @@ func (w *Writer) WriteMetadataPointersTestDB() error {
 				"es": repeatedString,
 				"zh": repeatedString,
 			},
-			DisableIPv4Aliasing:     true,
-			DisableMetadataPointers: false,
-			IPVersion:               6,
-			Languages:               []string{"en", "es", "zh"},
-			RecordSize:              24,
+			DisableIPv4Aliasing: true,
+			IPVersion:           6,
+			Languages:           []string{"en", "es", "zh"},
+			RecordSize:          24,
 		},
 	)
 	if err != nil {

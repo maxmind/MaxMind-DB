@@ -22,7 +22,6 @@ func (w *Writer) WriteDecoderTestDB() error {
 				"en": "MaxMind DB Decoder Test database - contains every MaxMind DB data type",
 			},
 			DisableIPv4Aliasing:     false,
-			DisableMetadataPointers: true,
 			IncludeReservedNetworks: true,
 			IPVersion:               6,
 			Languages:               []string{"en"},
