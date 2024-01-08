@@ -1087,5 +1087,13 @@
             "static_ip_score" : 1.47
          }
       }
+   },
+   {
+      "214.214.214.216/32" : {
+         "traits" : {
+            "static_ip_score" : 0.4,
+            "user_type" : "traveler"
+         }
+      }
    }
 ]
