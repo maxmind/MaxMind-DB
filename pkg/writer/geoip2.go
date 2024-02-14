@@ -156,7 +156,7 @@ func toMMDBType(key string, value any) (mmdbtype.DataType, error) {
 			"static_ip_score":
 			return mmdbtype.Float64(v), nil
 		default:
-			return nil, fmt.Errorf("unsupported numberic type for key %q: %T", key, value)
+			return nil, fmt.Errorf("unsupported numeric type for key %q: %T", key, value)
 		}
 	default:
 		return nil, fmt.Errorf("unsupported type for key %q: %T", key, value)
