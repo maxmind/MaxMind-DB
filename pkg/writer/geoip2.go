@@ -64,12 +64,12 @@ func (w *Writer) WriteGeoIP2TestDB() error {
 			}
 		}
 
-		jsonFileName := fmt.Sprintf("%s-Test.json", dbType)
+		jsonFileName := dbType + "-Test.json"
 		if err := w.insertJSON(dbWriter, jsonFileName); err != nil {
 			return fmt.Errorf("inserting json: %w", err)
 		}
 
-		dbFileName := fmt.Sprintf("%s-Test.mmdb", dbType)
+		dbFileName := dbType + "-Test.mmdb"
 		if err := w.write(dbWriter, dbFileName); err != nil {
 			return fmt.Errorf("writing database: %w", err)
 		}

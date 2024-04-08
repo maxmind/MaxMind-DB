@@ -3,7 +3,9 @@
 package writer
 
 import (
+	"errors"
 	"fmt"
+	"io/fs"
 	"os"
 	"path/filepath"
 
@@ -29,7 +31,7 @@ type Writer struct {
 // New initializes a new test database writer struct.
 func New(source, target string) (*Writer, error) {
 	s := filepath.Clean(source)
-	if _, err := os.Stat(s); os.IsNotExist(err) {
+	if _, err := os.Stat(s); errors.Is(err, fs.ErrNotExist) {
 		return nil, fmt.Errorf("source directory does not exist: %w", err)
 	}
 
