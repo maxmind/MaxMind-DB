@@ -36,6 +36,7 @@ func New(source, target string) (*Writer, error) {
 	}
 
 	t := filepath.Clean(target)
+	//nolint:gosec // not security sensitive.
 	if err := os.MkdirAll(t, os.ModePerm); err != nil {
 		return nil, fmt.Errorf("creating target directory: %w", err)
 	}
