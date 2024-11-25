@@ -23,6 +23,7 @@ func (w *Writer) WriteGeoIP2TestDB() error {
 		"GeoIP2-DensityIncome",
 		"GeoIP2-Domain",
 		"GeoIP2-Enterprise",
+		"GeoIP2-IP-Risk",
 		"GeoIP2-ISP",
 		"GeoIP2-Precision-Enterprise",
 		"GeoIP2-Static-IP-Score",
