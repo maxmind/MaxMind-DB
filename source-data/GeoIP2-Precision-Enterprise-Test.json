@@ -1797,6 +1797,91 @@
       }
    },
    {
+       "::214.61.39.7/128": {
+          "city": {
+            "confidence": 40,
+            "geoname_id": 5089478,
+            "names": {
+              "en": "Merrimack",
+              "ja": "メリマック",
+              "pt-BR": "East Merrimack",
+              "ru": "Мерримак"
+            }
+          },
+          "continent": {
+            "code": "NA",
+            "geoname_id": 6255149,
+            "names": {
+              "de": "Nordamerika",
+              "en": "North America",
+              "es": "Norteamérica",
+              "fr": "Amérique du Nord",
+              "ja": "北アメリカ",
+              "pt-BR": "América do Norte",
+              "ru": "Северная Америка",
+              "zh-CN": "北美洲"
+            }
+          },
+          "country": {
+            "confidence": 99,
+            "geoname_id": 6252001,
+            "iso_code": "US",
+            "names": {
+              "de": "USA",
+              "en": "United States",
+              "es": "Estados Unidos",
+              "fr": "États Unis",
+              "ja": "アメリカ",
+              "pt-BR": "EUA",
+              "ru": "США",
+              "zh-CN": "美国"
+            }
+          },
+          "location": {
+            "accuracy_radius": 10,
+            "latitude": 42.8651,
+            "longitude": -71.4934,
+            "metro_code": 506,
+            "time_zone": "America/New_York"
+          },
+          "postal": {
+            "code": "03054",
+            "confidence": 40
+          },
+          "registered_country": {
+            "geoname_id": 6252001,
+            "iso_code": "US",
+            "names": {
+              "de": "USA",
+              "en": "United States",
+              "es": "Estados Unidos",
+              "fr": "États Unis",
+              "ja": "アメリカ",
+              "pt-BR": "EUA",
+              "ru": "США",
+              "zh-CN": "美国"
+            }
+          },
+          "subdivisions": [
+            {
+              "confidence": 80,
+              "geoname_id": 5090174,
+              "iso_code": "NH",
+              "names": {
+                "de": "New Hampshire",
+                "en": "New Hampshire",
+                "es": "Nueva Hampshire",
+                "fr": "New Hampshire",
+                "ja": "ニューハンプシャー州",
+                "pt-BR": "New Hampshire",
+                "ru": "Нью-Гэмпшир",
+                "zh-CN": "新罕布什尔州"
+              }
+            }
+        ]
+      }
+   },
+   {
       "::214.61.39.4/128": {
          "city": {
             "confidence": 50,
