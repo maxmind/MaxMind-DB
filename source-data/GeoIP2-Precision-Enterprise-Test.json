@@ -221,6 +221,7 @@
                }
             },
             {
+               "confidence" : 60,
                "geoname_id" : 3333217,
                "iso_code" : "WBK",
                "names" : {
