@@ -1,6 +1,6 @@
 module github.com/maxmind/MaxMind-DB
 
-go 1.21
+go 1.23
 
 require (
 	github.com/maxmind/mmdbwriter v1.0.0
