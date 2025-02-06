@@ -1,31 +1,31 @@
 [
-    {
-        "::214.2.3.0/126": {
-            "ip_risk": 25,
-            "is_anonymous": true,
-            "is_anonymous_vpn": true
-        }
-    },
-    {
-        "::214.2.3.4/128": {
-            "ip_risk": 50,
-            "is_anonymous": true,
-            "is_anonymous_vpn": true,
-            "is_tor_exit_node": true
-        }
-    },
-    {
-        "::214.2.3.5/128": {
-            "ip_risk": 90,
-            "is_anonymous": true,
-            "is_anonymous_vpn": true,
-            "is_residential_proxy": true,
-            "is_tor_exit_node": true
-        }
-    },
-    {
-        "::214.2.3.6/128": {
-            "ip_risk": 85
-        }
-    }
+   {
+      "::214.2.3.0/126" : {
+         "ip_risk" : 25,
+         "is_anonymous" : true,
+         "is_anonymous_vpn" : true
+      }
+   },
+   {
+      "::214.2.3.4/128" : {
+         "ip_risk" : 50,
+         "is_anonymous" : true,
+         "is_anonymous_vpn" : true,
+         "is_tor_exit_node" : true
+      }
+   },
+   {
+      "::214.2.3.5/128" : {
+         "ip_risk" : 90,
+         "is_anonymous" : true,
+         "is_anonymous_vpn" : true,
+         "is_residential_proxy" : true,
+         "is_tor_exit_node" : true
+      }
+   },
+   {
+      "::214.2.3.6/128" : {
+         "ip_risk" : 85
+      }
+   }
 ]

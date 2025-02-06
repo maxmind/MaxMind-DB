@@ -75,7 +75,7 @@
                }
             },
             {
-               "confidence": 60,
+               "confidence" : 60,
                "geoname_id" : 3333217,
                "iso_code" : "WBK",
                "names" : {
@@ -781,9 +781,9 @@
    },
    {
       "214.1.1.0/24" : {
-          "traits": {
-              "is_anycast": true
-          }
+         "traits" : {
+            "is_anycast" : true
+         }
       }
    },
    {
