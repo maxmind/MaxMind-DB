@@ -75,6 +75,7 @@
                }
             },
             {
+               "confidence" : 60,
                "geoname_id" : 3333217,
                "iso_code" : "WBK",
                "names" : {
@@ -780,9 +781,9 @@
    },
    {
       "214.1.1.0/24" : {
-          "traits": {
-              "is_anycast": true
-          }
+         "traits" : {
+            "is_anycast" : true
+         }
       }
    },
    {
@@ -1101,6 +1102,13 @@
          "traits" : {
             "static_ip_score" : 0.4,
             "user_type" : "hosting"
+         }
+      }
+   },
+   {
+      "214.214.214.221/32" : {
+         "traits" : {
+            "user_type" : "content_delivery_network"
          }
       }
    }

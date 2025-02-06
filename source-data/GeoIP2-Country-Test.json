@@ -15903,9 +15903,9 @@
    },
    {
       "214.1.1.0/24" : {
-          "traits": {
-              "is_anycast": true
-          }
+         "traits" : {
+            "is_anycast" : true
+         }
       }
    },
    {
