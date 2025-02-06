@@ -254,7 +254,6 @@
             }
          },
          "traits" : {
-            "is_anonymous_proxy" : true,
             "isp" : "WifiNetCom",
             "static_ip_score" : 0.28
          }
@@ -686,7 +685,6 @@
          "traits" : {
             "autonomous_system_number" : 35908,
             "domain" : "shoesfin.NET",
-            "is_anonymous_proxy" : true,
             "isp" : "Loud Packet",
             "organization" : "zudoarichikito_",
             "static_ip_score" : 0.34,
@@ -779,9 +777,7 @@
             "autonomous_system_organization" : "FairPoint Communications",
             "connection_type" : "Cable/DSL",
             "domain" : "frpt.net",
-            "is_anonymous_proxy" : true,
             "is_legitimate_proxy" : true,
-            "is_satellite_provider" : true,
             "isp" : "Fairpoint Communications",
             "organization" : "Fairpoint Communications",
             "static_ip_score" : 0.34,
@@ -874,9 +870,7 @@
             "autonomous_system_organization" : "FairPoint Communications",
             "connection_type" : "Cable/DSL",
             "domain" : "frpt.net",
-            "is_anonymous_proxy" : true,
             "is_legitimate_proxy" : true,
-            "is_satellite_provider" : true,
             "isp" : "Fairpoint Communications",
             "organization" : "Fairpoint Communications",
             "static_ip_score" : 0.35,
@@ -2669,7 +2663,6 @@
    {
       "::212.47.235.81/128" : {
          "traits" : {
-            "is_anonymous_proxy" : true,
             "static_ip_score" : 1.47
          }
       }
@@ -2677,7 +2670,6 @@
    {
       "::212.47.235.82/128" : {
          "traits" : {
-            "is_satellite_provider" : true,
             "static_ip_score" : 1.47
          }
       }
