@@ -15211,10 +15211,6 @@
                "ru" : "США",
                "zh-CN" : "美国"
             }
-         },
-         "traits" : {
-            "is_anonymous_proxy" : true,
-            "is_satellite_provider" : true
          }
       }
    },
@@ -15261,10 +15257,6 @@
                "ru" : "США",
                "zh-CN" : "美国"
             }
-         },
-         "traits" : {
-            "is_anonymous_proxy" : true,
-            "is_satellite_provider" : true
          }
       }
    },
@@ -15638,9 +15630,6 @@
                "ru" : "Румыния",
                "zh-CN" : "罗马尼亚"
             }
-         },
-         "traits" : {
-            "is_anonymous_proxy" : true
          }
       }
    },
@@ -15794,20 +15783,6 @@
                "ru" : "Китай",
                "zh-CN" : "中国"
             }
-         }
-      }
-   },
-   {
-      "::212.47.235.81/128" : {
-         "traits" : {
-            "is_anonymous_proxy" : true
-         }
-      }
-   },
-   {
-      "::212.47.235.82/128" : {
-         "traits" : {
-            "is_satellite_provider" : true
          }
       }
    },
