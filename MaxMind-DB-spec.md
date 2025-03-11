@@ -544,14 +544,13 @@ data section size for the database is limited to 4GB.
 
 ### Writer
 
-* [Perl](https://github.com/maxmind/MaxMind-DB-Writer-perl)
+* [Go](https://github.com/maxmind/mmdbwriter)
 
 ### Reader
 
 * [C](https://github.com/maxmind/libmaxminddb)
 * [C#](https://github.com/maxmind/MaxMind-DB-Reader-dotnet)
 * [Java](https://github.com/maxmind/MaxMind-DB-Reader-java)
-* [Perl](https://github.com/maxmind/MaxMind-DB-Reader-perl)
 * [PHP](https://github.com/maxmind/MaxMind-DB-Reader-php)
 * [Python](https://github.com/maxmind/MaxMind-DB-Reader-python)
 * [Ruby](https://github.com/maxmind/MaxMind-DB-Reader-ruby)
