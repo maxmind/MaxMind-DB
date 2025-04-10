@@ -53,7 +53,8 @@ func (w *Writer) WriteIPv6TestDB() error {
 	return nil
 }
 
-// WriteMixedIPTestDB writes mmdb files for a mixed ip version range between ::1:ffff:ffff and ::2:0000:0059
+// WriteMixedIPTestDB writes mmdb files for a mixed ip version range between ::1:ffff:ffff and
+// ::2:0000:0059
 // with various record sizes.
 func (w *Writer) WriteMixedIPTestDB() error {
 	ipv6Range, err := parseIPRange("::1:ffff:ffff", "::2:0000:0059")
