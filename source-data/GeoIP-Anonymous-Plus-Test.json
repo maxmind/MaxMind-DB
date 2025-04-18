@@ -1,0 +1,175 @@
+[
+  {
+    "1.2.0.0/32": {
+      "is_anonymous": true,
+      "is_anonymous_vpn": true
+    }
+  },
+  {
+    "1.2.0.1/32": {
+      "anonymizer_confidence": 30,
+      "is_anonymous": true,
+      "is_anonymous_vpn": true,
+      "network_last_seen": "2025-04-14",
+      "provider_name": "foo"
+    }
+  },
+  {
+    "1.2.0.2/32": {
+      "anonymizer_confidence": 99,
+      "is_anonymous": true,
+      "is_anonymous_vpn": true
+    }
+  },
+  {
+    "1.2.0.3/32": {
+      "is_anonymous": true,
+      "is_anonymous_vpn": true,
+      "network_last_seen": "2025-04-14"
+    }
+  },
+  {
+    "1.2.0.4/32": {
+      "is_anonymous": true,
+      "is_anonymous_vpn": true,
+      "provider_name": "foo"
+    }
+  },
+  {
+    "1.2.0.5/32": {
+      "is_anonymous": true,
+      "is_anonymous_vpn": true
+    }
+  },
+  {
+    "1.2.0.6/31": {
+      "is_anonymous": true,
+      "is_anonymous_vpn": true
+    }
+  },
+  {
+    "1.2.0.8/29": {
+      "is_anonymous": true,
+      "is_anonymous_vpn": true
+    }
+  },
+  {
+    "1.2.0.16/28": {
+      "is_anonymous": true,
+      "is_anonymous_vpn": true
+    }
+  },
+  {
+    "1.2.0.32/27": {
+      "is_anonymous": true,
+      "is_anonymous_vpn": true
+    }
+  },
+  {
+    "1.2.0.64/26": {
+      "is_anonymous": true,
+      "is_anonymous_vpn": true
+    }
+  },
+  {
+    "1.2.0.128/25": {
+      "is_anonymous": true,
+      "is_anonymous_vpn": true
+    }
+  },
+  {
+    "1.2.1.0/24": {
+      "is_anonymous": true,
+      "is_anonymous_vpn": true
+    }
+  },
+  {
+    "1.2.2.0/23": {
+      "is_anonymous": true,
+      "is_anonymous_vpn": true
+    }
+  },
+  {
+    "1.2.4.0/22": {
+      "is_anonymous": true,
+      "is_anonymous_vpn": true
+    }
+  },
+  {
+    "1.2.8.0/21": {
+      "is_anonymous": true,
+      "is_anonymous_vpn": true
+    }
+  },
+  {
+    "1.2.16.0/20": {
+      "is_anonymous": true,
+      "is_anonymous_vpn": true
+    }
+  },
+  {
+    "1.2.32.0/19": {
+      "is_anonymous": true,
+      "is_anonymous_vpn": true
+    }
+  },
+  {
+    "1.2.64.0/18": {
+      "is_anonymous": true,
+      "is_anonymous_vpn": true
+    }
+  },
+  {
+    "1.2.128.0/17": {
+      "is_anonymous": true,
+      "is_anonymous_vpn": true
+    }
+  },
+  {
+    "::1.124.213.1/128": {
+      "is_anonymous": true,
+      "is_anonymous_vpn": true,
+      "is_tor_exit_node": true
+    }
+  },
+  {
+    "::81.2.69.0/120": {
+      "is_anonymous": true,
+      "is_anonymous_vpn": true,
+      "is_hosting_provider": true,
+      "is_public_proxy": true,
+      "is_residential_proxy": true,
+      "is_tor_exit_node": true
+    }
+  },
+  {
+    "::71.160.223.0/120": {
+      "is_anonymous": true,
+      "is_hosting_provider": true
+    }
+  },
+  {
+    "::186.30.236.0/120": {
+      "is_anonymous": true,
+      "is_public_proxy": true
+    }
+  },
+  {
+    "::65.0.0.0/109": {
+      "is_anonymous": true,
+      "is_tor_exit_node": true
+    }
+  },
+  {
+    "abcd:1000::/112": {
+      "is_anonymous": true,
+      "is_public_proxy": true
+    }
+  },
+  {
+    "2001:480:3a::/64": {
+      "is_anonymous": true,
+      "is_public_proxy": true
+    }
+  }
+]

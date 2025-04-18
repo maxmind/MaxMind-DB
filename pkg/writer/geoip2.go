@@ -16,6 +16,7 @@ import (
 // WriteGeoIP2TestDB writes GeoIP2 test mmdb files.
 func (w *Writer) WriteGeoIP2TestDB() error {
 	dbTypes := []string{
+		"GeoIP-Anonymous-Plus",
 		"GeoIP2-Anonymous-IP",
 		"GeoIP2-City",
 		"GeoIP2-Connection-Type",
@@ -59,7 +60,7 @@ func (w *Writer) WriteGeoIP2TestDB() error {
 			return fmt.Errorf("creating mmdbwriter: %w", err)
 		}
 
-		if dbType == "GeoIP2-Anonymous-IP" {
+		if dbType == "GeoIP2-Anonymous-IP" || dbType == "GeoIP-Anonymous-Plus" {
 			if err := populateAllNetworks(dbWriter); err != nil {
 				return fmt.Errorf("inserting all networks: %w", err)
 			}
@@ -147,7 +148,7 @@ func toMMDBType(key string, value any) (mmdbtype.DataType, error) {
 		return s, nil
 	case float64:
 		switch key {
-		case "accuracy_radius", "confidence", "metro_code":
+		case "accuracy_radius", "anonymizer_confidence", "confidence", "metro_code":
 			return mmdbtype.Uint16(v), nil
 		case "autonomous_system_number", "average_income",
 			"geoname_id", "ipv4_24", "ipv4_32", "ipv6_32",
