@@ -15,26 +15,31 @@ import (
 
 // WriteGeoIP2TestDB writes GeoIP2 test mmdb files.
 func (w *Writer) WriteGeoIP2TestDB() error {
-	dbTypes := []string{
-		"GeoIP-Anonymous-Plus",
-		"GeoIP2-Anonymous-IP",
-		"GeoIP2-City",
-		"GeoIP2-Connection-Type",
-		"GeoIP2-Country",
-		"GeoIP2-DensityIncome",
-		"GeoIP2-Domain",
-		"GeoIP2-Enterprise",
-		"GeoIP2-IP-Risk",
-		"GeoIP2-ISP",
-		"GeoIP2-Precision-Enterprise",
-		"GeoIP2-Static-IP-Score",
-		"GeoIP2-User-Count",
-		"GeoLite2-ASN",
-		"GeoLite2-City",
-		"GeoLite2-Country",
+	// This is a map from database type to input file name.
+	dbTypes := map[string]string{
+		"GeoIP-Anonymous-Plus":               "GeoIP-Anonymous-Plus-Test.json",
+		"GeoIP2-Anonymous-IP":                "GeoIP2-Anonymous-IP-Test.json",
+		"GeoIP2-City":                        "GeoIP2-City-Test.json",
+		"GeoIP2-City-Shield":                 "GeoIP2-City-Test.json",
+		"GeoIP2-Connection-Type":             "GeoIP2-Connection-Type-Test.json",
+		"GeoIP2-Country":                     "GeoIP2-Country-Test.json",
+		"GeoIP2-Country-Shield":              "GeoIP2-Country-Test.json",
+		"GeoIP2-DensityIncome":               "GeoIP2-DensityIncome-Test.json",
+		"GeoIP2-Domain":                      "GeoIP2-Domain-Test.json",
+		"GeoIP2-Enterprise":                  "GeoIP2-Enterprise-Test.json",
+		"GeoIP2-Enterprise-Shield":           "GeoIP2-Enterprise-Test.json",
+		"GeoIP2-IP-Risk":                     "GeoIP2-IP-Risk-Test.json",
+		"GeoIP2-ISP":                         "GeoIP2-ISP-Test.json",
+		"GeoIP2-Precision-Enterprise":        "GeoIP2-Precision-Enterprise-Test.json",
+		"GeoIP2-Precision-Enterprise-Shield": "GeoIP2-Precision-Enterprise-Test.json",
+		"GeoIP2-Static-IP-Score":             "GeoIP2-Static-IP-Score-Test.json",
+		"GeoIP2-User-Count":                  "GeoIP2-User-Count-Test.json",
+		"GeoLite2-ASN":                       "GeoLite2-ASN-Test.json",
+		"GeoLite2-City":                      "GeoLite2-City-Test.json",
+		"GeoLite2-Country":                   "GeoLite2-Country-Test.json",
 	}
 
-	for _, dbType := range dbTypes {
+	for dbType, jsonFileName := range dbTypes {
 		languages := []string{"en"}
 		description := map[string]string{
 			"en": strings.ReplaceAll(dbType, "-", " ") +
@@ -66,7 +71,6 @@ func (w *Writer) WriteGeoIP2TestDB() error {
 			}
 		}
 
-		jsonFileName := dbType + "-Test.json"
 		if err := w.insertJSON(dbWriter, jsonFileName); err != nil {
 			return fmt.Errorf("inserting json: %w", err)
 		}
