@@ -71,7 +71,7 @@ func (w *Writer) WriteGeoIP2TestDB() error {
 			}
 		}
 
-		if err := w.insertJSON(dbWriter, jsonFileName); err != nil {
+		if err := InsertJSON(dbWriter, filepath.Join(w.source, jsonFileName)); err != nil {
 			return fmt.Errorf("inserting json: %w", err)
 		}
 
@@ -84,10 +84,10 @@ func (w *Writer) WriteGeoIP2TestDB() error {
 	return nil
 }
 
-// insertJSON reads and parses a json file into mmdbtypes values and inserts
+// InsertJSON reads and parses a json file into mmdbtypes values and inserts
 // them into the mmdbwriter tree.
-func (w *Writer) insertJSON(dbWriter *mmdbwriter.Tree, fileName string) error {
-	file, err := os.Open(filepath.Clean(filepath.Join(w.source, fileName)))
+func InsertJSON(dbWriter *mmdbwriter.Tree, filePath string) error {
+	file, err := os.Open(filepath.Clean(filePath))
 	if err != nil {
 		return fmt.Errorf("opening json file: %w", err)
 	}
