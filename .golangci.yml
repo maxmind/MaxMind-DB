@@ -96,6 +96,9 @@ linters:
     # there are many cases where it is not.
     - nlreturn
 
+    # We allow inline errors in if statements as long as it stays on a single line.
+    - noinlineerr
+
     # We occasionally use named returns for documentation, which is helpful.
     # Named returns are only really a problem when used in conjunction with
     # a bare return statement. I _think_ Revive's bare-return covers that
@@ -120,6 +123,9 @@ linters:
     # Although some fixes in this seem good (e.g., err cuddling), I was
     # not able to disable some of the less desirable whitespace changes.
     - wsl
+    # This is a new, rewritten version of wsl. It would be worth exploring
+    # the options.
+    - wsl_v5
 
   settings:
     # Please note that we only use depguard for blocking packages and
@@ -127,6 +133,19 @@ linters:
     depguard:
       rules:
         main:
+          # Allow if package doesn't match the deny list or, if it does, allow
+          # if the allow list rule is more specific (longer).
+          list-mode: lax
+          allow:
+            # This is the modern package for Drive.
+            - google.golang.org/api/drive/v3
+            # This is the modern package for Sheets.
+            - google.golang.org/api/sheets/v4
+            # These package are used by cloud.google.com/go package APIs.
+            - google.golang.org/api/googleapi
+            - google.golang.org/api/iterator
+            - google.golang.org/api/option
+            - google.golang.org/api/transport/http
           deny:
             - pkg: github.com/likexian/gokit/assert
               desc: Use github.com/stretchr/testify/assert
@@ -136,12 +155,8 @@ linters:
               desc: Use slices instead.
             - pkg: golang.org/x/exp/slog
               desc: Use log/slog instead.
-            - pkg: google.golang.org/api/compute/v1
-              desc: Use cloud.google.com/go/compute/apiv1 instead.
-            - pkg: google.golang.org/api/cloudresourcemanager/v1
-              desc: Use cloud.google.com/go/resourcemanager/apiv3 instead.
-            - pkg: google.golang.org/api/serviceusage/v1
-              desc: Use cloud.google.com/go/serviceusage/apiv1 instead.
+            - pkg: google.golang.org/api
+              desc: These are maintenance mode/deprecated packages. Use cloud.google.com/go packages instead.
             - pkg: io/ioutil
               desc: Deprecated. Functions have been moved elsewhere.
             - pkg: k8s.io/utils/strings/slices
@@ -249,6 +264,12 @@ linters:
           msg: You should use net.Resolver functions instead.
         - pattern: ^net.LookupSRV
           msg: You should use net.Resolver functions instead.
+
+    funcorder:
+      constructor: true
+      # Don't require that public methods come first. The rule might make sense
+      # but we have a significant amount of existing code that violates this.
+      struct-method: false
 
     gocritic:
       enable-all: true
@@ -432,11 +453,6 @@ linters:
       require-specific: true
       allow-no-explanation:
         - misspell
-      # Setting allow-unused to false would be nice. We previously had it that
-      # way. However there is an unresolved issue where it occasionally fails
-      # when it should not. We think there might be some kind of caching bug in
-      # golangci-lint. See
-      # https://maxmind.slack.com/archives/C07ER81BQ4T/p1739389216305519.
       allow-unused: false
 
     revive:
@@ -539,6 +555,18 @@ linters:
         - name: unused-receiver
           disabled: true
 
+        # This rule seems generally good, but it is unstable. If there is a
+        # package that violates it, you cannot just add a nolint to the file
+        # that it first complains about. You need to add nolints to _every_
+        # file in that package or otherwise it will randomly faily. This in
+        # turn causes issues for nolintlint as that will randomly think all
+        # but one of those nolints are unnecessary. More discussion on Slack:
+        # https://maxmind.slack.com/archives/C07ER81BQ4T/p1751312286948379
+        #
+        # TODO: reenable if this is fixed.
+        - name: var-naming
+          disabled: true
+
     sloglint:
       # Enforce not mixing key-value pairs and attributes.
       no-mixed-args: true
@@ -615,6 +643,10 @@ linters:
 
   exclusions:
     generated: lax
+    # Warning on unused exclusions does not work well when running golangci-lint
+    # from precious as most exclusions will not be used for a particular directory.
+    # It is worth manually enabling this when cleaning up the config file though.
+    warn-unused: false
     rules:
       # This rule doesn't really make sense for tests where we don't have an open
       # connection and we might be passing around the response for other reasons.
@@ -641,13 +673,6 @@ linters:
       - linters:
           - forbidigo
         text: "[Aa]ccountUserID|Account\\.UserID"
-
-      # For some reason the imports stuff in ruleguard doesn't work in golangci-lint.
-      # Perhaps it has an outdated version or something
-      - linters:
-          - gocritic
-        path: _test.go
-        text: "ruleguard: Prefer the alternative Context method instead"
 
       # The nolintlint linter behaves oddly with ruleguard rules
       - linters:
@@ -686,18 +711,8 @@ linters:
           - wrapcheck
         text: github.com/maxmind/MaxMind-DB
 
-      - linters:
-          - wrapcheck
-        path: _easyjson.go
-
-      - linters:
-          - gocritic
-        text: octalLiteral
-        source: Chmod|WriteFile
-
     paths:
       - _easyjson\.go$
-      - _easyjson_test\.go$
       - _xgb2code\.go$
       - _json2vector\.go$
       - geoip-build/mmcsv
@@ -729,9 +744,7 @@ formatters:
 
   exclusions:
     generated: lax
-    paths:
-      - _easyjson\.go$
-      - _easyjson_test\.go$
-      - _xgb2code\.go$
-      - _json2vector\.go$
-      - geoip-build/mmcsv
+    # Warning on unused exclusions does not work well when running golangci-lint
+    # from precious as most exclusions will not be used for a particular directory.
+    # It is worth manually enabling this when cleaning up the config file though.
+    warn-unused: false
