@@ -13,7 +13,7 @@ jobs:
   build:
     strategy:
       matrix:
-        go-version: [1.23.x, 1.24.x]
+        go-version: [1.24.x, 1.25.x]
         # We don't test on macOS and windows as the database builds aren't
         # repeatable there for some reason. As such, tests fail. It'd
         # probably be worth looking into this at some point.
