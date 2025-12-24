@@ -1,91 +1,91 @@
 [
-   {
-      "::214.2.3.0/126" : {
-         "ip_risk" : 25,
-         "is_anonymous" : true,
-         "is_anonymous_vpn" : true
-      }
-   },
-   {
-      "::214.2.3.4/128" : {
-         "ip_risk" : 50,
-         "is_anonymous" : true,
-         "is_anonymous_vpn" : true,
-         "is_tor_exit_node" : true
-      }
-   },
-   {
-      "::214.2.3.5/128" : {
-         "ip_risk" : 90,
-         "is_anonymous" : true,
-         "is_anonymous_vpn" : true,
-         "is_residential_proxy" : true,
-         "is_tor_exit_node" : true
-      }
-   },
-   {
-      "::214.2.3.6/128" : {
-         "ip_risk" : 85
-      }
-   },
-   {
-      "6.1.2.1/32" : {
-         "ip_risk" : 75,
-         "is_anonymous" : true,
-         "is_anonymous_vpn" : true,
-         "provider_name" : "Test VPN Service",
-         "anonymizer_confidence" : 95,
-         "network_last_seen" : "2025-01-15"
-      }
-   },
-   {
-      "7.1.2.2/32" : {
-         "ip_risk" : 60,
-         "is_anonymous" : true,
-         "is_hosting_provider" : true,
-         "anonymizer_confidence" : 80
-      }
-   },
-   {
-      "11.1.2.3/32" : {
-         "is_anonymous" : true,
-         "is_public_proxy" : true,
-         "provider_name" : "ProxyCorp",
-         "network_last_seen" : "2025-01-10"
-      }
-   },
-   {
-      "21.1.2.4/32" : {
-         "ip_risk" : 45,
-         "is_anonymous" : true,
-         "is_residential_proxy" : true,
-         "provider_name" : "ResidentialNet"
-      }
-   },
-   {
-      "2001:480:1::/64" : {
-         "ip_risk" : 75,
-         "is_anonymous" : true,
-         "is_anonymous_vpn" : true,
-         "provider_name" : "IPv6 VPN Provider",
-         "anonymizer_confidence" : 85,
-         "network_last_seen" : "2025-01-12"
-      }
-   },
-   {
-      "2001:480:2::/64" : {
-         "is_anonymous" : true,
-         "is_public_proxy" : true,
-         "provider_name" : "IPv6 Proxy Service",
-         "network_last_seen" : "2025-01-08"
-      }
-   },
-   {
-      "2001:480::/32" : {
-         "ip_risk" : 30,
-         "is_anonymous" : true,
-         "is_hosting_provider" : true,
-         "anonymizer_confidence" : 70
-      }
-   }
+  {
+    "::214.2.3.0/126": {
+      "ip_risk": 25,
+      "is_anonymous": true,
+      "is_anonymous_vpn": true
+    }
+  },
+  {
+    "::214.2.3.4/128": {
+      "ip_risk": 50,
+      "is_anonymous": true,
+      "is_anonymous_vpn": true,
+      "is_tor_exit_node": true
+    }
+  },
+  {
+    "::214.2.3.5/128": {
+      "ip_risk": 90,
+      "is_anonymous": true,
+      "is_anonymous_vpn": true,
+      "is_residential_proxy": true,
+      "is_tor_exit_node": true
+    }
+  },
+  {
+    "::214.2.3.6/128": {
+      "ip_risk": 85
+    }
+  },
+  {
+    "6.1.2.1/32": {
+      "ip_risk": 75,
+      "is_anonymous": true,
+      "is_anonymous_vpn": true,
+      "provider_name": "Test VPN Service",
+      "anonymizer_confidence": 95,
+      "network_last_seen": "2025-01-15"
+    }
+  },
+  {
+    "7.1.2.2/32": {
+      "ip_risk": 60,
+      "is_anonymous": true,
+      "is_hosting_provider": true,
+      "anonymizer_confidence": 80
+    }
+  },
+  {
+    "11.1.2.3/32": {
+      "is_anonymous": true,
+      "is_public_proxy": true,
+      "provider_name": "ProxyCorp",
+      "network_last_seen": "2025-01-10"
+    }
+  },
+  {
+    "21.1.2.4/32": {
+      "ip_risk": 45,
+      "is_anonymous": true,
+      "is_residential_proxy": true,
+      "provider_name": "ResidentialNet"
+    }
+  },
+  {
+    "2001:480:1::/64": {
+      "ip_risk": 75,
+      "is_anonymous": true,
+      "is_anonymous_vpn": true,
+      "provider_name": "IPv6 VPN Provider",
+      "anonymizer_confidence": 85,
+      "network_last_seen": "2025-01-12"
+    }
+  },
+  {
+    "2001:480:2::/64": {
+      "is_anonymous": true,
+      "is_public_proxy": true,
+      "provider_name": "IPv6 Proxy Service",
+      "network_last_seen": "2025-01-08"
+    }
+  },
+  {
+    "2001:480::/32": {
+      "ip_risk": 30,
+      "is_anonymous": true,
+      "is_hosting_provider": true,
+      "anonymizer_confidence": 70
+    }
+  }
 ]
