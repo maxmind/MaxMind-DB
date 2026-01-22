@@ -171,5 +171,11 @@
       "is_anonymous": true,
       "is_public_proxy": true
     }
+  },
+  {
+    "55.0.0.4/32": {
+      "is_anonymous": true,
+      "is_anonymous_vpn": true
+    }
   }
 ]
