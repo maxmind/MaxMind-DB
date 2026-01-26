@@ -1,0 +1,6 @@
+[tools]
+go = "latest"
+node = "latest"
+golangci-lint = "latest"
+"github:houseabsolute/precious" = "latest"
+"npm:prettier" = "latest"
