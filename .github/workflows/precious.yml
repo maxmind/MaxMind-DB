@@ -4,6 +4,8 @@ on:
   push:
   pull_request:
 
+permissions: {}
+
 jobs:
   precious:
     name: lint
@@ -12,9 +14,11 @@ jobs:
       - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
         with:
           persist-credentials: false
-      - name: Install precious
-        run: |
-          curl -L https://github.com/houseabsolute/precious/releases/download/v0.10.1/precious-Linux-musl-x86_64.tar.gz | \
-            tar -xz -C /usr/local/bin precious
+
+      - name: Setup mise
+        uses: jdx/mise-action@6d1e696aa24c1aa1bcc1adea0212707c71ab78a8 # v3.6.1
+        with:
+          cache: true
+
       - name: Run precious lint
         run: precious lint --all

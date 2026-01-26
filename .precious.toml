@@ -4,7 +4,7 @@ exclude = [
 
 [commands.prettier-json]
 type = "both"
-cmd = ["npx", "-y", "--", "prettier"]
+cmd = ["prettier"]
 lint-flags = ["--check"]
 tidy-flags = ["--write"]
 path-args = "absolute-file"
