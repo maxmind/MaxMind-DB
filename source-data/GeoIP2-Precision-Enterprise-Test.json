@@ -3345,5 +3345,370 @@
         "user_type": "military"
       }
     }
+  },
+  {
+    "55.0.0.1/32": {
+      "city": {
+        "confidence": 80,
+        "geoname_id": 2643743,
+        "names": {
+          "de": "London",
+          "en": "London",
+          "es": "Londres",
+          "fr": "Londres",
+          "ja": "ロンドン",
+          "pt-BR": "Londres",
+          "ru": "Лондон",
+          "zh-CN": "伦敦"
+        }
+      },
+      "continent": {
+        "code": "EU",
+        "geoname_id": 6255148,
+        "names": {
+          "de": "Europa",
+          "en": "Europe",
+          "es": "Europa",
+          "fr": "Europe",
+          "ja": "ヨーロッパ",
+          "pt-BR": "Europa",
+          "ru": "Европа",
+          "zh-CN": "欧洲"
+        }
+      },
+      "country": {
+        "confidence": 95,
+        "geoname_id": 2635167,
+        "iso_code": "GB",
+        "names": {
+          "de": "Vereinigtes Königreich",
+          "en": "United Kingdom",
+          "es": "Reino Unido",
+          "fr": "Royaume-Uni",
+          "ja": "イギリス",
+          "pt-BR": "Reino Unido",
+          "ru": "Великобритания",
+          "zh-CN": "英国"
+        }
+      },
+      "location": {
+        "accuracy_radius": 100,
+        "latitude": 51.5074,
+        "longitude": -0.1278,
+        "time_zone": "Europe/London"
+      },
+      "registered_country": {
+        "geoname_id": 2635167,
+        "iso_code": "GB",
+        "names": {
+          "de": "Vereinigtes Königreich",
+          "en": "United Kingdom",
+          "es": "Reino Unido",
+          "fr": "Royaume-Uni",
+          "ja": "イギリス",
+          "pt-BR": "Reino Unido",
+          "ru": "Великобритания",
+          "zh-CN": "英国"
+        }
+      },
+      "subdivisions": [
+        {
+          "confidence": 80,
+          "geoname_id": 6269131,
+          "iso_code": "ENG",
+          "names": {
+            "de": "England",
+            "en": "England",
+            "es": "Inglaterra",
+            "fr": "Angleterre",
+            "ja": "イングランド",
+            "pt-BR": "Inglaterra",
+            "ru": "Англия"
+          }
+        }
+      ],
+      "traits": {
+        "autonomous_system_number": 5089,
+        "autonomous_system_organization": "Virgin Media Limited",
+        "connection_type": "Cable/DSL",
+        "isp": "Virgin Media",
+        "organization": "Virgin Media",
+        "user_type": "residential"
+      }
+    }
+  },
+  {
+    "55.0.0.2/32": {
+      "city": {
+        "confidence": 80,
+        "geoname_id": 703448,
+        "names": {
+          "de": "Kiew",
+          "en": "Kyiv",
+          "es": "Kiev",
+          "fr": "Kiev",
+          "ja": "キエフ",
+          "pt-BR": "Kiev",
+          "ru": "Киев",
+          "zh-CN": "基辅"
+        }
+      },
+      "continent": {
+        "code": "EU",
+        "geoname_id": 6255148,
+        "names": {
+          "de": "Europa",
+          "en": "Europe",
+          "es": "Europa",
+          "fr": "Europe",
+          "ja": "ヨーロッパ",
+          "pt-BR": "Europa",
+          "ru": "Европа",
+          "zh-CN": "欧洲"
+        }
+      },
+      "country": {
+        "confidence": 95,
+        "geoname_id": 690791,
+        "iso_code": "UA",
+        "names": {
+          "de": "Ukraine",
+          "en": "Ukraine",
+          "es": "Ucrania",
+          "fr": "Ukraine",
+          "ja": "ウクライナ",
+          "pt-BR": "Ucrânia",
+          "ru": "Украина",
+          "zh-CN": "乌克兰"
+        }
+      },
+      "location": {
+        "accuracy_radius": 100,
+        "latitude": 50.4501,
+        "longitude": 30.5234,
+        "time_zone": "Europe/Kyiv"
+      },
+      "registered_country": {
+        "geoname_id": 690791,
+        "iso_code": "UA",
+        "names": {
+          "de": "Ukraine",
+          "en": "Ukraine",
+          "es": "Ucrania",
+          "fr": "Ukraine",
+          "ja": "ウクライナ",
+          "pt-BR": "Ucrânia",
+          "ru": "Украина",
+          "zh-CN": "乌克兰"
+        }
+      },
+      "subdivisions": [
+        {
+          "confidence": 80,
+          "geoname_id": 703447,
+          "iso_code": "30",
+          "names": {
+            "en": "Kyiv City",
+            "ru": "Киев",
+            "uk": "Київ"
+          }
+        }
+      ],
+      "traits": {
+        "autonomous_system_number": 15895,
+        "autonomous_system_organization": "Kyivstar PJSC",
+        "connection_type": "Cable/DSL",
+        "isp": "Kyivstar",
+        "organization": "Kyivstar",
+        "user_type": "residential"
+      }
+    }
+  },
+  {
+    "55.0.0.3/32": {
+      "city": {
+        "confidence": 80,
+        "geoname_id": 5128581,
+        "names": {
+          "de": "New York City",
+          "en": "New York",
+          "es": "Nueva York",
+          "fr": "New York",
+          "ja": "ニューヨーク",
+          "pt-BR": "Nova Iorque",
+          "ru": "Нью-Йорк",
+          "zh-CN": "纽约"
+        }
+      },
+      "continent": {
+        "code": "NA",
+        "geoname_id": 6255149,
+        "names": {
+          "de": "Nordamerika",
+          "en": "North America",
+          "es": "Norteamérica",
+          "fr": "Amérique du Nord",
+          "ja": "北アメリカ",
+          "pt-BR": "América do Norte",
+          "ru": "Северная Америка",
+          "zh-CN": "北美洲"
+        }
+      },
+      "country": {
+        "confidence": 95,
+        "geoname_id": 6252001,
+        "iso_code": "US",
+        "names": {
+          "de": "Vereinigte Staaten",
+          "en": "United States",
+          "es": "Estados Unidos",
+          "fr": "États Unis",
+          "ja": "アメリカ",
+          "pt-BR": "EUA",
+          "ru": "США",
+          "zh-CN": "美国"
+        }
+      },
+      "location": {
+        "accuracy_radius": 100,
+        "latitude": 40.7128,
+        "longitude": -74.006,
+        "metro_code": 501,
+        "time_zone": "America/New_York"
+      },
+      "postal": {
+        "code": "10001",
+        "confidence": 80
+      },
+      "registered_country": {
+        "geoname_id": 6252001,
+        "iso_code": "US",
+        "names": {
+          "de": "Vereinigte Staaten",
+          "en": "United States",
+          "es": "Estados Unidos",
+          "fr": "États Unis",
+          "ja": "アメリカ",
+          "pt-BR": "EUA",
+          "ru": "США",
+          "zh-CN": "美国"
+        }
+      },
+      "subdivisions": [
+        {
+          "confidence": 80,
+          "geoname_id": 5128638,
+          "iso_code": "NY",
+          "names": {
+            "de": "New York",
+            "en": "New York",
+            "es": "Nueva York",
+            "fr": "New York",
+            "ja": "ニューヨーク州",
+            "pt-BR": "Nova Iorque",
+            "ru": "Нью-Йорк",
+            "zh-CN": "纽约州"
+          }
+        }
+      ],
+      "traits": {
+        "autonomous_system_number": 701,
+        "autonomous_system_organization": "Verizon Business",
+        "connection_type": "Cable/DSL",
+        "isp": "Verizon",
+        "organization": "Verizon",
+        "user_type": "residential"
+      }
+    }
+  },
+  {
+    "55.0.0.4/32": {
+      "city": {
+        "confidence": 80,
+        "geoname_id": 2950159,
+        "names": {
+          "de": "Berlin",
+          "en": "Berlin",
+          "es": "Berlín",
+          "fr": "Berlin",
+          "ja": "ベルリン",
+          "pt-BR": "Berlim",
+          "ru": "Берлин",
+          "zh-CN": "柏林"
+        }
+      },
+      "continent": {
+        "code": "EU",
+        "geoname_id": 6255148,
+        "names": {
+          "de": "Europa",
+          "en": "Europe",
+          "es": "Europa",
+          "fr": "Europe",
+          "ja": "ヨーロッパ",
+          "pt-BR": "Europa",
+          "ru": "Европа",
+          "zh-CN": "欧洲"
+        }
+      },
+      "country": {
+        "confidence": 95,
+        "geoname_id": 2921044,
+        "iso_code": "DE",
+        "names": {
+          "de": "Deutschland",
+          "en": "Germany",
+          "es": "Alemania",
+          "fr": "Allemagne",
+          "ja": "ドイツ連邦共和国",
+          "pt-BR": "Alemanha",
+          "ru": "Германия",
+          "zh-CN": "德国"
+        }
+      },
+      "location": {
+        "accuracy_radius": 100,
+        "latitude": 52.52,
+        "longitude": 13.405,
+        "time_zone": "Europe/Berlin"
+      },
+      "registered_country": {
+        "geoname_id": 2921044,
+        "iso_code": "DE",
+        "names": {
+          "de": "Deutschland",
+          "en": "Germany",
+          "es": "Alemania",
+          "fr": "Allemagne",
+          "ja": "ドイツ連邦共和国",
+          "pt-BR": "Alemanha",
+          "ru": "Германия",
+          "zh-CN": "德国"
+        }
+      },
+      "subdivisions": [
+        {
+          "confidence": 80,
+          "geoname_id": 2950157,
+          "iso_code": "BE",
+          "names": {
+            "de": "Berlin",
+            "en": "Berlin",
+            "es": "Berlín",
+            "fr": "Berlin",
+            "ja": "ベルリン州",
+            "ru": "Берлин"
+          }
+        }
+      ],
+      "traits": {
+        "autonomous_system_number": 3320,
+        "autonomous_system_organization": "Deutsche Telekom AG",
+        "connection_type": "Cable/DSL",
+        "isp": "Deutsche Telekom",
+        "organization": "Deutsche Telekom",
+        "user_type": "residential"
+      }
+    }
   }
 ]

@@ -87,5 +87,25 @@
       "is_hosting_provider": true,
       "anonymizer_confidence": 70
     }
+  },
+  {
+    "55.0.0.1/32": {
+      "ip_risk": 65
+    }
+  },
+  {
+    "55.0.0.2/32": {
+      "ip_risk": 45
+    }
+  },
+  {
+    "55.0.0.3/32": {
+      "ip_risk": 65
+    }
+  },
+  {
+    "55.0.0.4/32": {
+      "ip_risk": 99
+    }
   }
 ]
