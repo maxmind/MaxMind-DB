@@ -1106,5 +1106,18 @@
         "user_type": "content_delivery_network"
       }
     }
+  },
+  {
+    "::6.1.0.0/121": {
+      "country": {
+        "iso_code": "US",
+        "names": {
+          "en": "United States"
+        }
+      },
+      "traits": {
+        "user_type": "residential"
+      }
+    }
   }
 ]

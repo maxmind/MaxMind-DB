@@ -51,5 +51,29 @@
       "is_anonymous": true,
       "is_public_proxy": true
     }
+  },
+  {
+    "::6.1.0.0/127": {
+      "is_anonymous": true,
+      "is_anonymous_vpn": true
+    }
+  },
+  {
+    "::6.1.0.2/128": {
+      "is_anonymous": true,
+      "is_hosting_provider": true
+    }
+  },
+  {
+    "::6.1.0.3/128": {
+      "is_anonymous": true,
+      "is_public_proxy": true
+    }
+  },
+  {
+    "::6.1.0.4/128": {
+      "is_anonymous": true,
+      "is_residential_proxy": true
+    }
   }
 ]

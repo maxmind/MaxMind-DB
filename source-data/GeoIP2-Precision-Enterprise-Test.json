@@ -3710,5 +3710,18 @@
         "user_type": "residential"
       }
     }
+  },
+  {
+    "::6.1.0.0/121": {
+      "country": {
+        "iso_code": "US",
+        "names": {
+          "en": "United States"
+        }
+      },
+      "traits": {
+        "user_type": "residential"
+      }
+    }
   }
 ]
