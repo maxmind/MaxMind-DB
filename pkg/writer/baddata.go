@@ -58,7 +58,7 @@ func writeRawDB(dir, name string, data []byte) error {
 // writeDeepArrayNestingDB creates an MMDB with 600 levels of nested arrays.
 // This exceeds libmaxminddb's MAXIMUM_DATA_STRUCTURE_DEPTH (512) and
 // should trigger MMDB_INVALID_DATA_ERROR during data extraction.
-func writeDeepArrayNestingDB(dir string) error {
+func writeDeepArrayNestingDB(dir string) (retErr error) {
 	dbWriter, err := mmdbwriter.New(
 		mmdbwriter.Options{
 			DatabaseType: "Test",
@@ -93,7 +93,11 @@ func writeDeepArrayNestingDB(dir string) error {
 	if err != nil {
 		return fmt.Errorf("creating file: %w", err)
 	}
-	defer outputFile.Close()
+	defer func() {
+		if err := outputFile.Close(); err != nil && retErr == nil {
+			retErr = fmt.Errorf("closing file: %w", err)
+		}
+	}()
 
 	if _, err := dbWriter.WriteTo(outputFile); err != nil {
 		return fmt.Errorf("writing file: %w", err)
@@ -105,7 +109,7 @@ func writeDeepArrayNestingDB(dir string) error {
 // writeDeepNestingDB creates an MMDB with 600 levels of nested maps.
 // This exceeds libmaxminddb's MAXIMUM_DATA_STRUCTURE_DEPTH (512) and
 // should trigger MMDB_INVALID_DATA_ERROR during data extraction.
-func writeDeepNestingDB(dir string) error {
+func writeDeepNestingDB(dir string) (retErr error) {
 	dbWriter, err := mmdbwriter.New(
 		mmdbwriter.Options{
 			DatabaseType: "Test",
@@ -141,7 +145,11 @@ func writeDeepNestingDB(dir string) error {
 	if err != nil {
 		return fmt.Errorf("creating file: %w", err)
 	}
-	defer outputFile.Close()
+	defer func() {
+		if err := outputFile.Close(); err != nil && retErr == nil {
+			retErr = fmt.Errorf("closing file: %w", err)
+		}
+	}()
 
 	if _, err := dbWriter.WriteTo(outputFile); err != nil {
 		return fmt.Errorf("writing file: %w", err)
