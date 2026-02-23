@@ -2,17 +2,37 @@
 package main
 
 import (
+	"bufio"
 	"flag"
 	"fmt"
 	"os"
+	"path/filepath"
+	"strings"
 
 	"github.com/maxmind/MaxMind-DB/pkg/writer"
 )
 
+const moduleName = "github.com/maxmind/MaxMind-DB"
+
 func main() {
-	source := flag.String("source", "", "Source data directory")
-	target := flag.String("target", "", "Destination directory for the generated mmdb files")
-	badData := flag.String("bad-data", "", "Destination directory for generated bad mmdb files")
+	var defaultSource, defaultTarget, defaultBadData string
+	if root, err := findRepoRoot(); err == nil {
+		defaultSource = filepath.Join(root, "source-data")
+		defaultTarget = filepath.Join(root, "test-data")
+		defaultBadData = filepath.Join(root, "bad-data", "libmaxminddb")
+	}
+
+	source := flag.String("source", defaultSource, "Source data directory")
+	target := flag.String(
+		"target",
+		defaultTarget,
+		"Destination directory for the generated mmdb files",
+	)
+	badData := flag.String(
+		"bad-data",
+		defaultBadData,
+		"Destination directory for generated bad mmdb files",
+	)
 
 	flag.Parse()
 
@@ -73,4 +93,47 @@ func main() {
 			os.Exit(1)
 		}
 	}
+}
+
+// findRepoRoot walks up from the current working directory looking for a
+// go.mod that belongs to this module. It returns the directory containing
+// that go.mod, or an error if none is found.
+func findRepoRoot() (string, error) {
+	dir, err := os.Getwd()
+	if err != nil {
+		return "", fmt.Errorf("getting working directory: %w", err)
+	}
+
+	for {
+		if hasModuleFile(dir) {
+			return dir, nil
+		}
+		parent := filepath.Dir(dir)
+		if parent == dir {
+			return "", fmt.Errorf(
+				"could not find go.mod for %s in any parent directory",
+				moduleName,
+			)
+		}
+		dir = parent
+	}
+}
+
+// hasModuleFile reports whether dir contains a go.mod whose first "module"
+// directive matches moduleName.
+func hasModuleFile(dir string) bool {
+	f, err := os.Open(filepath.Clean(filepath.Join(dir, "go.mod")))
+	if err != nil {
+		return false
+	}
+	defer f.Close()
+
+	scanner := bufio.NewScanner(f)
+	for scanner.Scan() {
+		line := strings.TrimSpace(scanner.Text())
+		if after, ok := strings.CutPrefix(line, "module "); ok {
+			return strings.TrimSpace(after) == moduleName
+		}
+	}
+	return false
 }
