@@ -207,3 +207,38 @@ func buildUint64MaxEpochDB() []byte {
 
 	return buf[:pos]
 }
+
+// buildCorruptSearchTreeDB creates a complete MMDB where the metadata claims
+// node_count = 100 but the actual search tree has only 1 node worth of real
+// data (6 bytes for 24-bit records). The file is padded so MMDB_open
+// succeeds (it validates file_size >= search_tree_size + separator), but
+// MMDB_read_node with a node_number like 50 reads zeroed memory and should
+// return MMDB_CORRUPT_SEARCH_TREE_ERROR.
+func buildCorruptSearchTreeDB() []byte {
+	const fakeNodeCount = 100
+	const recordSize = 24
+	// fakeNodeCount * (recordSize/4) = bytes in the fake search tree
+	const fakeSearchTreeSize = fakeNodeCount * (recordSize / 4)
+	const recordValue = fakeNodeCount + 16
+
+	// Allocate enough for the fake tree + separator + data + metadata
+	buf := make([]byte, fakeSearchTreeSize+dataSeparatorSize+1024)
+	pos := 0
+
+	// Write 1 real node at position 0; rest stays zeroed
+	writeSearchTree(buf[pos:], recordValue)
+	pos = fakeSearchTreeSize // skip to end of the fake tree
+
+	// 16-byte null separator
+	pos += dataSeparatorSize
+
+	// Data: a simple map
+	pos += writeMap(buf[pos:], 1)
+	pos += writeString(buf[pos:], "ip")
+	pos += writeString(buf[pos:], "test")
+
+	// Metadata claims 100 nodes
+	pos += writeMetadataBlock(buf[pos:], fakeNodeCount, 1_000_000_000)
+
+	return buf[:pos]
+}
