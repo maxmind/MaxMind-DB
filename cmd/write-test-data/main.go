@@ -12,6 +12,7 @@ import (
 func main() {
 	source := flag.String("source", "", "Source data directory")
 	target := flag.String("target", "", "Destination directory for the generated mmdb files")
+	badData := flag.String("bad-data", "", "Destination directory for generated bad mmdb files")
 
 	flag.Parse()
 
@@ -64,5 +65,12 @@ func main() {
 	if err := w.WriteGeoIP2TestDB(); err != nil {
 		fmt.Printf("writing GeoIP2 test databases: %+v\n", err)
 		os.Exit(1)
+	}
+
+	if *badData != "" {
+		if err := w.WriteBadDataDBs(*badData); err != nil {
+			fmt.Printf("writing bad data test databases: %+v\n", err)
+			os.Exit(1)
+		}
 	}
 }
