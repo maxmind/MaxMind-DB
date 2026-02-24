@@ -368,7 +368,7 @@ the length information for maps indicates how many key/value pairs it
 contains, not its length in bytes. This size can be zero.
 
 See below for the algorithm used to determine the number of pairs in the
-hash. This algorithm is also used to determine the length of a field's
+map. This algorithm is also used to determine the length of a field's
 payload.
 
 ### array - 11
