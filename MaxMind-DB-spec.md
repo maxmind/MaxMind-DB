@@ -463,14 +463,14 @@ bytes. For example:
 If the five bits are equal to 29, 30, or 31, then use the following algorithm
 to calculate the payload size.
 
-If the value is 29, then the size is 29 + *the next byte after the type
-specifying bytes as an unsigned integer*.
+If the value is 29, then the size is 29 + *the next byte (as an unsigned
+integer)*.
 
-If the value is 30, then the size is 285 + *the next two bytes after the type
-specifying bytes as a single unsigned integer*.
+If the value is 30, then the size is 285 + *the next two bytes (as a single
+unsigned integer)*.
 
-If the value is 31, then the size is 65,821 + *the next three bytes after the
-type specifying bytes as a single unsigned integer*.
+If the value is 31, then the size is 65,821 + *the next three bytes (as a
+single unsigned integer)*.
 
 Some examples:
 
