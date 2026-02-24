@@ -276,9 +276,15 @@ of the IPv4 address space in the tree. This accounts for the
 Database creators are encouraged to document whether they are doing something
 similar for their databases.
 
-The Teredo subnet cannot be accounted for in the tree. Instead, code that
-searches the tree can offer to decode the IPv4 portion of a Teredo address and
-look that up.
+The Teredo subnet (`2001::/32`,
+[RFC 4380](https://datatracker.ietf.org/doc/html/rfc4380)) cannot be accounted
+for with a tree alias. In a Teredo address, the client's public IPv4 address is
+in the last 32 bits (bits 96-127), XOR'd with `0xFFFFFFFF`, and is separated
+from the Teredo prefix by 64 bits of server address, flags, and port data. A
+tree alias can only map to the bits immediately following the aliased prefix, so
+there is no way to construct an alias that reaches the client's IPv4 address.
+Correct handling of Teredo addresses requires the reader library or application
+to extract and decode the client's IPv4 address and look it up separately.
 
 ## Data Section Separator
 
