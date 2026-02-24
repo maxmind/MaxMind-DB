@@ -8,8 +8,8 @@ This repository contains the spec for that format as well as test databases.
 The `write-test-data` command generates the MMDB test files under `test-data/`
 and `bad-data/`.
 
-When run from anywhere inside this repository, it auto-detects the repo root
-and uses default paths:
+When run from anywhere inside this repository, it auto-detects the repo root and
+uses default paths:
 
 ```bash
 go run ./cmd/write-test-data
@@ -28,5 +28,6 @@ go run ./cmd/write-test-data \
 
 This software is Copyright (c) 2013 - 2026 by MaxMind, Inc.
 
-This is free software, licensed under the [Apache License, Version
-2.0](LICENSE-APACHE) or the [MIT License](LICENSE-MIT), at your option.
+This is free software, licensed under the
+[Apache License, Version 2.0](LICENSE-APACHE) or the [MIT License](LICENSE-MIT),
+at your option.
