@@ -28,9 +28,8 @@ The binary database is split into three parts:
 1. The binary search tree. Each level of the tree corresponds to a single bit
 in the prefix of the network the IP address belongs to.
 2. The data section with the values for the networks in the binary search
-tree. These values may be comprised of a single data type, e.g., the string
-"US" or "New York", or they may be a more complex map or array type made up
-of multiple fields.
+tree. These values can be a single data type, e.g., the string "US" or
+"New York", or a more complex map or array type made up of multiple fields.
 3. Database metadata. Information about the database itself.
 
 ## Database Metadata
@@ -49,8 +48,8 @@ of this sequence.
 The maximum allowable size for the metadata section, including the marker that
 starts the metadata, is 128KiB.
 
-The metadata is stored as a separate data section comprised of a map data
-structure starting at the beginning of that section. This structure is
+The metadata is stored as a separate data section containing a map data
+structure at its beginning. This structure is
 described later in the spec.
 
 Except where otherwise specified, each key listed is required for the database
@@ -176,7 +175,7 @@ and 32 bit records. Larger record sizes follow this same pattern.
     | <------------- node --------------->|
     | 23 .. 0 | 27..24 | 27..24 | 23 .. 0 |
 
-Note 4 bits of each pointer are combined into the middle byte. For both
+Note that 4 bits of each pointer are combined into the middle byte. For both
 records, they are prepended and end up in the most significant position.
 
 #### 32 bits (large database), one node is 8 bytes
@@ -326,7 +325,7 @@ length of a double is always 8 bytes.
 ### bytes - 4
 
 A variable length byte sequence containing any sort of binary data. If the
-length is zero then this a zero-length byte sequence.
+length is zero then this is a zero-length byte sequence.
 
 This is not currently used but may be used in the future to embed non-text
 data (images, etc.).
