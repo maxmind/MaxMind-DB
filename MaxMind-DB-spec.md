@@ -441,8 +441,8 @@ tell us the type:
 
     001XXXXX          pointer
     010XXXXX          UTF-8 string
-    110XXXXX          unsigned 32-bit int (ASCII)
-    000XXXXX 00000011 unsigned 128-bit int (binary)
+    110XXXXX          unsigned 32-bit int
+    000XXXXX 00000011 unsigned 128-bit int
     000XXXXX 00000100 array
     000XXXXX 00000110 end marker
 
