@@ -158,12 +158,13 @@ relevant to the given netblock.
 
 Each node in the search tree consists of two records, each of which is a
 pointer. The record size varies by database, but inside a single database node
-records are always the same size. A record may be anywhere from 24 to 128 bits
-long, depending on the number of nodes in the tree. These pointers are
-stored in big-endian format (most significant byte first).
+records are always the same size. The record size must be a multiple of 4 (so
+that nodes are an integral number of bytes) and is at least 24 bits. All
+existing databases use record sizes of 24, 28, or 32
+bits, but the format supports larger sizes following the same pattern. These
+pointers are stored in big-endian format (most significant byte first).
 
-Here are some examples of how the records are laid out in a node for 24, 28,
-and 32 bit records. Larger record sizes follow this same pattern.
+Here are the record layouts for 24, 28, and 32 bit records.
 
 #### 24 bits (small database), one node is 6 bytes
 
@@ -194,8 +195,7 @@ bit, a value of 0 means we choose the left record in a node, and a value of 1
 means we choose the right record.
 
 The record value is always interpreted as an unsigned integer. The maximum
-size of the integer is dependent on the number of bits in a record (24, 28, or
-32).
+size of the integer is dependent on the number of bits in a record.
 
 If the record value is a number that is less than the *number of nodes* (not
 in bytes, but the actual node count) in the search tree (this is stored in the
