@@ -254,8 +254,13 @@ offset in the file can be simplified to:
 
 ### IPv4 addresses in an IPv6 tree
 
-When storing IPv4 addresses in an IPv6 tree, they are stored as-is, so they
-occupy the first 32-bits of the address space (from 0 to 2**32 - 1).
+When storing IPv4 addresses in an IPv6 tree, the four bytes of the IPv4
+address are placed in the least significant 32 bits of the 128-bit address,
+with the upper 96 bits set to zero. This means IPv4 addresses occupy the
+lowest portion of the 128-bit address space, from 0 to 2**32 - 1 (the `::/96`
+network in IPv6 notation). In the search tree, looking up an IPv4 address
+requires traversing 96 zero-bit branches from the root before reaching the 32
+bits that distinguish individual IPv4 addresses.
 
 Creators of databases should decide on a strategy for handling the various
 mappings between IPv4 and IPv6.
