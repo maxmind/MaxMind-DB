@@ -386,27 +386,23 @@ size can be zero.
 This type uses the same algorithm as maps for determining the length of a
 field's payload.
 
-### data cache container - 12
+### data cache container - 12 (deprecated)
 
-This is a special data type that marks a container used to cache repeated
-data. For example, instead of repeating the string "United States" over and
-over in the database, we store it in the cache container and use pointers
-*into* this container instead.
+This type is deprecated. It has never been used in any known database and
+readers are not expected to support it.
 
-Nothing in the database will ever contain a pointer to this field
-itself. Instead, various fields will point into the container.
+It was originally intended to mark a container of repeated data that a database
+dumper tool could skip. In practice, data deduplication is handled by pointers,
+making this type unnecessary.
 
-The primary reason for making this a separate data type versus simply inlining
-the cached data is so that a database dumper tool can skip this cache when
-dumping the data section. The cache contents will end up being dumped as
-pointers into it are followed.
+### end marker - 13 (deprecated)
 
-### end marker - 13
+This type is deprecated. It has never been used in any known database and
+readers are not expected to support it.
 
-The end marker marks the end of the data section. It is not strictly
-necessary, but including this marker allows a data section deserializer to
-process a stream of input, rather than having to find the end of the section
-before beginning the deserialization.
+It was originally intended to mark the end of the data section for stream-based
+deserialization. In practice, readers determine section boundaries from the
+metadata, making this type unnecessary.
 
 This data type is not followed by a payload, and its size is always zero.
 
@@ -450,7 +446,7 @@ tell us the type:
     110XXXXX          unsigned 32-bit int
     000XXXXX 00000011 unsigned 128-bit int
     000XXXXX 00000100 array
-    000XXXXX 00000110 end marker
+    000XXXXX 00000110 end marker (deprecated)
 
 #### Payload Size
 
