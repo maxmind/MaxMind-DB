@@ -2,7 +2,7 @@
 go = "latest"
 hugo = "latest"
 node = "latest"
-golangci-lint = "latest"
+"github:golangci/golangci-lint" = "latest"
 "github:houseabsolute/precious" = "latest"
 "npm:prettier" = "latest"
 
