@@ -13,6 +13,42 @@ const (
 	dataSeparatorSize = 16
 )
 
+var (
+	metadataKeysStandard = []string{
+		"binary_format_major_version",
+		"binary_format_minor_version",
+		"build_epoch",
+		"database_type",
+		"description",
+		"ip_version",
+		"languages",
+		"node_count",
+		"record_size",
+	}
+	metadataKeysEmptyMapLast = []string{
+		"binary_format_major_version",
+		"binary_format_minor_version",
+		"build_epoch",
+		"database_type",
+		"ip_version",
+		"languages",
+		"node_count",
+		"record_size",
+		"description",
+	}
+	metadataKeysEmptyArrayLast = []string{
+		"binary_format_major_version",
+		"binary_format_minor_version",
+		"build_epoch",
+		"database_type",
+		"description",
+		"ip_version",
+		"node_count",
+		"record_size",
+		"languages",
+	}
+)
+
 // writeMap writes a map control byte (type 7) for sizes <= 28.
 func writeMap(buf []byte, size int) int {
 	buf[0] = (7 << 5) | byte(size&0x1f)
@@ -95,44 +131,70 @@ func writeSearchTree(buf []byte, recordValue uint32) int {
 	return 6
 }
 
-// writeMetadataBlock writes the metadata marker followed by a standard
-// metadata map with the given parameters.
-func writeMetadataBlock(buf []byte, nodeCount uint32, buildEpoch uint64) int {
+func writeMetadataBlockWithKeyOrder(
+	buf []byte,
+	nodeCount uint32,
+	buildEpoch uint64,
+	keys []string,
+) int {
 	pos := 0
 
 	copy(buf[pos:], metadataMarker)
 	pos += len(metadataMarker)
 
-	pos += writeMap(buf[pos:], 9)
+	pos += writeMap(buf[pos:], len(keys))
 
-	pos += writeMetaKey(buf[pos:], "binary_format_major_version")
-	pos += writeUint16(buf[pos:], 2)
+	valueWriters := map[string]func([]byte) int{
+		"binary_format_major_version": func(b []byte) int { return writeUint16(b, 2) },
+		"binary_format_minor_version": func(b []byte) int { return writeUint16(b, 0) },
+		"build_epoch":                 func(b []byte) int { return writeUint64(b, buildEpoch) },
+		"database_type":               func(b []byte) int { return writeString(b, "Test") },
+		"description":                 func(b []byte) int { return writeMap(b, 0) },
+		"ip_version":                  func(b []byte) int { return writeUint16(b, 4) },
+		"languages":                   writeEmptyArray,
+		"node_count":                  func(b []byte) int { return writeUint32(b, nodeCount) },
+		"record_size":                 func(b []byte) int { return writeUint16(b, 24) },
+	}
 
-	pos += writeMetaKey(buf[pos:], "binary_format_minor_version")
-	pos += writeUint16(buf[pos:], 0)
-
-	pos += writeMetaKey(buf[pos:], "build_epoch")
-	pos += writeUint64(buf[pos:], buildEpoch)
-
-	pos += writeMetaKey(buf[pos:], "database_type")
-	pos += writeString(buf[pos:], "Test")
-
-	pos += writeMetaKey(buf[pos:], "description")
-	pos += writeMap(buf[pos:], 0)
-
-	pos += writeMetaKey(buf[pos:], "ip_version")
-	pos += writeUint16(buf[pos:], 4)
-
-	pos += writeMetaKey(buf[pos:], "languages")
-	pos += writeEmptyArray(buf[pos:])
-
-	pos += writeMetaKey(buf[pos:], "node_count")
-	pos += writeUint32(buf[pos:], nodeCount)
-
-	pos += writeMetaKey(buf[pos:], "record_size")
-	pos += writeUint16(buf[pos:], 24)
+	for _, key := range keys {
+		valueWriter, ok := valueWriters[key]
+		if !ok {
+			panic("unknown metadata key: " + key)
+		}
+		pos += writeMetaKey(buf[pos:], key)
+		pos += valueWriter(buf[pos:])
+	}
 
 	return pos
+}
+
+// writeMetadataBlock writes the metadata marker followed by a standard
+// metadata map with the given parameters.
+func writeMetadataBlock(buf []byte, nodeCount uint32, buildEpoch uint64) int {
+	return writeMetadataBlockWithKeyOrder(buf, nodeCount, buildEpoch, metadataKeysStandard)
+}
+
+func buildSimpleDB(metadataWriter func([]byte, uint32, uint64) int) []byte {
+	const nodeCount = 1
+	const recordValue = nodeCount + 16
+	const buildEpoch = 1_000_000_000
+
+	buf := make([]byte, 1024)
+	pos := 0
+
+	pos += writeSearchTree(buf[pos:], recordValue)
+
+	// 16-byte null separator
+	pos += dataSeparatorSize
+
+	// Data: a simple map with one string entry
+	pos += writeMap(buf[pos:], 1)
+	pos += writeString(buf[pos:], "ip")
+	pos += writeString(buf[pos:], "test")
+
+	pos += metadataWriter(buf[pos:], nodeCount, buildEpoch)
+
+	return buf[:pos]
 }
 
 // buildOversizedArrayDB creates a complete MMDB with an array claiming
@@ -187,25 +249,47 @@ func buildOversizedMapDB() []byte {
 // UINT64_MAX (18446744073709551615). The database is structurally valid
 // but the extreme epoch value can cause overflow in time conversions.
 func buildUint64MaxEpochDB() []byte {
-	const nodeCount = 1
-	const recordValue = nodeCount + 16
+	return buildSimpleDB(func(buf []byte, nodeCount uint32, _ uint64) int {
+		return writeMetadataBlock(buf, nodeCount, ^uint64(0))
+	})
+}
 
-	buf := make([]byte, 1024)
-	pos := 0
+// writeMetadataBlockEmptyMapLast writes a metadata block where the last field
+// is "description" (an empty map). This triggers the off-by-one bug where
+// offset_to_next == data_section_size for a 0-length container.
+func writeMetadataBlockEmptyMapLast(buf []byte, nodeCount uint32, buildEpoch uint64) int {
+	return writeMetadataBlockWithKeyOrder(
+		buf,
+		nodeCount,
+		buildEpoch,
+		metadataKeysEmptyMapLast,
+	)
+}
 
-	pos += writeSearchTree(buf[pos:], recordValue)
+// writeMetadataBlockEmptyArrayLast writes a metadata block where the last
+// field is "languages" (an empty array).
+func writeMetadataBlockEmptyArrayLast(buf []byte, nodeCount uint32, buildEpoch uint64) int {
+	return writeMetadataBlockWithKeyOrder(
+		buf,
+		nodeCount,
+		buildEpoch,
+		metadataKeysEmptyArrayLast,
+	)
+}
 
-	// 16-byte null separator
-	pos += dataSeparatorSize
+// buildEmptyMapLastInMetadataDB creates a valid MMDB where the metadata
+// map's last field is "description" (an empty map {}). This reproduces the
+// off-by-one bug in get_entry_data_list() where offset == data_section_size
+// is incorrectly rejected for 0-length containers.
+func buildEmptyMapLastInMetadataDB() []byte {
+	return buildSimpleDB(writeMetadataBlockEmptyMapLast)
+}
 
-	// Data: a simple map with one string entry
-	pos += writeMap(buf[pos:], 1)
-	pos += writeString(buf[pos:], "ip")
-	pos += writeString(buf[pos:], "test")
-
-	pos += writeMetadataBlock(buf[pos:], nodeCount, ^uint64(0))
-
-	return buf[:pos]
+// buildEmptyArrayLastInMetadataDB creates a valid MMDB where the metadata
+// map's last field is "languages" (an empty array []). Tests the array
+// validation path of the same off-by-one bug.
+func buildEmptyArrayLastInMetadataDB() []byte {
+	return buildSimpleDB(writeMetadataBlockEmptyArrayLast)
 }
 
 // buildCorruptSearchTreeDB creates a complete MMDB where the metadata claims
