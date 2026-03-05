@@ -1,3 +1,7 @@
+[settings]
+lockfile = true
+locked = true
+
 [tools]
 go = "latest"
 hugo = "latest"

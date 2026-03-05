@@ -29,6 +29,8 @@ func (w *Writer) WriteBadDataDBs(target string) error {
 		{"libmaxminddb-oversized-map.mmdb", buildOversizedMapDB()},
 		{"libmaxminddb-uint64-max-epoch.mmdb", buildUint64MaxEpochDB()},
 		{"libmaxminddb-corrupt-search-tree.mmdb", buildCorruptSearchTreeDB()},
+		{"libmaxminddb-empty-map-last-in-metadata.mmdb", buildEmptyMapLastInMetadataDB()},
+		{"libmaxminddb-empty-array-last-in-metadata.mmdb", buildEmptyArrayLastInMetadataDB()},
 	} {
 		if err := writeRawDB(target, db.name, db.data); err != nil {
 			return fmt.Errorf("writing %s: %w", db.name, err)
