@@ -18,6 +18,7 @@ func (w *Writer) WriteGeoIP2TestDB() error {
 	// This is a map from database type to input file name.
 	dbTypes := map[string]string{
 		"GeoIP-Anonymous-Plus":               "GeoIP-Anonymous-Plus-Test.json",
+		"GeoIP-Residential-Proxy":            "GeoIP-Residential-Proxy-Test.json",
 		"GeoIP2-Anonymous-IP":                "GeoIP2-Anonymous-IP-Test.json",
 		"GeoIP2-City":                        "GeoIP2-City-Test.json",
 		"GeoIP2-City-Shield":                 "GeoIP2-City-Test.json",
