@@ -1,0 +1,190 @@
+[
+  {
+    "6.0.42.17/32": {
+      "provider_name": "novada",
+      "anonymizer_confidence": 95,
+      "network_last_seen": "2026-05-14"
+    }
+  },
+  {
+    "7.13.219.50/32": {
+      "provider_name": "netnut",
+      "anonymizer_confidence": 90,
+      "network_last_seen": "2026-05-10"
+    }
+  },
+  {
+    "11.99.6.105/32": {
+      "provider_name": "dataimpulse",
+      "anonymizer_confidence": 85,
+      "network_last_seen": "2026-05-01"
+    }
+  },
+  {
+    "21.4.181.220/32": {
+      "provider_name": "geonode",
+      "anonymizer_confidence": 80,
+      "network_last_seen": "2026-04-28"
+    }
+  },
+  {
+    "22.55.78.93/32": {
+      "provider_name": "711proxy",
+      "anonymizer_confidence": 75,
+      "network_last_seen": "2026-04-22"
+    }
+  },
+  {
+    "26.200.1.7/32": {
+      "provider_name": "911proxy",
+      "anonymizer_confidence": 70,
+      "network_last_seen": "2026-04-15"
+    }
+  },
+  {
+    "28.111.43.250/32": {
+      "provider_name": "anyip",
+      "anonymizer_confidence": 65,
+      "network_last_seen": "2026-04-08"
+    }
+  },
+  {
+    "29.7.222.34/32": {
+      "provider_name": "cliproxy",
+      "anonymizer_confidence": 60,
+      "network_last_seen": "2026-04-01"
+    }
+  },
+  {
+    "30.150.99.181/32": {
+      "provider_name": "floppydata",
+      "anonymizer_confidence": 55,
+      "network_last_seen": "2026-03-25"
+    }
+  },
+  {
+    "33.81.66.40/32": {
+      "provider_name": "geonix",
+      "anonymizer_confidence": 50,
+      "network_last_seen": "2026-03-18"
+    }
+  },
+  {
+    "55.6.13.207/32": {
+      "provider_name": "oxylabs",
+      "anonymizer_confidence": 45,
+      "network_last_seen": "2026-03-11"
+    }
+  },
+  {
+    "214.230.5.158/32": {
+      "provider_name": "proxyrack",
+      "anonymizer_confidence": 40,
+      "network_last_seen": "2026-03-04"
+    }
+  },
+  {
+    "215.42.187.99/32": {
+      "provider_name": "smartproxy",
+      "anonymizer_confidence": 35,
+      "network_last_seen": "2026-02-25"
+    }
+  },
+  {
+    "2001:480:cdad:9d31::/64": {
+      "provider_name": "novada",
+      "anonymizer_confidence": 95,
+      "network_last_seen": "2026-05-14"
+    }
+  },
+  {
+    "2001:480:2dcc:2af5::/64": {
+      "provider_name": "netnut",
+      "anonymizer_confidence": 90,
+      "network_last_seen": "2026-05-12"
+    }
+  },
+  {
+    "2001:480:8df7:f125::/64": {
+      "provider_name": "dataimpulse",
+      "anonymizer_confidence": 85,
+      "network_last_seen": "2026-05-05"
+    }
+  },
+  {
+    "2001:480:eb66:c6de::/64": {
+      "provider_name": "geonode",
+      "anonymizer_confidence": 80,
+      "network_last_seen": "2026-04-29"
+    }
+  },
+  {
+    "2001:480:a21e:3f4b::/64": {
+      "provider_name": "711proxy",
+      "anonymizer_confidence": 75,
+      "network_last_seen": "2026-04-23"
+    }
+  },
+  {
+    "2001:480:328c:e2ac::/64": {
+      "provider_name": "911proxy",
+      "anonymizer_confidence": 70,
+      "network_last_seen": "2026-04-16"
+    }
+  },
+  {
+    "2001:480:1b20:fb4f::/64": {
+      "provider_name": "lumiproxy",
+      "anonymizer_confidence": 65,
+      "network_last_seen": "2026-04-09"
+    }
+  },
+  {
+    "2001:480:6457:e238::/64": {
+      "provider_name": "proxyrack",
+      "anonymizer_confidence": 60,
+      "network_last_seen": "2026-04-02"
+    }
+  },
+  {
+    "2001:480:adf7:dcc9::/64": {
+      "provider_name": "smartproxy",
+      "anonymizer_confidence": 55,
+      "network_last_seen": "2026-03-26"
+    }
+  },
+  {
+    "2001:480:f163:9b28::/64": {
+      "provider_name": "oxylabs",
+      "anonymizer_confidence": 50,
+      "network_last_seen": "2026-03-19"
+    }
+  },
+  {
+    "2001:480:320f:69e1::/64": {
+      "provider_name": "geonix",
+      "anonymizer_confidence": 45,
+      "network_last_seen": "2026-03-12"
+    }
+  },
+  {
+    "2001:480:3710:ac69::/64": {
+      "provider_name": "floppydata",
+      "anonymizer_confidence": 40,
+      "network_last_seen": "2026-03-05"
+    }
+  },
+  {
+    "2001:480:7c22:f02b::/64": {
+      "provider_name": "cliproxy",
+      "anonymizer_confidence": 35,
+      "network_last_seen": "2026-02-26"
+    }
+  },
+  {
+    "2001:480:725b:17e::/64": {
+      "provider_name": "anyip",
+      "network_last_seen": "2026-02-19"
+    }
+  }
+]
