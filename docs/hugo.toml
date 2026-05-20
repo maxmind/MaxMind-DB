@@ -1,5 +1,5 @@
 title = "MaxMind DB"
-disableKinds = ["taxonomy"]
+disableKinds = ["taxonomy", "term", "RSS"]
 
 [markup.highlight]
   noClasses = true
