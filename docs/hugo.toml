@@ -1,6 +1,5 @@
-baseURL = "https://maxmind.github.io/MaxMind-DB/"
 title = "MaxMind DB"
-disableKinds = ["taxonomy"]
+disableKinds = ["taxonomy", "term", "RSS"]
 
 [markup.highlight]
   noClasses = true

@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>{{ .Title }}</title>
+    <title>Page not found | {{ .Site.Title }}</title>
     {{- $css := resources.Get "css/main.css" | fingerprint -}}
     <link
       rel="stylesheet"
@@ -14,7 +14,11 @@
   </head>
   <body>
     <main>
-      {{ .Content }}
+      <h1>Page not found</h1>
+      <p>
+        The page you're looking for doesn't exist. Return to
+        <a href="{{ .Site.Home.RelPermalink }}">{{ .Site.Title }}</a>.
+      </p>
     </main>
   </body>
 </html>
