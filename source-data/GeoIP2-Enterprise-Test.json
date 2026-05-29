@@ -1119,5 +1119,766 @@
         "user_type": "residential"
       }
     }
+  },
+  {
+    "::1.124.213.0/120": {
+      "continent": {
+        "code": "AS",
+        "geoname_id": 6255147,
+        "names": {
+          "de": "Asien",
+          "en": "Asia",
+          "es": "Asia",
+          "fr": "Asie",
+          "ja": "アジア",
+          "pt-BR": "Ásia",
+          "ru": "Азия",
+          "zh-CN": "亚洲"
+        }
+      },
+      "country": {
+        "confidence": 99,
+        "geoname_id": 130758,
+        "iso_code": "IR",
+        "names": {
+          "de": "Iran (Islamische Republik)",
+          "en": "Iran",
+          "es": "Irán",
+          "fr": "Iran",
+          "ja": "イラン・イスラム共和国",
+          "pt-BR": "Irã",
+          "ru": "Иран",
+          "zh-CN": "伊朗伊斯兰共和国"
+        }
+      },
+      "location": {
+        "accuracy_radius": 50,
+        "latitude": 35.6961,
+        "longitude": 51.4231,
+        "time_zone": "Asia/Tehran"
+      },
+      "registered_country": {
+        "geoname_id": 130758,
+        "iso_code": "IR",
+        "names": {
+          "de": "Iran (Islamische Republik)",
+          "en": "Iran",
+          "es": "Irán",
+          "fr": "Iran",
+          "ja": "イラン・イスラム共和国",
+          "pt-BR": "Irã",
+          "ru": "Иран",
+          "zh-CN": "伊朗伊斯兰共和国"
+        }
+      },
+      "traits": {
+        "autonomous_system_number": 44244,
+        "autonomous_system_organization": "Iran Cell Service and Communication Company",
+        "connection_type": "Cellular",
+        "isp": "Iran Cell Service and Communication Company",
+        "organization": "Iran Cell Service and Communication Company",
+        "static_ip_score": 0.25,
+        "user_type": "cellular"
+      }
+    }
+  },
+  {
+    "::1.231.232.0/120": {
+      "city": {
+        "confidence": 60,
+        "geoname_id": 709334,
+        "names": {
+          "de": "Dschankoj",
+          "en": "Dzhankoy",
+          "ru": "Джанкой"
+        }
+      },
+      "continent": {
+        "code": "EU",
+        "geoname_id": 6255148,
+        "names": {
+          "de": "Europa",
+          "en": "Europe",
+          "es": "Europa",
+          "fr": "Europe",
+          "ja": "ヨーロッパ",
+          "pt-BR": "Europa",
+          "ru": "Европа",
+          "zh-CN": "欧洲"
+        }
+      },
+      "country": {
+        "confidence": 80,
+        "geoname_id": 690791,
+        "iso_code": "UA",
+        "names": {
+          "de": "Ukraine",
+          "en": "Ukraine",
+          "es": "Ucrania",
+          "fr": "Ukraine",
+          "ja": "ウクライナ共和国",
+          "pt-BR": "Ucrânia",
+          "ru": "Украина",
+          "zh-CN": "乌克兰"
+        }
+      },
+      "location": {
+        "accuracy_radius": 200,
+        "latitude": 45.7117,
+        "longitude": 34.3927,
+        "time_zone": "Europe/Simferopol"
+      },
+      "registered_country": {
+        "geoname_id": 690791,
+        "iso_code": "UA",
+        "names": {
+          "de": "Ukraine",
+          "en": "Ukraine",
+          "es": "Ucrania",
+          "fr": "Ukraine",
+          "ja": "ウクライナ共和国",
+          "pt-BR": "Ucrânia",
+          "ru": "Украина",
+          "zh-CN": "乌克兰"
+        }
+      },
+      "subdivisions": [
+        {
+          "confidence": 70,
+          "geoname_id": 703883,
+          "iso_code": "43",
+          "names": {
+            "de": "Krim",
+            "en": "Autonomous Republic of Crimea",
+            "fr": "République autonome de Crimée",
+            "ru": "Республика Крым"
+          }
+        }
+      ],
+      "traits": {
+        "autonomous_system_number": 28761,
+        "autonomous_system_organization": "CrimeaCom South LLC",
+        "connection_type": "Cable/DSL",
+        "isp": "CrimeaCom South LLC",
+        "organization": "CrimeaCom South LLC",
+        "static_ip_score": 0.26,
+        "user_type": "residential"
+      }
+    }
+  },
+  {
+    "::5.83.124.0/118": {
+      "registered_country": {
+        "geoname_id": 798549,
+        "is_in_european_union": true,
+        "iso_code": "RO",
+        "names": {
+          "de": "Rumänien",
+          "en": "Romania",
+          "es": "Rumanía",
+          "fr": "Roumanie",
+          "ja": "ルーマニア",
+          "pt-BR": "Romênia",
+          "ru": "Румыния",
+          "zh-CN": "罗马尼亚"
+        }
+      },
+      "traits": {
+        "isp": "WifiNetCom",
+        "static_ip_score": 0.28
+      }
+    }
+  },
+  {
+    "::75.209.24.0/128": {
+      "city": {
+        "confidence": 11,
+        "geoname_id": 5112335,
+        "names": {
+          "en": "Chatham"
+        }
+      },
+      "continent": {
+        "code": "NA",
+        "geoname_id": 6255149,
+        "names": {
+          "de": "Nordamerika",
+          "en": "North America",
+          "es": "Norteamérica",
+          "fr": "Amérique du Nord",
+          "ja": "北アメリカ",
+          "pt-BR": "América do Norte",
+          "ru": "Северная Америка",
+          "zh-CN": "北美洲"
+        }
+      },
+      "country": {
+        "confidence": 99,
+        "geoname_id": 6252001,
+        "iso_code": "US",
+        "names": {
+          "de": "USA",
+          "en": "United States",
+          "es": "Estados Unidos",
+          "fr": "États-Unis",
+          "ja": "アメリカ合衆国",
+          "pt-BR": "Estados Unidos",
+          "ru": "США",
+          "zh-CN": "美国"
+        }
+      },
+      "location": {
+        "accuracy_radius": 27,
+        "latitude": 42.3478,
+        "longitude": -73.5549,
+        "metro_code": 532,
+        "time_zone": "America/New_York"
+      },
+      "postal": {
+        "code": "12037",
+        "confidence": 11
+      },
+      "registered_country": {
+        "geoname_id": 6252001,
+        "iso_code": "US",
+        "names": {
+          "de": "USA",
+          "en": "United States",
+          "es": "Estados Unidos",
+          "fr": "États-Unis",
+          "ja": "アメリカ合衆国",
+          "pt-BR": "Estados Unidos",
+          "ru": "США",
+          "zh-CN": "美国"
+        }
+      },
+      "subdivisions": [
+        {
+          "confidence": 93,
+          "geoname_id": 5128638,
+          "iso_code": "NY",
+          "names": {
+            "de": "New York",
+            "en": "New York",
+            "es": "Nueva York",
+            "fr": "New York",
+            "ja": "ニューヨーク州",
+            "pt-BR": "Nova Iorque",
+            "ru": "Нью-Йорк",
+            "zh-CN": "纽约州"
+          }
+        }
+      ],
+      "traits": {
+        "autonomous_system_number": 14671,
+        "autonomous_system_organization": "FairPoint Communications",
+        "connection_type": "Cable/DSL",
+        "domain": "frpt.net",
+        "is_legitimate_proxy": true,
+        "isp": "Fairpoint Communications",
+        "organization": "Fairpoint Communications",
+        "static_ip_score": 0.35,
+        "user_type": "residential"
+      }
+    }
+  },
+  {
+    "::1.9.127.107/128": {
+      "traits": {
+        "static_ip_score": 0.22,
+        "user_type": "business"
+      }
+    }
+  },
+  {
+    "2001:219::/32": {
+      "city": {
+        "confidence": 51,
+        "geoname_id": 2694762,
+        "names": {
+          "de": "Linköping",
+          "en": "Linköping",
+          "fr": "Linköping",
+          "ja": "リンシェーピング",
+          "zh-CN": "林雪平"
+        }
+      },
+      "continent": {
+        "code": "EU",
+        "geoname_id": 6255148,
+        "names": {
+          "de": "Europa",
+          "en": "Europe",
+          "es": "Europa",
+          "fr": "Europe",
+          "ja": "ヨーロッパ",
+          "pt-BR": "Europa",
+          "ru": "Европа",
+          "zh-CN": "欧洲"
+        }
+      },
+      "country": {
+        "confidence": 99,
+        "geoname_id": 2661886,
+        "is_in_european_union": true,
+        "iso_code": "SE",
+        "names": {
+          "de": "Schweden",
+          "en": "Sweden",
+          "es": "Suecia",
+          "fr": "Suède",
+          "ja": "スウェーデン王国",
+          "pt-BR": "Suécia",
+          "ru": "Швеция",
+          "zh-CN": "瑞典"
+        }
+      },
+      "location": {
+        "accuracy_radius": 76,
+        "latitude": 58.4167,
+        "longitude": 15.6167,
+        "metro_code": 4,
+        "time_zone": "Europe/Stockholm"
+      },
+      "postal": {
+        "code": "138 20",
+        "confidence": 20
+      },
+      "registered_country": {
+        "geoname_id": 2921044,
+        "is_in_european_union": true,
+        "iso_code": "DE",
+        "names": {
+          "de": "Deutschland",
+          "en": "Germany",
+          "es": "Alemania",
+          "fr": "Allemagne",
+          "ja": "ドイツ連邦共和国",
+          "pt-BR": "Alemanha",
+          "ru": "Германия",
+          "zh-CN": "德国"
+        }
+      },
+      "subdivisions": [
+        {
+          "confidence": 51,
+          "geoname_id": 2685867,
+          "iso_code": "E",
+          "names": {
+            "en": "Östergötland County",
+            "fr": "Comté d'Östergötland"
+          }
+        }
+      ],
+      "traits": {
+        "autonomous_system_number": 29518,
+        "autonomous_system_organization": "Bredband2 AB",
+        "connection_type": "Corporate",
+        "domain": "bredband2.com",
+        "isp": "Bredband2 AB",
+        "organization": "Bevtec",
+        "static_ip_score": 2.81,
+        "user_type": "government"
+      }
+    }
+  },
+  {
+    "2001:220::/128": {
+      "city": {
+        "confidence": 51,
+        "geoname_id": 2694762,
+        "names": {
+          "de": "Linköping",
+          "en": "Linköping",
+          "fr": "Linköping",
+          "ja": "リンシェーピング",
+          "zh-CN": "林雪平"
+        }
+      },
+      "continent": {
+        "code": "EU",
+        "geoname_id": 6255148,
+        "names": {
+          "de": "Europa",
+          "en": "Europe",
+          "es": "Europa",
+          "fr": "Europe",
+          "ja": "ヨーロッパ",
+          "pt-BR": "Europa",
+          "ru": "Европа",
+          "zh-CN": "欧洲"
+        }
+      },
+      "country": {
+        "confidence": 99,
+        "geoname_id": 2661886,
+        "is_in_european_union": true,
+        "iso_code": "SE",
+        "names": {
+          "de": "Schweden",
+          "en": "Sweden",
+          "es": "Suecia",
+          "fr": "Suède",
+          "ja": "スウェーデン王国",
+          "pt-BR": "Suécia",
+          "ru": "Швеция",
+          "zh-CN": "瑞典"
+        }
+      },
+      "location": {
+        "accuracy_radius": 76,
+        "latitude": 58.4167,
+        "longitude": 15.6167,
+        "metro_code": 4,
+        "time_zone": "Europe/Stockholm"
+      },
+      "postal": {
+        "code": "138 20",
+        "confidence": 20
+      },
+      "registered_country": {
+        "geoname_id": 2921044,
+        "is_in_european_union": true,
+        "iso_code": "DE",
+        "names": {
+          "de": "Deutschland",
+          "en": "Germany",
+          "es": "Alemania",
+          "fr": "Allemagne",
+          "ja": "ドイツ連邦共和国",
+          "pt-BR": "Alemanha",
+          "ru": "Германия",
+          "zh-CN": "德国"
+        }
+      },
+      "subdivisions": [
+        {
+          "confidence": 51,
+          "geoname_id": 2685867,
+          "iso_code": "E",
+          "names": {
+            "en": "Östergötland County",
+            "fr": "Comté d'Östergötland"
+          }
+        }
+      ],
+      "traits": {
+        "autonomous_system_number": 29518,
+        "autonomous_system_organization": "Bredband2 AB",
+        "connection_type": "Corporate",
+        "domain": "bredband2.com",
+        "isp": "Bredband2 AB",
+        "organization": "Bevtec",
+        "static_ip_score": 2.82,
+        "user_type": "government"
+      }
+    }
+  },
+  {
+    "::2.20.32.110/127": {
+      "city": {
+        "confidence": 60,
+        "geoname_id": 315808,
+        "names": {
+          "de": "Elazığ",
+          "en": "Elâzığ",
+          "fr": "Elazığ",
+          "ja": "エラズー",
+          "ru": "Элязыг",
+          "zh-CN": "埃拉泽"
+        }
+      },
+      "continent": {
+        "code": "AS",
+        "geoname_id": 6255147,
+        "names": {
+          "de": "Asien",
+          "en": "Asia",
+          "es": "Asia",
+          "fr": "Asie",
+          "ja": "アジア",
+          "pt-BR": "Ásia",
+          "ru": "Азия",
+          "zh-CN": "亚洲"
+        }
+      },
+      "country": {
+        "confidence": 90,
+        "geoname_id": 298795,
+        "iso_code": "TR",
+        "names": {
+          "de": "Türkei",
+          "en": "Turkey",
+          "es": "Turquía",
+          "fr": "Turquie",
+          "ja": "トルコ共和国",
+          "pt-BR": "Turquia",
+          "ru": "Турция",
+          "zh-CN": "土耳其"
+        }
+      },
+      "location": {
+        "accuracy_radius": 50,
+        "latitude": 38.6229,
+        "longitude": 39.3217,
+        "time_zone": "Europe/Istanbul"
+      },
+      "postal": {
+        "code": "23100",
+        "confidence": 30
+      },
+      "registered_country": {
+        "geoname_id": 298795,
+        "iso_code": "TR",
+        "names": {
+          "de": "Türkei",
+          "en": "Turkey",
+          "es": "Turquía",
+          "fr": "Turquie",
+          "ja": "トルコ共和国",
+          "pt-BR": "Turquia",
+          "ru": "Турция",
+          "zh-CN": "土耳其"
+        }
+      },
+      "subdivisions": [
+        {
+          "confidence": 60,
+          "geoname_id": 315807,
+          "iso_code": "23",
+          "names": {
+            "en": "Elazığ"
+          }
+        }
+      ],
+      "traits": {
+        "autonomous_system_number": 8517,
+        "autonomous_system_organization": "National Academic Network and Information Center",
+        "connection_type": "Cable/DSL",
+        "isp": "National Academic Network and Information Center",
+        "organization": "National Academic Network and Information Center",
+        "user_type": "business"
+      }
+    }
+  },
+  {
+    "::65.116.3.80/126": {
+      "city": {
+        "confidence": 40,
+        "geoname_id": 4699066,
+        "names": {
+          "en": "Houston",
+          "fr": "Houston",
+          "ja": "ヒューストン",
+          "pt-BR": "Houston",
+          "ru": "Хьюстон",
+          "zh-CN": "休斯敦"
+        }
+      },
+      "continent": {
+        "code": "NA",
+        "geoname_id": 6255149,
+        "names": {
+          "de": "Nordamerika",
+          "en": "North America",
+          "es": "Norteamérica",
+          "fr": "Amérique du Nord",
+          "ja": "北アメリカ",
+          "pt-BR": "América do Norte",
+          "ru": "Северная Америка",
+          "zh-CN": "北美洲"
+        }
+      },
+      "country": {
+        "confidence": 99,
+        "geoname_id": 6252001,
+        "iso_code": "US",
+        "names": {
+          "de": "USA",
+          "en": "United States",
+          "es": "Estados Unidos",
+          "fr": "États-Unis",
+          "ja": "アメリカ合衆国",
+          "pt-BR": "Estados Unidos",
+          "ru": "США",
+          "zh-CN": "美国"
+        }
+      },
+      "location": {
+        "accuracy_radius": 500,
+        "latitude": 29.7702,
+        "longitude": -95.3628,
+        "metro_code": 618,
+        "time_zone": "America/Chicago"
+      },
+      "postal": {
+        "code": "77002",
+        "confidence": 1
+      },
+      "registered_country": {
+        "geoname_id": 6252001,
+        "iso_code": "US",
+        "names": {
+          "de": "USA",
+          "en": "United States",
+          "es": "Estados Unidos",
+          "fr": "États-Unis",
+          "ja": "アメリカ合衆国",
+          "pt-BR": "Estados Unidos",
+          "ru": "США",
+          "zh-CN": "美国"
+        }
+      },
+      "subdivisions": [
+        {
+          "confidence": 90,
+          "geoname_id": 4736286,
+          "iso_code": "TX",
+          "names": {
+            "en": "Texas",
+            "es": "Texas",
+            "fr": "Texas",
+            "ja": "テキサス州",
+            "ru": "Техас",
+            "zh-CN": "德克萨斯州"
+          }
+        }
+      ],
+      "traits": {
+        "autonomous_system_number": 209,
+        "autonomous_system_organization": "Qwest Communications Company, LLC",
+        "connection_type": "Cable/DSL",
+        "domain": "qwest.net",
+        "isp": "CenturyLink",
+        "organization": "CenturyLink",
+        "static_ip_score": 0.34,
+        "user_type": "residential"
+      }
+    }
+  },
+  {
+    "::128.101.101.101/128": {
+      "city": {
+        "confidence": 50,
+        "geoname_id": 5037649,
+        "names": {
+          "de": "Minneapolis",
+          "en": "Minneapolis",
+          "es": "Mineápolis",
+          "fr": "Minneapolis",
+          "ja": "ミネアポリス",
+          "pt-BR": "Minneapolis",
+          "ru": "Миннеаполис",
+          "zh-CN": "明尼阿波利斯"
+        }
+      },
+      "continent": {
+        "code": "NA",
+        "geoname_id": 6255149,
+        "names": {
+          "de": "Nordamerika",
+          "en": "North America",
+          "es": "Norteamérica",
+          "fr": "Amérique du Nord",
+          "ja": "北アメリカ",
+          "pt-BR": "América do Norte",
+          "ru": "Северная Америка",
+          "zh-CN": "北美洲"
+        }
+      },
+      "country": {
+        "confidence": 95,
+        "geoname_id": 6252001,
+        "iso_code": "US",
+        "names": {
+          "de": "USA",
+          "en": "United States",
+          "es": "Estados Unidos",
+          "fr": "États-Unis",
+          "ja": "アメリカ合衆国",
+          "pt-BR": "Estados Unidos",
+          "ru": "Сша",
+          "zh-CN": "美国"
+        }
+      },
+      "location": {
+        "accuracy_radius": 3,
+        "latitude": 44.9759,
+        "longitude": -93.2166,
+        "metro_code": 613,
+        "time_zone": "America/Chicago"
+      },
+      "postal": {
+        "code": "55414",
+        "confidence": 20
+      },
+      "registered_country": {
+        "geoname_id": 6252001,
+        "iso_code": "US",
+        "names": {
+          "de": "USA",
+          "en": "United States",
+          "es": "Estados Unidos",
+          "fr": "États-Unis",
+          "ja": "アメリカ合衆国",
+          "pt-BR": "Estados Unidos",
+          "ru": "Сша",
+          "zh-CN": "美国"
+        }
+      },
+      "subdivisions": [
+        {
+          "confidence": 70,
+          "geoname_id": 5037779,
+          "iso_code": "MN",
+          "names": {
+            "en": "Minnesota",
+            "es": "Minnesota",
+            "ja": "ミネソタ州",
+            "ru": "Миннесота"
+          }
+        }
+      ],
+      "traits": {
+        "autonomous_system_number": 2313,
+        "autonomous_system_organization": "Precision AS Org",
+        "isp": "Precision ISP",
+        "organization": "Precision Org",
+        "static_ip_score": 0.46,
+        "user_type": "residential"
+      }
+    }
+  },
+  {
+    "214.214.214.217/32": {
+      "traits": {
+        "static_ip_score": 0.4,
+        "user_type": "traveler"
+      }
+    }
+  },
+  {
+    "214.214.214.218/32": {
+      "traits": {
+        "static_ip_score": 0.4,
+        "user_type": "business"
+      }
+    }
+  },
+  {
+    "214.214.214.219/32": {
+      "traits": {
+        "static_ip_score": 0.4,
+        "user_type": "business"
+      }
+    }
+  },
+  {
+    "214.214.214.222/32": {
+      "traits": {
+        "static_ip_score": 0.4,
+        "user_type": "business"
+      }
+    }
   }
 ]
