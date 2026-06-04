@@ -2,3 +2,4 @@ docs/.hugo_build.lock
 docs/public/
 *.swp
 /cmd/write-test-data/write-test-data
+.lycheecache
