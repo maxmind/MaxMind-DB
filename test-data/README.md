@@ -1,7 +1,7 @@
 ## How to generate test data
 
 Use the
-[write-test-data](https://github.com/maxmind/MaxMind-DB/blob/main/cmd/write-test-data)
+[write-test-data](https://github.com/maxmind/MaxMind-DB/tree/main/cmd/write-test-data)
 go tool to create a small set of test databases with a variety of data and
 record sizes.
 
