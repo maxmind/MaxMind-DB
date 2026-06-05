@@ -1,0 +1,54 @@
+# Lychee link checker configuration
+# https://lychee.cli.rs/#/usage/config
+#
+# Run locally with:
+#   lychee './**/*.md'
+
+# Include URL fragments in checks
+include_fragments = true
+
+# Don't allow any redirects, so links that have moved are surfaced and can be
+# updated to their canonical destination.
+max_redirects = 0
+
+# Accept these HTTP status codes
+# 100-103: Informational responses
+# 200-299: Success responses
+# 403: Forbidden (some sites use this for rate limiting)
+# 429: Too Many Requests
+# 500-599: Server errors (temporary issues shouldn't fail CI)
+# 999: LinkedIn's custom status code
+accept = ["100..=103", "200..=299", "403", "429", "500..=599", "999"]
+
+# Exclude URL patterns from checking (treated as regular expressions)
+exclude = [
+    # GitHub blob URLs with line-number fragments (not parseable as page anchors)
+    '^https://github\.com/[^/]+/[^/]+/blob/[0-9a-fA-F]+/.+#L\d+$',
+    # Local / placeholder URLs
+    '^file://',
+    '^https?://example\.(com|org|net)',
+    '^http://localhost',
+    '127\.0\.0\.1',
+]
+
+# Exclude file paths from getting checked (regular expressions, matched against
+# the path relative to the working directory). Patterns are segment-anchored
+# with (^|/) so short names like "build" don't match unintended paths.
+#
+# Note: the check-links task only globs Markdown, so the large generated test
+# fixtures (test-data/*.mmdb, source-data/*.json) are never scanned. The
+# README.md files under test-data/ and bad-data/ are real docs and remain in
+# scope. These entries guard against accidentally widening the globs.
+exclude_path = [
+    '(^|/)source-data/',
+    '(^|/)vendor/',
+    '(^|/)build/',
+    '(^|/)public/',
+]
+
+# Cache results for 1 day to speed up repeated checks
+cache = true
+max_cache_age = "1d"
+
+# Skip missing input files instead of erroring
+skip_missing = true

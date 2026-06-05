@@ -264,11 +264,11 @@ mappings between IPv4 and IPv6.
 The strategy that MaxMind uses for its GeoIP databases is to include a pointer
 from the `::ffff:0:0/96` subnet to the root node of the IPv4 address space in
 the tree. This accounts for the
-[IPv4-mapped IPv6 address](http://en.wikipedia.org/wiki/IPv6#IPv4-mapped_IPv6_addresses).
+[IPv4-mapped IPv6 address](https://en.wikipedia.org/wiki/IPv6#IPv4-mapped_IPv6_addresses).
 
 MaxMind also includes a pointer from the `2002::/16` subnet to the root node of
 the IPv4 address space in the tree. This accounts for the
-[6to4 mapping](http://en.wikipedia.org/wiki/6to4) subnet.
+[6to4 mapping](https://en.wikipedia.org/wiki/6to4) subnet.
 
 Database creators are encouraged to document whether they are doing something
 similar for their databases.
@@ -564,6 +564,6 @@ This specification was created by the following authors:
 
 This work is licensed under the Creative Commons Attribution-ShareAlike 3.0
 Unported License. To view a copy of this license, visit
-[http://creativecommons.org/licenses/by-sa/3.0/](http://creativecommons.org/licenses/by-sa/3.0/)
+[https://creativecommons.org/licenses/by-sa/3.0/](https://creativecommons.org/licenses/by-sa/3.0/)
 or send a letter to Creative Commons, 444 Castro Street, Suite 900, Mountain
 View, California, 94041, USA

@@ -86,38 +86,6 @@ url = "https://github.com/houseabsolute/precious/releases/download/v0.10.2/preci
 url_api = "https://api.github.com/repos/houseabsolute/precious/releases/assets/345520544"
 
 [[tools.go]]
-version = "1.26.0"
-backend = "core:go"
-
-[tools.go."platforms.linux-arm64"]
-checksum = "sha256:bd03b743eb6eb4193ea3c3fd3956546bf0e3ca5b7076c8226334afe6b75704cd"
-url = "https://dl.google.com/go/go1.26.0.linux-arm64.tar.gz"
-
-[tools.go."platforms.linux-arm64-musl"]
-checksum = "sha256:bd03b743eb6eb4193ea3c3fd3956546bf0e3ca5b7076c8226334afe6b75704cd"
-url = "https://dl.google.com/go/go1.26.0.linux-arm64.tar.gz"
-
-[tools.go."platforms.linux-x64"]
-checksum = "sha256:aac1b08a0fb0c4e0a7c1555beb7b59180b05dfc5a3d62e40e9de90cd42f88235"
-url = "https://dl.google.com/go/go1.26.0.linux-amd64.tar.gz"
-
-[tools.go."platforms.linux-x64-musl"]
-checksum = "sha256:aac1b08a0fb0c4e0a7c1555beb7b59180b05dfc5a3d62e40e9de90cd42f88235"
-url = "https://dl.google.com/go/go1.26.0.linux-amd64.tar.gz"
-
-[tools.go."platforms.macos-arm64"]
-checksum = "sha256:b1640525dfe68f066d56f200bef7bf4dce955a1a893bd061de6754c211431023"
-url = "https://dl.google.com/go/go1.26.0.darwin-arm64.tar.gz"
-
-[tools.go."platforms.macos-x64"]
-checksum = "sha256:1ca28b7703cbea05a65b2a1d92d6b308610ef92f8824578a0874f2e60c9d5a22"
-url = "https://dl.google.com/go/go1.26.0.darwin-amd64.tar.gz"
-
-[tools.go."platforms.windows-x64"]
-checksum = "sha256:9bbe0fc64236b2b51f6255c05c4232532b8ecc0e6d2e00950bd3021d8a4d07d4"
-url = "https://dl.google.com/go/go1.26.0.windows-amd64.zip"
-
-[[tools.go]]
 version = "1.26.1"
 backend = "core:go"
 
@@ -181,37 +149,33 @@ url = "https://github.com/gohugoio/hugo/releases/download/v0.157.0/hugo_0.157.0_
 checksum = "sha256:3aaf98a9f504047fb7f2d5c01c649012a9763e02c60dcc30f56342b8bfa0caac"
 url = "https://github.com/gohugoio/hugo/releases/download/v0.157.0/hugo_0.157.0_windows-amd64.zip"
 
-[[tools.node]]
-version = "25.7.0"
-backend = "core:node"
+[[tools.lychee]]
+version = "0.23.0"
+backend = "aqua:lycheeverse/lychee"
 
-[tools.node."platforms.linux-arm64"]
-checksum = "sha256:3a73c9145547b5d2e29491b0ed6a37b95306b784eb83cdb2361f1e2e76fa237f"
-url = "https://nodejs.org/dist/v25.7.0/node-v25.7.0-linux-arm64.tar.gz"
+[tools.lychee."platforms.linux-arm64"]
+checksum = "sha256:97eb93b02a7d78a752fc33e5b0983439ccaadbf3db952b68a0a4401acd92e6e0"
+url = "https://github.com/lycheeverse/lychee/releases/download/lychee-v0.23.0/lychee-aarch64-unknown-linux-gnu.tar.gz"
 
-[tools.node."platforms.linux-arm64-musl"]
-checksum = "sha256:3a73c9145547b5d2e29491b0ed6a37b95306b784eb83cdb2361f1e2e76fa237f"
-url = "https://nodejs.org/dist/v25.7.0/node-v25.7.0-linux-arm64.tar.gz"
+[tools.lychee."platforms.linux-arm64-musl"]
+checksum = "sha256:97eb93b02a7d78a752fc33e5b0983439ccaadbf3db952b68a0a4401acd92e6e0"
+url = "https://github.com/lycheeverse/lychee/releases/download/lychee-v0.23.0/lychee-aarch64-unknown-linux-gnu.tar.gz"
 
-[tools.node."platforms.linux-x64"]
-checksum = "sha256:033ad3a740d62d3c7e3aaa1fecfeec16a719d4af33ab030666bf171057b070d9"
-url = "https://nodejs.org/dist/v25.7.0/node-v25.7.0-linux-x64.tar.gz"
+[tools.lychee."platforms.linux-x64"]
+checksum = "sha256:5538440d2c69a45a0a09983271e5dee0c2fe7137d8035d25b2632e10a66a090a"
+url = "https://github.com/lycheeverse/lychee/releases/download/lychee-v0.23.0/lychee-x86_64-unknown-linux-musl.tar.gz"
 
-[tools.node."platforms.linux-x64-musl"]
-checksum = "sha256:033ad3a740d62d3c7e3aaa1fecfeec16a719d4af33ab030666bf171057b070d9"
-url = "https://nodejs.org/dist/v25.7.0/node-v25.7.0-linux-x64.tar.gz"
+[tools.lychee."platforms.linux-x64-musl"]
+checksum = "sha256:5538440d2c69a45a0a09983271e5dee0c2fe7137d8035d25b2632e10a66a090a"
+url = "https://github.com/lycheeverse/lychee/releases/download/lychee-v0.23.0/lychee-x86_64-unknown-linux-musl.tar.gz"
 
-[tools.node."platforms.macos-arm64"]
-checksum = "sha256:d4e3cfe5e6bddda41ba0c683e37329632465b93371ddc538c763578758d5bc35"
-url = "https://nodejs.org/dist/v25.7.0/node-v25.7.0-darwin-arm64.tar.gz"
+[tools.lychee."platforms.macos-arm64"]
+checksum = "sha256:4c8034900e11083b68ac6f6582c377ff1f704e268991999e09d717973e493e7f"
+url = "https://github.com/lycheeverse/lychee/releases/download/lychee-v0.23.0/lychee-arm64-macos.dmg"
 
-[tools.node."platforms.macos-x64"]
-checksum = "sha256:f83929f4a84ae5a88c2a5333466b100dd101658063592497626ae9eea15b3b1b"
-url = "https://nodejs.org/dist/v25.7.0/node-v25.7.0-darwin-x64.tar.gz"
-
-[tools.node."platforms.windows-x64"]
-checksum = "sha256:4a66eac416c30474fe9c3f0ef7d4ffc85a8797cbc35f6b8566dfbce02789a9c4"
-url = "https://nodejs.org/dist/v25.7.0/node-v25.7.0-win-x64.zip"
+[tools.lychee."platforms.windows-x64"]
+checksum = "sha256:0fda7ff0a60c0250939fc25361c2d4e6e7853c31c996733fdd5a1dd760bcb824"
+url = "https://github.com/lycheeverse/lychee/releases/download/lychee-v0.23.0/lychee-x86_64-windows.exe"
 
 [[tools.node]]
 version = "25.8.0"
