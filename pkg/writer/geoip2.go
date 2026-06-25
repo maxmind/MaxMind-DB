@@ -52,8 +52,15 @@ func (w *Writer) WriteGeoIP2TestDB() error {
 			description["zh"] = "小型数据库"
 		}
 
+		buildEpoch := int64(0)
+		if dbType == "GeoIP-Residential-Proxy" {
+			// 2026-05-15 13:20:00 UTC
+			buildEpoch = 1778851200
+		}
+
 		dbWriter, err := mmdbwriter.New(
 			mmdbwriter.Options{
+				BuildEpoch:          buildEpoch,
 				DatabaseType:        dbType,
 				Description:         description,
 				DisableIPv4Aliasing: false,
