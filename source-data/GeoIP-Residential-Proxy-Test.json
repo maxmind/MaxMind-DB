@@ -1,5 +1,12 @@
 [
   {
+    "1.2.0.4/32": {
+      "provider_name": "quickshift",
+      "anonymizer_confidence": 82,
+      "network_last_seen": "2026-05-11"
+    }
+  },
+  {
     "6.0.42.17/32": {
       "provider_name": "novada",
       "anonymizer_confidence": 95,
