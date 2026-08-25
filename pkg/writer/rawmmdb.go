@@ -141,6 +141,7 @@ func writeMetadataBlockWithKeyOrder(
 	buf []byte,
 	nodeCount uint32,
 	buildEpoch uint64,
+	ipVersion uint16,
 	keys []string,
 ) int {
 	pos := 0
@@ -156,7 +157,7 @@ func writeMetadataBlockWithKeyOrder(
 		"build_epoch":                 func(b []byte) int { return writeUint64(b, buildEpoch) },
 		"database_type":               func(b []byte) int { return writeString(b, "Test") },
 		"description":                 func(b []byte) int { return writeMap(b, 0) },
-		"ip_version":                  func(b []byte) int { return writeUint16(b, 4) },
+		"ip_version":                  func(b []byte) int { return writeUint16(b, ipVersion) },
 		"languages":                   writeEmptyArray,
 		"node_count":                  func(b []byte) int { return writeUint32(b, nodeCount) },
 		"record_size":                 func(b []byte) int { return writeUint16(b, 24) },
@@ -177,7 +178,7 @@ func writeMetadataBlockWithKeyOrder(
 // writeMetadataBlock writes the metadata marker followed by a standard
 // metadata map with the given parameters.
 func writeMetadataBlock(buf []byte, nodeCount uint32, buildEpoch uint64) int {
-	return writeMetadataBlockWithKeyOrder(buf, nodeCount, buildEpoch, metadataKeysStandard)
+	return writeMetadataBlockWithKeyOrder(buf, nodeCount, buildEpoch, 4, metadataKeysStandard)
 }
 
 func buildSimpleDB(metadataWriter func([]byte, uint32, uint64) int) []byte {
@@ -268,6 +269,7 @@ func writeMetadataBlockEmptyMapLast(buf []byte, nodeCount uint32, buildEpoch uin
 		buf,
 		nodeCount,
 		buildEpoch,
+		4,
 		metadataKeysEmptyMapLast,
 	)
 }
@@ -279,6 +281,7 @@ func writeMetadataBlockEmptyArrayLast(buf []byte, nodeCount uint32, buildEpoch u
 		buf,
 		nodeCount,
 		buildEpoch,
+		4,
 		metadataKeysEmptyArrayLast,
 	)
 }
