@@ -4,7 +4,7 @@ go 1.25.0
 
 require (
 	github.com/maxmind/mmdbwriter v1.2.0
-	go4.org/netipx v0.0.0-20231129151722-fdeea329fbba
+	go4.org/netipx v0.0.0-20260823151212-3075585bcbeb
 )
 
 require (
