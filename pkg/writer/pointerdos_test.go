@@ -44,6 +44,9 @@ func TestPointerFanOutFixturesMatchCommitted(t *testing.T) {
 		pointerDoSIPv6FixtureFilename: buildPointerFanOutAllSpaceDB(
 			pointerDoSDepth,
 		),
+		pointerValueLimitFixtureFilename: buildPointerFanOutDB(
+			pointerValueLimitDepth,
+		),
 		payloadDoSFixtureFilename: buildPayloadAmplificationDB(
 			payloadPointerCount,
 			scalarTypeBytes,
@@ -56,6 +59,19 @@ func TestPointerFanOutFixturesMatchCommitted(t *testing.T) {
 			payloadPointerCount,
 			scalarTypeString,
 		),
+		valueLimitFixtureFilename: buildValueLimitDB(
+			recommendedValueLimit - 1,
+		),
+		valueLimitOverFixtureFilename: buildValueLimitDB(
+			recommendedValueLimit,
+		),
+		payloadLimitFixtureFilename: buildPayloadLimitDB(
+			recommendedPayloadLimit - 32*payloadScalarSize,
+		),
+		payloadLimitOverFixtureFilename: buildPayloadLimitDB(
+			recommendedPayloadLimit - 32*payloadScalarSize + 1,
+		),
+		metadataLimitFixtureFilename: buildMetadataLimitDB(),
 	}
 	for name, got := range cases {
 		//nolint:gosec // name comes from the fixed cases map, not user input.
@@ -69,23 +85,89 @@ func TestPointerFanOutFixturesMatchCommitted(t *testing.T) {
 	}
 }
 
+func TestDecoderLimitBoundaryData(t *testing.T) {
+	for _, pointerCount := range []int{
+		recommendedValueLimit - 1,
+		recommendedValueLimit,
+	} {
+		data, top := buildValueLimitData(pointerCount)
+		if top != 1 {
+			t.Errorf("value boundary top offset = %d, want 1", top)
+		}
+		if data[0] != 0xA0 {
+			t.Errorf("value boundary scalar = %#x, want 0xa0", data[0])
+		}
+		if len(data) != 1+4+pointerCount*2 {
+			t.Errorf("value boundary length = %d, want %d", len(data), 1+4+pointerCount*2)
+		}
+		for offset := top + 4; offset < len(data); offset += 2 {
+			if target := smallDataPointer(t, data, offset); target != 0 {
+				t.Fatalf("value boundary pointer at %d targets %d, want 0", offset, target)
+			}
+		}
+	}
+
+	for _, smallSize := range []int{32, 33} {
+		data, top := buildPayloadLimitData(smallSize)
+		if top <= payloadScalarSize {
+			t.Errorf("payload boundary top offset = %d, want after large scalar", top)
+		}
+		if len(data) <= top {
+			t.Fatalf("payload boundary data ends before outer array at %d", top)
+		}
+		gotPayload := sumPointedPayload(t, data, top)
+		wantPayload := recommendedPayloadLimit + smallSize - 32
+		if gotPayload != wantPayload {
+			t.Errorf("payload boundary total = %d, want %d", gotPayload, wantPayload)
+		}
+	}
+}
+
+func TestMetadataLimitFixtureIsSemanticallyValid(t *testing.T) {
+	path := filepath.Clean(filepath.Join("..", "..", "test-data", metadataLimitFixtureFilename))
+	db, err := maxminddb.Open(path)
+	if err != nil {
+		t.Fatalf("opening metadata limit fixture: %v", err)
+	}
+	t.Cleanup(func() {
+		if err := db.Close(); err != nil {
+			t.Errorf("closing metadata limit fixture: %v", err)
+		}
+	})
+
+	if got := len(db.Metadata.DatabaseType); got != payloadScalarSize {
+		t.Errorf("database type length = %d, want %d", got, payloadScalarSize)
+	}
+	if got := len(db.Metadata.Languages); got != 33 {
+		t.Fatalf("language count = %d, want 33", got)
+	}
+	for i, language := range db.Metadata.Languages {
+		if got := len(language); got != payloadScalarSize {
+			t.Errorf("language %d length = %d, want %d", i, got, payloadScalarSize)
+		}
+	}
+}
+
 func TestPointerFanOutFixturesAreSemanticallyValid(t *testing.T) {
 	tests := []struct {
 		name      string
 		ipVersion uint
 		nodeCount uint
+		depth     int
 		addresses []string
 	}{
 		{
 			name:      pointerDoSFixtureFilename,
 			ipVersion: 4,
 			nodeCount: 1,
+			depth:     pointerDoSDepth,
 			addresses: []string{"0.0.0.0", "203.0.113.9", "255.255.255.255"},
 		},
 		{
 			name:      pointerDoSIPv6FixtureFilename,
 			ipVersion: 6,
 			nodeCount: 97,
+			depth:     pointerDoSDepth,
 			addresses: []string{
 				"0.0.0.0",
 				"203.0.113.9",
@@ -94,6 +176,13 @@ func TestPointerFanOutFixturesAreSemanticallyValid(t *testing.T) {
 				"2001:db8::1",
 				"ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff",
 			},
+		},
+		{
+			name:      pointerValueLimitFixtureFilename,
+			ipVersion: 4,
+			nodeCount: 1,
+			depth:     15,
+			addresses: []string{"1.1.1.1"},
 		},
 	}
 
@@ -166,7 +255,7 @@ func TestPointerFanOutFixturesAreSemanticallyValid(t *testing.T) {
 			if outerOffsetInt >= len(raw)-dataStart {
 				t.Fatalf("outer record offset %d is outside the data section", outerOffset)
 			}
-			verifyPointerFanOutRecord(t, raw[dataStart:], outerOffsetInt, pointerDoSDepth)
+			verifyPointerFanOutRecord(t, raw[dataStart:], outerOffsetInt, test.depth)
 		})
 	}
 }
@@ -203,6 +292,51 @@ func verifyPointerFanOutRecord(t *testing.T, data []byte, offset, depth int) {
 	if data[offset] != 0xA0 {
 		t.Fatalf("leaf control byte = %#x, want 0xa0", data[offset])
 	}
+}
+
+// scalarPayloadSize returns the declared payload length of the string or bytes
+// scalar at offset, reading only its control bytes.
+func scalarPayloadSize(t *testing.T, data []byte, offset int) int {
+	t.Helper()
+	if offset < 0 || offset+3 > len(data) {
+		t.Fatalf("scalar at offset %d is outside the data section", offset)
+	}
+	control := data[offset]
+	major := control >> 5
+	if major != scalarTypeString && major != scalarTypeBytes {
+		t.Fatalf("value at offset %d has major type %d, want a string or bytes", offset, major)
+	}
+	size := int(control & 0x1F)
+	switch {
+	case size <= 28:
+		return size
+	case size == 29:
+		return int(data[offset+1]) + 29
+	case size == 30:
+		return (int(data[offset+1])<<8 | int(data[offset+2])) + 285
+	default:
+		t.Fatalf("scalar at offset %d uses size code %d, which this test cannot read", offset, size)
+		return 0
+	}
+}
+
+// sumPointedPayload adds up the payload that every element of the array at top
+// references, which is what a reader charging each occurrence materializes. It
+// reads the generated bytes rather than recomputing the builder's arithmetic, so
+// a change to the encoding or the element count fails the assertion.
+func sumPointedPayload(t *testing.T, data []byte, top int) int {
+	t.Helper()
+	if top+3 > len(data) || data[top] != 29 || data[top+1] != 4 {
+		t.Fatalf("value at offset %d is not a size-29 array header", top)
+	}
+	count := int(data[top+2]) + 29
+	total := 0
+	elem := top + 3
+	for range count {
+		total += scalarPayloadSize(t, data, smallDataPointer(t, data, elem))
+		elem += 2
+	}
+	return total
 }
 
 func smallDataPointer(t *testing.T, data []byte, offset int) int {

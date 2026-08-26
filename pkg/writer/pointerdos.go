@@ -18,11 +18,17 @@ const (
 	// pointerDoSBuildEpoch is fixed so the generated files are reproducible.
 	pointerDoSBuildEpoch = 1_000_000_000
 
-	pointerDoSFixtureFilename       = "MaxMind-DB-test-pointer-decoder-dos.mmdb"
-	pointerDoSIPv6FixtureFilename   = "MaxMind-DB-test-pointer-decoder-dos-ipv6.mmdb"
-	payloadDoSFixtureFilename       = "MaxMind-DB-test-payload-amplification-dos.mmdb"
-	worstCasePayloadFixtureFilename = "MaxMind-DB-test-payload-amplification-dos-worst-case.mmdb"
-	stringPayloadFixtureFilename    = "MaxMind-DB-test-payload-amplification-dos-string.mmdb"
+	pointerDoSFixtureFilename        = "MaxMind-DB-test-pointer-decoder-dos.mmdb"
+	pointerDoSIPv6FixtureFilename    = "MaxMind-DB-test-pointer-decoder-dos-ipv6.mmdb"
+	pointerValueLimitFixtureFilename = "MaxMind-DB-test-decoder-value-limit-pointer-heavy.mmdb"
+	payloadDoSFixtureFilename        = "MaxMind-DB-test-payload-amplification-dos.mmdb"
+	worstCasePayloadFixtureFilename  = "MaxMind-DB-test-payload-amplification-dos-worst-case.mmdb"
+	stringPayloadFixtureFilename     = "MaxMind-DB-test-payload-amplification-dos-string.mmdb"
+	valueLimitFixtureFilename        = "MaxMind-DB-test-decoder-value-limit.mmdb"
+	valueLimitOverFixtureFilename    = "MaxMind-DB-test-decoder-value-limit-over.mmdb"
+	payloadLimitFixtureFilename      = "MaxMind-DB-test-decoder-payload-limit.mmdb"
+	payloadLimitOverFixtureFilename  = "MaxMind-DB-test-decoder-payload-limit-over.mmdb"
+	metadataLimitFixtureFilename     = "MaxMind-DB-test-metadata-payload-limit.mmdb"
 )
 
 // writeDataPointer writes a data-section pointer with a one-byte payload,
@@ -83,6 +89,9 @@ func buildPointerFanOutData(depth int) (data []byte, top int) {
 }
 
 const (
+	recommendedValueLimit   = 1 << 16
+	recommendedPayloadLimit = 1 << 21
+
 	// payloadScalarSize is the size of the single shared bytes value that the
 	// pointers target. Size code 30 covers 285..65820 bytes.
 	payloadScalarSize = 1<<16 - 1
@@ -108,6 +117,52 @@ const (
 	scalarTypeBytes  byte = 4
 )
 
+func writeScalar(buf []byte, size int, scalarType byte) int {
+	pos := 1
+	switch {
+	case size <= 28:
+		buf[0] = (scalarType << 5) | byte(size&0x1F)
+	case size <= 284:
+		buf[0] = (scalarType << 5) | 29
+		buf[1] = byte(size - 29)
+		pos++
+	case size <= 65820:
+		buf[0] = (scalarType << 5) | 30
+		encoded := size - 285
+		buf[1] = byte((encoded >> 8) & 0xFF)
+		buf[2] = byte(encoded & 0xFF)
+		pos += 2
+	default:
+		panic(fmt.Sprintf("scalar size %d is unsupported by this fixture writer", size))
+	}
+	clear(buf[pos : pos+size])
+	return pos + size
+}
+
+func writeArrayHeader(buf []byte, size int) int {
+	switch {
+	case size <= 28:
+		buf[0] = byte(size & 0x1F)
+		buf[1] = 4
+		return 2
+	case size <= 284:
+		buf[0] = 29
+		buf[1] = 4
+		buf[2] = byte(size - 29)
+		return 3
+	case size <= 65820:
+		buf[0] = 30
+		buf[1] = 4
+		encoded := size - 285
+		buf[2] = byte((encoded >> 8) & 0xFF)
+		buf[3] = byte(encoded & 0xFF)
+		return 4
+	default:
+		//nolint:gosec // size is a bounded fixture element count.
+		return writeLargeArray(buf, uint32(size))
+	}
+}
+
 // buildPayloadAmplificationData builds a data section holding one large scalar
 // value (string or bytes, per scalarType) at offset 0 followed by an array of
 // pointers that all target it. The value count and depth limits do not bound
@@ -118,23 +173,54 @@ func buildPayloadAmplificationData(
 	pointerCount int,
 	scalarType byte,
 ) (data []byte, top int) {
-	const sizeCode30 = 30
-	encoded := payloadScalarSize - 285
-	data = append(
-		data,
-		(scalarType<<5)|sizeCode30,
-		byte((encoded>>8)&0xFF),
-		byte(encoded&0xFF),
-	)
-	data = append(data, make([]byte, payloadScalarSize)...)
-
-	top = len(data)
-	arrEncoded := pointerCount - 285
-	data = append(data, 0x1E, 0x04, byte((arrEncoded>>8)&0xFF), byte(arrEncoded&0xFF))
-	for range pointerCount {
-		data = append(data, writeDataPointer(0)...)
+	data = make([]byte, payloadScalarSize+16+pointerCount*2)
+	pos := writeScalar(data, payloadScalarSize, scalarType)
+	// The payload must not be left as NUL. A NUL-filled string measures length 0
+	// through strlen, so a binding that copies C strings would skip the copy path
+	// this fixture exists to exercise.
+	for i := pos - payloadScalarSize; i < pos; i++ {
+		data[i] = 'a'
 	}
-	return data, top
+
+	top = pos
+	pos += writeArrayHeader(data[pos:], pointerCount)
+	for range pointerCount {
+		pos += copy(data[pos:], writeDataPointer(0))
+	}
+	return data[:pos], top
+}
+
+// buildValueLimitData produces one array node followed by pointerCount scalar
+// nodes. The scalar has no string/bytes payload, so only the decoded-value
+// budget determines whether the record is accepted.
+func buildValueLimitData(pointerCount int) (data []byte, top int) {
+	data = make([]byte, 16+pointerCount*2)
+	data[0] = 0xA0 // uint16 with value 0
+	pos := 1
+	top = pos
+	pos += writeArrayHeader(data[pos:], pointerCount)
+	for range pointerCount {
+		pos += copy(data[pos:], writeDataPointer(0))
+	}
+	return data[:pos], top
+}
+
+// buildPayloadLimitData produces 32 references to a 65,535-byte value and one
+// reference to a 32- or 33-byte value. Those totals are exactly 2 MiB and one
+// byte over 2 MiB respectively, while the decoded-value count remains tiny.
+func buildPayloadLimitData(smallSize int) (data []byte, top int) {
+	const largePointerCount = 32
+	data = make([]byte, payloadScalarSize+smallSize+128)
+	pos := writeScalar(data, smallSize, scalarTypeBytes)
+	largeOffset := pos
+	pos += writeScalar(data[pos:], payloadScalarSize, scalarTypeBytes)
+	top = pos
+	pos += writeArrayHeader(data[pos:], largePointerCount+1)
+	for range largePointerCount {
+		pos += copy(data[pos:], writeDataPointer(largeOffset))
+	}
+	pos += copy(data[pos:], writeDataPointer(0))
+	return data[:pos], top
 }
 
 // buildPayloadAmplificationDB builds a minimal valid IPv4 MMDB whose single
@@ -142,8 +228,14 @@ func buildPayloadAmplificationData(
 // amplification record. See buildPayloadAmplificationData.
 func buildPayloadAmplificationDB(pointerCount int, scalarType byte) []byte {
 	data, top := buildPayloadAmplificationData(pointerCount, scalarType)
+	return buildSingleRecordDB(data, top)
+}
 
+func buildSingleRecordDB(data []byte, top int) []byte {
 	const nodeCount = 1
+	// A data record value is the data-section offset plus the node count plus the
+	// 16-byte data section separator, which is how a reader recovers the offset:
+	// offset = recordValue - nodeCount - dataSeparatorSize.
 	recordValue := dataRecordValue24(nodeCount, top)
 
 	buf := make([]byte, 1024+len(data))
@@ -152,6 +244,78 @@ func buildPayloadAmplificationDB(pointerCount int, scalarType byte) []byte {
 	pos += dataSeparatorSize
 	pos += copy(buf[pos:], data)
 	pos += writeMetadataBlock(buf[pos:], nodeCount, pointerDoSBuildEpoch)
+	return buf[:pos]
+}
+
+func buildValueLimitDB(pointerCount int) []byte {
+	data, top := buildValueLimitData(pointerCount)
+	return buildSingleRecordDB(data, top)
+}
+
+func buildPayloadLimitDB(smallSize int) []byte {
+	data, top := buildPayloadLimitData(smallSize)
+	return buildSingleRecordDB(data, top)
+}
+
+func writeMetadataLimitBlock(buf []byte, nodeCount uint32, buildEpoch uint64) int {
+	pos := 0
+	copy(buf[pos:], metadataMarker)
+	pos += len(metadataMarker)
+	metadataStart := pos
+	pos += writeMap(buf[pos:], len(metadataKeysStandard))
+
+	var databaseTypeOffset int
+	for _, key := range metadataKeysStandard {
+		pos += writeMetaKey(buf[pos:], key)
+		switch key {
+		case "binary_format_major_version":
+			pos += writeUint16(buf[pos:], 2)
+		case "binary_format_minor_version":
+			pos += writeUint16(buf[pos:], 0)
+		case "build_epoch":
+			pos += writeUint64(buf[pos:], buildEpoch)
+		case "database_type":
+			databaseTypeOffset = pos - metadataStart
+			pos += writeScalar(buf[pos:], payloadScalarSize, scalarTypeString)
+			for i := pos - payloadScalarSize; i < pos; i++ {
+				buf[i] = 'T'
+			}
+		case "description":
+			pos += writeMap(buf[pos:], 0)
+		case "ip_version":
+			pos += writeUint16(buf[pos:], 4)
+		case "languages":
+			// The pointers below target the database_type string, so that key must
+			// already be written. Offset 0 is the metadata map's own control byte,
+			// which would silently make this a pointer cycle instead of a payload
+			// fixture.
+			if databaseTypeOffset == 0 {
+				panic("languages must be written after database_type")
+			}
+			const pointerCount = 33
+			pos += writeArrayHeader(buf[pos:], pointerCount)
+			for range pointerCount {
+				pos += copy(buf[pos:], writeDataPointer(databaseTypeOffset))
+			}
+		case "node_count":
+			pos += writeUint32(buf[pos:], nodeCount)
+		case "record_size":
+			pos += writeUint16(buf[pos:], 24)
+		default:
+			panic("unknown metadata key: " + key)
+		}
+	}
+	return pos
+}
+
+func buildMetadataLimitDB() []byte {
+	const nodeCount = 1
+	const recordValue = nodeCount + dataSeparatorSize
+	buf := make([]byte, 128*1024)
+	pos := writeSearchTree(buf, recordValue)
+	pos += dataSeparatorSize
+	pos += writeMap(buf[pos:], 0)
+	pos += writeMetadataLimitBlock(buf[pos:], nodeCount, pointerDoSBuildEpoch)
 	return buf[:pos]
 }
 
@@ -160,20 +324,7 @@ func buildPayloadAmplificationDB(pointerCount int, scalarType byte) []byte {
 // buildPointerFanOutData.
 func buildPointerFanOutDB(depth int) []byte {
 	data, top := buildPointerFanOutData(depth)
-
-	const nodeCount = 1
-	// A data record value is the data-section offset plus the node count plus
-	// the 16-byte data section separator, which is how a reader recovers the
-	// offset: offset = recordValue - nodeCount - dataSeparatorSize.
-	recordValue := dataRecordValue24(nodeCount, top)
-
-	buf := make([]byte, 1024+len(data))
-	pos := 0
-	pos += writeSearchTree(buf[pos:], recordValue)
-	pos += dataSeparatorSize
-	pos += copy(buf[pos:], data)
-	pos += writeMetadataBlock(buf[pos:], nodeCount, pointerDoSBuildEpoch)
-	return buf[:pos]
+	return buildSingleRecordDB(data, top)
 }
 
 // buildPointerFanOutAllSpaceDB builds a conventional IPv6 MMDB that maps the
@@ -218,18 +369,30 @@ func buildPointerFanOutAllSpaceDB(depth int) []byte {
 	return buf[:pos]
 }
 
+// pointerValueLimitDepth is the deepest fan-out whose flat value count a reader
+// at the recommended limit still accepts. A binary fan-out of depth d decodes
+// 2**(d+1) - 1 values, so depth 15 gives 65,535, one below the limit, and depth
+// 16 would give 131,071. Depth 15 is therefore the only depth that lands on the
+// boundary from below.
+const pointerValueLimitDepth = 15
+
 // WritePointerDecoderDoSTestDB writes the databases that exercise the
 // data-section pointer denial of service. Two exercise the fan-out: a minimal
 // single-node database and a conventional IPv6 database that maps all of the
 // address space to the fan-out record. Three exercise payload amplification: a
 // moderate and a worst-case fixture with a shared bytes value, and one with a
-// shared string value, the type most bindings copy into a native string. See
+// shared string value, the type most bindings copy into a native string. It
+// also writes exact boundary fixtures for both recommended limits and a
+// metadata fixture that exceeds the payload limit while opening. See
 // buildPointerFanOutData and buildPayloadAmplificationData.
 func (w *Writer) WritePointerDecoderDoSTestDB() error {
 	files := map[string][]byte{
 		pointerDoSFixtureFilename: buildPointerFanOutDB(pointerDoSDepth),
 		pointerDoSIPv6FixtureFilename: buildPointerFanOutAllSpaceDB(
 			pointerDoSDepth,
+		),
+		pointerValueLimitFixtureFilename: buildPointerFanOutDB(
+			pointerValueLimitDepth,
 		),
 		payloadDoSFixtureFilename: buildPayloadAmplificationDB(
 			payloadPointerCount,
@@ -243,6 +406,19 @@ func (w *Writer) WritePointerDecoderDoSTestDB() error {
 			payloadPointerCount,
 			scalarTypeString,
 		),
+		valueLimitFixtureFilename: buildValueLimitDB(
+			recommendedValueLimit - 1,
+		),
+		valueLimitOverFixtureFilename: buildValueLimitDB(
+			recommendedValueLimit,
+		),
+		payloadLimitFixtureFilename: buildPayloadLimitDB(
+			recommendedPayloadLimit - 32*payloadScalarSize,
+		),
+		payloadLimitOverFixtureFilename: buildPayloadLimitDB(
+			recommendedPayloadLimit - 32*payloadScalarSize + 1,
+		),
+		metadataLimitFixtureFilename: buildMetadataLimitDB(),
 	}
 	for name, db := range files {
 		path := filepath.Clean(filepath.Join(w.target, name))
