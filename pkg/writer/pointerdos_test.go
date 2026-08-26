@@ -44,6 +44,18 @@ func TestPointerFanOutFixturesMatchCommitted(t *testing.T) {
 		pointerDoSIPv6FixtureFilename: buildPointerFanOutAllSpaceDB(
 			pointerDoSDepth,
 		),
+		payloadDoSFixtureFilename: buildPayloadAmplificationDB(
+			payloadPointerCount,
+			scalarTypeBytes,
+		),
+		worstCasePayloadFixtureFilename: buildPayloadAmplificationDB(
+			worstCasePointerCount,
+			scalarTypeBytes,
+		),
+		stringPayloadFixtureFilename: buildPayloadAmplificationDB(
+			payloadPointerCount,
+			scalarTypeString,
+		),
 	}
 	for name, got := range cases {
 		//nolint:gosec // name comes from the fixed cases map, not user input.
@@ -146,26 +158,7 @@ func TestPointerFanOutFixturesAreSemanticallyValid(t *testing.T) {
 			if err != nil {
 				t.Fatalf("reading fixture: %v", err)
 			}
-			recordSizeQuarter := uint64(db.Metadata.RecordSize / 4)
-			if recordSizeQuarter == 0 ||
-				uint64(
-					db.Metadata.NodeCount,
-				) > uint64(
-					math.MaxInt-dataSeparatorSize,
-				)/recordSizeQuarter {
-				t.Fatalf(
-					"search tree dimensions overflow int: %d nodes at %d bits per record",
-					db.Metadata.NodeCount,
-					db.Metadata.RecordSize,
-				)
-			}
-			searchTreeSize64 := uint64(db.Metadata.NodeCount) * recordSizeQuarter
-			//nolint:gosec // G115: searchTreeSize64 is checked against math.MaxInt above.
-			searchTreeSize := int(searchTreeSize64)
-			dataStart := searchTreeSize + dataSeparatorSize
-			if dataStart > len(raw) {
-				t.Fatalf("data section starts at %d, beyond file size %d", dataStart, len(raw))
-			}
+			dataStart := dataSectionStart(t, db, raw)
 			if uint64(outerOffset) > uint64(math.MaxInt) {
 				t.Fatalf("outer record offset %d overflows int", outerOffset)
 			}
@@ -222,4 +215,113 @@ func smallDataPointer(t *testing.T, data []byte, offset int) int {
 		t.Fatalf("value at offset %d is not a two-byte data pointer", offset)
 	}
 	return int(control&0x7)<<8 | int(data[offset+1])
+}
+
+// dataSectionStart returns the offset in raw where the data section begins,
+// after the search tree and its separator, validating the tree dimensions fit
+// an int.
+func dataSectionStart(t *testing.T, db *maxminddb.Reader, raw []byte) int {
+	t.Helper()
+	recordSizeQuarter := uint64(db.Metadata.RecordSize / 4)
+	if recordSizeQuarter == 0 ||
+		uint64(db.Metadata.NodeCount) > uint64(math.MaxInt-dataSeparatorSize)/recordSizeQuarter {
+		t.Fatalf("search tree dimensions overflow int: %d nodes at %d bits per record",
+			db.Metadata.NodeCount, db.Metadata.RecordSize)
+	}
+	searchTreeSize64 := uint64(db.Metadata.NodeCount) * recordSizeQuarter
+	//nolint:gosec // G115: searchTreeSize64 is checked against math.MaxInt above.
+	dataStart := int(searchTreeSize64) + dataSeparatorSize
+	if dataStart > len(raw) {
+		t.Fatalf("data section starts at %d, beyond file size %d", dataStart, len(raw))
+	}
+	return dataStart
+}
+
+// TestPayloadAmplificationFixturesAreSemanticallyValid independently validates
+// each committed payload fixture: a shared 65,535-byte scalar at data-section
+// offset 0 and an outer array whose elements all point to it. It inspects the
+// raw data section without expanding the array.
+func TestPayloadAmplificationFixturesAreSemanticallyValid(t *testing.T) {
+	tests := []struct {
+		name         string
+		scalarType   byte // MMDB major type: 2 is string, 4 is bytes
+		pointerCount int
+	}{
+		{payloadDoSFixtureFilename, scalarTypeBytes, payloadPointerCount},
+		{worstCasePayloadFixtureFilename, scalarTypeBytes, worstCasePointerCount},
+		{stringPayloadFixtureFilename, scalarTypeString, payloadPointerCount},
+	}
+
+	for _, test := range tests {
+		t.Run(test.name, func(t *testing.T) {
+			path := filepath.Clean(filepath.Join("..", "..", "test-data", test.name))
+			db, err := maxminddb.Open(path)
+			if err != nil {
+				t.Fatalf("opening fixture: %v", err)
+			}
+			t.Cleanup(func() {
+				if err := db.Close(); err != nil {
+					t.Errorf("closing fixture: %v", err)
+				}
+			})
+
+			if got := db.Metadata.IPVersion; got != 4 {
+				t.Errorf("IP version = %d, want 4", got)
+			}
+
+			// The lookup finds the outer array. Do not Decode: expanding it is
+			// deliberately hostile in an unprotected reader.
+			result := db.Lookup(netip.MustParseAddr("1.1.1.1"))
+			if err := result.Err(); err != nil {
+				t.Fatalf("lookup: %v", err)
+			}
+			if !result.Found() {
+				t.Fatal("lookup did not find a record")
+			}
+			offset := result.Offset()
+			if uint64(offset) > uint64(math.MaxInt) {
+				t.Fatalf("record offset %d overflows int", offset)
+			}
+			//nolint:gosec // G115: offset is checked against math.MaxInt above.
+			outerOffset := int(offset)
+
+			raw, err := os.ReadFile(path)
+			if err != nil {
+				t.Fatalf("reading fixture: %v", err)
+			}
+			data := raw[dataSectionStart(t, db, raw):]
+
+			// The shared scalar sits at offset 0. Size code 30 means its length is
+			// the next two bytes plus 285.
+			wantControl := (test.scalarType << 5) | 30
+			if got := data[0]; got != wantControl {
+				t.Errorf("scalar control byte = %#x, want %#x", got, wantControl)
+			}
+			if got := (int(data[1])<<8 | int(data[2])) + 285; got != payloadScalarSize {
+				t.Errorf("scalar length = %d, want %d", got, payloadScalarSize)
+			}
+
+			// The outer record is an extended array (0x1E, 0x04) with a size-30
+			// two-byte element count.
+			if outerOffset+4 > len(data) {
+				t.Fatalf("array header at %d is outside the data section", outerOffset)
+			}
+			if data[outerOffset] != 0x1E || data[outerOffset+1] != 0x04 {
+				t.Fatalf("outer record at %d is not an extended array", outerOffset)
+			}
+			count := (int(data[outerOffset+2])<<8 | int(data[outerOffset+3])) + 285
+			if count != test.pointerCount {
+				t.Errorf("array element count = %d, want %d", count, test.pointerCount)
+			}
+
+			// Every element is a two-byte pointer to the shared value at offset 0.
+			elem := outerOffset + 4
+			for i := range test.pointerCount {
+				if target := smallDataPointer(t, data, elem); target != 0 {
+					t.Fatalf("array element %d points to offset %d, want 0", i, target)
+				}
+				elem += 2
+			}
+		})
+	}
 }

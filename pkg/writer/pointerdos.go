@@ -7,18 +7,22 @@ import (
 )
 
 // pointerDoSDepth is the nesting depth of the fan-out structure. Each level
-// adds a factor of two to the number of leaf decodes a reader without pointer
-// memoization performs. The 2**40 leaf decodes, and Θ(2**40) total decode
-// operations, make a sub-kilobyte file impossible to decode without the fix
-// while staying trivial to decode with it.
+// adds a factor of two to the number of leaf decodes an unprotected reader that
+// re-decodes every target per referencing path performs. The 2**40 leaf
+// decodes, and Θ(2**40) total decode operations, make a sub-kilobyte file
+// impossible to decode that way. Memoization is one defense. A cumulative work
+// budget or a schema-directed path also avoids the blow-up.
 const pointerDoSDepth = 40
 
 const (
 	// pointerDoSBuildEpoch is fixed so the generated files are reproducible.
 	pointerDoSBuildEpoch = 1_000_000_000
 
-	pointerDoSFixtureFilename     = "MaxMind-DB-test-pointer-decoder-dos.mmdb"
-	pointerDoSIPv6FixtureFilename = "MaxMind-DB-test-pointer-decoder-dos-ipv6.mmdb"
+	pointerDoSFixtureFilename       = "MaxMind-DB-test-pointer-decoder-dos.mmdb"
+	pointerDoSIPv6FixtureFilename   = "MaxMind-DB-test-pointer-decoder-dos-ipv6.mmdb"
+	payloadDoSFixtureFilename       = "MaxMind-DB-test-payload-amplification-dos.mmdb"
+	worstCasePayloadFixtureFilename = "MaxMind-DB-test-payload-amplification-dos-worst-case.mmdb"
+	stringPayloadFixtureFilename    = "MaxMind-DB-test-payload-amplification-dos-string.mmdb"
 )
 
 // writeDataPointer writes a data-section pointer with a one-byte payload,
@@ -76,6 +80,79 @@ func buildPointerFanOutData(depth int) (data []byte, top int) {
 		prev = offset
 	}
 	return data, prev
+}
+
+const (
+	// payloadScalarSize is the size of the single shared bytes value that the
+	// pointers target. Size code 30 covers 285..65820 bytes.
+	payloadScalarSize = 1<<16 - 1
+	// payloadPointerCount pointers each re-materialize the shared value, so a
+	// reader that copies the target for every pointer allocates
+	// payloadPointerCount*payloadScalarSize bytes, about 512 MiB, from a file of
+	// a few tens of kilobytes.
+	payloadPointerCount = 8192
+	// worstCasePointerCount is the largest fan-out a reader whose only defense is
+	// the value count still accepts. Under flat value accounting the array plus
+	// its elements decode to worstCasePointerCount+1 = 65,536 values, which meets
+	// the recommended limit without exceeding it, so that reader does not reject
+	// it. Copying each target materializes worstCasePointerCount*payloadScalarSize
+	// bytes, about 4 GiB, from a file of about 200 KiB. A limit on the copied
+	// bytes stops this, as can safe reuse or structural rejection.
+	worstCasePointerCount = 65535
+)
+
+// MMDB scalar type codes used by the payload fixtures: 2 is a UTF-8 string and
+// 4 is bytes.
+const (
+	scalarTypeString byte = 2
+	scalarTypeBytes  byte = 4
+)
+
+// buildPayloadAmplificationData builds a data section holding one large scalar
+// value (string or bytes, per scalarType) at offset 0 followed by an array of
+// pointers that all target it. The value count and depth limits do not bound
+// this: the array stays well under the value limit, yet a reader that copies
+// each pointer's target materializes payloadPointerCount*payloadScalarSize
+// bytes. top is the offset of the array.
+func buildPayloadAmplificationData(
+	pointerCount int,
+	scalarType byte,
+) (data []byte, top int) {
+	const sizeCode30 = 30
+	encoded := payloadScalarSize - 285
+	data = append(
+		data,
+		(scalarType<<5)|sizeCode30,
+		byte((encoded>>8)&0xFF),
+		byte(encoded&0xFF),
+	)
+	data = append(data, make([]byte, payloadScalarSize)...)
+
+	top = len(data)
+	arrEncoded := pointerCount - 285
+	data = append(data, 0x1E, 0x04, byte((arrEncoded>>8)&0xFF), byte(arrEncoded&0xFF))
+	for range pointerCount {
+		data = append(data, writeDataPointer(0)...)
+	}
+	return data, top
+}
+
+// buildPayloadAmplificationDB builds a minimal valid IPv4 MMDB whose single
+// search-tree node resolves every supported lookup to the payload
+// amplification record. See buildPayloadAmplificationData.
+func buildPayloadAmplificationDB(pointerCount int, scalarType byte) []byte {
+	data, top := buildPayloadAmplificationData(pointerCount, scalarType)
+
+	const nodeCount = 1
+	recordValue := dataRecordValue24(nodeCount, top)
+
+	buf := make([]byte, 1024+len(data))
+	pos := 0
+	pos += writeSearchTree(buf[pos:], recordValue)
+	pos += dataSeparatorSize
+	pos += copy(buf[pos:], data)
+	pos += writeMetadataBlock(buf[pos:], nodeCount, pointerDoSBuildEpoch)
+	return buf[:pos]
 }
 
 // buildPointerFanOutDB builds a minimal valid IPv4 MMDB whose single search-tree
@@ -142,20 +219,35 @@ func buildPointerFanOutAllSpaceDB(depth int) []byte {
 }
 
 // WritePointerDecoderDoSTestDB writes the databases that exercise the
-// data-section pointer fan-out denial of service: a minimal single-node
-// database and a conventional IPv6 database that maps all of the address space
-// to the fan-out record. See buildPointerFanOutData.
+// data-section pointer denial of service. Two exercise the fan-out: a minimal
+// single-node database and a conventional IPv6 database that maps all of the
+// address space to the fan-out record. Three exercise payload amplification: a
+// moderate and a worst-case fixture with a shared bytes value, and one with a
+// shared string value, the type most bindings copy into a native string. See
+// buildPointerFanOutData and buildPayloadAmplificationData.
 func (w *Writer) WritePointerDecoderDoSTestDB() error {
 	files := map[string][]byte{
 		pointerDoSFixtureFilename: buildPointerFanOutDB(pointerDoSDepth),
 		pointerDoSIPv6FixtureFilename: buildPointerFanOutAllSpaceDB(
 			pointerDoSDepth,
 		),
+		payloadDoSFixtureFilename: buildPayloadAmplificationDB(
+			payloadPointerCount,
+			scalarTypeBytes,
+		),
+		worstCasePayloadFixtureFilename: buildPayloadAmplificationDB(
+			worstCasePointerCount,
+			scalarTypeBytes,
+		),
+		stringPayloadFixtureFilename: buildPayloadAmplificationDB(
+			payloadPointerCount,
+			scalarTypeString,
+		),
 	}
 	for name, db := range files {
 		path := filepath.Clean(filepath.Join(w.target, name))
 		if err := os.WriteFile(path, db, 0o644); err != nil {
-			return fmt.Errorf("writing pointer fan-out database %s: %w", name, err)
+			return fmt.Errorf("writing pointer DoS database %s: %w", name, err)
 		}
 	}
 	return nil
