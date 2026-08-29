@@ -29,6 +29,7 @@ const (
 	payloadLimitFixtureFilename      = "MaxMind-DB-test-decoder-payload-limit.mmdb"
 	payloadLimitOverFixtureFilename  = "MaxMind-DB-test-decoder-payload-limit-over.mmdb"
 	metadataLimitFixtureFilename     = "MaxMind-DB-test-metadata-payload-limit.mmdb"
+	decodePathBudgetFixtureFilename  = "MaxMind-DB-test-decode-path-shared-budget.mmdb"
 )
 
 // writeDataPointer writes a data-section pointer with a one-byte payload,
@@ -91,6 +92,9 @@ func buildPointerFanOutData(depth int) (data []byte, top int) {
 const (
 	recommendedValueLimit   = 1 << 16
 	recommendedPayloadLimit = 1 << 21
+	decodePathDecoyCount    = 511
+	decodePathSharedKeySize = 4096
+	decodePathValueSize     = 4091
 
 	// payloadScalarSize is the size of the single shared bytes value that the
 	// pointers target. Size code 30 covers 285..65820 bytes.
@@ -163,6 +167,26 @@ func writeArrayHeader(buf []byte, size int) int {
 	}
 }
 
+func writeMapHeader(buf []byte, size int) int {
+	switch {
+	case size <= 28:
+		buf[0] = (7 << 5) | byte(size&0x1F)
+		return 1
+	case size <= 284:
+		buf[0] = (7 << 5) | 29
+		buf[1] = byte(size - 29)
+		return 2
+	case size <= 65820:
+		buf[0] = (7 << 5) | 30
+		encoded := size - 285
+		buf[1] = byte((encoded >> 8) & 0xFF)
+		buf[2] = byte(encoded & 0xFF)
+		return 3
+	default:
+		panic(fmt.Sprintf("map size %d is unsupported by this fixture writer", size))
+	}
+}
+
 // buildPayloadAmplificationData builds a data section holding one large scalar
 // value (string or bytes, per scalarType) at offset 0 followed by an array of
 // pointers that all target it. The value count and depth limits do not bound
@@ -223,6 +247,38 @@ func buildPayloadLimitData(smallSize int) (data []byte, top int) {
 	return data[:pos], top
 }
 
+// buildDecodePathSharedBudgetData produces a map whose first 511 keys point to
+// one shared 4 KiB string. Reading those keys and the final inline "target" key
+// consumes 2,093,062 bytes. The selected 4,091-byte value then takes the total
+// to 2,097,153 bytes, exactly one byte above the recommended 2 MiB budget. This
+// verifies that path navigation and selected-value decoding share one budget.
+func buildDecodePathSharedBudgetData() (data []byte, top int) {
+	data = make([]byte, 16*1024)
+	pos := writeScalar(data, decodePathSharedKeySize, scalarTypeString)
+	for i := pos - decodePathSharedKeySize; i < pos; i++ {
+		data[i] = 'k'
+	}
+
+	top = pos
+	pos += writeMapHeader(data[pos:], decodePathDecoyCount+1)
+	for range decodePathDecoyCount {
+		pos += copy(data[pos:], writeDataPointer(0))
+		data[pos] = 0
+		data[pos+1] = 7 // extended type 14, size 0: false
+		pos += 2
+	}
+
+	const target = "target"
+	pos += writeScalar(data[pos:], len(target), scalarTypeString)
+	copy(data[pos-len(target):pos], target)
+	pos += writeScalar(data[pos:], decodePathValueSize, scalarTypeString)
+	for i := pos - decodePathValueSize; i < pos; i++ {
+		data[i] = 'v'
+	}
+
+	return data[:pos], top
+}
+
 // buildPayloadAmplificationDB builds a minimal valid IPv4 MMDB whose single
 // search-tree node resolves every supported lookup to the payload
 // amplification record. See buildPayloadAmplificationData.
@@ -254,6 +310,11 @@ func buildValueLimitDB(pointerCount int) []byte {
 
 func buildPayloadLimitDB(smallSize int) []byte {
 	data, top := buildPayloadLimitData(smallSize)
+	return buildSingleRecordDB(data, top)
+}
+
+func buildDecodePathSharedBudgetDB() []byte {
+	data, top := buildDecodePathSharedBudgetData()
 	return buildSingleRecordDB(data, top)
 }
 
@@ -383,8 +444,9 @@ const pointerValueLimitDepth = 15
 // moderate and a worst-case fixture with a shared bytes value, and one with a
 // shared string value, the type most bindings copy into a native string. It
 // also writes exact boundary fixtures for both recommended limits and a
-// metadata fixture that exceeds the payload limit while opening. See
-// buildPointerFanOutData and buildPayloadAmplificationData.
+// metadata fixture that exceeds the payload limit while opening. A small path
+// fixture verifies that navigation and selected-value decoding share the same
+// budget. See buildPointerFanOutData and buildPayloadAmplificationData.
 func (w *Writer) WritePointerDecoderDoSTestDB() error {
 	files := map[string][]byte{
 		pointerDoSFixtureFilename: buildPointerFanOutDB(pointerDoSDepth),
@@ -418,7 +480,8 @@ func (w *Writer) WritePointerDecoderDoSTestDB() error {
 		payloadLimitOverFixtureFilename: buildPayloadLimitDB(
 			recommendedPayloadLimit - 32*payloadScalarSize + 1,
 		),
-		metadataLimitFixtureFilename: buildMetadataLimitDB(),
+		metadataLimitFixtureFilename:    buildMetadataLimitDB(),
+		decodePathBudgetFixtureFilename: buildDecodePathSharedBudgetDB(),
 	}
 	for name, db := range files {
 		path := filepath.Clean(filepath.Join(w.target, name))

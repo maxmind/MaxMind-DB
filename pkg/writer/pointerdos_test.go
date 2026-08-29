@@ -71,7 +71,8 @@ func TestPointerFanOutFixturesMatchCommitted(t *testing.T) {
 		payloadLimitOverFixtureFilename: buildPayloadLimitDB(
 			recommendedPayloadLimit - 32*payloadScalarSize + 1,
 		),
-		metadataLimitFixtureFilename: buildMetadataLimitDB(),
+		metadataLimitFixtureFilename:    buildMetadataLimitDB(),
+		decodePathBudgetFixtureFilename: buildDecodePathSharedBudgetDB(),
 	}
 	for name, got := range cases {
 		//nolint:gosec // name comes from the fixed cases map, not user input.
@@ -120,6 +121,72 @@ func TestDecoderLimitBoundaryData(t *testing.T) {
 		if gotPayload != wantPayload {
 			t.Errorf("payload boundary total = %d, want %d", gotPayload, wantPayload)
 		}
+	}
+}
+
+func TestDecodePathSharedBudgetData(t *testing.T) {
+	data, top := buildDecodePathSharedBudgetData()
+	if top != 3+decodePathSharedKeySize {
+		t.Fatalf("map offset = %d, want %d", top, 3+decodePathSharedKeySize)
+	}
+	if got := len(data); got >= 16*1024 {
+		t.Errorf("fixture data size = %d, want less than 16 KiB", got)
+	}
+
+	pos := top
+	if got, want := data[pos:pos+3], []byte{0xFE, 0x00, 0xE3}; !bytes.Equal(got, want) {
+		t.Fatalf("map header = %#v, want %#v", got, want)
+	}
+	pos += 3
+	for i := range decodePathDecoyCount {
+		if target := smallDataPointer(t, data, pos); target != 0 {
+			t.Fatalf("decoy key %d points to %d, want 0", i, target)
+		}
+		pos += 2
+		if got, want := data[pos:pos+2], []byte{0x00, 0x07}; !bytes.Equal(got, want) {
+			t.Fatalf("decoy value %d = %#v, want %#v", i, got, want)
+		}
+		pos += 2
+	}
+
+	wantTargetKey := []byte{0x46, 't', 'a', 'r', 'g', 'e', 't'}
+	if got := data[pos : pos+7]; !bytes.Equal(got, wantTargetKey) {
+		t.Fatalf("target key = %#v, want %#v", got, wantTargetKey)
+	}
+	pos += 7
+	if got, want := data[pos:pos+3], []byte{0x5E, 0x0E, 0xDE}; !bytes.Equal(got, want) {
+		t.Fatalf("selected value header = %#v, want %#v", got, want)
+	}
+
+	const targetKeySize = len("target")
+	navigated := decodePathDecoyCount*decodePathSharedKeySize + targetKeySize
+	if got := navigated + decodePathValueSize; got != recommendedPayloadLimit+1 {
+		t.Errorf("navigated and selected payload = %d, want %d", got, recommendedPayloadLimit+1)
+	}
+}
+
+func TestDecodePathSharedBudgetFixtureIsSemanticallyValid(t *testing.T) {
+	path := filepath.Clean(filepath.Join("..", "..", "test-data", decodePathBudgetFixtureFilename))
+	db, err := maxminddb.Open(path)
+	if err != nil {
+		t.Fatalf("opening decode path budget fixture: %v", err)
+	}
+	t.Cleanup(func() {
+		if err := db.Close(); err != nil {
+			t.Errorf("closing decode path budget fixture: %v", err)
+		}
+	})
+
+	result := db.Lookup(netip.MustParseAddr("1.1.1.1"))
+	if err := result.Err(); err != nil {
+		t.Fatalf("lookup: %v", err)
+	}
+	var value string
+	if err := result.DecodePath(&value, "target"); err != nil {
+		t.Fatalf("decoding target path: %v", err)
+	}
+	if got := len(value); got != decodePathValueSize {
+		t.Errorf("selected value length = %d, want %d", got, decodePathValueSize)
 	}
 }
 
