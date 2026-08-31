@@ -32,6 +32,62 @@ broken, and exploited functionality simply not available in the go mmdbwriter:
 - GeoIP2-City-Test-Invalid-Node-Count.mmdb
 - maps-with-pointers.raw
 
+## Denial of service test data
+
+Some files in this directory are hostile by design. Each one is a valid MaxMind
+DB file. A reader without resource limits uses very large amounts of CPU or
+memory to decode them. Use them to test the limits in the "Reader Resource
+Limits" section of the spec.
+
+Do not decode these files without a memory limit on the process. The worst case
+file is about 200 KB and expands to about 4 GiB. A test harness that walks this
+whole directory and decodes every record will hang or run out of memory.
+
+| File                                                      | What a reader must survive                                                                                                                 |
+| --------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------ |
+| MaxMind-DB-test-pointer-decoder-dos.mmdb                  | A depth 40 pointer fan-out. An unprotected decoder performs 2\*\*40 leaf decodes from 451 bytes.                                           |
+| MaxMind-DB-test-pointer-decoder-dos-ipv6.mmdb             | The same fan-out in a conventional IPv6 database that maps the whole address space to the record.                                          |
+| MaxMind-DB-test-payload-amplification-dos.mmdb            | 8,192 pointers to one 65,535 byte bytes value. A reader that copies each target materializes about 512 MiB.                                |
+| MaxMind-DB-test-payload-amplification-dos-string.mmdb     | The same shape with a UTF-8 string value, the type most bindings copy into a native string.                                                |
+| MaxMind-DB-test-payload-amplification-dos-worst-case.mmdb | 65,535 pointers to that value. The record decodes to 65,536 values, which meets the recommended value limit, and materializes about 4 GiB. |
+
+These files are the boundary cases. A reader at the recommended limits accepts
+the first file in each pair and rejects the second.
+
+| File                                                   | Expected result                                                                 |
+| ------------------------------------------------------ | ------------------------------------------------------------------------------- |
+| MaxMind-DB-test-decoder-value-limit.mmdb               | Accept. 65,536 decoded values, exactly the limit.                               |
+| MaxMind-DB-test-decoder-value-limit-over.mmdb          | Reject. 65,537 decoded values.                                                  |
+| MaxMind-DB-test-decoder-value-limit-pointer-heavy.mmdb | Accept. 65,535 values reached through a depth 15 fan-out.                       |
+| MaxMind-DB-test-decoder-payload-limit.mmdb             | Accept. 2,097,152 payload bytes, exactly 2 MiB.                                 |
+| MaxMind-DB-test-decoder-payload-limit-over.mmdb        | Reject. 2,097,153 payload bytes.                                                |
+| MaxMind-DB-test-metadata-payload-limit.mmdb            | Reject at open. The metadata alone materializes 2,228,190 bytes.                |
+| MaxMind-DB-test-decode-path-shared-budget.mmdb         | Reject a path lookup. Navigation plus the selected value costs 2,097,153 bytes. |
+
+### The boundary values are recommendations
+
+The spec recommends a limit of 65,536 decoded values. It does not require a
+single payload limit, because the right method and limit depend on the reader's
+language and API.
+
+The payload files use 2 MiB (2\*\*21 bytes) because libmaxminddb and the MaxMind
+readers use that value. A reader that picks a different payload limit is still
+compliant. For that reader, treat the two `-decoder-payload-limit` files as an
+example of the attack shape, not as a pass or fail requirement. Adjust the
+expected boundary to the limit the reader actually uses.
+
+### The payload files assume per-occurrence accounting
+
+The payload boundary files point 32 of their 33 elements at one shared value.
+They separate accept from reject only for a reader that charges every decoded
+occurrence.
+
+A reader that memoizes pointer targets materializes the shared value one time,
+about 64 KB. That reader accepts both files. This is correct behavior for it.
+The spec lists safe memoization as one way to bound the amplification. Test such
+a reader with the amplification files above, which no accounting model can
+expand cheaply.
+
 ## Usage
 
 ```
