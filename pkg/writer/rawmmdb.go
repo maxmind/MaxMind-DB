@@ -6,7 +6,10 @@ package writer
 // large-size (case-31) encoding and complete database builders for crafting
 // intentionally malformed MMDB files that cannot be created through mmdbwriter.
 
-import "encoding/binary"
+import (
+	"encoding/binary"
+	"fmt"
+)
 
 const (
 	metadataMarker    = "\xab\xcd\xefMaxMind.com"
@@ -49,17 +52,35 @@ var (
 	}
 )
 
-// writeMap writes a map control byte (type 7) for sizes <= 28.
+// writeMap writes a map control byte (type 7). Sizes above 28 use the extended
+// size forms, which take one or two more bytes.
 func writeMap(buf []byte, size int) int {
-	buf[0] = (7 << 5) | byte(size&0x1f)
-	return 1
+	switch {
+	case size <= 28:
+		buf[0] = (7 << 5) | byte(size&0x1F)
+		return 1
+	case size <= 284:
+		buf[0] = (7 << 5) | 29
+		buf[1] = byte(size - 29)
+		return 2
+	case size <= 65820:
+		buf[0] = (7 << 5) | 30
+		encoded := size - 285
+		buf[1] = byte((encoded >> 8) & 0xFF)
+		buf[2] = byte(encoded & 0xFF)
+		return 3
+	default:
+		panic(fmt.Sprintf("map size %d is unsupported by this fixture writer", size))
+	}
 }
 
-// writeString writes a string value (type 2).
+// writeString writes a string value (type 2). It delegates the control byte to
+// writeScalar so strings longer than 28 bytes get the extended size forms
+// instead of a truncated size.
 func writeString(buf []byte, s string) int {
-	buf[0] = (2 << 5) | byte(len(s)&0x1f)
-	copy(buf[1:], s)
-	return 1 + len(s)
+	pos := writeScalar(buf, len(s), scalarTypeString)
+	copy(buf[pos-len(s):pos], s)
+	return pos
 }
 
 // writeUint16 writes a uint16 value (type 5, 2 bytes).

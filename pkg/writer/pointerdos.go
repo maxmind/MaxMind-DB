@@ -167,26 +167,6 @@ func writeArrayHeader(buf []byte, size int) int {
 	}
 }
 
-func writeMapHeader(buf []byte, size int) int {
-	switch {
-	case size <= 28:
-		buf[0] = (7 << 5) | byte(size&0x1F)
-		return 1
-	case size <= 284:
-		buf[0] = (7 << 5) | 29
-		buf[1] = byte(size - 29)
-		return 2
-	case size <= 65820:
-		buf[0] = (7 << 5) | 30
-		encoded := size - 285
-		buf[1] = byte((encoded >> 8) & 0xFF)
-		buf[2] = byte(encoded & 0xFF)
-		return 3
-	default:
-		panic(fmt.Sprintf("map size %d is unsupported by this fixture writer", size))
-	}
-}
-
 // buildPayloadAmplificationData builds a data section holding one large scalar
 // value (string or bytes, per scalarType) at offset 0 followed by an array of
 // pointers that all target it. The value count and depth limits do not bound
@@ -260,7 +240,7 @@ func buildDecodePathSharedBudgetData() (data []byte, top int) {
 	}
 
 	top = pos
-	pos += writeMapHeader(data[pos:], decodePathDecoyCount+1)
+	pos += writeMap(data[pos:], decodePathDecoyCount+1)
 	for range decodePathDecoyCount {
 		pos += copy(data[pos:], writeDataPointer(0))
 		data[pos] = 0
