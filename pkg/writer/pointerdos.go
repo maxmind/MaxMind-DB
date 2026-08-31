@@ -437,18 +437,11 @@ func buildPointerFanOutAllSpaceDB(depth int) []byte {
 // boundary from below.
 const pointerValueLimitDepth = 15
 
-// WritePointerDecoderDoSTestDB writes the databases that exercise the
-// data-section pointer denial of service. Two exercise the fan-out: a minimal
-// single-node database and a conventional IPv6 database that maps all of the
-// address space to the fan-out record. Three exercise payload amplification: a
-// moderate and a worst-case fixture with a shared bytes value, and one with a
-// shared string value, the type most bindings copy into a native string. It
-// also writes exact boundary fixtures for both recommended limits and a
-// metadata fixture that exceeds the payload limit while opening. A small path
-// fixture verifies that navigation and selected-value decoding share the same
-// budget. See buildPointerFanOutData and buildPayloadAmplificationData.
-func (w *Writer) WritePointerDecoderDoSTestDB() error {
-	files := map[string][]byte{
+// pointerDoSFixtures returns every fixture this file generates, keyed by
+// filename. The writer and the byte-equality test share it so a new fixture
+// cannot be added to one without the other.
+func pointerDoSFixtures() map[string][]byte {
+	return map[string][]byte{
 		pointerDoSFixtureFilename: buildPointerFanOutDB(pointerDoSDepth),
 		pointerDoSIPv6FixtureFilename: buildPointerFanOutAllSpaceDB(
 			pointerDoSDepth,
@@ -483,7 +476,20 @@ func (w *Writer) WritePointerDecoderDoSTestDB() error {
 		metadataLimitFixtureFilename:    buildMetadataLimitDB(),
 		decodePathBudgetFixtureFilename: buildDecodePathSharedBudgetDB(),
 	}
-	for name, db := range files {
+}
+
+// WritePointerDecoderDoSTestDB writes the databases that exercise the
+// data-section pointer denial of service. Two exercise the fan-out: a minimal
+// single-node database and a conventional IPv6 database that maps all of the
+// address space to the fan-out record. Three exercise payload amplification: a
+// moderate and a worst-case fixture with a shared bytes value, and one with a
+// shared string value, the type most bindings copy into a native string. It
+// also writes exact boundary fixtures for both recommended limits and a
+// metadata fixture that exceeds the payload limit while opening. A small path
+// fixture verifies that navigation and selected-value decoding share the same
+// budget. See buildPointerFanOutData and buildPayloadAmplificationData.
+func (w *Writer) WritePointerDecoderDoSTestDB() error {
+	for name, db := range pointerDoSFixtures() {
 		path := filepath.Clean(filepath.Join(w.target, name))
 		if err := os.WriteFile(path, db, 0o644); err != nil {
 			return fmt.Errorf("writing pointer DoS database %s: %w", name, err)

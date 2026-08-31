@@ -39,42 +39,7 @@ func TestPointerFanOutDataIsExponential(t *testing.T) {
 }
 
 func TestPointerFanOutFixturesMatchCommitted(t *testing.T) {
-	cases := map[string][]byte{
-		pointerDoSFixtureFilename: buildPointerFanOutDB(pointerDoSDepth),
-		pointerDoSIPv6FixtureFilename: buildPointerFanOutAllSpaceDB(
-			pointerDoSDepth,
-		),
-		pointerValueLimitFixtureFilename: buildPointerFanOutDB(
-			pointerValueLimitDepth,
-		),
-		payloadDoSFixtureFilename: buildPayloadAmplificationDB(
-			payloadPointerCount,
-			scalarTypeBytes,
-		),
-		worstCasePayloadFixtureFilename: buildPayloadAmplificationDB(
-			worstCasePointerCount,
-			scalarTypeBytes,
-		),
-		stringPayloadFixtureFilename: buildPayloadAmplificationDB(
-			payloadPointerCount,
-			scalarTypeString,
-		),
-		valueLimitFixtureFilename: buildValueLimitDB(
-			recommendedValueLimit - 1,
-		),
-		valueLimitOverFixtureFilename: buildValueLimitDB(
-			recommendedValueLimit,
-		),
-		payloadLimitFixtureFilename: buildPayloadLimitDB(
-			recommendedPayloadLimit - 32*payloadScalarSize,
-		),
-		payloadLimitOverFixtureFilename: buildPayloadLimitDB(
-			recommendedPayloadLimit - 32*payloadScalarSize + 1,
-		),
-		metadataLimitFixtureFilename:    buildMetadataLimitDB(),
-		decodePathBudgetFixtureFilename: buildDecodePathSharedBudgetDB(),
-	}
-	for name, got := range cases {
+	for name, got := range pointerDoSFixtures() {
 		//nolint:gosec // name comes from the fixed cases map, not user input.
 		want, err := os.ReadFile(filepath.Join("..", "..", "test-data", name))
 		if err != nil {
