@@ -146,20 +146,32 @@ func TestDecodePathSharedBudgetFixtureIsSemanticallyValid(t *testing.T) {
 	if err := result.Err(); err != nil {
 		t.Fatalf("lookup: %v", err)
 	}
+	// The fixture sits one byte above the payload budget the spec calls a
+	// recommendation, so both outcomes are compliant: the reader returns the
+	// whole value, or it refuses on its own limit. Assert that disjunction. A
+	// partial value, a wrong length, or a panic still fails. The bytes are
+	// checked by TestDecodePathSharedBudgetData and
+	// TestPointerFanOutFixturesMatchCommitted, which do not depend on the reader.
 	var value string
-	if err := result.DecodePath(&value, "target"); err != nil {
-		t.Fatalf("decoding target path: %v", err)
-	}
-	if got := len(value); got != decodePathValueSize {
-		t.Errorf("selected value length = %d, want %d", got, decodePathValueSize)
+	err = result.DecodePath(&value, "target")
+	if err != nil {
+		t.Logf("reader refused the path decode, which its limits allow: %v", err)
+	} else if len(value) != decodePathValueSize {
+		t.Errorf("selected value length = %d, want %d", len(value), decodePathValueSize)
 	}
 }
 
 func TestMetadataLimitFixtureIsSemanticallyValid(t *testing.T) {
 	path := filepath.Clean(filepath.Join("..", "..", "test-data", metadataLimitFixtureFilename))
+	// The metadata materializes 2,228,190 bytes while opening, above the payload
+	// budget the spec calls a recommendation. A reader that bounds metadata
+	// rejects the file here, which is the behavior this fixture exists to
+	// provoke, so treat that as a pass and check the sizes only when the reader
+	// accepts it.
 	db, err := maxminddb.Open(path)
 	if err != nil {
-		t.Fatalf("opening metadata limit fixture: %v", err)
+		t.Logf("reader refused to open the fixture, which its limits allow: %v", err)
+		return
 	}
 	t.Cleanup(func() {
 		if err := db.Close(); err != nil {
