@@ -70,7 +70,7 @@ value accounting rule and the 2 MiB payload limit described below.
 | MaxMind-DB-test-metadata-payload-limit.mmdb            | Reject at open. The metadata alone materializes 2,228,190 bytes.                |
 | MaxMind-DB-test-decode-path-shared-budget.mmdb         | Reject a path lookup. Navigation plus the selected value costs 2,097,153 bytes. |
 
-### The boundary values are recommendations
+### The value-count boundary is a recommendation
 
 The spec recommends a limit of 65,536 decoded values. It does not require a
 single payload limit, because the right method and limit depend on the reader's

@@ -185,8 +185,8 @@ func TestDecodePathSharedBudgetData(t *testing.T) {
 
 	const targetKeySize = len("target")
 	navigated := decodePathDecoyCount*decodePathSharedKeySize + targetKeySize
-	if got := navigated + decodePathValueSize; got != recommendedPayloadLimit+1 {
-		t.Errorf("navigated and selected payload = %d, want %d", got, recommendedPayloadLimit+1)
+	if got := navigated + decodePathValueSize; got != fixturePayloadLimit+1 {
+		t.Errorf("navigated and selected payload = %d, want %d", got, fixturePayloadLimit+1)
 	}
 }
 
@@ -206,11 +206,11 @@ func TestDecodePathSharedBudgetFixtureIsSemanticallyValid(t *testing.T) {
 	if err := result.Err(); err != nil {
 		t.Fatalf("lookup: %v", err)
 	}
-	// The fixture sits one byte above the payload budget the spec calls a
-	// recommendation, so both outcomes are compliant: the reader returns the
-	// whole value, or it refuses on its own limit. Assert that disjunction. A
-	// partial value, a wrong length, or a panic still fails. The bytes are
-	// checked by TestDecodePathSharedBudgetData and
+	// The fixture sits one byte above its 2 MiB example payload budget. The spec
+	// does not prescribe this threshold, so both outcomes are compliant: the
+	// reader returns the whole value, or it refuses on its own limit. Assert that
+	// disjunction. A partial value, a wrong length, or a panic still fails. The
+	// bytes are checked by TestDecodePathSharedBudgetData and
 	// TestPointerFanOutFixturesMatchCommitted, which do not depend on the reader.
 	var value string
 	err = result.DecodePath(&value, "target")
@@ -226,11 +226,10 @@ func TestDecodePathSharedBudgetFixtureIsSemanticallyValid(t *testing.T) {
 
 func TestMetadataLimitFixtureIsSemanticallyValid(t *testing.T) {
 	path := filepath.Clean(filepath.Join("..", "..", "test-data", metadataLimitFixtureFilename))
-	// The metadata materializes 2,228,190 bytes while opening, above the payload
-	// budget the spec calls a recommendation. A reader that bounds metadata
-	// rejects the file here, which is the behavior this fixture exists to
-	// provoke, so treat that as a pass and check the sizes only when the reader
-	// accepts it.
+	// The metadata materializes 2,228,190 bytes while opening, above the 2 MiB
+	// example payload budget used by these fixtures. A reader that bounds metadata
+	// rejects the file here, which is the behavior this fixture exists to provoke,
+	// so treat that as a pass and check the sizes only when the reader accepts it.
 	db, err := maxminddb.Open(path)
 	if err != nil {
 		if !isReaderResourceLimitError(err) {

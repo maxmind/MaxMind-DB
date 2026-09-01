@@ -90,7 +90,7 @@ func buildPointerFanOutData(depth int) (data []byte, top int) {
 
 const (
 	recommendedValueLimit   = 1 << 16
-	recommendedPayloadLimit = 1 << 21
+	fixturePayloadLimit     = 1 << 21
 	decodePathDecoyCount    = 511
 	decodePathSharedKeySize = 4096
 	decodePathValueSize     = 4091
@@ -251,8 +251,9 @@ func buildPayloadLimitData(smallSize int) (data []byte, top int) {
 // buildDecodePathSharedBudgetData produces a map whose first 511 keys point to
 // one shared 4 KiB string. Reading those keys and the final inline "target" key
 // consumes 2,093,062 bytes. The selected 4,091-byte value then takes the total
-// to 2,097,153 bytes, exactly one byte above the recommended 2 MiB budget. This
-// verifies that path navigation and selected-value decoding share one budget.
+// to 2,097,153 bytes, exactly one byte above the 2 MiB example payload budget
+// used by these fixtures. This verifies that path navigation and selected-value
+// decoding share one budget.
 func buildDecodePathSharedBudgetData() (data []byte, top int) {
 	data = make([]byte, 16*1024)
 	pos := writeScalar(data, decodePathSharedKeySize, scalarTypeString)
@@ -469,10 +470,10 @@ func pointerDoSFixtures() map[string][]byte {
 			recommendedValueLimit,
 		),
 		payloadLimitFixtureFilename: buildPayloadLimitDB(
-			recommendedPayloadLimit - 32*payloadScalarSize,
+			fixturePayloadLimit - 32*payloadScalarSize,
 		),
 		payloadLimitOverFixtureFilename: buildPayloadLimitDB(
-			recommendedPayloadLimit - 32*payloadScalarSize + 1,
+			fixturePayloadLimit - 32*payloadScalarSize + 1,
 		),
 		metadataLimitFixtureFilename:    buildMetadataLimitDB(),
 		decodePathBudgetFixtureFilename: buildDecodePathSharedBudgetDB(),
@@ -485,10 +486,11 @@ func pointerDoSFixtures() map[string][]byte {
 // address space to the fan-out record. Three exercise payload amplification: a
 // moderate and a worst-case fixture with a shared bytes value, and one with a
 // shared string value, the type most bindings copy into a native string. It
-// also writes exact boundary fixtures for both recommended limits and a
-// metadata fixture that exceeds the payload limit while opening. A small path
-// fixture verifies that navigation and selected-value decoding share the same
-// budget. See buildPointerFanOutData and buildPayloadAmplificationData.
+// also writes exact boundary fixtures for the recommended value-count limit and
+// the 2 MiB example payload budget, plus a metadata fixture that exceeds that
+// budget while opening. A small path fixture verifies that navigation and
+// selected-value decoding share the same budget. See buildPointerFanOutData and
+// buildPayloadAmplificationData.
 func (w *Writer) WritePointerDecoderDoSTestDB() error {
 	for name, db := range pointerDoSFixtures() {
 		path := filepath.Clean(filepath.Join(w.target, name))
