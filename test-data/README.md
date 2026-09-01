@@ -46,16 +46,16 @@ Use a reader-level test to verify the exact boundary that implementation uses.
 
 Do not decode these files without time and memory limits on the process. The
 worst-case file is about 192 KiB and describes about 4 GiB of repeated data. A
-test harness that walks this whole directory and decodes every data entry will
-hang or run out of memory.
+test harness without resource controls that walks this whole directory and
+decodes every data entry will hang or run out of memory.
 
-| File                                                      | Behavior under test                                                                                                                      |
-| --------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
-| MaxMind-DB-test-pointer-decoder-dos.mmdb                  | A depth-40 pointer fan-out. An unprotected decoder performs 2\*\*40 leaf decodes from 451 bytes.                                         |
-| MaxMind-DB-test-pointer-decoder-dos-ipv6.mmdb             | The same fan-out in a conventional IPv6 database that maps the whole address space to the data entry.                                    |
-| MaxMind-DB-test-payload-amplification-dos.mmdb            | 8,192 pointers to one 65,535-byte value of type `bytes`. A reader that copies each target materializes about 512 MiB.                    |
-| MaxMind-DB-test-payload-amplification-dos-string.mmdb     | The same shape with a UTF-8 string value, the type most bindings copy into a native string.                                              |
-| MaxMind-DB-test-payload-amplification-dos-worst-case.mmdb | 65,535 pointers to that value. The data entry decodes to 65,536 values, meets the recommended value limit, and materializes about 4 GiB. |
+| File                                                      | Behavior under test                                                                                                                                              |
+| --------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| MaxMind-DB-test-pointer-decoder-dos.mmdb                  | A depth-40 pointer fan-out. An unprotected decoder performs 2\*\*40 leaf decodes from 451 bytes.                                                                 |
+| MaxMind-DB-test-pointer-decoder-dos-ipv6.mmdb             | The same fan-out in a conventional IPv6 database that maps the whole address space to the data entry.                                                            |
+| MaxMind-DB-test-payload-amplification-dos.mmdb            | 8,192 pointers to one 65,535-byte value of type `bytes`. A reader that copies each target materializes about 512 MiB.                                            |
+| MaxMind-DB-test-payload-amplification-dos-string.mmdb     | The same shape with a UTF-8 string value, the type most bindings copy into a native string.                                                                      |
+| MaxMind-DB-test-payload-amplification-dos-worst-case.mmdb | 65,535 pointers to that value. The data entry decodes to 65,536 values and meets the recommended value limit. Copying every occurrence materializes about 4 GiB. |
 
 The next table lists example boundary fixtures. Its results assume the flat
 value accounting rule and the 2 MiB payload limit described below.
@@ -76,17 +76,19 @@ The spec recommends a limit of 65,536 decoded values. It does not require a
 single payload limit, because the right method and limit depend on the reader's
 language and API.
 
-The payload files use 2 MiB (2\*\*21 bytes), matching the default in the
-companion [libmaxminddb](https://github.com/maxmind/libmaxminddb/pull/479) pull
-request and the limits in the companion
+The payload files use 2 MiB (2\*\*21 bytes), matching the current companion pull
+request heads for
+[libmaxminddb](https://github.com/maxmind/libmaxminddb/pull/479),
 [Go](https://github.com/oschwald/maxminddb-golang/pull/233),
 [Python](https://github.com/maxmind/MaxMind-DB-Reader-python/pull/439),
 [Ruby](https://github.com/maxmind/MaxMind-DB-Reader-ruby/pull/235),
 [PHP](https://github.com/maxmind/MaxMind-DB-Reader-php/pull/281),
 [Java](https://github.com/maxmind/MaxMind-DB-Reader-java/pull/442), and
-[.NET](https://github.com/maxmind/MaxMind-DB-Reader-dotnet/pull/355) reader pull
-requests. This shared test boundary is not a file format requirement. A reader
-that picks a different payload limit or uses an equivalent strategy is still
+[.NET](https://github.com/maxmind/MaxMind-DB-Reader-dotnet/pull/355). In
+libmaxminddb, 2 MiB is the default and can be changed at build time; the current
+Go, Python, Ruby, PHP, Java, and .NET pull request heads use a fixed 2 MiB
+limit. This shared test boundary is not a file format requirement. A reader that
+picks a different payload limit or uses an equivalent strategy is still
 compliant. Treat these files as examples of the attack shape and adjust the
 expected boundary to the reader's policy.
 
