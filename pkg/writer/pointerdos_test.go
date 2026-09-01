@@ -6,6 +6,7 @@ import (
 	"net/netip"
 	"os"
 	"path/filepath"
+	"strings"
 	"testing"
 
 	"github.com/oschwald/maxminddb-golang/v2"
@@ -52,29 +53,52 @@ func TestPointerFanOutFixturesMatchCommitted(t *testing.T) {
 }
 
 func TestDecoderLimitBoundaryData(t *testing.T) {
-	for _, pointerCount := range []int{
-		recommendedValueLimit - 1,
-		recommendedValueLimit,
-	} {
-		data, top := buildValueLimitData(pointerCount)
+	valueTests := []struct {
+		pointerCount int
+		wantCount    int
+		wantValues   int
+	}{
+		{recommendedValueLimit - 1, 65_535, 65_536},
+		{recommendedValueLimit, 65_536, 65_537},
+	}
+	for _, test := range valueTests {
+		data, top := buildValueLimitData(test.pointerCount)
 		if top != 1 {
 			t.Errorf("value boundary top offset = %d, want 1", top)
 		}
 		if data[0] != 0xA0 {
 			t.Errorf("value boundary scalar = %#x, want 0xa0", data[0])
 		}
-		if len(data) != 1+4+pointerCount*2 {
-			t.Errorf("value boundary length = %d, want %d", len(data), 1+4+pointerCount*2)
+		if len(data) != 1+4+test.pointerCount*2 {
+			t.Errorf(
+				"value boundary length = %d, want %d",
+				len(data),
+				1+4+test.pointerCount*2,
+			)
 		}
-		for offset := top + 4; offset < len(data); offset += 2 {
+		count, headerSize := arrayElementCount(t, data, top)
+		if count != test.wantCount {
+			t.Errorf("array element count = %d, want %d", count, test.wantCount)
+		}
+		if values := count + 1; values != test.wantValues {
+			t.Errorf("decoded value count = %d, want %d", values, test.wantValues)
+		}
+		for offset := top + headerSize; offset < len(data); offset += 2 {
 			if target := smallDataPointer(t, data, offset); target != 0 {
 				t.Fatalf("value boundary pointer at %d targets %d, want 0", offset, target)
 			}
 		}
 	}
 
-	for _, smallSize := range []int{32, 33} {
-		data, top := buildPayloadLimitData(smallSize)
+	payloadTests := []struct {
+		smallSize   int
+		wantPayload int
+	}{
+		{32, 2_097_152},
+		{33, 2_097_153},
+	}
+	for _, test := range payloadTests {
+		data, top := buildPayloadLimitData(test.smallSize)
 		if top <= payloadScalarSize {
 			t.Errorf("payload boundary top offset = %d, want after large scalar", top)
 		}
@@ -82,10 +106,46 @@ func TestDecoderLimitBoundaryData(t *testing.T) {
 			t.Fatalf("payload boundary data ends before outer array at %d", top)
 		}
 		gotPayload := sumPointedPayload(t, data, top)
-		wantPayload := recommendedPayloadLimit + smallSize - 32
-		if gotPayload != wantPayload {
-			t.Errorf("payload boundary total = %d, want %d", gotPayload, wantPayload)
+		if gotPayload != test.wantPayload {
+			t.Errorf("payload boundary total = %d, want %d", gotPayload, test.wantPayload)
 		}
+	}
+}
+
+func TestDecoderLimitBoundaryFixturesOpen(t *testing.T) {
+	tests := []struct {
+		name       string
+		wantOffset uintptr
+	}{
+		{valueLimitFixtureFilename, 1},
+		{valueLimitOverFixtureFilename, 1},
+		{payloadLimitFixtureFilename, 65_572},
+		{payloadLimitOverFixtureFilename, 65_573},
+	}
+	for _, test := range tests {
+		t.Run(test.name, func(t *testing.T) {
+			path := filepath.Clean(filepath.Join("..", "..", "test-data", test.name))
+			db, err := maxminddb.Open(path)
+			if err != nil {
+				t.Fatalf("opening fixture: %v", err)
+			}
+			t.Cleanup(func() {
+				if err := db.Close(); err != nil {
+					t.Errorf("closing fixture: %v", err)
+				}
+			})
+
+			result := db.Lookup(netip.MustParseAddr("1.1.1.1"))
+			if err := result.Err(); err != nil {
+				t.Fatalf("lookup: %v", err)
+			}
+			if !result.Found() {
+				t.Fatal("lookup did not find a record")
+			}
+			if got := result.Offset(); got != test.wantOffset {
+				t.Errorf("record offset = %d, want %d", got, test.wantOffset)
+			}
+		})
 	}
 }
 
@@ -155,6 +215,9 @@ func TestDecodePathSharedBudgetFixtureIsSemanticallyValid(t *testing.T) {
 	var value string
 	err = result.DecodePath(&value, "target")
 	if err != nil {
+		if !isReaderResourceLimitError(err) {
+			t.Fatalf("decoding path: %v", err)
+		}
 		t.Logf("reader refused the path decode, which its limits allow: %v", err)
 	} else if len(value) != decodePathValueSize {
 		t.Errorf("selected value length = %d, want %d", len(value), decodePathValueSize)
@@ -170,6 +233,9 @@ func TestMetadataLimitFixtureIsSemanticallyValid(t *testing.T) {
 	// accepts it.
 	db, err := maxminddb.Open(path)
 	if err != nil {
+		if !isReaderResourceLimitError(err) {
+			t.Fatalf("opening metadata limit fixture: %v", err)
+		}
 		t.Logf("reader refused to open the fixture, which its limits allow: %v", err)
 		return
 	}
@@ -190,6 +256,10 @@ func TestMetadataLimitFixtureIsSemanticallyValid(t *testing.T) {
 			t.Errorf("language %d length = %d, want %d", i, got, payloadScalarSize)
 		}
 	}
+}
+
+func isReaderResourceLimitError(err error) bool {
+	return strings.Contains(err.Error(), "maximum decoded record size")
 }
 
 func TestPointerFanOutFixturesAreSemanticallyValid(t *testing.T) {
@@ -271,12 +341,10 @@ func TestPointerFanOutFixturesAreSemanticallyValid(t *testing.T) {
 			for i, address := range test.addresses {
 				result := db.Lookup(netip.MustParseAddr(address))
 				if err := result.Err(); err != nil {
-					t.Errorf("looking up %s: %v", address, err)
-					continue
+					t.Fatalf("looking up %s: %v", address, err)
 				}
 				if !result.Found() {
-					t.Errorf("lookup for %s did not find a record", address)
-					continue
+					t.Fatalf("lookup for %s did not find a record", address)
 				}
 				if i == 0 {
 					outerOffset = result.Offset()
@@ -370,17 +438,42 @@ func scalarPayloadSize(t *testing.T, data []byte, offset int) int {
 // a change to the encoding or the element count fails the assertion.
 func sumPointedPayload(t *testing.T, data []byte, top int) int {
 	t.Helper()
-	if top+3 > len(data) || data[top] != 29 || data[top+1] != 4 {
-		t.Fatalf("value at offset %d is not a size-29 array header", top)
-	}
-	count := int(data[top+2]) + 29
+	count, headerSize := arrayElementCount(t, data, top)
 	total := 0
-	elem := top + 3
+	elem := top + headerSize
 	for range count {
 		total += scalarPayloadSize(t, data, smallDataPointer(t, data, elem))
 		elem += 2
 	}
 	return total
+}
+
+func arrayElementCount(t *testing.T, data []byte, offset int) (count, headerSize int) {
+	t.Helper()
+	if offset < 0 || offset+2 > len(data) || data[offset]>>5 != 0 || data[offset+1] != 4 {
+		t.Fatalf("value at offset %d is not an array", offset)
+	}
+	sizeCode := int(data[offset] & 0x1F)
+	switch {
+	case sizeCode <= 28:
+		return sizeCode, 2
+	case sizeCode == 29:
+		if offset+3 > len(data) {
+			t.Fatalf("size-29 array header at offset %d is truncated", offset)
+		}
+		return int(data[offset+2]) + 29, 3
+	case sizeCode == 30:
+		if offset+4 > len(data) {
+			t.Fatalf("size-30 array header at offset %d is truncated", offset)
+		}
+		return (int(data[offset+2])<<8 | int(data[offset+3])) + 285, 4
+	default:
+		if offset+5 > len(data) {
+			t.Fatalf("size-31 array header at offset %d is truncated", offset)
+		}
+		return (int(data[offset+2])<<16 | int(data[offset+3])<<8 | int(data[offset+4])) +
+			minimumSizeCode31, 5
+	}
 }
 
 func smallDataPointer(t *testing.T, data []byte, offset int) int {
