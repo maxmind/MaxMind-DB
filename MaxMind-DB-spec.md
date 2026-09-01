@@ -584,18 +584,25 @@ and bound nesting and traversal work.
 
 ### Maximum decoded value count
 
-The depth limit does not bound the total amount of work. A record can nest
-arrays or maps whose elements are all pointers to the level below, so each level
-is decoded twice as often as the one above. Such a structure stays shallow, but
-decoding the top value produces 2\*\*depth leaf decodes and Θ(2\*\*depth) total
-decode operations. A record under one kilobyte can therefore take longer to
-decode than any real workload allows.
+The depth limit does not bound the total amount of work. Arrays and maps can
+contain many pointers to the same target. Unless the reader safely reuses the
+target, it decodes that target once for every pointer occurrence. In the binary
+fan-out example used by the test data, each array contains two pointers to the
+level below, so each lower level doubles the work. Decoding the top value takes
+exponentially more operations than the depth suggests. A record under one
+kilobyte can therefore take longer to decode than any real workload allows.
 
-A reader can bound this by counting the values it decodes for a single record
-and stopping if the count exceeds a fixed limit. One rule is to charge each
-logical value occurrence, including one resolved from a memoized target. Readers
-with structural or weighted bounds may account differently. Under a logical
-value rule, map keys and values are separate occurrences.
+A reader can bound this by counting the values it decodes and stopping if the
+count exceeds a fixed limit. One flat accounting rule is:
+
+- Charge every logical value occurrence once. The root is one occurrence. An
+  array or map is one occurrence in addition to its children. Map keys and map
+  values are separate occurrences.
+- Do not charge a pointer separately from its resolved value. Charge the value
+  at the position where the pointer occurs. Under this rule, a value resolved
+  from a memoized target is still charged once for each logical occurrence.
+
+Readers with structural or weighted bounds may account differently.
 
 If a destination uses a container's declared length to allocate storage,
 counting only after that allocation may be too late. A reader can reserve the
@@ -615,8 +622,9 @@ produces decode a few hundred values, so this leaves a wide margin.
 
 The value count limits how many fields a record decodes, not how many bytes they
 hold. A single string or bytes value can be up to 16,843,036 bytes. An array of
-32,767 pointers to one such value stays under the value limit. It still expands
-to more than 500 GiB, from a file barely larger than the value itself.
+65,535 pointers to one such value stays at the recommended value limit under the
+flat rule above. It can still describe more than 1 TiB of repeated data in a
+file barely larger than the value itself.
 
 A reader that copies, validates, or allocates these values should bound the
 total string and bytes data it materializes for one lookup. The right method and
@@ -643,11 +651,11 @@ A reader can bound this in several ways:
   including data stored inline in a container that a pointer targets. Stop when
   the total exceeds a limit. Re-decoding a pointer target charges its data
   again, which is what bounds the amplification.
-- Fold the size into the value-count budget, charging each value by its size.
-  Charge containers by entries traversed, pointer expansion when the target is
-  not safely reused, map-key and selector work, and strings and bytes
-  materialized. A small fixed-width scalar can cost little, once the traversal
-  needed to reach it is bounded.
+- Fold these concerns into a unified weighted budget. It can account for
+  container entries traversed, pointer expansion when the target is not safely
+  reused, map-key and selector work, and strings and bytes materialized. A small
+  fixed-width scalar can cost little or nothing once the work needed to reach it
+  is bounded.
 - Safely memoize decoded pointer targets, handling cycles and in-progress
   targets, so a shared target is materialized once.
 
