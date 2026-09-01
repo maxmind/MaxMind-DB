@@ -12,8 +12,12 @@ import (
 )
 
 const (
-	metadataMarker    = "\xab\xcd\xefMaxMind.com"
-	dataSeparatorSize = 16
+	metadataMarker              = "\xab\xcd\xefMaxMind.com"
+	dataSeparatorSize           = 16
+	maximumSizeCode30           = 65820
+	minimumSizeCode31           = maximumSizeCode30 + 1
+	maximumDataStructureSize    = minimumSizeCode31 + (1 << 24) - 1
+	maximum24BitSearchTreeValue = 1<<24 - 1
 )
 
 var (
@@ -53,8 +57,15 @@ var (
 )
 
 // writeMap writes a map control byte (type 7). Sizes above 28 use the extended
-// size forms, which take one or two more bytes.
+// size forms, which take one to three more bytes.
 func writeMap(buf []byte, size int) int {
+	if size < 0 || size > maximumDataStructureSize {
+		panic(fmt.Sprintf(
+			"map size %d is outside the supported range 0..%d",
+			size,
+			maximumDataStructureSize,
+		))
+	}
 	switch {
 	case size <= 28:
 		buf[0] = (7 << 5) | byte(size&0x1F)
@@ -63,14 +74,14 @@ func writeMap(buf []byte, size int) int {
 		buf[0] = (7 << 5) | 29
 		buf[1] = byte(size - 29)
 		return 2
-	case size <= 65820:
+	case size <= maximumSizeCode30:
 		buf[0] = (7 << 5) | 30
 		encoded := size - 285
 		buf[1] = byte((encoded >> 8) & 0xFF)
 		buf[2] = byte(encoded & 0xFF)
 		return 3
 	default:
-		panic(fmt.Sprintf("map size %d is unsupported by this fixture writer", size))
+		return writeLargeMap(buf, uint32(size))
 	}
 }
 
@@ -113,7 +124,15 @@ func writeMetaKey(buf []byte, key string) int {
 // writeLargeArray writes an array control byte (extended type 11) with
 // case-31 size encoding for sizes > 65820.
 func writeLargeArray(buf []byte, size uint32) int {
-	adjusted := size - 65821
+	if size < minimumSizeCode31 || size > maximumDataStructureSize {
+		panic(fmt.Sprintf(
+			"array size %d is outside the case-31 range %d..%d",
+			size,
+			minimumSizeCode31,
+			maximumDataStructureSize,
+		))
+	}
+	adjusted := size - minimumSizeCode31
 	buf[0] = (0 << 5) | 31 // extended type, size = case 31
 	buf[1] = 4             // extended type: 7 + 4 = 11 (array)
 	buf[2] = byte((adjusted >> 16) & 0xFF)
@@ -125,7 +144,15 @@ func writeLargeArray(buf []byte, size uint32) int {
 // writeLargeMap writes a map control byte (type 7) with case-31 size
 // encoding for sizes > 65820.
 func writeLargeMap(buf []byte, size uint32) int {
-	adjusted := size - 65821
+	if size < minimumSizeCode31 || size > maximumDataStructureSize {
+		panic(fmt.Sprintf(
+			"map size %d is outside the case-31 range %d..%d",
+			size,
+			minimumSizeCode31,
+			maximumDataStructureSize,
+		))
+	}
+	adjusted := size - minimumSizeCode31
 	buf[0] = (7 << 5) | 31 // type 7 (map), size = case 31
 	buf[1] = byte((adjusted >> 16) & 0xFF)
 	buf[2] = byte((adjusted >> 8) & 0xFF)
@@ -146,9 +173,16 @@ func writeSearchTree(buf []byte, recordValue uint32) int {
 	return writeSearchTreeRecords(buf, recordValue, recordValue)
 }
 
-// writeSearchTreeRecords writes a 1-node search tree with 24-bit records
-// where the left and right records can hold different values.
+// writeSearchTreeRecords writes one search-tree node with 24-bit records where
+// the left and right records can hold different values.
 func writeSearchTreeRecords(buf []byte, leftRecord, rightRecord uint32) int {
+	if leftRecord > maximum24BitSearchTreeValue || rightRecord > maximum24BitSearchTreeValue {
+		panic(fmt.Sprintf(
+			"search-tree record values %d and %d must fit in 24 bits",
+			leftRecord,
+			rightRecord,
+		))
+	}
 	buf[0] = byte((leftRecord >> 16) & 0xFF)
 	buf[1] = byte((leftRecord >> 8) & 0xFF)
 	buf[2] = byte(leftRecord & 0xFF)

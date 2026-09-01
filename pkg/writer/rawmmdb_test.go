@@ -21,6 +21,8 @@ func TestWriteMapControlByte(t *testing.T) {
 		{285, []byte{0xFE, 0x00, 0x00}},
 		{512, []byte{0xFE, 0x00, 0xE3}},
 		{65820, []byte{0xFE, 0xFF, 0xFF}},
+		{65821, []byte{0xFF, 0x00, 0x00, 0x00}},
+		{maximumDataStructureSize, []byte{0xFF, 0xFF, 0xFF, 0xFF}},
 	}
 	for _, test := range tests {
 		buf := make([]byte, 8)
@@ -45,10 +47,12 @@ func TestWriteStringControlByte(t *testing.T) {
 		{29, []byte{0x5D, 0x00}},
 		{284, []byte{0x5D, 0xFF}},
 		{285, []byte{0x5E, 0x00, 0x00}},
+		{65820, []byte{0x5E, 0xFF, 0xFF}},
+		{65821, []byte{0x5F, 0x00, 0x00, 0x00}},
 	}
 	for _, test := range tests {
 		value := strings.Repeat("a", test.size)
-		buf := make([]byte, 1024)
+		buf := make([]byte, test.size+8)
 		n := writeString(buf, value)
 		want := append(append([]byte{}, test.wantHeader...), value...)
 		if got := buf[:n]; !bytes.Equal(got, want) {
@@ -58,11 +62,69 @@ func TestWriteStringControlByte(t *testing.T) {
 	}
 }
 
-func TestWriteMapRejectsOversize(t *testing.T) {
-	defer func() {
-		if recover() == nil {
-			t.Error("writeMap(65821) did not panic")
+func TestWriteArrayHeader(t *testing.T) {
+	tests := []struct {
+		size int
+		want []byte
+	}{
+		{0, []byte{0x00, 0x04}},
+		{28, []byte{0x1C, 0x04}},
+		{29, []byte{0x1D, 0x04, 0x00}},
+		{284, []byte{0x1D, 0x04, 0xFF}},
+		{285, []byte{0x1E, 0x04, 0x00, 0x00}},
+		{65820, []byte{0x1E, 0x04, 0xFF, 0xFF}},
+		{65821, []byte{0x1F, 0x04, 0x00, 0x00, 0x00}},
+		{maximumDataStructureSize, []byte{0x1F, 0x04, 0xFF, 0xFF, 0xFF}},
+	}
+	for _, test := range tests {
+		buf := make([]byte, 8)
+		n := writeArrayHeader(buf, test.size)
+		if got := buf[:n]; !bytes.Equal(got, test.want) {
+			t.Errorf("writeArrayHeader(%d) = %#v, want %#v", test.size, got, test.want)
 		}
-	}()
-	writeMap(make([]byte, 8), 65821)
+	}
+}
+
+func TestWriteSearchTreeRecordsMaximum(t *testing.T) {
+	buf := make([]byte, 6)
+	n := writeSearchTreeRecords(buf, maximum24BitSearchTreeValue, maximum24BitSearchTreeValue)
+	want := []byte{0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF}
+	if got := buf[:n]; !bytes.Equal(got, want) {
+		t.Errorf("writeSearchTreeRecords() = %#v, want %#v", got, want)
+	}
+}
+
+func TestRawWritersRejectInvalidInput(t *testing.T) {
+	tests := []struct {
+		name string
+		call func()
+	}{
+		{"negative map size", func() { writeMap(make([]byte, 8), -1) }},
+		{"oversized map", func() { writeMap(make([]byte, 8), maximumDataStructureSize+1) }},
+		{"undersized large map", func() { writeLargeMap(make([]byte, 8), maximumSizeCode30) }},
+		{"negative array size", func() { writeArrayHeader(make([]byte, 8), -1) }},
+		{
+			"oversized array",
+			func() { writeArrayHeader(make([]byte, 8), maximumDataStructureSize+1) },
+		},
+		{"undersized large array", func() { writeLargeArray(make([]byte, 8), maximumSizeCode30) }},
+		{"negative scalar size", func() { writeScalar(make([]byte, 8), -1, scalarTypeBytes) }},
+		{"oversized scalar", func() {
+			writeScalar(make([]byte, 8), maximumDataStructureSize+1, scalarTypeBytes)
+		}},
+		{"invalid scalar type", func() { writeScalar(make([]byte, 8), 0, 8) }},
+		{"oversized search-tree record", func() {
+			writeSearchTreeRecords(make([]byte, 8), maximum24BitSearchTreeValue+1, 0)
+		}},
+	}
+	for _, test := range tests {
+		t.Run(test.name, func(t *testing.T) {
+			defer func() {
+				if recover() == nil {
+					t.Error("call did not panic")
+				}
+			}()
+			test.call()
+		})
+	}
 }

@@ -57,8 +57,7 @@ func dataRecordValue24(nodeCount uint32, dataOffset int) uint32 {
 		panic(fmt.Sprintf("negative data-section offset: %d", dataOffset))
 	}
 	recordValue := uint64(nodeCount) + dataSeparatorSize + uint64(dataOffset)
-	const max24BitRecordValue = 1<<24 - 1
-	if recordValue > max24BitRecordValue {
+	if recordValue > maximum24BitSearchTreeValue {
 		panic(fmt.Sprintf(
 			"data record value %d does not fit in a 24-bit search-tree record",
 			recordValue,
@@ -122,6 +121,17 @@ const (
 )
 
 func writeScalar(buf []byte, size int, scalarType byte) int {
+	if size < 0 || size > maximumDataStructureSize {
+		panic(fmt.Sprintf(
+			"scalar size %d is outside the supported range 0..%d",
+			size,
+			maximumDataStructureSize,
+		))
+	}
+	if scalarType != scalarTypeString && scalarType != scalarTypeBytes {
+		panic(fmt.Sprintf("unsupported scalar type %d", scalarType))
+	}
+
 	pos := 1
 	switch {
 	case size <= 28:
@@ -130,20 +140,32 @@ func writeScalar(buf []byte, size int, scalarType byte) int {
 		buf[0] = (scalarType << 5) | 29
 		buf[1] = byte(size - 29)
 		pos++
-	case size <= 65820:
+	case size <= maximumSizeCode30:
 		buf[0] = (scalarType << 5) | 30
 		encoded := size - 285
 		buf[1] = byte((encoded >> 8) & 0xFF)
 		buf[2] = byte(encoded & 0xFF)
 		pos += 2
 	default:
-		panic(fmt.Sprintf("scalar size %d is unsupported by this fixture writer", size))
+		buf[0] = (scalarType << 5) | 31
+		encoded := size - minimumSizeCode31
+		buf[1] = byte((encoded >> 16) & 0xFF)
+		buf[2] = byte((encoded >> 8) & 0xFF)
+		buf[3] = byte(encoded & 0xFF)
+		pos += 3
 	}
 	clear(buf[pos : pos+size])
 	return pos + size
 }
 
 func writeArrayHeader(buf []byte, size int) int {
+	if size < 0 || size > maximumDataStructureSize {
+		panic(fmt.Sprintf(
+			"array size %d is outside the supported range 0..%d",
+			size,
+			maximumDataStructureSize,
+		))
+	}
 	switch {
 	case size <= 28:
 		buf[0] = byte(size & 0x1F)
@@ -154,7 +176,7 @@ func writeArrayHeader(buf []byte, size int) int {
 		buf[1] = 4
 		buf[2] = byte(size - 29)
 		return 3
-	case size <= 65820:
+	case size <= maximumSizeCode30:
 		buf[0] = 30
 		buf[1] = 4
 		encoded := size - 285
@@ -162,7 +184,6 @@ func writeArrayHeader(buf []byte, size int) int {
 		buf[3] = byte(encoded & 0xFF)
 		return 4
 	default:
-		//nolint:gosec // size is a bounded fixture element count.
 		return writeLargeArray(buf, uint32(size))
 	}
 }
