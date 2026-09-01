@@ -544,9 +544,9 @@ section size for the database is limited to 4GB.
 ## Reader Resource Limits
 
 A crafted or corrupt data section can make a reader use far more time and memory
-than the record's size suggests. A value can be a pointer, and several pointers
-can share one target. A small data section can therefore describe a structure
-that is huge, or effectively infinite, when fully expanded.
+than a data entry's encoded size suggests. A value can be a pointer, and several
+pointers can share one target. A small data section can therefore describe a
+structure that is huge, or effectively infinite, when fully expanded.
 
 A reader should apply resource controls to operations that decode
 attacker-controlled values. The controls should bound the reader's time and
@@ -579,26 +579,26 @@ collections, repeated recognized fields, or dynamically shaped values. A
 schema-aware reader can apply tighter semantic limits where it knows a
 collection's valid size is small.
 
-### Maximum data structure depth
+### Maximum Data Structure Depth
 
-A reader that uses a nesting counter should limit how deeply it decodes one
-record. The depth increases by one each time the reader enters a map or an
-array, or follows a pointer. If the depth exceeds 512, the reader should stop
-and reject the record.
+A reader that uses a nesting counter should limit how deeply it decodes one data
+entry. The depth increases by one each time the reader enters a map or an array,
+or follows a pointer. If the depth exceeds 512, the reader should stop and
+reject the data entry.
 
 This limit stops unbounded recursion, including a pointer cycle and a structure
 nested deeper than any real database needs, and it is a portable default.
 Iterative decoding avoids call-stack exhaustion, but it must still detect cycles
 and bound nesting and traversal work.
 
-### Maximum decoded value count
+### Maximum Decoded Value Count
 
 The depth limit does not bound the total amount of work. Arrays and maps can
 contain many pointers to the same target. Unless the reader safely reuses the
 target, it decodes that target once for every pointer occurrence. In the binary
 fan-out example used by the test data, each array contains two pointers to the
 level below, so each lower level doubles the work. Decoding the top value takes
-exponentially more operations than the depth suggests. A record under one
+exponentially more operations than the depth suggests. A data entry under one
 kilobyte can therefore take longer to decode than any real workload allows.
 
 A reader can bound this by counting the values it decodes and stopping if the
@@ -623,23 +623,24 @@ restart between internal phases. For example, path navigation and decoding the
 selected value can share one budget or use another end-to-end control. Bounding
 each navigation step on its own does not bound their cumulative work.
 
-A limit of 65,536 (2\*\*16) values is recommended. The largest records MaxMind
-produces decode a few hundred values, so this leaves a wide margin.
+A limit of 65,536 (2\*\*16) values is recommended. The largest data entries
+MaxMind produces decode a few hundred values, so this leaves a wide margin.
 
-### Maximum expanded payload work
+### Bounding Expanded Payload
 
-The value count limits how many fields a record decodes, not how many bytes they
-hold. A single string or bytes value can be up to 16,843,036 bytes. An array of
-65,535 pointers to one such value stays at the recommended value limit under the
-flat rule above. It can still describe more than 1 TiB of repeated data in a
-file barely larger than the value itself.
+The value-count strategy limits how many values the reader decodes from a data
+entry, not how many bytes those values contain. A single string or bytes value
+can be up to 16,843,036 bytes. An array of 65,535 pointers to one such value
+stays at the recommended value limit under the flat rule above. It can still
+describe more than 1 TiB of repeated data in a file barely larger than the value
+itself.
 
 A reader that copies, validates, or allocates these values should bound the
 total string and bytes data it materializes for one caller-requested decode
 operation. The right method and limit depend on the reader's language and API,
 so this specification does not require a single limit. As guidance, the largest
-records MaxMind produces hold about a kilobyte of such data, so a few megabytes
-is generous.
+data entries MaxMind produces hold about a kilobyte of such data, so a few
+megabytes is generous.
 
 Borrowing bytes from the data section or safely memoizing pointer targets can
 bound the reader's own materialization. The decoded result may still contain
@@ -648,7 +649,7 @@ to owning values that copies each occurrence should bound that downstream work.
 
 Payload that a reader skips without copying, validating, or allocating need not
 consume a materialization budget, as long as the traversal to skip it is bounded
-separately. A reader selecting part of a record likewise need not expand an
+separately. A reader selecting part of a data entry likewise need not expand an
 unrequested pointer target. A reader whose API or validation rules require that
 work should bound it.
 
@@ -669,7 +670,7 @@ A reader can bound this in several ways:
 When a reader's resource controls reject a decode, it should return an error
 rather than a partial result. It may treat a value outside its documented
 resource profile as invalid, and may make limits configurable for unusually
-large valid records.
+large valid data entries.
 
 ## Reference Implementations
 

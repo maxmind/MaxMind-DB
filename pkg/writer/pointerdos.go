@@ -108,7 +108,7 @@ const (
 	// its elements decode to worstCasePointerCount+1 = 65,536 values, which meets
 	// the recommended limit without exceeding it, so that reader does not reject
 	// it. Copying each target materializes worstCasePointerCount*payloadScalarSize
-	// bytes, about 4 GiB, from a file of about 200 KiB. A limit on the copied
+	// bytes, about 4 GiB, from a file of about 192 KiB. A limit on the copied
 	// bytes stops this, as can safe reuse or structural rejection.
 	worstCasePointerCount = 65535
 )
