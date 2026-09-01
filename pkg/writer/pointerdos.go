@@ -71,8 +71,8 @@ func dataRecordValue24(nodeCount uint32, dataOffset int) uint32 {
 // offset 0 and each array points back to the level below it. A decoder that
 // re-decodes a shared pointer target once per referencing path performs
 // 2**depth leaf decodes and Θ(2**depth) total decode operations from these few
-// hundred bytes (GHSA-hj94-g986-h9r7); a decoder that memoizes resolved targets
-// decodes it in linear time. mmdbwriter cannot produce this shape because its
+// hundred bytes; a decoder that memoizes resolved targets decodes it in linear
+// time. mmdbwriter cannot produce this shape because its
 // own deduplication fans out while computing the file, so the bytes are written
 // directly. top is the data-section offset of the outermost array.
 func buildPointerFanOutData(depth int) (data []byte, top int) {
