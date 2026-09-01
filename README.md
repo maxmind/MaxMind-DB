@@ -3,6 +3,12 @@ subnets (IPv4 or IPv6).
 
 This repository contains the spec for that format as well as test databases.
 
+Some structurally well-formed databases under `test-data/` are deliberately
+hostile and can exhaust an unprotected reader. Do not fully decode every fixture
+without resource controls. See the
+[denial-of-service test data](test-data/README.md#denial-of-service-test-data)
+documentation.
+
 # Generating Test Data
 
 The `write-test-data` command generates the MMDB test files under `test-data/`
