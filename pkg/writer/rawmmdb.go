@@ -6,11 +6,18 @@ package writer
 // large-size (case-31) encoding and complete database builders for crafting
 // intentionally malformed MMDB files that cannot be created through mmdbwriter.
 
-import "encoding/binary"
+import (
+	"encoding/binary"
+	"fmt"
+)
 
 const (
-	metadataMarker    = "\xab\xcd\xefMaxMind.com"
-	dataSeparatorSize = 16
+	metadataMarker              = "\xab\xcd\xefMaxMind.com"
+	dataSeparatorSize           = 16
+	maximumSizeCode30           = 65820
+	minimumSizeCode31           = maximumSizeCode30 + 1
+	maximumDataStructureSize    = minimumSizeCode31 + (1 << 24) - 1
+	maximum24BitSearchTreeValue = 1<<24 - 1
 )
 
 var (
@@ -49,17 +56,42 @@ var (
 	}
 )
 
-// writeMap writes a map control byte (type 7) for sizes <= 28.
+// writeMap writes a map control byte (type 7). Sizes above 28 use the extended
+// size forms, which take one to three more bytes.
 func writeMap(buf []byte, size int) int {
-	buf[0] = (7 << 5) | byte(size&0x1f)
-	return 1
+	if size < 0 || size > maximumDataStructureSize {
+		panic(fmt.Sprintf(
+			"map size %d is outside the supported range 0..%d",
+			size,
+			maximumDataStructureSize,
+		))
+	}
+	switch {
+	case size <= 28:
+		buf[0] = (7 << 5) | byte(size&0x1F)
+		return 1
+	case size <= 284:
+		buf[0] = (7 << 5) | 29
+		buf[1] = byte(size - 29)
+		return 2
+	case size <= maximumSizeCode30:
+		buf[0] = (7 << 5) | 30
+		encoded := size - 285
+		buf[1] = byte((encoded >> 8) & 0xFF)
+		buf[2] = byte(encoded & 0xFF)
+		return 3
+	default:
+		return writeLargeMap(buf, uint32(size))
+	}
 }
 
-// writeString writes a string value (type 2).
+// writeString writes a string value (type 2). It delegates the control byte to
+// writeScalar so strings longer than 28 bytes get the extended size forms
+// instead of a truncated size.
 func writeString(buf []byte, s string) int {
-	buf[0] = (2 << 5) | byte(len(s)&0x1f)
-	copy(buf[1:], s)
-	return 1 + len(s)
+	pos := writeScalar(buf, len(s), scalarTypeString)
+	copy(buf[pos-len(s):pos], s)
+	return pos
 }
 
 // writeUint16 writes a uint16 value (type 5, 2 bytes).
@@ -92,7 +124,15 @@ func writeMetaKey(buf []byte, key string) int {
 // writeLargeArray writes an array control byte (extended type 11) with
 // case-31 size encoding for sizes > 65820.
 func writeLargeArray(buf []byte, size uint32) int {
-	adjusted := size - 65821
+	if size < minimumSizeCode31 || size > maximumDataStructureSize {
+		panic(fmt.Sprintf(
+			"array size %d is outside the case-31 range %d..%d",
+			size,
+			minimumSizeCode31,
+			maximumDataStructureSize,
+		))
+	}
+	adjusted := size - minimumSizeCode31
 	buf[0] = (0 << 5) | 31 // extended type, size = case 31
 	buf[1] = 4             // extended type: 7 + 4 = 11 (array)
 	buf[2] = byte((adjusted >> 16) & 0xFF)
@@ -104,7 +144,15 @@ func writeLargeArray(buf []byte, size uint32) int {
 // writeLargeMap writes a map control byte (type 7) with case-31 size
 // encoding for sizes > 65820.
 func writeLargeMap(buf []byte, size uint32) int {
-	adjusted := size - 65821
+	if size < minimumSizeCode31 || size > maximumDataStructureSize {
+		panic(fmt.Sprintf(
+			"map size %d is outside the case-31 range %d..%d",
+			size,
+			minimumSizeCode31,
+			maximumDataStructureSize,
+		))
+	}
+	adjusted := size - minimumSizeCode31
 	buf[0] = (7 << 5) | 31 // type 7 (map), size = case 31
 	buf[1] = byte((adjusted >> 16) & 0xFF)
 	buf[2] = byte((adjusted >> 8) & 0xFF)
@@ -125,9 +173,16 @@ func writeSearchTree(buf []byte, recordValue uint32) int {
 	return writeSearchTreeRecords(buf, recordValue, recordValue)
 }
 
-// writeSearchTreeRecords writes a 1-node search tree with 24-bit records
-// where the left and right records can hold different values.
+// writeSearchTreeRecords writes one search-tree node with 24-bit records where
+// the left and right records can hold different values.
 func writeSearchTreeRecords(buf []byte, leftRecord, rightRecord uint32) int {
+	if leftRecord > maximum24BitSearchTreeValue || rightRecord > maximum24BitSearchTreeValue {
+		panic(fmt.Sprintf(
+			"search-tree record values %d and %d must fit in 24 bits",
+			leftRecord,
+			rightRecord,
+		))
+	}
 	buf[0] = byte((leftRecord >> 16) & 0xFF)
 	buf[1] = byte((leftRecord >> 8) & 0xFF)
 	buf[2] = byte(leftRecord & 0xFF)
@@ -141,6 +196,7 @@ func writeMetadataBlockWithKeyOrder(
 	buf []byte,
 	nodeCount uint32,
 	buildEpoch uint64,
+	ipVersion uint16,
 	keys []string,
 ) int {
 	pos := 0
@@ -156,7 +212,7 @@ func writeMetadataBlockWithKeyOrder(
 		"build_epoch":                 func(b []byte) int { return writeUint64(b, buildEpoch) },
 		"database_type":               func(b []byte) int { return writeString(b, "Test") },
 		"description":                 func(b []byte) int { return writeMap(b, 0) },
-		"ip_version":                  func(b []byte) int { return writeUint16(b, 4) },
+		"ip_version":                  func(b []byte) int { return writeUint16(b, ipVersion) },
 		"languages":                   writeEmptyArray,
 		"node_count":                  func(b []byte) int { return writeUint32(b, nodeCount) },
 		"record_size":                 func(b []byte) int { return writeUint16(b, 24) },
@@ -177,7 +233,7 @@ func writeMetadataBlockWithKeyOrder(
 // writeMetadataBlock writes the metadata marker followed by a standard
 // metadata map with the given parameters.
 func writeMetadataBlock(buf []byte, nodeCount uint32, buildEpoch uint64) int {
-	return writeMetadataBlockWithKeyOrder(buf, nodeCount, buildEpoch, metadataKeysStandard)
+	return writeMetadataBlockWithKeyOrder(buf, nodeCount, buildEpoch, 4, metadataKeysStandard)
 }
 
 func buildSimpleDB(metadataWriter func([]byte, uint32, uint64) int) []byte {
@@ -268,6 +324,7 @@ func writeMetadataBlockEmptyMapLast(buf []byte, nodeCount uint32, buildEpoch uin
 		buf,
 		nodeCount,
 		buildEpoch,
+		4,
 		metadataKeysEmptyMapLast,
 	)
 }
@@ -279,6 +336,7 @@ func writeMetadataBlockEmptyArrayLast(buf []byte, nodeCount uint32, buildEpoch u
 		buf,
 		nodeCount,
 		buildEpoch,
+		4,
 		metadataKeysEmptyArrayLast,
 	)
 }

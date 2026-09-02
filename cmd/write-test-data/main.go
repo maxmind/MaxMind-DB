@@ -82,6 +82,11 @@ func main() {
 		os.Exit(1)
 	}
 
+	if err := w.WritePointerDecoderDoSTestDB(); err != nil {
+		fmt.Printf("writing pointer decoder DoS test databases: %+v\n", err)
+		os.Exit(1)
+	}
+
 	if err := w.WriteGeoIP2TestDB(); err != nil {
 		fmt.Printf("writing GeoIP2 test databases: %+v\n", err)
 		os.Exit(1)

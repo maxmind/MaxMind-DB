@@ -310,6 +310,10 @@ A pointer to another part of the data section's address space. The pointer will
 point to the beginning of a field. It is illegal for a pointer to point to
 another pointer.
 
+Because several pointers can share one target, following pointers naively can
+decode far more data than a record's size suggests. See
+[Reader Resource Limits](#reader-resource-limits).
+
 Pointer values start from the beginning of the data section, _not_ the beginning
 of the file. Pointers in the metadata start from the beginning of the metadata
 section.
@@ -536,6 +540,137 @@ are ignored.
 
 This means that we are limited to 4GB of address space for pointers, so the data
 section size for the database is limited to 4GB.
+
+## Reader Resource Limits
+
+A crafted or corrupt data section can make a reader use far more time and memory
+than a data entry's encoded size suggests. A value can be a pointer, and several
+pointers can share one target. A small data section can therefore describe a
+structure that is huge, or effectively infinite, when fully expanded.
+
+A reader should apply resource controls to operations that decode
+attacker-controlled values. The controls should bound the reader's time and
+memory before it allocates, traverses, or copies an attacker-chosen amount of
+data. The examples in this section are implementation guidance. They do not
+define whether an encoding conforms to the file format.
+
+A caller-requested decode operation can include a lookup, path selection and
+decoding of the selected value, or metadata decoding while opening a database. A
+reader that validates a whole database can apply a bound to each data entry if
+the work outside those entries is also bounded.
+
+A reader can apply the depth, value-count, and payload limits below. It can
+instead combine them or use another strategy that bounds the same risks, such
+as:
+
+- Safe memoization of pointer targets, including cycle handling.
+- Schema-directed decoding into a destination that is finite and nonrecursive,
+  and that skips unknown values without following pointers.
+- A weighted work budget.
+
+A reader that delegates decoding to caller-defined code should document where
+that responsibility transfers.
+
+A finite, nonrecursive destination can provide an inherent bound when its
+recognized fields have bounded shapes and unknown values are skipped without
+following their pointers. A specific typed destination does not provide that
+bound by itself. It can still contain recursive types, attacker-sized
+collections, repeated recognized fields, or dynamically shaped values. A
+schema-aware reader can apply tighter semantic limits where it knows a
+collection's valid size is small.
+
+### Maximum Data Structure Depth
+
+A reader that uses a nesting counter should limit how deeply it decodes one data
+entry. The depth increases by one each time the reader enters a map or an array,
+or follows a pointer. If the depth exceeds 512, the reader should stop and
+reject the data entry.
+
+This limit stops unbounded recursion, including a pointer cycle and a structure
+nested deeper than any real database needs, and it is a portable default.
+Iterative decoding avoids call-stack exhaustion, but it must still detect cycles
+and bound nesting and traversal work.
+
+### Maximum Decoded Value Count
+
+The depth limit does not bound the total amount of work. Arrays and maps can
+contain many pointers to the same target. Unless the reader safely reuses the
+target, it decodes that target once for every pointer occurrence. In the binary
+fan-out example used by the test data, each array contains two pointers to the
+level below, so each lower level doubles the work. Decoding the top value takes
+exponentially more operations than the depth suggests. A data entry under one
+kilobyte can therefore take longer to decode than any real workload allows.
+
+A reader can bound this by counting the values it decodes and stopping if the
+count exceeds a fixed limit. One flat accounting rule is:
+
+- Charge every logical value occurrence once. The root is one occurrence. An
+  array or map is one occurrence in addition to its children. Map keys and map
+  values are separate occurrences.
+- Do not charge a pointer separately from its resolved value. Charge the value
+  at the position where the pointer occurs. Under this rule, a value resolved
+  from a memoized target is still charged once for each logical occurrence.
+
+Readers with structural or weighted bounds may account differently.
+
+If a destination uses a container's declared length to allocate storage,
+counting only after that allocation may be too late. A reader can reserve the
+declared children against its value budget first, cap the allocation separately,
+grow storage incrementally, or use another approach with an equivalent bound.
+
+The bound should cover the whole operation the caller requested. It should not
+restart between internal phases. For example, path navigation and decoding the
+selected value can share one budget or use another end-to-end control. Bounding
+each navigation step on its own does not bound their cumulative work.
+
+A limit of 65,536 (2\*\*16) values is recommended. The largest data entries
+MaxMind produces decode a few hundred values, so this leaves a wide margin.
+
+### Bounding Expanded Payload
+
+The value-count strategy limits how many values the reader decodes from a data
+entry, not how many bytes those values contain. A single string or bytes value
+can be up to 16,843,036 bytes. An array of 65,535 pointers to one such value
+stays at the recommended value limit under the flat rule above. It can still
+describe more than 1 TiB of repeated data in a file barely larger than the value
+itself.
+
+A reader that copies, validates, or allocates these values should bound the
+total string and bytes data it materializes for one caller-requested decode
+operation. The right method and limit depend on the reader's language and API,
+so this specification does not require a single limit. As guidance, the largest
+data entries MaxMind produces hold about a kilobyte of such data, so a few
+megabytes is generous.
+
+Borrowing bytes from the data section or safely memoizing pointer targets can
+bound the reader's own materialization. The decoded result may still contain
+many logical references to the same value. A binding, serializer, or conversion
+to owning values that copies each occurrence should bound that downstream work.
+
+Payload that a reader skips without copying, validating, or allocating need not
+consume a materialization budget, as long as the traversal to skip it is bounded
+separately. A reader selecting part of a data entry likewise need not expand an
+unrequested pointer target. A reader whose API or validation rules require that
+work should bound it.
+
+A reader can bound this in several ways:
+
+- Charge each value's size against a per-operation budget wherever it is
+  decoded, including data stored inline in a container that a pointer targets.
+  Stop when the total exceeds a limit. Re-decoding a pointer target charges its
+  data again, which is what bounds the amplification.
+- Fold these concerns into a unified weighted budget. It can account for
+  container entries traversed, pointer expansion when the target is not safely
+  reused, map-key and selector work, and strings and bytes materialized. A small
+  fixed-width scalar can cost little or nothing once the work needed to reach it
+  is bounded.
+- Safely memoize decoded pointer targets, handling cycles and in-progress
+  targets, so a shared target is materialized once.
+
+When a reader's resource controls reject a decode, it should return an error
+rather than a partial result. It may treat a value outside its documented
+resource profile as invalid, and may make limits configurable for unusually
+large valid data entries.
 
 ## Reference Implementations
 
