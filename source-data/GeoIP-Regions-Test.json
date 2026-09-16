@@ -1,0 +1,474 @@
+[
+  {
+    "214.78.120.0/22": {
+      "country": {
+        "geoname_id": 6252001,
+        "iso_code": "US",
+        "confidence": 60
+      },
+      "location": {
+        "accuracy_radius": 200,
+        "latitude": 32.7405,
+        "longitude": -117.0935,
+        "metro_code": 825,
+        "time_zone": "America/Los_Angeles"
+      },
+      "subdivisions": [
+        {
+          "geoname_id": 5332921,
+          "iso_code": "CA",
+          "confidence": 25
+        }
+      ],
+      "alternate_locations": [
+        {
+          "country": {
+            "geoname_id": 6252001,
+            "iso_code": "US",
+            "confidence": 60
+          },
+          "subdivisions": [
+            {
+              "geoname_id": 5128638,
+              "iso_code": "NY",
+              "confidence": 41
+            }
+          ]
+        },
+        {
+          "country": {
+            "geoname_id": 6252001,
+            "iso_code": "US",
+            "confidence": 60
+          },
+          "subdivisions": [
+            {
+              "geoname_id": 4736286,
+              "iso_code": "TX",
+              "confidence": 38
+            }
+          ]
+        },
+        {
+          "country": {
+            "geoname_id": 6252001,
+            "iso_code": "US",
+            "confidence": 60
+          },
+          "subdivisions": [
+            {
+              "geoname_id": 5815135,
+              "iso_code": "WA",
+              "confidence": 12
+            }
+          ]
+        },
+        {
+          "country": {
+            "geoname_id": 6252001,
+            "iso_code": "US",
+            "confidence": 60
+          },
+          "subdivisions": [
+            {
+              "geoname_id": 5037779,
+              "iso_code": "MN",
+              "confidence": 33
+            }
+          ]
+        },
+        {
+          "country": {
+            "geoname_id": 6252001,
+            "iso_code": "US",
+            "confidence": 60
+          },
+          "subdivisions": [
+            {
+              "geoname_id": 5417618,
+              "iso_code": "CO",
+              "confidence": 7
+            }
+          ]
+        },
+        {
+          "country": {
+            "geoname_id": 6252001,
+            "iso_code": "US",
+            "confidence": 60
+          },
+          "subdivisions": [
+            {
+              "geoname_id": 5744337,
+              "iso_code": "OR",
+              "confidence": 29
+            }
+          ]
+        },
+        {
+          "country": {
+            "geoname_id": 6252001,
+            "iso_code": "US",
+            "confidence": 60
+          },
+          "subdivisions": [
+            {
+              "geoname_id": 4831725,
+              "iso_code": "CT",
+              "confidence": 22
+            }
+          ]
+        },
+        {
+          "country": {
+            "geoname_id": 6252001,
+            "iso_code": "US",
+            "confidence": 60
+          },
+          "subdivisions": [
+            {
+              "geoname_id": 5090174,
+              "iso_code": "NH",
+              "confidence": 5
+            }
+          ]
+        },
+        {
+          "country": {
+            "geoname_id": 6252001,
+            "iso_code": "US",
+            "confidence": 60
+          },
+          "subdivisions": [
+            {
+              "geoname_id": 4142224,
+              "iso_code": "DE",
+              "confidence": 19
+            }
+          ]
+        },
+        {
+          "country": {
+            "geoname_id": 6252001,
+            "iso_code": "US",
+            "confidence": 60
+          },
+          "subdivisions": [
+            {
+              "geoname_id": 5667009,
+              "iso_code": "MT",
+              "confidence": 3
+            }
+          ]
+        },
+        {
+          "country": {
+            "geoname_id": 6252001,
+            "iso_code": "US",
+            "confidence": 60
+          },
+          "subdivisions": [
+            {
+              "geoname_id": 5101760,
+              "iso_code": "NJ",
+              "confidence": 26
+            }
+          ]
+        },
+        {
+          "country": {
+            "geoname_id": 6252001,
+            "iso_code": "US",
+            "confidence": 60
+          },
+          "subdivisions": [
+            {
+              "geoname_id": 4662168,
+              "iso_code": "TN",
+              "confidence": 14
+            }
+          ]
+        },
+        {
+          "country": {
+            "geoname_id": 2635167,
+            "iso_code": "GB",
+            "confidence": 15
+          },
+          "subdivisions": [
+            {
+              "geoname_id": 6269131,
+              "iso_code": "ENG",
+              "confidence": 31
+            }
+          ]
+        },
+        {
+          "country": {
+            "geoname_id": 2921044,
+            "iso_code": "DE",
+            "confidence": 11
+          },
+          "subdivisions": [
+            {
+              "geoname_id": 2950157,
+              "iso_code": "BE",
+              "confidence": 24
+            }
+          ]
+        },
+        {
+          "country": {
+            "geoname_id": 2077456,
+            "iso_code": "AU",
+            "confidence": 8
+          },
+          "subdivisions": [
+            {
+              "geoname_id": 2145234,
+              "iso_code": "VIC",
+              "confidence": 16
+            }
+          ]
+        },
+        {
+          "country": {
+            "geoname_id": 1562822,
+            "iso_code": "VN",
+            "confidence": 6
+          },
+          "subdivisions": [
+            {
+              "geoname_id": 1580578,
+              "iso_code": "SG",
+              "confidence": 9
+            }
+          ]
+        },
+        {
+          "country": {
+            "geoname_id": 298795,
+            "iso_code": "TR",
+            "confidence": 4
+          },
+          "subdivisions": [
+            {
+              "geoname_id": 315807,
+              "iso_code": "23",
+              "confidence": 6
+            }
+          ]
+        },
+        {
+          "country": {
+            "geoname_id": 3017382,
+            "iso_code": "FR",
+            "confidence": 3
+          }
+        }
+      ]
+    }
+  },
+  {
+    "214.78.0.0/23": {
+      "country": {
+        "geoname_id": 6252001,
+        "iso_code": "US",
+        "confidence": 99
+      },
+      "location": {
+        "accuracy_radius": 100,
+        "latitude": 32.7405,
+        "longitude": -117.0935,
+        "metro_code": 825,
+        "time_zone": "America/Los_Angeles"
+      },
+      "subdivisions": [
+        {
+          "geoname_id": 5332921,
+          "iso_code": "CA",
+          "confidence": 99
+        }
+      ],
+      "alternate_locations": [
+        {
+          "country": {
+            "geoname_id": 6252001,
+            "iso_code": "US",
+            "confidence": 87
+          },
+          "subdivisions": [
+            {
+              "geoname_id": 5128638,
+              "iso_code": "NY",
+              "confidence": 56
+            }
+          ]
+        },
+        {
+          "country": {
+            "geoname_id": 6252001,
+            "iso_code": "US",
+            "confidence": 87
+          },
+          "subdivisions": [
+            {
+              "geoname_id": 5101760,
+              "iso_code": "NJ",
+              "confidence": 17
+            }
+          ]
+        },
+        {
+          "country": {
+            "geoname_id": 6252001,
+            "iso_code": "US",
+            "confidence": 87
+          },
+          "subdivisions": [
+            {
+              "geoname_id": 4662168,
+              "iso_code": "TN",
+              "confidence": 9
+            }
+          ]
+        },
+        {
+          "country": {
+            "geoname_id": 2635167,
+            "iso_code": "GB",
+            "confidence": 12
+          },
+          "subdivisions": [
+            {
+              "geoname_id": 6269131,
+              "iso_code": "ENG",
+              "confidence": 40
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "2001:480:10::/49": {
+      "country": {
+        "geoname_id": 6252001,
+        "iso_code": "US",
+        "confidence": 87
+      },
+      "location": {
+        "accuracy_radius": 100,
+        "latitude": 32.7405,
+        "longitude": -117.0935,
+        "metro_code": 825,
+        "time_zone": "America/Los_Angeles"
+      },
+      "subdivisions": [
+        {
+          "geoname_id": 5332921,
+          "iso_code": "CA",
+          "confidence": 56
+        }
+      ],
+      "alternate_locations": [
+        {
+          "country": {
+            "geoname_id": 6252001,
+            "iso_code": "US",
+            "confidence": 87
+          },
+          "subdivisions": [
+            {
+              "geoname_id": 5128638,
+              "iso_code": "NY",
+              "confidence": 17
+            }
+          ]
+        },
+        {
+          "country": {
+            "geoname_id": 6252001,
+            "iso_code": "US",
+            "confidence": 87
+          },
+          "subdivisions": [
+            {
+              "geoname_id": 4736286,
+              "iso_code": "TX",
+              "confidence": 4
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "214.214.214.219/32": {
+      "country": {
+        "geoname_id": 2635167,
+        "iso_code": "GB",
+        "confidence": 75
+      },
+      "location": {
+        "accuracy_radius": 100,
+        "latitude": 51.75,
+        "longitude": -1.25,
+        "time_zone": "Europe/London"
+      },
+      "subdivisions": [
+        {
+          "geoname_id": 6269131,
+          "iso_code": "ENG",
+          "confidence": 60
+        },
+        {
+          "geoname_id": 3333217,
+          "iso_code": "WBK",
+          "confidence": 40
+        }
+      ],
+      "alternate_locations": [
+        {
+          "country": {
+            "geoname_id": 2635167,
+            "iso_code": "GB"
+          },
+          "subdivisions": [
+            {
+              "geoname_id": 6269131,
+              "iso_code": "ENG"
+            }
+          ]
+        },
+        {
+          "country": {
+            "geoname_id": 2963597,
+            "iso_code": "IE"
+          }
+        },
+        {
+          "country": {
+            "geoname_id": 2510769,
+            "iso_code": "ES"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "::6.1.0.0/121": {
+      "country": {
+        "geoname_id": 6252001,
+        "iso_code": "US",
+        "confidence": 99
+      },
+      "location": {
+        "accuracy_radius": 1000,
+        "latitude": 37.751,
+        "longitude": -97.822,
+        "time_zone": "America/Chicago"
+      }
+    }
+  }
+]
