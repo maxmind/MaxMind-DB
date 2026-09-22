@@ -4,7 +4,7 @@ go 1.25.0
 
 require (
 	github.com/maxmind/mmdbwriter v1.2.0
-	github.com/oschwald/maxminddb-golang/v2 v2.5.0
+	github.com/oschwald/maxminddb-golang/v2 v2.6.0
 	go4.org/netipx v0.0.0-20260823151212-3075585bcbeb
 )
 
