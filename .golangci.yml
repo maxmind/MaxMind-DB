@@ -37,6 +37,7 @@ linters:
     # We often don't initialize all of the struct fields. This is fine
     # generally
     - exhaustruct
+    - exhaustruct_v5
 
     # We tried this linter but most places we do forced type asserts are
     # pretty safe, e.g., an atomic.Value when everything is encapsulated
@@ -53,8 +54,18 @@ linters:
 
     - gocognit
 
+    # golangci-lint 2.12 changed goconst to count repeated strings across all
+    # files in a package. Its findings here are MMDB field names in test data
+    # writers, which read better as literals.
+    - goconst
+
     # We don't want to forbid TODO, FIXME, etc.
     - godox
+
+    # Deprecated in golangci-lint 2.12 and replaced by gomodguard_v2, which we
+    # configure below. `default: all` would otherwise re-enable the deprecated
+    # linter and emit a warning on every run.
+    - gomodguard
 
     # This only "caught" one thing, and it seemed like a reasonable use
     # of Han script. Generally, I don't think we want to prevent the use
@@ -129,7 +140,7 @@ linters:
 
   settings:
     # Please note that we only use depguard for blocking packages and
-    # gomodguard for blocking modules.
+    # gomodguard_v2 for blocking modules.
     depguard:
       rules:
         main:
@@ -309,92 +320,90 @@ linters:
       toolchain-forbidden: true
       go-version-pattern: \d\.\d+(\.0)?
 
-    # IMPORTANT: gomodguard blocks _modules_, not arbitrary packages. Be
+    # IMPORTANT: gomodguard_v2 blocks _modules_, not arbitrary packages. Be
     # sure to use the module path from the go.mod file for these.
     # See https://github.com/ryancurrah/gomodguard/issues/12
-    gomodguard:
+    gomodguard_v2:
       blocked:
-        modules:
-          - github.com/avct/uasurfer:
-              recommendations:
-                - github.com/xavivars/uasurfer
-              reason: The original avct module appears abandoned.
-          - github.com/BurntSushi/toml:
-              recommendations:
-                - github.com/pelletier/go-toml/v2
-              reason: This library panics frequently on invalid input.
-          - github.com/pelletier/go-toml:
-              recommendations:
-                - github.com/pelletier/go-toml/v2
-              reason: This is an outdated version.
-          - github.com/gofrs/uuid:
-              recommendations:
-                - github.com/google/uuid
-          - github.com/gofrs/uuid/v5:
-              recommendations:
-                - github.com/google/uuid
-          - github.com/satori/go.uuid:
-              recommendations:
-                - github.com/google/uuid
-          - github.com/google/uuid:
-              recommendations:
-                - github.com/google/uuid
-          - github.com/lib/pq:
-              recommendations:
-                - github.com/jackc/pgx
-              reason: This library is no longer actively maintained.
-          - github.com/neilotoole/errgroup:
-              recommendations:
-                - golang.org/x/sync/errgroup
-              reason: This library can lead to subtle deadlocks in certain use cases.
-          - github.com/pariz/gountries:
-              reason: This library's data is not actively maintained. Use GeoInfo data.
-            github.com/pkg/errors:
-              recommendations:
-                - errors
-              reason: pkg/errors is no longer maintained.
-          - github.com/RackSec/srslog:
-              recommendations:
-                - log/syslog
-              reason: This library's data is not actively maintained.
-          - github.com/ua-parser/uap-go:
-              recommendations:
-                - github.com/xavivars/uasurfer
-              reason: The performance of this library is absolutely abysmal.
-          - github.com/ugorji/go:
-              recommendations:
-                - encoding/json
-                - github.com/mailru/easyjson
-              reason: This library is poorly maintained. We should default to using encoding/json and use easyjson where performance really matters.
-          - github.com/zeebo/assert:
-              recommendations:
-                - github.com/stretchr/testify/assert
-              reason: Use github.com/stretchr/testify/assert
-          - gopkg.in/yaml.v2:
-              recommendations:
-                - github.com/goccy/go-yaml
-              reason: Not actively maintained.
-          - gopkg.in/yaml.v3:
-              recommendations:
-                - github.com/goccy/go-yaml
-              reason: Not actively maintained.
-          - gotest.tools/v3:
-              recommendations:
-                - github.com/stretchr/testify/assert
-              reason: Use github.com/stretchr/testify/assert
-          - inet.af/netaddr:
-              recommendations:
-                - net/netip
-                - go4.org/netipx
-              reason: inet.af/netaddr has been deprecated.
-        versions:
-          - github.com/jackc/pgconn:
-              reason: Use github.com/jackc/pgx/v5
-          - github.com/jackc/pgtype:
-              reason: Use github.com/jackc/pgx/v5
-          - github.com/jackc/pgx:
-              version: < 5.0.0
-              reason: Use github.com/jackc/pgx/v5
+        - module: github.com/avct/uasurfer
+          recommendations:
+            - github.com/xavivars/uasurfer
+          reason: The original avct module appears abandoned.
+        - module: github.com/BurntSushi/toml
+          recommendations:
+            - github.com/pelletier/go-toml/v2
+          reason: This library panics frequently on invalid input.
+        - module: github.com/pelletier/go-toml
+          recommendations:
+            - github.com/pelletier/go-toml/v2
+          reason: This is an outdated version.
+        - module: github.com/gofrs/uuid
+          recommendations:
+            - github.com/google/uuid
+        - module: github.com/gofrs/uuid/v5
+          recommendations:
+            - github.com/google/uuid
+        - module: github.com/satori/go.uuid
+          recommendations:
+            - github.com/google/uuid
+        - module: github.com/google/uuid
+          recommendations:
+            - github.com/google/uuid
+        - module: github.com/lib/pq
+          recommendations:
+            - github.com/jackc/pgx
+          reason: This library is no longer actively maintained.
+        - module: github.com/neilotoole/errgroup
+          recommendations:
+            - golang.org/x/sync/errgroup
+          reason: This library can lead to subtle deadlocks in certain use cases.
+        - module: github.com/pariz/gountries
+          reason: This library's data is not actively maintained. Use GeoInfo data.
+        - module: github.com/pkg/errors
+          recommendations:
+            - errors
+          reason: pkg/errors is no longer maintained.
+        - module: github.com/RackSec/srslog
+          recommendations:
+            - log/syslog
+          reason: This library's data is not actively maintained.
+        - module: github.com/ua-parser/uap-go
+          recommendations:
+            - github.com/xavivars/uasurfer
+          reason: The performance of this library is absolutely abysmal.
+        - module: github.com/ugorji/go
+          recommendations:
+            - encoding/json
+            - github.com/mailru/easyjson
+          reason: This library is poorly maintained. We should default to using encoding/json and use easyjson where performance really matters.
+        - module: github.com/zeebo/assert
+          recommendations:
+            - github.com/stretchr/testify/assert
+          reason: Use github.com/stretchr/testify/assert
+        - module: gopkg.in/yaml.v2
+          recommendations:
+            - github.com/goccy/go-yaml
+          reason: Not actively maintained.
+        - module: gopkg.in/yaml.v3
+          recommendations:
+            - github.com/goccy/go-yaml
+          reason: Not actively maintained.
+        - module: gotest.tools/v3
+          recommendations:
+            - github.com/stretchr/testify/assert
+          reason: Use github.com/stretchr/testify/assert
+        - module: inet.af/netaddr
+          recommendations:
+            - net/netip
+            - go4.org/netipx
+          reason: inet.af/netaddr has been deprecated.
+        - module: github.com/jackc/pgconn
+          reason: Use github.com/jackc/pgx/v5
+        - module: github.com/jackc/pgtype
+          reason: Use github.com/jackc/pgx/v5
+        - module: github.com/jackc/pgx
+          version: < 5.0.0
+          reason: Use github.com/jackc/pgx/v5
 
     gosec:
       excludes:
@@ -693,10 +702,6 @@ linters:
 
       - linters:
           - contextcheck
-          # With recent changes to the linter, there were a lot of failures in
-          # the tests and it wasn't clear to me that fixing them would actually
-          # improve the readability.
-          - goconst
           - nilerr
           - wrapcheck
         path: _test.go
@@ -733,7 +738,12 @@ formatters:
 
     gofumpt:
       module-path: github.com/maxmind/MaxMind-DB
-      extra-rules: true
+      # extra-rules is deprecated. Name each rule so that a rule added to a
+      # later gofumpt does not turn on silently.
+      extra:
+        group-params: true
+        clothe-returns: true
+        balance-calls: true
 
     goimports:
       local-prefixes:

@@ -3,6 +3,7 @@ package writer
 import (
 	"bytes"
 	"fmt"
+	"slices"
 	"strings"
 	"testing"
 )
@@ -57,7 +58,7 @@ func TestWriteStringControlByte(t *testing.T) {
 		value := strings.Repeat("a", test.size)
 		buf := make([]byte, test.size+8)
 		n := writeString(buf, value)
-		want := append(append([]byte{}, test.wantHeader...), value...)
+		want := slices.Concat(test.wantHeader, []byte(value))
 		if got := buf[:n]; !bytes.Equal(got, want) {
 			t.Errorf("writeString(%d bytes) = %#v, want %#v",
 				test.size, got[:min(n, 4)], want[:min(len(want), 4)])
