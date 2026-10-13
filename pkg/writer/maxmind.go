@@ -4,8 +4,8 @@ import (
 	"fmt"
 	"net/netip"
 
-	"github.com/maxmind/mmdbwriter"
-	"github.com/maxmind/mmdbwriter/mmdbtype"
+	"github.com/maxmind/mmdbwriter/v2"
+	"github.com/maxmind/mmdbwriter/v2/mmdbtype"
 	"go4.org/netipx"
 )
 
@@ -118,7 +118,7 @@ func (w *Writer) writeMaxMindTestDB(
 			}
 
 			err := dbWriter.Insert(
-				netipx.PrefixIPNet(prefix),
+				prefix,
 				mmdbtype.Map{
 					"ip": mmdbtype.String(ipString),
 				},
@@ -162,7 +162,7 @@ func (w *Writer) WriteNoIPv4TestDB() error {
 	}
 
 	err = dbWriter.Insert(
-		netipx.PrefixIPNet(addr),
+		addr,
 		mmdbtype.String(addr.String()),
 	)
 	if err != nil {
@@ -200,7 +200,7 @@ func (w *Writer) WriteNoMapTestDB() error {
 
 	for _, prefix := range ipRange.Prefixes() {
 		err := dbWriter.Insert(
-			netipx.PrefixIPNet(prefix),
+			prefix,
 			mmdbtype.String(prefix.String()),
 		)
 		if err != nil {

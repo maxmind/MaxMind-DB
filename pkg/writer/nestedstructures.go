@@ -4,9 +4,8 @@ import (
 	"fmt"
 	"net/netip"
 
-	"github.com/maxmind/mmdbwriter"
-	"github.com/maxmind/mmdbwriter/mmdbtype"
-	"go4.org/netipx"
+	"github.com/maxmind/mmdbwriter/v2"
+	"github.com/maxmind/mmdbwriter/v2/mmdbtype"
 )
 
 // WriteDeeplyNestedStructuresTestDB writes an mmdb file with deeply nested record value types.
@@ -62,7 +61,7 @@ func insertNestedStructure(w *mmdbwriter.Tree, ipAddresses []netip.Prefix) error
 
 	for _, addr := range ipAddresses {
 		err := w.Insert(
-			netipx.PrefixIPNet(addr),
+			addr,
 			nestedStruct,
 		)
 		if err != nil {

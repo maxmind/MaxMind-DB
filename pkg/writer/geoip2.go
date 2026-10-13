@@ -8,9 +8,8 @@ import (
 	"path/filepath"
 	"strings"
 
-	"github.com/maxmind/mmdbwriter"
-	"github.com/maxmind/mmdbwriter/mmdbtype"
-	"go4.org/netipx"
+	"github.com/maxmind/mmdbwriter/v2"
+	"github.com/maxmind/mmdbwriter/v2/mmdbtype"
 )
 
 // WriteGeoIP2TestDB writes GeoIP2 test mmdb files.
@@ -120,7 +119,7 @@ func InsertJSON(dbWriter *mmdbwriter.Tree, filePath string) error {
 			}
 
 			err = dbWriter.Insert(
-				netipx.PrefixIPNet(prefix),
+				prefix,
 				mmdbValue,
 			)
 			if err != nil {
@@ -186,7 +185,7 @@ func populateAllNetworks(w *mmdbwriter.Tree) error {
 	}
 
 	err = w.Insert(
-		netipx.PrefixIPNet(defaultNet),
+		defaultNet,
 		mmdbtype.Map{},
 	)
 	if err != nil {

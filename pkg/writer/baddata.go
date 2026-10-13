@@ -6,9 +6,8 @@ import (
 	"os"
 	"path/filepath"
 
-	"github.com/maxmind/mmdbwriter"
-	"github.com/maxmind/mmdbwriter/mmdbtype"
-	"go4.org/netipx"
+	"github.com/maxmind/mmdbwriter/v2"
+	"github.com/maxmind/mmdbwriter/v2/mmdbtype"
 )
 
 // WriteBadDataDBs writes intentionally corrupt or extreme MMDB databases
@@ -89,7 +88,7 @@ func writeDeepArrayNestingDB(dir string) (retErr error) {
 		if err != nil {
 			return fmt.Errorf("parsing prefix %s: %w", cidr, err)
 		}
-		if err := dbWriter.Insert(netipx.PrefixIPNet(prefix), value); err != nil {
+		if err := dbWriter.Insert(prefix, value); err != nil {
 			return fmt.Errorf("inserting %s: %w", cidr, err)
 		}
 	}
@@ -141,7 +140,7 @@ func writeDeepNestingDB(dir string) (retErr error) {
 		if err != nil {
 			return fmt.Errorf("parsing prefix %s: %w", cidr, err)
 		}
-		if err := dbWriter.Insert(netipx.PrefixIPNet(prefix), value); err != nil {
+		if err := dbWriter.Insert(prefix, value); err != nil {
 			return fmt.Errorf("inserting %s: %w", cidr, err)
 		}
 	}

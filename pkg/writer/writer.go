@@ -9,7 +9,7 @@ import (
 	"os"
 	"path/filepath"
 
-	"github.com/maxmind/mmdbwriter"
+	"github.com/maxmind/mmdbwriter/v2"
 )
 
 var ipSample = []string{

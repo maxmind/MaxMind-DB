@@ -8,9 +8,8 @@ import (
 	"math/big"
 	"net/netip"
 
-	"github.com/maxmind/mmdbwriter"
-	"github.com/maxmind/mmdbwriter/mmdbtype"
-	"go4.org/netipx"
+	"github.com/maxmind/mmdbwriter/v2"
+	"github.com/maxmind/mmdbwriter/v2/mmdbtype"
 )
 
 // WriteDecoderTestDB writes an mmdb file with all possible record value types.
@@ -72,9 +71,7 @@ func insertAllTypes(w *mmdbwriter.Tree, ipAddresses []netip.Prefix) error {
 	ui64 := big.Int{}
 	ui64.Lsh(big.NewInt(1), 60)
 
-	ui128 := big.Int{}
-	ui128.Lsh(big.NewInt(1), 120)
-	mmdbUint128 := mmdbtype.Uint128(ui128)
+	mmdbUint128 := mmdbtype.Uint128{High: 1 << 56}
 
 	allTypes := mmdbtype.Map{
 		"array": mmdbtype.Slice{
@@ -106,7 +103,7 @@ func insertAllTypes(w *mmdbwriter.Tree, ipAddresses []netip.Prefix) error {
 
 	for _, addr := range ipAddresses {
 		err := w.Insert(
-			netipx.PrefixIPNet(addr),
+			addr,
 			allTypes,
 		)
 		if err != nil {
@@ -118,8 +115,7 @@ func insertAllTypes(w *mmdbwriter.Tree, ipAddresses []netip.Prefix) error {
 
 // insertAllTypesZero inserts records with all possible value types with zero values.
 func insertAllTypesZero(w *mmdbwriter.Tree, ipAddresses []netip.Prefix) error {
-	var uint128 big.Int
-	mmdbUint128 := mmdbtype.Uint128(uint128)
+	mmdbUint128 := mmdbtype.Uint128{}
 
 	zeroValues := mmdbtype.Map{
 		"array":       mmdbtype.Slice{},
@@ -138,7 +134,7 @@ func insertAllTypesZero(w *mmdbwriter.Tree, ipAddresses []netip.Prefix) error {
 
 	for _, addr := range ipAddresses {
 		err := w.Insert(
-			netipx.PrefixIPNet(addr),
+			addr,
 			zeroValues,
 		)
 		if err != nil {
@@ -150,10 +146,7 @@ func insertAllTypesZero(w *mmdbwriter.Tree, ipAddresses []netip.Prefix) error {
 
 // insertNumericMax inserts records with numeric types maxed out.
 func insertNumericMax(w *mmdbwriter.Tree, ipAddresses []netip.Prefix) error {
-	var uint128Max big.Int
-	uint128Max.Exp(big.NewInt(2), big.NewInt(128), nil)
-	uint128Max.Sub(&uint128Max, big.NewInt(1))
-	mmdbUint128 := mmdbtype.Uint128(uint128Max)
+	mmdbUint128 := mmdbtype.Uint128{High: math.MaxUint64, Low: math.MaxUint64}
 
 	numMax := mmdbtype.Map{
 		"double":  mmdbtype.Float64(math.Inf(1)),
@@ -167,7 +160,7 @@ func insertNumericMax(w *mmdbwriter.Tree, ipAddresses []netip.Prefix) error {
 
 	for _, addr := range ipAddresses {
 		err := w.Insert(
-			netipx.PrefixIPNet(addr),
+			addr,
 			numMax,
 		)
 		if err != nil {
