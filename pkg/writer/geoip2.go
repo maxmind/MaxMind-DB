@@ -1,7 +1,7 @@
 package writer
 
 import (
-	"encoding/json"
+	"encoding/json/v2"
 	"fmt"
 	"net/netip"
 	"os"
@@ -102,7 +102,7 @@ func InsertJSON(dbWriter *mmdbwriter.Tree, filePath string) error {
 	defer file.Close()
 
 	var data []map[string]any
-	if err := json.NewDecoder(file).Decode(&data); err != nil {
+	if err := json.UnmarshalRead(file, &data); err != nil {
 		return fmt.Errorf("decoding json file: %w", err)
 	}
 
