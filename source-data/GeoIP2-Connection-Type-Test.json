@@ -1,121 +1,121 @@
 [
   {
-    "::1.0.0.0/120": {
+    "1.0.0.0/24": {
       "connection_type": "Cable/DSL"
     }
   },
   {
-    "::1.0.1.0/120": {
+    "1.0.1.0/24": {
       "connection_type": "Cellular"
     }
   },
   {
-    "::1.0.2.0/119": {
+    "1.0.2.0/23": {
       "connection_type": "Cable/DSL"
     }
   },
   {
-    "::1.0.4.0/118": {
+    "1.0.4.0/22": {
       "connection_type": "Cable/DSL"
     }
   },
   {
-    "::1.0.8.0/117": {
+    "1.0.8.0/21": {
       "connection_type": "Cable/DSL"
     }
   },
   {
-    "::1.0.16.0/116": {
+    "1.0.16.0/20": {
       "connection_type": "Cable/DSL"
     }
   },
   {
-    "::1.0.32.0/115": {
+    "1.0.32.0/19": {
       "connection_type": "Cable/DSL"
     }
   },
   {
-    "::1.0.64.0/114": {
+    "1.0.64.0/18": {
       "connection_type": "Cable/DSL"
     }
   },
   {
-    "::1.0.128.0/113": {
+    "1.0.128.0/17": {
       "connection_type": "Cable/DSL"
     }
   },
   {
-    "::2.125.160.216/125": {
+    "2.125.160.216/29": {
       "connection_type": "Cable/DSL"
     }
   },
   {
-    "::149.101.100.0/124": {
+    "149.101.100.0/28": {
       "connection_type": "Cellular"
     }
   },
   {
-    "::67.43.156.0/120": {
+    "67.43.156.0/24": {
       "connection_type": "Cellular"
     }
   },
   {
-    "::80.214.0.0/116": {
+    "80.214.0.0/20": {
       "connection_type": "Cellular"
     }
   },
   {
-    "::96.1.0.0/112": {
+    "96.1.0.0/16": {
       "connection_type": "Cable/DSL"
     }
   },
   {
-    "::96.10.0.0/111": {
+    "96.10.0.0/15": {
       "connection_type": "Cable/DSL"
     }
   },
   {
-    "::96.69.0.0/112": {
+    "96.69.0.0/16": {
       "connection_type": "Cable/DSL"
     }
   },
   {
-    "::96.94.0.0/111": {
+    "96.94.0.0/15": {
       "connection_type": "Cable/DSL"
     }
   },
   {
-    "::108.96.0.0/107": {
+    "108.96.0.0/11": {
       "connection_type": "Cellular"
     }
   },
   {
-    "::175.16.199.0/120": {
+    "175.16.199.0/24": {
       "connection_type": "Cable/DSL"
     }
   },
   {
-    "::187.156.138.0/120": {
+    "187.156.138.0/24": {
       "connection_type": "Cable/DSL"
     }
   },
   {
-    "::201.243.200.0/120": {
+    "201.243.200.0/24": {
       "connection_type": "Corporate"
     }
   },
   {
-    "::207.179.48.0/116": {
+    "207.179.48.0/20": {
       "connection_type": "Cellular"
     }
   },
   {
-    "::214.78.120.0/118": {
+    "214.78.120.0/22": {
       "connection_type": "Satellite"
     }
   },
   {
-    "::216.160.83.56/125": {
+    "216.160.83.56/29": {
       "connection_type": "Corporate"
     }
   },
