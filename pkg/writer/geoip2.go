@@ -106,12 +106,17 @@ func InsertJSON(dbWriter *mmdbwriter.Tree, filePath string) error {
 		return fmt.Errorf("decoding json file: %w", err)
 	}
 
+	seen := map[netip.Prefix]struct{}{}
 	for _, record := range data {
 		for k, v := range record {
 			prefix, err := netip.ParsePrefix(k)
 			if err != nil {
 				return fmt.Errorf("parsing ip: %w", err)
 			}
+			if _, ok := seen[prefix.Masked()]; ok {
+				return fmt.Errorf("duplicate network %s in %s", k, filePath)
+			}
+			seen[prefix.Masked()] = struct{}{}
 
 			mmdbValue, err := toMMDBType(prefix.String(), v)
 			if err != nil {
