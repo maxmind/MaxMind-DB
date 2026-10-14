@@ -113,6 +113,9 @@ func InsertJSON(dbWriter *mmdbwriter.Tree, filePath string) error {
 			if err != nil {
 				return fmt.Errorf("parsing ip: %w", err)
 			}
+			if p4, ok := ipv4Prefix(prefix); ok {
+				return fmt.Errorf("network %s in %s is IPv4, write it as %s", k, filePath, p4)
+			}
 			if _, ok := seen[prefix.Masked()]; ok {
 				return fmt.Errorf("duplicate network %s in %s", k, filePath)
 			}
@@ -133,6 +136,20 @@ func InsertJSON(dbWriter *mmdbwriter.Tree, filePath string) error {
 		}
 	}
 	return nil
+}
+
+// ipv4Prefix returns the IPv4 form of prefix when prefix is an IPv4 network in
+// IPv4-compatible (::a.b.c.d) or IPv4-mapped (::ffff:a.b.c.d) form.
+func ipv4Prefix(prefix netip.Prefix) (netip.Prefix, bool) {
+	addr := prefix.Addr()
+	if !addr.Is6() || prefix.Bits() < 96 {
+		return netip.Prefix{}, false
+	}
+	b := addr.As16()
+	if !addr.Is4In6() && [12]byte(b[:12]) != [12]byte{} {
+		return netip.Prefix{}, false
+	}
+	return netip.PrefixFrom(netip.AddrFrom4([4]byte(b[12:])), prefix.Bits()-96), true
 }
 
 // toMMDBType key converts field values read from json into their corresponding mmdbtype.DataType.
