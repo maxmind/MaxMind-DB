@@ -1,5 +1,5 @@
-github.com/maxmind/mmdbwriter v1.2.0 h1:hyvDopImmgvle3aR8AaddxXnT0iQH2KWJX3vNfkwzYM=
-github.com/maxmind/mmdbwriter v1.2.0/go.mod h1:EQmKHhk2y9DRVvyNxwCLKC5FrkXZLx4snc5OlLY5XLE=
+github.com/maxmind/mmdbwriter/v2 v2.0.0-20261007223840-9a8f309f0d71 h1:JAcOLOiWieaBwuWUd0WmUpqRKlaKoVA9G4iLgxMcJa0=
+github.com/maxmind/mmdbwriter/v2 v2.0.0-20261007223840-9a8f309f0d71/go.mod h1:wgHnsdUYfQeQZI6xWn4Ix7zt1b9/Wi5Q9JJMFa1jZDk=
 github.com/oschwald/maxminddb-golang/v2 v2.7.0 h1:ZcAr3GYc2LYC8aec2mCMX9+QOF0EolH3jDFKRV/Z1+U=
 github.com/oschwald/maxminddb-golang/v2 v2.7.0/go.mod h1:DuKJLbbug6TXC0yJXgs1MWifvXHmudRWzMobMIUu04g=
 github.com/stretchr/testify v1.12.1 h1:EuwCh5fleGS7H32xRwO3wRGT7DxrDhLAT6FF8MpWDWE=

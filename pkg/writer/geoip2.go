@@ -1,16 +1,15 @@
 package writer
 
 import (
-	"encoding/json"
+	"encoding/json/v2"
 	"fmt"
 	"net/netip"
 	"os"
 	"path/filepath"
 	"strings"
 
-	"github.com/maxmind/mmdbwriter"
-	"github.com/maxmind/mmdbwriter/mmdbtype"
-	"go4.org/netipx"
+	"github.com/maxmind/mmdbwriter/v2"
+	"github.com/maxmind/mmdbwriter/v2/mmdbtype"
 )
 
 // WriteGeoIP2TestDB writes GeoIP2 test mmdb files.
@@ -103,16 +102,24 @@ func InsertJSON(dbWriter *mmdbwriter.Tree, filePath string) error {
 	defer file.Close()
 
 	var data []map[string]any
-	if err := json.NewDecoder(file).Decode(&data); err != nil {
+	if err := json.UnmarshalRead(file, &data); err != nil {
 		return fmt.Errorf("decoding json file: %w", err)
 	}
 
+	seen := map[netip.Prefix]struct{}{}
 	for _, record := range data {
 		for k, v := range record {
 			prefix, err := netip.ParsePrefix(k)
 			if err != nil {
 				return fmt.Errorf("parsing ip: %w", err)
 			}
+			if p4, ok := ipv4Prefix(prefix); ok {
+				return fmt.Errorf("network %s in %s is IPv4, write it as %s", k, filePath, p4)
+			}
+			if _, ok := seen[prefix.Masked()]; ok {
+				return fmt.Errorf("duplicate network %s in %s", k, filePath)
+			}
+			seen[prefix.Masked()] = struct{}{}
 
 			mmdbValue, err := toMMDBType(prefix.String(), v)
 			if err != nil {
@@ -120,7 +127,7 @@ func InsertJSON(dbWriter *mmdbwriter.Tree, filePath string) error {
 			}
 
 			err = dbWriter.Insert(
-				netipx.PrefixIPNet(prefix),
+				prefix,
 				mmdbValue,
 			)
 			if err != nil {
@@ -129,6 +136,20 @@ func InsertJSON(dbWriter *mmdbwriter.Tree, filePath string) error {
 		}
 	}
 	return nil
+}
+
+// ipv4Prefix returns the IPv4 form of prefix when prefix is an IPv4 network in
+// IPv4-compatible (::a.b.c.d) or IPv4-mapped (::ffff:a.b.c.d) form.
+func ipv4Prefix(prefix netip.Prefix) (netip.Prefix, bool) {
+	addr := prefix.Addr()
+	if !addr.Is6() || prefix.Bits() < 96 {
+		return netip.Prefix{}, false
+	}
+	b := addr.As16()
+	if !addr.Is4In6() && [12]byte(b[:12]) != [12]byte{} {
+		return netip.Prefix{}, false
+	}
+	return netip.PrefixFrom(netip.AddrFrom4([4]byte(b[12:])), prefix.Bits()-96), true
 }
 
 // toMMDBType key converts field values read from json into their corresponding mmdbtype.DataType.
@@ -186,7 +207,7 @@ func populateAllNetworks(w *mmdbwriter.Tree) error {
 	}
 
 	err = w.Insert(
-		netipx.PrefixIPNet(defaultNet),
+		defaultNet,
 		mmdbtype.Map{},
 	)
 	if err != nil {

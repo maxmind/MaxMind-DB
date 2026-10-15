@@ -553,7 +553,6 @@ func TestPayloadAmplificationFixturesAreSemanticallyValid(t *testing.T) {
 			if uint64(offset) > uint64(math.MaxInt) {
 				t.Fatalf("record offset %d overflows int", offset)
 			}
-			//nolint:gosec // G115: offset is checked against math.MaxInt above.
 			outerOffset := int(offset)
 
 			raw, err := os.ReadFile(path)
