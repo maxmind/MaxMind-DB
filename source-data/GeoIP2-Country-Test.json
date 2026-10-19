@@ -15974,5 +15974,404 @@
         }
       }
     }
+  },
+  {
+    "2001:480::/64": {
+      "continent": {
+        "code": "AS",
+        "geoname_id": 6255147,
+        "names": {
+          "de": "Asien",
+          "en": "Asia",
+          "es": "Asia",
+          "fr": "Asie",
+          "ja": "アジア",
+          "pt-BR": "Ásia",
+          "ru": "Азия",
+          "zh-CN": "亚洲"
+        }
+      },
+      "country": {
+        "geoname_id": 1861060,
+        "iso_code": "JP",
+        "names": {
+          "de": "Japan",
+          "en": "Japan",
+          "es": "Japón",
+          "fr": "Japon",
+          "ja": "日本",
+          "pt-BR": "Japão",
+          "ru": "Япония",
+          "zh-CN": "日本"
+        }
+      },
+      "registered_country": {
+        "geoname_id": 1861060,
+        "iso_code": "JP",
+        "names": {
+          "de": "Japan",
+          "en": "Japan",
+          "es": "Japón",
+          "fr": "Japon",
+          "ja": "日本",
+          "pt-BR": "Japão",
+          "ru": "Япония",
+          "zh-CN": "日本"
+        }
+      }
+    }
+  },
+  {
+    "214.78.0.0/23": {
+      "continent": {
+        "code": "NA",
+        "geoname_id": 6255149,
+        "names": {
+          "de": "Nordamerika",
+          "en": "North America",
+          "es": "Norteamérica",
+          "fr": "Amérique du Nord",
+          "ja": "北アメリカ",
+          "pt-BR": "América do Norte",
+          "ru": "Северная Америка",
+          "zh-CN": "北美洲"
+        }
+      },
+      "country": {
+        "geoname_id": 6252001,
+        "iso_code": "US",
+        "names": {
+          "de": "Vereinigte Staaten",
+          "en": "United States",
+          "es": "Estados Unidos",
+          "fr": "États Unis",
+          "ja": "アメリカ",
+          "pt-BR": "EUA",
+          "ru": "США",
+          "zh-CN": "美国"
+        }
+      },
+      "registered_country": {
+        "geoname_id": 6252001,
+        "iso_code": "US",
+        "names": {
+          "de": "Vereinigte Staaten",
+          "en": "United States",
+          "es": "Estados Unidos",
+          "fr": "États Unis",
+          "ja": "アメリカ",
+          "pt-BR": "EUA",
+          "ru": "США",
+          "zh-CN": "美国"
+        }
+      }
+    }
+  },
+  {
+    "6.1.0.0/25": {
+      "country": {
+        "iso_code": "US",
+        "names": {
+          "en": "United States"
+        }
+      }
+    }
+  },
+  {
+    "1.124.213.0/24": {
+      "continent": {
+        "code": "AS",
+        "geoname_id": 6255147,
+        "names": {
+          "de": "Asien",
+          "en": "Asia",
+          "es": "Asia",
+          "fr": "Asie",
+          "ja": "アジア",
+          "pt-BR": "Ásia",
+          "ru": "Азия",
+          "zh-CN": "亚洲"
+        }
+      },
+      "country": {
+        "geoname_id": 130758,
+        "iso_code": "IR",
+        "names": {
+          "de": "Iran (Islamische Republik)",
+          "en": "Iran",
+          "es": "Irán",
+          "fr": "Iran",
+          "ja": "イラン・イスラム共和国",
+          "pt-BR": "Irã",
+          "ru": "Иран",
+          "zh-CN": "伊朗伊斯兰共和国"
+        }
+      },
+      "registered_country": {
+        "geoname_id": 130758,
+        "iso_code": "IR",
+        "names": {
+          "de": "Iran (Islamische Republik)",
+          "en": "Iran",
+          "es": "Irán",
+          "fr": "Iran",
+          "ja": "イラン・イスラム共和国",
+          "pt-BR": "Irã",
+          "ru": "Иран",
+          "zh-CN": "伊朗伊斯兰共和国"
+        }
+      }
+    }
+  },
+  {
+    "1.231.232.0/24": {
+      "continent": {
+        "code": "EU",
+        "geoname_id": 6255148,
+        "names": {
+          "de": "Europa",
+          "en": "Europe",
+          "es": "Europa",
+          "fr": "Europe",
+          "ja": "ヨーロッパ",
+          "pt-BR": "Europa",
+          "ru": "Европа",
+          "zh-CN": "欧洲"
+        }
+      },
+      "country": {
+        "geoname_id": 690791,
+        "iso_code": "UA",
+        "names": {
+          "de": "Ukraine",
+          "en": "Ukraine",
+          "es": "Ucrania",
+          "fr": "Ukraine",
+          "ja": "ウクライナ共和国",
+          "pt-BR": "Ucrânia",
+          "ru": "Украина",
+          "zh-CN": "乌克兰"
+        }
+      },
+      "registered_country": {
+        "geoname_id": 690791,
+        "iso_code": "UA",
+        "names": {
+          "de": "Ukraine",
+          "en": "Ukraine",
+          "es": "Ucrania",
+          "fr": "Ukraine",
+          "ja": "ウクライナ共和国",
+          "pt-BR": "Ucrânia",
+          "ru": "Украина",
+          "zh-CN": "乌克兰"
+        }
+      }
+    }
+  },
+  {
+    "5.83.124.0/22": {
+      "registered_country": {
+        "geoname_id": 798549,
+        "is_in_european_union": true,
+        "iso_code": "RO",
+        "names": {
+          "de": "Rumänien",
+          "en": "Romania",
+          "es": "Rumanía",
+          "fr": "Roumanie",
+          "ja": "ルーマニア",
+          "pt-BR": "Romênia",
+          "ru": "Румыния",
+          "zh-CN": "罗马尼亚"
+        }
+      }
+    }
+  },
+  {
+    "2001:219::/32": {
+      "continent": {
+        "code": "EU",
+        "geoname_id": 6255148,
+        "names": {
+          "de": "Europa",
+          "en": "Europe",
+          "es": "Europa",
+          "fr": "Europe",
+          "ja": "ヨーロッパ",
+          "pt-BR": "Europa",
+          "ru": "Европа",
+          "zh-CN": "欧洲"
+        }
+      },
+      "country": {
+        "geoname_id": 2661886,
+        "is_in_european_union": true,
+        "iso_code": "SE",
+        "names": {
+          "de": "Schweden",
+          "en": "Sweden",
+          "es": "Suecia",
+          "fr": "Suède",
+          "ja": "スウェーデン王国",
+          "pt-BR": "Suécia",
+          "ru": "Швеция",
+          "zh-CN": "瑞典"
+        }
+      },
+      "registered_country": {
+        "geoname_id": 2921044,
+        "is_in_european_union": true,
+        "iso_code": "DE",
+        "names": {
+          "de": "Deutschland",
+          "en": "Germany",
+          "es": "Alemania",
+          "fr": "Allemagne",
+          "ja": "ドイツ連邦共和国",
+          "pt-BR": "Alemanha",
+          "ru": "Германия",
+          "zh-CN": "德国"
+        }
+      }
+    }
+  },
+  {
+    "2.20.32.110/31": {
+      "continent": {
+        "code": "AS",
+        "geoname_id": 6255147,
+        "names": {
+          "de": "Asien",
+          "en": "Asia",
+          "es": "Asia",
+          "fr": "Asie",
+          "ja": "アジア",
+          "pt-BR": "Ásia",
+          "ru": "Азия",
+          "zh-CN": "亚洲"
+        }
+      },
+      "country": {
+        "geoname_id": 298795,
+        "iso_code": "TR",
+        "names": {
+          "de": "Türkei",
+          "en": "Turkey",
+          "es": "Turquía",
+          "fr": "Turquie",
+          "ja": "トルコ共和国",
+          "pt-BR": "Turquia",
+          "ru": "Турция",
+          "zh-CN": "土耳其"
+        }
+      },
+      "registered_country": {
+        "geoname_id": 298795,
+        "iso_code": "TR",
+        "names": {
+          "de": "Türkei",
+          "en": "Turkey",
+          "es": "Turquía",
+          "fr": "Turquie",
+          "ja": "トルコ共和国",
+          "pt-BR": "Turquia",
+          "ru": "Турция",
+          "zh-CN": "土耳其"
+        }
+      }
+    }
+  },
+  {
+    "65.116.3.80/30": {
+      "continent": {
+        "code": "NA",
+        "geoname_id": 6255149,
+        "names": {
+          "de": "Nordamerika",
+          "en": "North America",
+          "es": "Norteamérica",
+          "fr": "Amérique du Nord",
+          "ja": "北アメリカ",
+          "pt-BR": "América do Norte",
+          "ru": "Северная Америка",
+          "zh-CN": "北美洲"
+        }
+      },
+      "country": {
+        "geoname_id": 6252001,
+        "iso_code": "US",
+        "names": {
+          "de": "USA",
+          "en": "United States",
+          "es": "Estados Unidos",
+          "fr": "États-Unis",
+          "ja": "アメリカ合衆国",
+          "pt-BR": "Estados Unidos",
+          "ru": "США",
+          "zh-CN": "美国"
+        }
+      },
+      "registered_country": {
+        "geoname_id": 6252001,
+        "iso_code": "US",
+        "names": {
+          "de": "USA",
+          "en": "United States",
+          "es": "Estados Unidos",
+          "fr": "États-Unis",
+          "ja": "アメリカ合衆国",
+          "pt-BR": "Estados Unidos",
+          "ru": "США",
+          "zh-CN": "美国"
+        }
+      }
+    }
+  },
+  {
+    "128.101.101.101/32": {
+      "continent": {
+        "code": "NA",
+        "geoname_id": 6255149,
+        "names": {
+          "de": "Nordamerika",
+          "en": "North America",
+          "es": "Norteamérica",
+          "fr": "Amérique du Nord",
+          "ja": "北アメリカ",
+          "pt-BR": "América do Norte",
+          "ru": "Северная Америка",
+          "zh-CN": "北美洲"
+        }
+      },
+      "country": {
+        "geoname_id": 6252001,
+        "iso_code": "US",
+        "names": {
+          "de": "USA",
+          "en": "United States",
+          "es": "Estados Unidos",
+          "fr": "États-Unis",
+          "ja": "アメリカ合衆国",
+          "pt-BR": "Estados Unidos",
+          "ru": "Сша",
+          "zh-CN": "美国"
+        }
+      },
+      "registered_country": {
+        "geoname_id": 6252001,
+        "iso_code": "US",
+        "names": {
+          "de": "USA",
+          "en": "United States",
+          "es": "Estados Unidos",
+          "fr": "États-Unis",
+          "ja": "アメリカ合衆国",
+          "pt-BR": "Estados Unidos",
+          "ru": "Сша",
+          "zh-CN": "美国"
+        }
+      }
+    }
   }
 ]
