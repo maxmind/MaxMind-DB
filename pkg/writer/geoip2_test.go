@@ -107,6 +107,30 @@ func TestNamesAgreeForEachGeoNameID(t *testing.T) {
 	}
 }
 
+// TestCountryHasContinent checks that each GeoIP2 and GeoLite2 record with a
+// country also has a continent, as the production databases do.
+func TestCountryHasContinent(t *testing.T) {
+	var paths []string
+	for _, pattern := range []string{"GeoIP2-*.json", "GeoLite2-*.json"} {
+		matches, err := filepath.Glob(filepath.Join("..", "..", "source-data", pattern))
+		if err != nil {
+			t.Fatal(err)
+		}
+		paths = append(paths, matches...)
+	}
+
+	for _, path := range paths {
+		name := filepath.Base(path)
+		for prefix, record := range readSourceData(t, name) {
+			_, hasCountry := record["country"]
+			_, hasContinent := record["continent"]
+			if hasCountry && !hasContinent {
+				t.Errorf("%s %s has a country but no continent", name, prefix)
+			}
+		}
+	}
+}
+
 // readSourceData returns the records of a source data file by network.
 func readSourceData(t *testing.T, name string) map[netip.Prefix]map[string]any {
 	t.Helper()
