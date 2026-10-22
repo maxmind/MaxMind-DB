@@ -1865,10 +1865,14 @@
           "geoname_id": 5037779,
           "iso_code": "MN",
           "names": {
+            "de": "Minnesota",
             "en": "Minnesota",
             "es": "Minnesota",
+            "fr": "Minnesota",
             "ja": "ミネソタ州",
-            "ru": "Миннесота"
+            "pt-BR": "Minesota",
+            "ru": "Миннесота",
+            "zh-CN": "明尼苏达州"
           }
         }
       ],
@@ -3889,6 +3893,684 @@
         "organization": "Deutsche Telekom",
         "user_type": "residential"
       }
+    }
+  },
+  {
+    "214.78.124.0/24": {
+      "continent": {
+        "code": "NA",
+        "geoname_id": 6255149,
+        "names": {
+          "de": "Nordamerika",
+          "en": "North America",
+          "es": "Norteamérica",
+          "fr": "Amérique du Nord",
+          "ja": "北アメリカ",
+          "pt-BR": "América do Norte",
+          "ru": "Северная Америка",
+          "zh-CN": "北美洲"
+        }
+      },
+      "country": {
+        "geoname_id": 6252001,
+        "iso_code": "US",
+        "names": {
+          "de": "USA",
+          "en": "United States",
+          "es": "Estados Unidos",
+          "fr": "États-Unis",
+          "ja": "アメリカ",
+          "pt-BR": "EUA",
+          "ru": "США",
+          "zh-CN": "美国"
+        }
+      },
+      "location": {
+        "accuracy_radius": 100,
+        "latitude": 36.7783,
+        "longitude": -119.4179,
+        "time_zone": "America/Los_Angeles"
+      },
+      "registered_country": {
+        "geoname_id": 6252001,
+        "iso_code": "US",
+        "names": {
+          "de": "USA",
+          "en": "United States",
+          "es": "Estados Unidos",
+          "fr": "États-Unis",
+          "ja": "アメリカ",
+          "pt-BR": "EUA",
+          "ru": "США",
+          "zh-CN": "美国"
+        }
+      },
+      "subdivisions": [
+        {
+          "geoname_id": 5332921,
+          "iso_code": "CA",
+          "names": {
+            "de": "Kalifornien",
+            "en": "California",
+            "es": "California",
+            "fr": "Californie",
+            "ja": "カリフォルニア州",
+            "pt-BR": "Califórnia",
+            "ru": "Калифорния",
+            "zh-CN": "加州"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "216.160.83.64/29": {
+      "continent": {
+        "code": "NA",
+        "geoname_id": 6255149,
+        "names": {
+          "de": "Nordamerika",
+          "en": "North America",
+          "es": "Norteamérica",
+          "fr": "Amérique du Nord",
+          "ja": "北アメリカ",
+          "pt-BR": "América do Norte",
+          "ru": "Северная Америка",
+          "zh-CN": "北美洲"
+        }
+      },
+      "country": {
+        "geoname_id": 6252001,
+        "iso_code": "US",
+        "names": {
+          "de": "USA",
+          "en": "United States",
+          "es": "Estados Unidos",
+          "fr": "États-Unis",
+          "ja": "アメリカ",
+          "pt-BR": "EUA",
+          "ru": "США",
+          "zh-CN": "美国"
+        }
+      },
+      "location": {
+        "accuracy_radius": 1000,
+        "latitude": 47.7511,
+        "longitude": -120.7401,
+        "time_zone": "America/Los_Angeles"
+      },
+      "registered_country": {
+        "geoname_id": 2635167,
+        "iso_code": "GB",
+        "names": {
+          "de": "Vereinigtes Königreich",
+          "en": "United Kingdom",
+          "es": "Reino Unido",
+          "fr": "Royaume-Uni",
+          "ja": "イギリス",
+          "pt-BR": "Reino Unido",
+          "ru": "Великобритания",
+          "zh-CN": "英国"
+        }
+      },
+      "subdivisions": [
+        {
+          "geoname_id": 5815135,
+          "iso_code": "WA",
+          "names": {
+            "en": "Washington",
+            "es": "Washington",
+            "fr": "État de Washington",
+            "ja": "ワシントン州",
+            "ru": "Вашингтон",
+            "zh-CN": "华盛顿州"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "214.61.40.1/32": {
+      "continent": {
+        "code": "NA",
+        "geoname_id": 6255149,
+        "names": {
+          "de": "Nordamerika",
+          "en": "North America",
+          "es": "Norteamérica",
+          "fr": "Amérique du Nord",
+          "ja": "北アメリカ",
+          "pt-BR": "América do Norte",
+          "ru": "Северная Америка",
+          "zh-CN": "北美洲"
+        }
+      },
+      "country": {
+        "geoname_id": 6252001,
+        "iso_code": "US",
+        "names": {
+          "de": "USA",
+          "en": "United States",
+          "es": "Estados Unidos",
+          "fr": "États-Unis",
+          "ja": "アメリカ",
+          "pt-BR": "EUA",
+          "ru": "США",
+          "zh-CN": "美国"
+        }
+      },
+      "location": {
+        "accuracy_radius": 1000,
+        "latitude": 41.3959,
+        "longitude": -72.8968,
+        "time_zone": "America/New_York"
+      },
+      "registered_country": {
+        "geoname_id": 6252001,
+        "iso_code": "US",
+        "names": {
+          "de": "USA",
+          "en": "United States",
+          "es": "Estados Unidos",
+          "fr": "États-Unis",
+          "ja": "アメリカ",
+          "pt-BR": "EUA",
+          "ru": "США",
+          "zh-CN": "美国"
+        }
+      },
+      "subdivisions": [
+        {
+          "geoname_id": 4831725,
+          "iso_code": "CT",
+          "names": {
+            "de": "Connecticut",
+            "en": "Connecticut",
+            "es": "Connecticut",
+            "fr": "Connecticut",
+            "ja": "コネチカット州",
+            "pt-BR": "Coneticute",
+            "ru": "Коннектикут",
+            "zh-CN": "康乃狄克州"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "214.61.40.2/32": {
+      "continent": {
+        "code": "NA",
+        "geoname_id": 6255149,
+        "names": {
+          "de": "Nordamerika",
+          "en": "North America",
+          "es": "Norteamérica",
+          "fr": "Amérique du Nord",
+          "ja": "北アメリカ",
+          "pt-BR": "América do Norte",
+          "ru": "Северная Америка",
+          "zh-CN": "北美洲"
+        }
+      },
+      "country": {
+        "geoname_id": 6252001,
+        "iso_code": "US",
+        "names": {
+          "de": "USA",
+          "en": "United States",
+          "es": "Estados Unidos",
+          "fr": "États-Unis",
+          "ja": "アメリカ",
+          "pt-BR": "EUA",
+          "ru": "США",
+          "zh-CN": "美国"
+        }
+      },
+      "location": {
+        "accuracy_radius": 1000,
+        "latitude": 39.7503,
+        "longitude": -75.5453,
+        "time_zone": "America/New_York"
+      },
+      "registered_country": {
+        "geoname_id": 6252001,
+        "iso_code": "US",
+        "names": {
+          "de": "USA",
+          "en": "United States",
+          "es": "Estados Unidos",
+          "fr": "États-Unis",
+          "ja": "アメリカ",
+          "pt-BR": "EUA",
+          "ru": "США",
+          "zh-CN": "美国"
+        }
+      },
+      "subdivisions": [
+        {
+          "geoname_id": 4142224,
+          "iso_code": "DE",
+          "names": {
+            "de": "Delaware",
+            "en": "Delaware",
+            "es": "Delaware",
+            "fr": "Delaware",
+            "ja": "デラウェア州",
+            "pt-BR": "Delauare",
+            "ru": "Делавэр",
+            "zh-CN": "特拉华州"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "214.61.40.3/32": {
+      "continent": {
+        "code": "NA",
+        "geoname_id": 6255149,
+        "names": {
+          "de": "Nordamerika",
+          "en": "North America",
+          "es": "Norteamérica",
+          "fr": "Amérique du Nord",
+          "ja": "北アメリカ",
+          "pt-BR": "América do Norte",
+          "ru": "Северная Америка",
+          "zh-CN": "北美洲"
+        }
+      },
+      "country": {
+        "geoname_id": 6252001,
+        "iso_code": "US",
+        "names": {
+          "de": "USA",
+          "en": "United States",
+          "es": "Estados Unidos",
+          "fr": "États-Unis",
+          "ja": "アメリカ",
+          "pt-BR": "EUA",
+          "ru": "США",
+          "zh-CN": "美国"
+        }
+      },
+      "location": {
+        "accuracy_radius": 1000,
+        "latitude": 44.9834,
+        "longitude": -93.2622,
+        "time_zone": "America/Chicago"
+      },
+      "registered_country": {
+        "geoname_id": 6252001,
+        "iso_code": "US",
+        "names": {
+          "de": "USA",
+          "en": "United States",
+          "es": "Estados Unidos",
+          "fr": "États-Unis",
+          "ja": "アメリカ",
+          "pt-BR": "EUA",
+          "ru": "США",
+          "zh-CN": "美国"
+        }
+      },
+      "subdivisions": [
+        {
+          "geoname_id": 5037779,
+          "iso_code": "MN",
+          "names": {
+            "de": "Minnesota",
+            "en": "Minnesota",
+            "es": "Minnesota",
+            "fr": "Minnesota",
+            "ja": "ミネソタ州",
+            "pt-BR": "Minesota",
+            "ru": "Миннесота",
+            "zh-CN": "明尼苏达州"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "214.61.40.4/32": {
+      "continent": {
+        "code": "NA",
+        "geoname_id": 6255149,
+        "names": {
+          "de": "Nordamerika",
+          "en": "North America",
+          "es": "Norteamérica",
+          "fr": "Amérique du Nord",
+          "ja": "北アメリカ",
+          "pt-BR": "América do Norte",
+          "ru": "Северная Америка",
+          "zh-CN": "北美洲"
+        }
+      },
+      "country": {
+        "geoname_id": 6252001,
+        "iso_code": "US",
+        "names": {
+          "de": "USA",
+          "en": "United States",
+          "es": "Estados Unidos",
+          "fr": "États-Unis",
+          "ja": "アメリカ",
+          "pt-BR": "EUA",
+          "ru": "США",
+          "zh-CN": "美国"
+        }
+      },
+      "location": {
+        "accuracy_radius": 1000,
+        "latitude": 46.5934,
+        "longitude": -112.0396,
+        "time_zone": "America/Denver"
+      },
+      "registered_country": {
+        "geoname_id": 6252001,
+        "iso_code": "US",
+        "names": {
+          "de": "USA",
+          "en": "United States",
+          "es": "Estados Unidos",
+          "fr": "États-Unis",
+          "ja": "アメリカ",
+          "pt-BR": "EUA",
+          "ru": "США",
+          "zh-CN": "美国"
+        }
+      },
+      "subdivisions": [
+        {
+          "geoname_id": 5667009,
+          "iso_code": "MT",
+          "names": {
+            "de": "Montana",
+            "en": "Montana",
+            "es": "Montana",
+            "fr": "Montana",
+            "ja": "モンタナ州",
+            "pt-BR": "Montana",
+            "ru": "Монтана",
+            "zh-CN": "蒙大拿州"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "214.61.40.5/32": {
+      "continent": {
+        "code": "NA",
+        "geoname_id": 6255149,
+        "names": {
+          "de": "Nordamerika",
+          "en": "North America",
+          "es": "Norteamérica",
+          "fr": "Amérique du Nord",
+          "ja": "北アメリカ",
+          "pt-BR": "América do Norte",
+          "ru": "Северная Америка",
+          "zh-CN": "北美洲"
+        }
+      },
+      "country": {
+        "geoname_id": 6252001,
+        "iso_code": "US",
+        "names": {
+          "de": "USA",
+          "en": "United States",
+          "es": "Estados Unidos",
+          "fr": "États-Unis",
+          "ja": "アメリカ",
+          "pt-BR": "EUA",
+          "ru": "США",
+          "zh-CN": "美国"
+        }
+      },
+      "location": {
+        "accuracy_radius": 1000,
+        "latitude": 42.9948,
+        "longitude": -71.458,
+        "time_zone": "America/New_York"
+      },
+      "registered_country": {
+        "geoname_id": 6252001,
+        "iso_code": "US",
+        "names": {
+          "de": "USA",
+          "en": "United States",
+          "es": "Estados Unidos",
+          "fr": "États-Unis",
+          "ja": "アメリカ",
+          "pt-BR": "EUA",
+          "ru": "США",
+          "zh-CN": "美国"
+        }
+      },
+      "subdivisions": [
+        {
+          "geoname_id": 5090174,
+          "iso_code": "NH",
+          "names": {
+            "de": "New Hampshire",
+            "en": "New Hampshire",
+            "es": "Nueva Hampshire",
+            "fr": "New Hampshire",
+            "ja": "ニューハンプシャー州",
+            "pt-BR": "New Hampshire",
+            "ru": "Нью-Гэмпшир",
+            "zh-CN": "新罕布什尔州"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "214.61.40.6/32": {
+      "continent": {
+        "code": "NA",
+        "geoname_id": 6255149,
+        "names": {
+          "de": "Nordamerika",
+          "en": "North America",
+          "es": "Norteamérica",
+          "fr": "Amérique du Nord",
+          "ja": "北アメリカ",
+          "pt-BR": "América do Norte",
+          "ru": "Северная Америка",
+          "zh-CN": "北美洲"
+        }
+      },
+      "country": {
+        "geoname_id": 6252001,
+        "iso_code": "US",
+        "names": {
+          "de": "USA",
+          "en": "United States",
+          "es": "Estados Unidos",
+          "fr": "États-Unis",
+          "ja": "アメリカ",
+          "pt-BR": "EUA",
+          "ru": "США",
+          "zh-CN": "美国"
+        }
+      },
+      "location": {
+        "accuracy_radius": 1000,
+        "latitude": 40.7126,
+        "longitude": -74.0066,
+        "time_zone": "America/New_York"
+      },
+      "registered_country": {
+        "geoname_id": 6252001,
+        "iso_code": "US",
+        "names": {
+          "de": "USA",
+          "en": "United States",
+          "es": "Estados Unidos",
+          "fr": "États-Unis",
+          "ja": "アメリカ",
+          "pt-BR": "EUA",
+          "ru": "США",
+          "zh-CN": "美国"
+        }
+      },
+      "subdivisions": [
+        {
+          "geoname_id": 5128638,
+          "iso_code": "NY",
+          "names": {
+            "de": "New York",
+            "en": "New York",
+            "es": "Nueva York",
+            "fr": "New York",
+            "ja": "ニューヨーク州",
+            "pt-BR": "Nova Iorque",
+            "ru": "Нью-Йорк",
+            "zh-CN": "纽约州"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "214.61.40.7/32": {
+      "continent": {
+        "code": "NA",
+        "geoname_id": 6255149,
+        "names": {
+          "de": "Nordamerika",
+          "en": "North America",
+          "es": "Norteamérica",
+          "fr": "Amérique du Nord",
+          "ja": "北アメリカ",
+          "pt-BR": "América do Norte",
+          "ru": "Северная Америка",
+          "zh-CN": "北美洲"
+        }
+      },
+      "country": {
+        "geoname_id": 6252001,
+        "iso_code": "US",
+        "names": {
+          "de": "USA",
+          "en": "United States",
+          "es": "Estados Unidos",
+          "fr": "États-Unis",
+          "ja": "アメリカ",
+          "pt-BR": "EUA",
+          "ru": "США",
+          "zh-CN": "美国"
+        }
+      },
+      "location": {
+        "accuracy_radius": 1000,
+        "latitude": 45.5248,
+        "longitude": -122.6789,
+        "time_zone": "America/Los_Angeles"
+      },
+      "registered_country": {
+        "geoname_id": 6252001,
+        "iso_code": "US",
+        "names": {
+          "de": "USA",
+          "en": "United States",
+          "es": "Estados Unidos",
+          "fr": "États-Unis",
+          "ja": "アメリカ",
+          "pt-BR": "EUA",
+          "ru": "США",
+          "zh-CN": "美国"
+        }
+      },
+      "subdivisions": [
+        {
+          "geoname_id": 5744337,
+          "iso_code": "OR",
+          "names": {
+            "de": "Oregon",
+            "en": "Oregon",
+            "es": "Oregón",
+            "fr": "Oregon",
+            "ja": "オレゴン州",
+            "pt-BR": "Oregon",
+            "ru": "Орегон",
+            "zh-CN": "俄勒冈州"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "214.61.40.8/32": {
+      "continent": {
+        "code": "NA",
+        "geoname_id": 6255149,
+        "names": {
+          "de": "Nordamerika",
+          "en": "North America",
+          "es": "Norteamérica",
+          "fr": "Amérique du Nord",
+          "ja": "北アメリカ",
+          "pt-BR": "América do Norte",
+          "ru": "Северная Америка",
+          "zh-CN": "北美洲"
+        }
+      },
+      "country": {
+        "geoname_id": 6252001,
+        "iso_code": "US",
+        "names": {
+          "de": "USA",
+          "en": "United States",
+          "es": "Estados Unidos",
+          "fr": "États-Unis",
+          "ja": "アメリカ",
+          "pt-BR": "EUA",
+          "ru": "США",
+          "zh-CN": "美国"
+        }
+      },
+      "location": {
+        "accuracy_radius": 1000,
+        "latitude": 32.7797,
+        "longitude": -96.8022,
+        "time_zone": "America/Chicago"
+      },
+      "registered_country": {
+        "geoname_id": 6252001,
+        "iso_code": "US",
+        "names": {
+          "de": "USA",
+          "en": "United States",
+          "es": "Estados Unidos",
+          "fr": "États-Unis",
+          "ja": "アメリカ",
+          "pt-BR": "EUA",
+          "ru": "США",
+          "zh-CN": "美国"
+        }
+      },
+      "subdivisions": [
+        {
+          "geoname_id": 4736286,
+          "iso_code": "TX",
+          "names": {
+            "de": "Texas",
+            "en": "Texas",
+            "es": "Texas",
+            "fr": "Texas",
+            "ja": "テキサス州",
+            "pt-BR": "Texas",
+            "ru": "Техас",
+            "zh-CN": "得克萨斯州"
+          }
+        }
+      ]
     }
   }
 ]
