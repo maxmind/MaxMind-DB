@@ -68,10 +68,14 @@
           "geoname_id": 6269131,
           "iso_code": "ENG",
           "names": {
+            "de": "England",
             "en": "England",
             "es": "Inglaterra",
             "fr": "Angleterre",
-            "pt-BR": "Inglaterra"
+            "ja": "イングランド",
+            "pt-BR": "Inglaterra",
+            "ru": "Англия",
+            "zh-CN": "英格兰"
           }
         },
         {
@@ -184,8 +188,8 @@
           "en": "United States",
           "es": "Estados Unidos",
           "fr": "États-Unis",
-          "ja": "アメリカ合衆国",
-          "pt-BR": "Estados Unidos",
+          "ja": "アメリカ",
+          "pt-BR": "EUA",
           "ru": "США",
           "zh-CN": "美国"
         }
@@ -209,8 +213,8 @@
           "en": "United States",
           "es": "Estados Unidos",
           "fr": "États-Unis",
-          "ja": "アメリカ合衆国",
-          "pt-BR": "Estados Unidos",
+          "ja": "アメリカ",
+          "pt-BR": "EUA",
           "ru": "США",
           "zh-CN": "美国"
         }
@@ -257,7 +261,8 @@
           "fr": "Londres",
           "ja": "ロンドン",
           "pt-BR": "Londres",
-          "ru": "Лондон"
+          "ru": "Лондон",
+          "zh-CN": "伦敦"
         }
       },
       "continent": {
@@ -303,8 +308,8 @@
           "en": "United States",
           "es": "Estados Unidos",
           "fr": "États-Unis",
-          "ja": "アメリカ合衆国",
-          "pt-BR": "Estados Unidos",
+          "ja": "アメリカ",
+          "pt-BR": "EUA",
           "ru": "США",
           "zh-CN": "美国"
         }
@@ -315,10 +320,14 @@
           "geoname_id": 6269131,
           "iso_code": "ENG",
           "names": {
+            "de": "England",
             "en": "England",
             "es": "Inglaterra",
             "fr": "Angleterre",
-            "pt-BR": "Inglaterra"
+            "ja": "イングランド",
+            "pt-BR": "Inglaterra",
+            "ru": "Англия",
+            "zh-CN": "英格兰"
           }
         }
       ],
@@ -427,7 +436,7 @@
         "names": {
           "de": "Nordamerika",
           "en": "North America",
-          "es": "América del Norte",
+          "es": "Norteamérica",
           "fr": "Amérique du Nord",
           "ja": "北アメリカ",
           "pt-BR": "América do Norte",
@@ -444,8 +453,8 @@
           "en": "United States",
           "es": "Estados Unidos",
           "fr": "États-Unis",
-          "ja": "アメリカ合衆国",
-          "pt-BR": "Estados Unidos",
+          "ja": "アメリカ",
+          "pt-BR": "EUA",
           "ru": "США",
           "zh-CN": "美国"
         }
@@ -623,8 +632,8 @@
           "en": "United States",
           "es": "Estados Unidos",
           "fr": "États-Unis",
-          "ja": "アメリカ合衆国",
-          "pt-BR": "Estados Unidos",
+          "ja": "アメリカ",
+          "pt-BR": "EUA",
           "ru": "США",
           "zh-CN": "美国"
         },
@@ -651,7 +660,7 @@
         "names": {
           "de": "Nordamerika",
           "en": "North America",
-          "es": "América del Norte",
+          "es": "Norteamérica",
           "fr": "Amérique du Nord",
           "ja": "北アメリカ",
           "pt-BR": "América do Norte",
@@ -668,8 +677,8 @@
           "en": "United States",
           "es": "Estados Unidos",
           "fr": "États-Unis",
-          "ja": "アメリカ合衆国",
-          "pt-BR": "Estados Unidos",
+          "ja": "アメリカ",
+          "pt-BR": "EUA",
           "ru": "США",
           "zh-CN": "美国"
         }
@@ -817,10 +826,10 @@
         "geoname_id": 6252001,
         "iso_code": "US",
         "names": {
-          "de": "Vereinigte Staaten",
+          "de": "USA",
           "en": "United States",
           "es": "Estados Unidos",
-          "fr": "États Unis",
+          "fr": "États-Unis",
           "ja": "アメリカ",
           "pt-BR": "EUA",
           "ru": "США",
@@ -842,10 +851,10 @@
         "geoname_id": 6252001,
         "iso_code": "US",
         "names": {
-          "de": "Vereinigte Staaten",
+          "de": "USA",
           "en": "United States",
           "es": "Estados Unidos",
-          "fr": "États Unis",
+          "fr": "États-Unis",
           "ja": "アメリカ",
           "pt-BR": "EUA",
           "ru": "США",
@@ -912,10 +921,10 @@
         "geoname_id": 6252001,
         "iso_code": "US",
         "names": {
-          "de": "Vereinigte Staaten",
+          "de": "USA",
           "en": "United States",
           "es": "Estados Unidos",
-          "fr": "États Unis",
+          "fr": "États-Unis",
           "ja": "アメリカ",
           "pt-BR": "EUA",
           "ru": "США",
@@ -936,10 +945,10 @@
         "geoname_id": 6252001,
         "iso_code": "US",
         "names": {
-          "de": "Vereinigte Staaten",
+          "de": "USA",
           "en": "United States",
           "es": "Estados Unidos",
-          "fr": "États Unis",
+          "fr": "États-Unis",
           "ja": "アメリカ",
           "pt-BR": "EUA",
           "ru": "США",
@@ -1007,10 +1016,10 @@
         "geoname_id": 6252001,
         "iso_code": "US",
         "names": {
-          "de": "Vereinigte Staaten",
+          "de": "USA",
           "en": "United States",
           "es": "Estados Unidos",
-          "fr": "États Unis",
+          "fr": "États-Unis",
           "ja": "アメリカ",
           "pt-BR": "EUA",
           "ru": "США",
@@ -1032,10 +1041,10 @@
         "geoname_id": 6252001,
         "iso_code": "US",
         "names": {
-          "de": "Vereinigte Staaten",
+          "de": "USA",
           "en": "United States",
           "es": "Estados Unidos",
-          "fr": "États Unis",
+          "fr": "États-Unis",
           "ja": "アメリカ",
           "pt-BR": "EUA",
           "ru": "США",
@@ -1131,8 +1140,8 @@
           "en": "United States",
           "es": "Estados Unidos",
           "fr": "États-Unis",
-          "ja": "アメリカ合衆国",
-          "pt-BR": "Estados Unidos",
+          "ja": "アメリカ",
+          "pt-BR": "EUA",
           "ru": "США",
           "zh-CN": "美国"
         }
@@ -1163,14 +1172,14 @@
         "geoname_id": 130758,
         "iso_code": "IR",
         "names": {
-          "de": "Iran (Islamische Republik)",
+          "de": "Iran",
           "en": "Iran",
           "es": "Irán",
           "fr": "Iran",
           "ja": "イラン・イスラム共和国",
           "pt-BR": "Irã",
           "ru": "Иран",
-          "zh-CN": "伊朗伊斯兰共和国"
+          "zh-CN": "伊朗"
         }
       },
       "location": {
@@ -1183,14 +1192,14 @@
         "geoname_id": 130758,
         "iso_code": "IR",
         "names": {
-          "de": "Iran (Islamische Republik)",
+          "de": "Iran",
           "en": "Iran",
           "es": "Irán",
           "fr": "Iran",
           "ja": "イラン・イスラム共和国",
           "pt-BR": "Irã",
           "ru": "Иран",
-          "zh-CN": "伊朗伊斯兰共和国"
+          "zh-CN": "伊朗"
         }
       },
       "traits": {
@@ -1343,8 +1352,8 @@
           "en": "United States",
           "es": "Estados Unidos",
           "fr": "États-Unis",
-          "ja": "アメリカ合衆国",
-          "pt-BR": "Estados Unidos",
+          "ja": "アメリカ",
+          "pt-BR": "EUA",
           "ru": "США",
           "zh-CN": "美国"
         }
@@ -1368,8 +1377,8 @@
           "en": "United States",
           "es": "Estados Unidos",
           "fr": "États-Unis",
-          "ja": "アメリカ合衆国",
-          "pt-BR": "Estados Unidos",
+          "ja": "アメリカ",
+          "pt-BR": "EUA",
           "ru": "США",
           "zh-CN": "美国"
         }
@@ -1720,8 +1729,8 @@
           "en": "United States",
           "es": "Estados Unidos",
           "fr": "États-Unis",
-          "ja": "アメリカ合衆国",
-          "pt-BR": "Estados Unidos",
+          "ja": "アメリカ",
+          "pt-BR": "EUA",
           "ru": "США",
           "zh-CN": "美国"
         }
@@ -1745,8 +1754,8 @@
           "en": "United States",
           "es": "Estados Unidos",
           "fr": "États-Unis",
-          "ja": "アメリカ合衆国",
-          "pt-BR": "Estados Unidos",
+          "ja": "アメリカ",
+          "pt-BR": "EUA",
           "ru": "США",
           "zh-CN": "美国"
         }
@@ -1757,12 +1766,14 @@
           "geoname_id": 4736286,
           "iso_code": "TX",
           "names": {
+            "de": "Texas",
             "en": "Texas",
             "es": "Texas",
             "fr": "Texas",
             "ja": "テキサス州",
+            "pt-BR": "Texas",
             "ru": "Техас",
-            "zh-CN": "德克萨斯州"
+            "zh-CN": "得克萨斯州"
           }
         }
       ],
@@ -1817,9 +1828,9 @@
           "en": "United States",
           "es": "Estados Unidos",
           "fr": "États-Unis",
-          "ja": "アメリカ合衆国",
-          "pt-BR": "Estados Unidos",
-          "ru": "Сша",
+          "ja": "アメリカ",
+          "pt-BR": "EUA",
+          "ru": "США",
           "zh-CN": "美国"
         }
       },
@@ -1842,9 +1853,9 @@
           "en": "United States",
           "es": "Estados Unidos",
           "fr": "États-Unis",
-          "ja": "アメリカ合衆国",
-          "pt-BR": "Estados Unidos",
-          "ru": "Сша",
+          "ja": "アメリカ",
+          "pt-BR": "EUA",
+          "ru": "США",
           "zh-CN": "美国"
         }
       },
@@ -2022,8 +2033,8 @@
           "en": "United States",
           "es": "Estados Unidos",
           "fr": "États-Unis",
-          "ja": "アメリカ合衆国",
-          "pt-BR": "Estados Unidos",
+          "ja": "アメリカ",
+          "pt-BR": "EUA",
           "ru": "США",
           "zh-CN": "美国"
         }
@@ -2047,8 +2058,8 @@
           "en": "United States",
           "es": "Estados Unidos",
           "fr": "États-Unis",
-          "ja": "アメリカ合衆国",
-          "pt-BR": "Estados Unidos",
+          "ja": "アメリカ",
+          "pt-BR": "EUA",
           "ru": "США",
           "zh-CN": "美国"
         }
@@ -2066,7 +2077,7 @@
             "ja": "カリフォルニア州",
             "pt-BR": "Califórnia",
             "ru": "Калифорния",
-            "zh-CN": "加利福尼亚州"
+            "zh-CN": "加州"
           }
         }
       ],
@@ -2112,7 +2123,7 @@
           "de": "USA",
           "en": "United States",
           "es": "Estados Unidos",
-          "fr": "États Unis",
+          "fr": "États-Unis",
           "ja": "アメリカ",
           "pt-BR": "EUA",
           "ru": "США",
@@ -2137,7 +2148,7 @@
           "de": "USA",
           "en": "United States",
           "es": "Estados Unidos",
-          "fr": "États Unis",
+          "fr": "États-Unis",
           "ja": "アメリカ",
           "pt-BR": "EUA",
           "ru": "США",
@@ -2209,8 +2220,8 @@
           "en": "United States",
           "es": "Estados Unidos",
           "fr": "États-Unis",
-          "ja": "アメリカ合衆国",
-          "pt-BR": "Estados Unidos",
+          "ja": "アメリカ",
+          "pt-BR": "EUA",
           "ru": "США",
           "zh-CN": "美国"
         }
@@ -2234,8 +2245,8 @@
           "en": "United States",
           "es": "Estados Unidos",
           "fr": "États-Unis",
-          "ja": "アメリカ合衆国",
-          "pt-BR": "Estados Unidos",
+          "ja": "アメリカ",
+          "pt-BR": "EUA",
           "ru": "США",
           "zh-CN": "美国"
         }
@@ -2253,7 +2264,7 @@
             "ja": "カリフォルニア州",
             "pt-BR": "Califórnia",
             "ru": "Калифорния",
-            "zh-CN": "加利福尼亚州"
+            "zh-CN": "加州"
           }
         }
       ],
@@ -2281,7 +2292,8 @@
           "fr": "Londres",
           "ja": "ロンドン",
           "pt-BR": "Londres",
-          "ru": "Лондон"
+          "ru": "Лондон",
+          "zh-CN": "伦敦"
         }
       },
       "continent": {
@@ -2327,8 +2339,8 @@
           "en": "United States",
           "es": "Estados Unidos",
           "fr": "États-Unis",
-          "ja": "アメリカ合衆国",
-          "pt-BR": "Estados Unidos",
+          "ja": "アメリカ",
+          "pt-BR": "EUA",
           "ru": "США",
           "zh-CN": "美国"
         }
@@ -2339,10 +2351,14 @@
           "geoname_id": 6269131,
           "iso_code": "ENG",
           "names": {
+            "de": "England",
             "en": "England",
             "es": "Inglaterra",
             "fr": "Angleterre",
-            "pt-BR": "Inglaterra"
+            "ja": "イングランド",
+            "pt-BR": "Inglaterra",
+            "ru": "Англия",
+            "zh-CN": "英格兰"
           }
         }
       ],
@@ -2477,7 +2493,7 @@
           "de": "USA",
           "en": "United States",
           "es": "Estados Unidos",
-          "fr": "États Unis",
+          "fr": "États-Unis",
           "ja": "アメリカ",
           "pt-BR": "EUA",
           "ru": "США",
@@ -2497,7 +2513,7 @@
           "de": "USA",
           "en": "United States",
           "es": "Estados Unidos",
-          "fr": "États Unis",
+          "fr": "États-Unis",
           "ja": "アメリカ",
           "pt-BR": "EUA",
           "ru": "США",
@@ -2558,7 +2574,7 @@
           "de": "USA",
           "en": "United States",
           "es": "Estados Unidos",
-          "fr": "États Unis",
+          "fr": "États-Unis",
           "ja": "アメリカ",
           "pt-BR": "EUA",
           "ru": "США",
@@ -2583,7 +2599,7 @@
           "de": "USA",
           "en": "United States",
           "es": "Estados Unidos",
-          "fr": "États Unis",
+          "fr": "États-Unis",
           "ja": "アメリカ",
           "pt-BR": "EUA",
           "ru": "США",
@@ -2642,7 +2658,7 @@
           "de": "USA",
           "en": "United States",
           "es": "Estados Unidos",
-          "fr": "États Unis",
+          "fr": "États-Unis",
           "ja": "アメリカ",
           "pt-BR": "EUA",
           "ru": "США",
@@ -2667,7 +2683,7 @@
           "de": "USA",
           "en": "United States",
           "es": "Estados Unidos",
-          "fr": "États Unis",
+          "fr": "États-Unis",
           "ja": "アメリカ",
           "pt-BR": "EUA",
           "ru": "США",
@@ -2727,7 +2743,7 @@
           "de": "USA",
           "en": "United States",
           "es": "Estados Unidos",
-          "fr": "États Unis",
+          "fr": "États-Unis",
           "ja": "アメリカ",
           "pt-BR": "EUA",
           "ru": "США",
@@ -2752,7 +2768,7 @@
           "de": "USA",
           "en": "United States",
           "es": "Estados Unidos",
-          "fr": "États Unis",
+          "fr": "États-Unis",
           "ja": "アメリカ",
           "pt-BR": "EUA",
           "ru": "США",
@@ -2815,7 +2831,7 @@
           "de": "USA",
           "en": "United States",
           "es": "Estados Unidos",
-          "fr": "États Unis",
+          "fr": "États-Unis",
           "ja": "アメリカ",
           "pt-BR": "EUA",
           "ru": "США",
@@ -2840,7 +2856,7 @@
           "de": "USA",
           "en": "United States",
           "es": "Estados Unidos",
-          "fr": "États Unis",
+          "fr": "États-Unis",
           "ja": "アメリカ",
           "pt-BR": "EUA",
           "ru": "США",
@@ -2897,7 +2913,7 @@
           "de": "USA",
           "en": "United States",
           "es": "Estados Unidos",
-          "fr": "États Unis",
+          "fr": "États-Unis",
           "ja": "アメリカ",
           "pt-BR": "EUA",
           "ru": "США",
@@ -2922,7 +2938,7 @@
           "de": "USA",
           "en": "United States",
           "es": "Estados Unidos",
-          "fr": "États Unis",
+          "fr": "États-Unis",
           "ja": "アメリカ",
           "pt-BR": "EUA",
           "ru": "США",
@@ -2983,7 +2999,7 @@
           "de": "USA",
           "en": "United States",
           "es": "Estados Unidos",
-          "fr": "États Unis",
+          "fr": "États-Unis",
           "ja": "アメリカ",
           "pt-BR": "EUA",
           "ru": "США",
@@ -3008,7 +3024,7 @@
           "de": "USA",
           "en": "United States",
           "es": "Estados Unidos",
-          "fr": "États Unis",
+          "fr": "États-Unis",
           "ja": "アメリカ",
           "pt-BR": "EUA",
           "ru": "США",
@@ -3058,7 +3074,7 @@
           "de": "USA",
           "en": "United States",
           "es": "Estados Unidos",
-          "fr": "États Unis",
+          "fr": "États-Unis",
           "ja": "アメリカ",
           "pt-BR": "EUA",
           "ru": "США",
@@ -3078,7 +3094,7 @@
           "de": "USA",
           "en": "United States",
           "es": "Estados Unidos",
-          "fr": "États Unis",
+          "fr": "États-Unis",
           "ja": "アメリカ",
           "pt-BR": "EUA",
           "ru": "США",
@@ -3139,8 +3155,8 @@
           "en": "United States",
           "es": "Estados Unidos",
           "fr": "États-Unis",
-          "ja": "アメリカ合衆国",
-          "pt-BR": "Estados Unidos",
+          "ja": "アメリカ",
+          "pt-BR": "EUA",
           "ru": "США",
           "zh-CN": "美国"
         }
@@ -3164,8 +3180,8 @@
           "en": "United States",
           "es": "Estados Unidos",
           "fr": "États-Unis",
-          "ja": "アメリカ合衆国",
-          "pt-BR": "Estados Unidos",
+          "ja": "アメリカ",
+          "pt-BR": "EUA",
           "ru": "США",
           "zh-CN": "美国"
         }
@@ -3176,12 +3192,14 @@
           "geoname_id": 4736286,
           "iso_code": "TX",
           "names": {
+            "de": "Texas",
             "en": "Texas",
             "es": "Texas",
             "fr": "Texas",
             "ja": "テキサス州",
+            "pt-BR": "Texas",
             "ru": "Техас",
-            "zh-CN": "德克萨斯州"
+            "zh-CN": "得克萨斯州"
           }
         }
       ],
@@ -3232,8 +3250,8 @@
           "en": "United States",
           "es": "Estados Unidos",
           "fr": "États-Unis",
-          "ja": "アメリカ合衆国",
-          "pt-BR": "Estados Unidos",
+          "ja": "アメリカ",
+          "pt-BR": "EUA",
           "ru": "США",
           "zh-CN": "美国"
         }
@@ -3257,8 +3275,8 @@
           "en": "United States",
           "es": "Estados Unidos",
           "fr": "États-Unis",
-          "ja": "アメリカ合衆国",
-          "pt-BR": "Estados Unidos",
+          "ja": "アメリカ",
+          "pt-BR": "EUA",
           "ru": "США",
           "zh-CN": "美国"
         }
@@ -3269,12 +3287,14 @@
           "geoname_id": 4736286,
           "iso_code": "TX",
           "names": {
+            "de": "Texas",
             "en": "Texas",
             "es": "Texas",
             "fr": "Texas",
             "ja": "テキサス州",
+            "pt-BR": "Texas",
             "ru": "Техас",
-            "zh-CN": "德克萨斯州"
+            "zh-CN": "得克萨斯州"
           }
         }
       ],
@@ -3368,8 +3388,8 @@
         "iso_code": "CN",
         "names": {
           "de": "China",
-          "en": "People's Republic of China",
-          "es": "República Popular China",
+          "en": "China",
+          "es": "China",
           "fr": "Chine",
           "ja": "中国",
           "pt-BR": "China",
@@ -3387,8 +3407,8 @@
         "iso_code": "CN",
         "names": {
           "de": "China",
-          "en": "People's Republic of China",
-          "es": "República Popular China",
+          "en": "China",
+          "es": "China",
           "fr": "Chine",
           "ja": "中国",
           "pt-BR": "China",
@@ -3580,7 +3600,8 @@
             "fr": "Angleterre",
             "ja": "イングランド",
             "pt-BR": "Inglaterra",
-            "ru": "Англия"
+            "ru": "Англия",
+            "zh-CN": "英格兰"
           }
         }
       ],
@@ -3633,7 +3654,7 @@
           "en": "Ukraine",
           "es": "Ucrania",
           "fr": "Ukraine",
-          "ja": "ウクライナ",
+          "ja": "ウクライナ共和国",
           "pt-BR": "Ucrânia",
           "ru": "Украина",
           "zh-CN": "乌克兰"
@@ -3653,7 +3674,7 @@
           "en": "Ukraine",
           "es": "Ucrania",
           "fr": "Ukraine",
-          "ja": "ウクライナ",
+          "ja": "ウクライナ共和国",
           "pt-BR": "Ucrânia",
           "ru": "Украина",
           "zh-CN": "乌克兰"
@@ -3716,10 +3737,10 @@
         "geoname_id": 6252001,
         "iso_code": "US",
         "names": {
-          "de": "Vereinigte Staaten",
+          "de": "USA",
           "en": "United States",
           "es": "Estados Unidos",
-          "fr": "États Unis",
+          "fr": "États-Unis",
           "ja": "アメリカ",
           "pt-BR": "EUA",
           "ru": "США",
@@ -3741,10 +3762,10 @@
         "geoname_id": 6252001,
         "iso_code": "US",
         "names": {
-          "de": "Vereinigte Staaten",
+          "de": "USA",
           "en": "United States",
           "es": "Estados Unidos",
-          "fr": "États Unis",
+          "fr": "États-Unis",
           "ja": "アメリカ",
           "pt-BR": "EUA",
           "ru": "США",
