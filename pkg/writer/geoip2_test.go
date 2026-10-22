@@ -2,6 +2,7 @@ package writer
 
 import (
 	"encoding/json/v2"
+	"fmt"
 	"maps"
 	"net/netip"
 	"os"
@@ -86,6 +87,50 @@ func TestCountryMatchesEnterprise(t *testing.T) {
 	}
 }
 
+// TestNamesAgreeForEachGeoNameID checks that each place with names has a
+// geoname_id, and that every place with the same geoname_id has the same
+// names in all source data files. A CSV location file has one row for each
+// geoname_id, so conflicting names make that row depend on network order.
+func TestNamesAgreeForEachGeoNameID(t *testing.T) {
+	paths, err := filepath.Glob(filepath.Join("..", "..", "source-data", "*.json"))
+	if err != nil {
+		t.Fatal(err)
+	}
+
+	names := map[float64]any{}
+	where := map[float64]string{}
+	for _, path := range paths {
+		name := filepath.Base(path)
+		for prefix, record := range readSourceData(t, name) {
+			checkNames(t, record, name+" "+prefix.String(), names, where)
+		}
+	}
+}
+
+// TestCountryHasContinent checks that each GeoIP2 and GeoLite2 record with a
+// country also has a continent, as the production databases do.
+func TestCountryHasContinent(t *testing.T) {
+	var paths []string
+	for _, pattern := range []string{"GeoIP2-*.json", "GeoLite2-*.json"} {
+		matches, err := filepath.Glob(filepath.Join("..", "..", "source-data", pattern))
+		if err != nil {
+			t.Fatal(err)
+		}
+		paths = append(paths, matches...)
+	}
+
+	for _, path := range paths {
+		name := filepath.Base(path)
+		for prefix, record := range readSourceData(t, name) {
+			_, hasCountry := record["country"]
+			_, hasContinent := record["continent"]
+			if hasCountry && !hasContinent {
+				t.Errorf("%s %s has a country but no continent", name, prefix)
+			}
+		}
+	}
+}
+
 // readSourceData returns the records of a source data file by network.
 func readSourceData(t *testing.T, name string) map[netip.Prefix]map[string]any {
 	t.Helper()
@@ -146,4 +191,47 @@ func countryLevelData(t *testing.T, record map[string]any) map[string]any {
 		}
 	}
 	return data
+}
+
+// checkNames walks value and checks each place that has names against the
+// first names seen for its geoname_id. names and where record those first
+// names and their location.
+func checkNames(
+	t *testing.T,
+	value any,
+	location string,
+	names map[float64]any,
+	where map[float64]string,
+) {
+	t.Helper()
+
+	switch v := value.(type) {
+	case map[string]any:
+		if placeNames, ok := v["names"]; ok {
+			id, ok := v["geoname_id"].(float64)
+			switch {
+			case !ok:
+				t.Errorf("%s has names but no geoname_id", location)
+			case names[id] == nil:
+				names[id] = placeNames
+				where[id] = location
+			case !reflect.DeepEqual(placeNames, names[id]):
+				t.Errorf(
+					"%s names for geoname_id %v = %v, want the names at %s: %v",
+					location, id, placeNames, where[id], names[id],
+				)
+			default:
+				// The names match the first names for this geoname_id.
+			}
+		}
+		for key, field := range v {
+			checkNames(t, field, location+"."+key, names, where)
+		}
+	case []any:
+		for i, item := range v {
+			checkNames(t, item, fmt.Sprintf("%s[%d]", location, i), names, where)
+		}
+	default:
+		// A scalar holds no names.
+	}
 }

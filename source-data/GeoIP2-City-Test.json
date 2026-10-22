@@ -434,8 +434,8 @@
         "iso_code": "CN",
         "names": {
           "de": "China",
-          "en": "People's Republic of China",
-          "es": "República Popular China",
+          "en": "China",
+          "es": "China",
           "fr": "Chine",
           "ja": "中国",
           "pt-BR": "China",
@@ -453,8 +453,8 @@
         "iso_code": "CN",
         "names": {
           "de": "China",
-          "en": "People's Republic of China",
-          "es": "República Popular China",
+          "en": "China",
+          "es": "China",
           "fr": "Chine",
           "ja": "中国",
           "pt-BR": "China",
@@ -485,8 +485,8 @@
         "iso_code": "CN",
         "names": {
           "de": "China",
-          "en": "People's Republic of China",
-          "es": "República Popular China",
+          "en": "China",
+          "es": "China",
           "fr": "Chine",
           "ja": "中国",
           "pt-BR": "China",
@@ -504,8 +504,8 @@
         "iso_code": "CN",
         "names": {
           "de": "China",
-          "en": "People's Republic of China",
-          "es": "República Popular China",
+          "en": "China",
+          "es": "China",
           "fr": "Chine",
           "ja": "中国",
           "pt-BR": "China",
@@ -536,8 +536,8 @@
         "iso_code": "CN",
         "names": {
           "de": "China",
-          "en": "People's Republic of China",
-          "es": "República Popular China",
+          "en": "China",
+          "es": "China",
           "fr": "Chine",
           "ja": "中国",
           "pt-BR": "China",
@@ -555,8 +555,8 @@
         "iso_code": "CN",
         "names": {
           "de": "China",
-          "en": "People's Republic of China",
-          "es": "República Popular China",
+          "en": "China",
+          "es": "China",
           "fr": "Chine",
           "ja": "中国",
           "pt-BR": "China",
@@ -587,8 +587,8 @@
         "iso_code": "CN",
         "names": {
           "de": "China",
-          "en": "People's Republic of China",
-          "es": "República Popular China",
+          "en": "China",
+          "es": "China",
           "fr": "Chine",
           "ja": "中国",
           "pt-BR": "China",
@@ -606,8 +606,8 @@
         "iso_code": "CN",
         "names": {
           "de": "China",
-          "en": "People's Republic of China",
-          "es": "República Popular China",
+          "en": "China",
+          "es": "China",
           "fr": "Chine",
           "ja": "中国",
           "pt-BR": "China",
@@ -2418,14 +2418,14 @@
         "geoname_id": 130758,
         "iso_code": "IR",
         "names": {
-          "de": "Iran (Islamische Republik)",
+          "de": "Iran",
           "en": "Iran",
-          "es": "Irán (República Islámica)",
-          "fr": "Iran (République islamique de)",
+          "es": "Irán",
+          "fr": "Iran",
           "ja": "イラン・イスラム共和国",
-          "pt-BR": "República Islâmica do Irã",
+          "pt-BR": "Irã",
           "ru": "Иран",
-          "zh-CN": "伊朗伊斯兰共和国"
+          "zh-CN": "伊朗"
         }
       },
       "location": {
@@ -2438,14 +2438,14 @@
         "geoname_id": 130758,
         "iso_code": "IR",
         "names": {
-          "de": "Iran (Islamische Republik)",
+          "de": "Iran",
           "en": "Iran",
-          "es": "Irán (República Islámica)",
-          "fr": "Iran (République islamique de)",
+          "es": "Irán",
+          "fr": "Iran",
           "ja": "イラン・イスラム共和国",
-          "pt-BR": "República Islâmica do Irã",
+          "pt-BR": "Irã",
           "ru": "Иран",
-          "zh-CN": "伊朗伊斯兰共和国"
+          "zh-CN": "伊朗"
         }
       }
     }
@@ -2575,14 +2575,14 @@
         "geoname_id": 130758,
         "iso_code": "IR",
         "names": {
-          "de": "Iran (Islamische Republik)",
+          "de": "Iran",
           "en": "Iran",
-          "es": "Irán (República Islámica)",
-          "fr": "Iran (République islamique de)",
+          "es": "Irán",
+          "fr": "Iran",
           "ja": "イラン・イスラム共和国",
-          "pt-BR": "República Islâmica do Irã",
+          "pt-BR": "Irã",
           "ru": "Иран",
-          "zh-CN": "伊朗伊斯兰共和国"
+          "zh-CN": "伊朗"
         }
       },
       "location": {
@@ -2595,14 +2595,14 @@
         "geoname_id": 130758,
         "iso_code": "IR",
         "names": {
-          "de": "Iran (Islamische Republik)",
+          "de": "Iran",
           "en": "Iran",
-          "es": "Irán (República Islámica)",
-          "fr": "Iran (République islamique de)",
+          "es": "Irán",
+          "fr": "Iran",
           "ja": "イラン・イスラム共和国",
-          "pt-BR": "República Islâmica do Irã",
+          "pt-BR": "Irã",
           "ru": "Иран",
-          "zh-CN": "伊朗伊斯兰共和国"
+          "zh-CN": "伊朗"
         }
       }
     }
@@ -3506,14 +3506,14 @@
         "geoname_id": 130758,
         "iso_code": "IR",
         "names": {
-          "de": "Iran (Islamische Republik)",
+          "de": "Iran",
           "en": "Iran",
-          "es": "Irán (República Islámica)",
-          "fr": "Iran (République islamique de)",
+          "es": "Irán",
+          "fr": "Iran",
           "ja": "イラン・イスラム共和国",
-          "pt-BR": "República Islâmica do Irã",
+          "pt-BR": "Irã",
           "ru": "Иран",
-          "zh-CN": "伊朗伊斯兰共和国"
+          "zh-CN": "伊朗"
         }
       },
       "location": {
@@ -3526,14 +3526,14 @@
         "geoname_id": 130758,
         "iso_code": "IR",
         "names": {
-          "de": "Iran (Islamische Republik)",
+          "de": "Iran",
           "en": "Iran",
-          "es": "Irán (República Islámica)",
-          "fr": "Iran (République islamique de)",
+          "es": "Irán",
+          "fr": "Iran",
           "ja": "イラン・イスラム共和国",
-          "pt-BR": "República Islâmica do Irã",
+          "pt-BR": "Irã",
           "ru": "Иран",
-          "zh-CN": "伊朗伊斯兰共和国"
+          "zh-CN": "伊朗"
         }
       }
     }
@@ -5073,14 +5073,14 @@
         "geoname_id": 130758,
         "iso_code": "IR",
         "names": {
-          "de": "Iran (Islamische Republik)",
+          "de": "Iran",
           "en": "Iran",
-          "es": "Irán (República Islámica)",
-          "fr": "Iran (République islamique de)",
+          "es": "Irán",
+          "fr": "Iran",
           "ja": "イラン・イスラム共和国",
-          "pt-BR": "República Islâmica do Irã",
+          "pt-BR": "Irã",
           "ru": "Иран",
-          "zh-CN": "伊朗伊斯兰共和国"
+          "zh-CN": "伊朗"
         }
       },
       "location": {
@@ -5093,14 +5093,14 @@
         "geoname_id": 130758,
         "iso_code": "IR",
         "names": {
-          "de": "Iran (Islamische Republik)",
+          "de": "Iran",
           "en": "Iran",
-          "es": "Irán (República Islámica)",
-          "fr": "Iran (République islamique de)",
+          "es": "Irán",
+          "fr": "Iran",
           "ja": "イラン・イスラム共和国",
-          "pt-BR": "República Islâmica do Irã",
+          "pt-BR": "Irã",
           "ru": "Иран",
-          "zh-CN": "伊朗伊斯兰共和国"
+          "zh-CN": "伊朗"
         }
       }
     }
@@ -5229,14 +5229,14 @@
         "geoname_id": 130758,
         "iso_code": "IR",
         "names": {
-          "de": "Iran (Islamische Republik)",
+          "de": "Iran",
           "en": "Iran",
-          "es": "Irán (República Islámica)",
-          "fr": "Iran (République islamique de)",
+          "es": "Irán",
+          "fr": "Iran",
           "ja": "イラン・イスラム共和国",
-          "pt-BR": "República Islâmica do Irã",
+          "pt-BR": "Irã",
           "ru": "Иран",
-          "zh-CN": "伊朗伊斯兰共和国"
+          "zh-CN": "伊朗"
         }
       },
       "location": {
@@ -5249,14 +5249,14 @@
         "geoname_id": 130758,
         "iso_code": "IR",
         "names": {
-          "de": "Iran (Islamische Republik)",
+          "de": "Iran",
           "en": "Iran",
-          "es": "Irán (República Islámica)",
-          "fr": "Iran (République islamique de)",
+          "es": "Irán",
+          "fr": "Iran",
           "ja": "イラン・イスラム共和国",
-          "pt-BR": "República Islâmica do Irã",
+          "pt-BR": "Irã",
           "ru": "Иран",
-          "zh-CN": "伊朗伊斯兰共和国"
+          "zh-CN": "伊朗"
         }
       }
     }
@@ -9203,14 +9203,14 @@
         "geoname_id": 130758,
         "iso_code": "IR",
         "names": {
-          "de": "Iran (Islamische Republik)",
+          "de": "Iran",
           "en": "Iran",
-          "es": "Irán (República Islámica)",
-          "fr": "Iran (République islamique de)",
+          "es": "Irán",
+          "fr": "Iran",
           "ja": "イラン・イスラム共和国",
-          "pt-BR": "República Islâmica do Irã",
+          "pt-BR": "Irã",
           "ru": "Иран",
-          "zh-CN": "伊朗伊斯兰共和国"
+          "zh-CN": "伊朗"
         }
       },
       "location": {
@@ -9223,14 +9223,14 @@
         "geoname_id": 130758,
         "iso_code": "IR",
         "names": {
-          "de": "Iran (Islamische Republik)",
+          "de": "Iran",
           "en": "Iran",
-          "es": "Irán (República Islámica)",
-          "fr": "Iran (République islamique de)",
+          "es": "Irán",
+          "fr": "Iran",
           "ja": "イラン・イスラム共和国",
-          "pt-BR": "República Islâmica do Irã",
+          "pt-BR": "Irã",
           "ru": "Иран",
-          "zh-CN": "伊朗伊斯兰共和国"
+          "zh-CN": "伊朗"
         }
       }
     }
@@ -10678,14 +10678,14 @@
         "geoname_id": 130758,
         "iso_code": "IR",
         "names": {
-          "de": "Iran (Islamische Republik)",
+          "de": "Iran",
           "en": "Iran",
-          "es": "Irán (República Islámica)",
-          "fr": "Iran (République islamique de)",
+          "es": "Irán",
+          "fr": "Iran",
           "ja": "イラン・イスラム共和国",
-          "pt-BR": "República Islâmica do Irã",
+          "pt-BR": "Irã",
           "ru": "Иран",
-          "zh-CN": "伊朗伊斯兰共和国"
+          "zh-CN": "伊朗"
         }
       },
       "location": {
@@ -10698,14 +10698,14 @@
         "geoname_id": 130758,
         "iso_code": "IR",
         "names": {
-          "de": "Iran (Islamische Republik)",
+          "de": "Iran",
           "en": "Iran",
-          "es": "Irán (República Islámica)",
-          "fr": "Iran (République islamique de)",
+          "es": "Irán",
+          "fr": "Iran",
           "ja": "イラン・イスラム共和国",
-          "pt-BR": "República Islâmica do Irã",
+          "pt-BR": "Irã",
           "ru": "Иран",
-          "zh-CN": "伊朗伊斯兰共和国"
+          "zh-CN": "伊朗"
         }
       }
     }
@@ -12205,10 +12205,14 @@
           "geoname_id": 6269131,
           "iso_code": "ENG",
           "names": {
+            "de": "England",
             "en": "England",
             "es": "Inglaterra",
             "fr": "Angleterre",
-            "pt-BR": "Inglaterra"
+            "ja": "イングランド",
+            "pt-BR": "Inglaterra",
+            "ru": "Англия",
+            "zh-CN": "英格兰"
           }
         },
         {
@@ -12306,10 +12310,14 @@
           "geoname_id": 6269131,
           "iso_code": "ENG",
           "names": {
+            "de": "England",
             "en": "England",
             "es": "Inglaterra",
             "fr": "Angleterre",
-            "pt-BR": "Inglaterra"
+            "ja": "イングランド",
+            "pt-BR": "Inglaterra",
+            "ru": "Англия",
+            "zh-CN": "英格兰"
           }
         },
         {
@@ -12335,7 +12343,8 @@
           "fr": "Londres",
           "ja": "ロンドン",
           "pt-BR": "Londres",
-          "ru": "Лондон"
+          "ru": "Лондон",
+          "zh-CN": "伦敦"
         }
       },
       "continent": {
@@ -12380,8 +12389,8 @@
           "en": "United States",
           "es": "Estados Unidos",
           "fr": "États-Unis",
-          "ja": "アメリカ合衆国",
-          "pt-BR": "Estados Unidos",
+          "ja": "アメリカ",
+          "pt-BR": "EUA",
           "ru": "США",
           "zh-CN": "美国"
         }
@@ -12391,10 +12400,14 @@
           "geoname_id": 6269131,
           "iso_code": "ENG",
           "names": {
+            "de": "England",
             "en": "England",
             "es": "Inglaterra",
             "fr": "Angleterre",
-            "pt-BR": "Inglaterra"
+            "ja": "イングランド",
+            "pt-BR": "Inglaterra",
+            "ru": "Англия",
+            "zh-CN": "英格兰"
           }
         }
       ]
@@ -12411,7 +12424,8 @@
           "fr": "Londres",
           "ja": "ロンドン",
           "pt-BR": "Londres",
-          "ru": "Лондон"
+          "ru": "Лондон",
+          "zh-CN": "伦敦"
         }
       },
       "continent": {
@@ -12456,8 +12470,8 @@
           "en": "United States",
           "es": "Estados Unidos",
           "fr": "États-Unis",
-          "ja": "アメリカ合衆国",
-          "pt-BR": "Estados Unidos",
+          "ja": "アメリカ",
+          "pt-BR": "EUA",
           "ru": "США",
           "zh-CN": "美国"
         }
@@ -12467,10 +12481,14 @@
           "geoname_id": 6269131,
           "iso_code": "ENG",
           "names": {
+            "de": "England",
             "en": "England",
             "es": "Inglaterra",
             "fr": "Angleterre",
-            "pt-BR": "Inglaterra"
+            "ja": "イングランド",
+            "pt-BR": "Inglaterra",
+            "ru": "Англия",
+            "zh-CN": "英格兰"
           }
         }
       ]
@@ -12487,7 +12505,8 @@
           "fr": "Londres",
           "ja": "ロンドン",
           "pt-BR": "Londres",
-          "ru": "Лондон"
+          "ru": "Лондон",
+          "zh-CN": "伦敦"
         }
       },
       "continent": {
@@ -12532,8 +12551,8 @@
           "en": "United States",
           "es": "Estados Unidos",
           "fr": "États-Unis",
-          "ja": "アメリカ合衆国",
-          "pt-BR": "Estados Unidos",
+          "ja": "アメリカ",
+          "pt-BR": "EUA",
           "ru": "США",
           "zh-CN": "美国"
         }
@@ -12543,10 +12562,14 @@
           "geoname_id": 6269131,
           "iso_code": "ENG",
           "names": {
+            "de": "England",
             "en": "England",
             "es": "Inglaterra",
             "fr": "Angleterre",
-            "pt-BR": "Inglaterra"
+            "ja": "イングランド",
+            "pt-BR": "Inglaterra",
+            "ru": "Англия",
+            "zh-CN": "英格兰"
           }
         }
       ]
@@ -12563,7 +12586,8 @@
           "fr": "Londres",
           "ja": "ロンドン",
           "pt-BR": "Londres",
-          "ru": "Лондон"
+          "ru": "Лондон",
+          "zh-CN": "伦敦"
         }
       },
       "continent": {
@@ -12608,8 +12632,8 @@
           "en": "United States",
           "es": "Estados Unidos",
           "fr": "États-Unis",
-          "ja": "アメリカ合衆国",
-          "pt-BR": "Estados Unidos",
+          "ja": "アメリカ",
+          "pt-BR": "EUA",
           "ru": "США",
           "zh-CN": "美国"
         }
@@ -12619,10 +12643,14 @@
           "geoname_id": 6269131,
           "iso_code": "ENG",
           "names": {
+            "de": "England",
             "en": "England",
             "es": "Inglaterra",
             "fr": "Angleterre",
-            "pt-BR": "Inglaterra"
+            "ja": "イングランド",
+            "pt-BR": "Inglaterra",
+            "ru": "Англия",
+            "zh-CN": "英格兰"
           }
         }
       ]
@@ -12636,7 +12664,7 @@
         "names": {
           "de": "Nordamerika",
           "en": "North America",
-          "es": "América del Norte",
+          "es": "Norteamérica",
           "fr": "Amérique du Nord",
           "ja": "北アメリカ",
           "pt-BR": "América do Norte",
@@ -12652,8 +12680,8 @@
           "en": "United States",
           "es": "Estados Unidos",
           "fr": "États-Unis",
-          "ja": "アメリカ合衆国",
-          "pt-BR": "Estados Unidos",
+          "ja": "アメリカ",
+          "pt-BR": "EUA",
           "ru": "США",
           "zh-CN": "美国"
         }
@@ -12695,7 +12723,7 @@
         "names": {
           "de": "Nordamerika",
           "en": "North America",
-          "es": "América del Norte",
+          "es": "Norteamérica",
           "fr": "Amérique du Nord",
           "ja": "北アメリカ",
           "pt-BR": "América do Norte",
@@ -12711,8 +12739,8 @@
           "en": "United States",
           "es": "Estados Unidos",
           "fr": "États-Unis",
-          "ja": "アメリカ合衆国",
-          "pt-BR": "Estados Unidos",
+          "ja": "アメリカ",
+          "pt-BR": "EUA",
           "ru": "США",
           "zh-CN": "美国"
         }
@@ -12765,7 +12793,7 @@
         "names": {
           "de": "Nordamerika",
           "en": "North America",
-          "es": "América del Norte",
+          "es": "Norteamérica",
           "fr": "Amérique du Nord",
           "ja": "北アメリカ",
           "pt-BR": "América do Norte",
@@ -12781,8 +12809,8 @@
           "en": "United States",
           "es": "Estados Unidos",
           "fr": "États-Unis",
-          "ja": "アメリカ合衆国",
-          "pt-BR": "Estados Unidos",
+          "ja": "アメリカ",
+          "pt-BR": "EUA",
           "ru": "США",
           "zh-CN": "美国"
         }
@@ -13085,8 +13113,8 @@
           "en": "United States",
           "es": "Estados Unidos",
           "fr": "États-Unis",
-          "ja": "アメリカ合衆国",
-          "pt-BR": "Estados Unidos",
+          "ja": "アメリカ",
+          "pt-BR": "EUA",
           "ru": "США",
           "zh-CN": "美国"
         },
@@ -13199,10 +13227,10 @@
         "geoname_id": 6252001,
         "iso_code": "US",
         "names": {
-          "de": "Vereinigte Staaten",
+          "de": "USA",
           "en": "United States",
           "es": "Estados Unidos",
-          "fr": "États Unis",
+          "fr": "États-Unis",
           "ja": "アメリカ",
           "pt-BR": "EUA",
           "ru": "США",
@@ -13223,10 +13251,10 @@
         "geoname_id": 6252001,
         "iso_code": "US",
         "names": {
-          "de": "Vereinigte Staaten",
+          "de": "USA",
           "en": "United States",
           "es": "Estados Unidos",
-          "fr": "États Unis",
+          "fr": "États-Unis",
           "ja": "アメリカ",
           "pt-BR": "EUA",
           "ru": "США",
@@ -13271,10 +13299,10 @@
         "geoname_id": 6252001,
         "iso_code": "US",
         "names": {
-          "de": "Vereinigte Staaten",
+          "de": "USA",
           "en": "United States",
           "es": "Estados Unidos",
-          "fr": "États Unis",
+          "fr": "États-Unis",
           "ja": "アメリカ",
           "pt-BR": "EUA",
           "ru": "США",
@@ -13291,10 +13319,10 @@
         "geoname_id": 6252001,
         "iso_code": "US",
         "names": {
-          "de": "Vereinigte Staaten",
+          "de": "USA",
           "en": "United States",
           "es": "Estados Unidos",
-          "fr": "États Unis",
+          "fr": "États-Unis",
           "ja": "アメリカ",
           "pt-BR": "EUA",
           "ru": "США",
@@ -13351,10 +13379,10 @@
         "geoname_id": 6252001,
         "iso_code": "US",
         "names": {
-          "de": "Vereinigte Staaten",
+          "de": "USA",
           "en": "United States",
           "es": "Estados Unidos",
-          "fr": "États Unis",
+          "fr": "États-Unis",
           "ja": "アメリカ",
           "pt-BR": "EUA",
           "ru": "США",
@@ -13375,10 +13403,10 @@
         "geoname_id": 6252001,
         "iso_code": "US",
         "names": {
-          "de": "Vereinigte Staaten",
+          "de": "USA",
           "en": "United States",
           "es": "Estados Unidos",
-          "fr": "États Unis",
+          "fr": "États-Unis",
           "ja": "アメリカ",
           "pt-BR": "EUA",
           "ru": "США",
