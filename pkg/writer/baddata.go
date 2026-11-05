@@ -34,6 +34,8 @@ func (w *Writer) WriteBadDataDBs(target string) error {
 		{"libmaxminddb-separator-record-min-left.mmdb", buildSeparatorRecordMinLeftDB()},
 		{"libmaxminddb-separator-record-min-right.mmdb", buildSeparatorRecordMinRightDB()},
 		{"libmaxminddb-separator-record-max-left.mmdb", buildSeparatorRecordMaxLeftDB()},
+		{"libmaxminddb-repeated-metadata-key.mmdb", buildRepeatedMetadataKeyDB()},
+		{"libmaxminddb-repeated-description-key.mmdb", buildRepeatedDescriptionKeyDB()},
 	} {
 		if err := writeRawDB(target, db.name, db.data); err != nil {
 			return fmt.Errorf("writing %s: %w", db.name, err)

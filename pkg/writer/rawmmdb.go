@@ -484,3 +484,43 @@ func buildCorruptSearchTreeDB() []byte {
 
 	return buf[:pos]
 }
+
+// buildRepeatedMetadataKeyDB creates an MMDB whose metadata map has a second
+// database_type key with the value "Other". A reader that keeps the first
+// value sees "Test", and a reader that keeps the last value sees "Other".
+// Readers should reject the database.
+func buildRepeatedMetadataKeyDB() []byte {
+	return buildSimpleDB(func(buf []byte, nodeCount uint32, buildEpoch uint64) int {
+		entries := metadataEntries(nodeCount, buildEpoch, 4, metadataKeysStandard)
+		entries = append(entries, metadataEntry{
+			key:   "database_type",
+			write: func(b []byte) int { return writeString(b, "Other") },
+		})
+		return writeMetadataBlockWithEntries(buf, entries)
+	})
+}
+
+// buildRepeatedDescriptionKeyDB creates an MMDB whose description map has
+// the key "en" two times, with different values. Readers should reject the
+// database.
+func buildRepeatedDescriptionKeyDB() []byte {
+	return buildSimpleDB(func(buf []byte, nodeCount uint32, buildEpoch uint64) int {
+		entries := metadataEntries(nodeCount, buildEpoch, 4, metadataKeysStandard)
+		for i := range entries {
+			if entries[i].key == "description" {
+				entries[i].write = writeRepeatedDescription
+			}
+		}
+		return writeMetadataBlockWithEntries(buf, entries)
+	})
+}
+
+// writeRepeatedDescription writes {"en": "Test", "en": "Other"}.
+func writeRepeatedDescription(buf []byte) int {
+	pos := writeMap(buf, 2)
+	pos += writeString(buf[pos:], "en")
+	pos += writeString(buf[pos:], "Test")
+	pos += writeString(buf[pos:], "en")
+	pos += writeString(buf[pos:], "Other")
+	return pos
+}

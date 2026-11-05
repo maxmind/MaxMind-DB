@@ -27,9 +27,11 @@ func TestFixedEpochFixturesMatchCommitted(t *testing.T) {
 	}
 
 	for name, committed := range map[string]string{
-		"GeoIP-Residential-Proxy-Test.mmdb":    "test-data",
-		"libmaxminddb-deep-nesting.mmdb":       "bad-data/libmaxminddb",
-		"libmaxminddb-deep-array-nesting.mmdb": "bad-data/libmaxminddb",
+		"GeoIP-Residential-Proxy-Test.mmdb":          "test-data",
+		"libmaxminddb-deep-nesting.mmdb":             "bad-data/libmaxminddb",
+		"libmaxminddb-deep-array-nesting.mmdb":       "bad-data/libmaxminddb",
+		"libmaxminddb-repeated-metadata-key.mmdb":    "bad-data/libmaxminddb",
+		"libmaxminddb-repeated-description-key.mmdb": "bad-data/libmaxminddb",
 	} {
 		//nolint:gosec // name comes from the fixed cases map, not user input.
 		got, err := os.ReadFile(filepath.Join(dir, name))
