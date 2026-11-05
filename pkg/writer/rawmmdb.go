@@ -199,13 +199,27 @@ func writeMetadataBlockWithKeyOrder(
 	ipVersion uint16,
 	keys []string,
 ) int {
-	pos := 0
+	return writeMetadataBlockWithEntries(
+		buf,
+		metadataEntries(nodeCount, buildEpoch, ipVersion, keys),
+	)
+}
 
-	copy(buf[pos:], metadataMarker)
-	pos += len(metadataMarker)
+// metadataEntry is one key of the metadata map and the function that writes
+// its value.
+type metadataEntry struct {
+	key   string
+	write func([]byte) int
+}
 
-	pos += writeMap(buf[pos:], len(keys))
-
+// metadataEntries returns the standard value writer for each key, in the
+// order of keys.
+func metadataEntries(
+	nodeCount uint32,
+	buildEpoch uint64,
+	ipVersion uint16,
+	keys []string,
+) []metadataEntry {
 	valueWriters := map[string]func([]byte) int{
 		"binary_format_major_version": func(b []byte) int { return writeUint16(b, 2) },
 		"binary_format_minor_version": func(b []byte) int { return writeUint16(b, 0) },
@@ -218,13 +232,30 @@ func writeMetadataBlockWithKeyOrder(
 		"record_size":                 func(b []byte) int { return writeUint16(b, 24) },
 	}
 
+	entries := make([]metadataEntry, 0, len(keys))
 	for _, key := range keys {
 		valueWriter, ok := valueWriters[key]
 		if !ok {
 			panic("unknown metadata key: " + key)
 		}
-		pos += writeMetaKey(buf[pos:], key)
-		pos += valueWriter(buf[pos:])
+		entries = append(entries, metadataEntry{key: key, write: valueWriter})
+	}
+	return entries
+}
+
+// writeMetadataBlockWithEntries writes the metadata marker followed by a map
+// with the given entries. Entries can repeat a key.
+func writeMetadataBlockWithEntries(buf []byte, entries []metadataEntry) int {
+	pos := 0
+
+	copy(buf[pos:], metadataMarker)
+	pos += len(metadataMarker)
+
+	pos += writeMap(buf[pos:], len(entries))
+
+	for _, entry := range entries {
+		pos += writeMetaKey(buf[pos:], entry.key)
+		pos += entry.write(buf[pos:])
 	}
 
 	return pos
