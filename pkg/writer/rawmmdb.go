@@ -450,13 +450,22 @@ func buildRepeatedMetadataKeyDB() []byte {
 func buildRepeatedDescriptionKeyDB() []byte {
 	return buildSimpleDB(func(buf []byte, nodeCount uint32, buildEpoch uint64) int {
 		entries := metadataEntries(nodeCount, buildEpoch, 4, metadataKeysStandard)
-		for i := range entries {
-			if entries[i].key == "description" {
-				entries[i].write = writeRepeatedDescription
-			}
-		}
+		replaceMetadataValue(entries, "description", writeRepeatedDescription)
 		return writeMetadataBlockWithEntries(buf, entries)
 	})
+}
+
+// replaceMetadataValue sets the value writer of the entry with the given key.
+// It panics if no entry has the key, so a builder cannot silently write a
+// database without the case it is meant to contain.
+func replaceMetadataValue(entries []metadataEntry, key string, write func([]byte) int) {
+	for i := range entries {
+		if entries[i].key == key {
+			entries[i].write = write
+			return
+		}
+	}
+	panic("no metadata entry has the key " + key)
 }
 
 // writeRepeatedDescription writes {"en": "Test", "en": "Other"}.

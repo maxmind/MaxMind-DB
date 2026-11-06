@@ -174,6 +174,14 @@ func TestRawWritersRejectInvalidInput(t *testing.T) {
 			},
 			"search-tree record values 0 and 16777216 must fit in 24 bits",
 		},
+		{
+			"missing metadata key",
+			func() {
+				entries := metadataEntries(1, 0, 4, []string{"node_count"})
+				replaceMetadataValue(entries, "description", writeRepeatedDescription)
+			},
+			"no metadata entry has the key description",
+		},
 	}
 	for _, test := range tests {
 		t.Run(test.name, func(t *testing.T) {
