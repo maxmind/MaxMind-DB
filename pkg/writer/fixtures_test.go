@@ -9,6 +9,7 @@ import (
 	"testing"
 
 	"github.com/oschwald/maxminddb-golang/v2"
+	"github.com/oschwald/maxminddb-golang/v2/mmdbdata"
 )
 
 // TestFixedEpochFixturesMatchCommitted checks the mmdbwriter-generated
@@ -60,6 +61,65 @@ func TestRawBadDataFixturesMatchCommitted(t *testing.T) {
 			t.Errorf("%s differs from the committed file; regenerate with write-test-data", name)
 		}
 	}
+}
+
+// TestRepeatedKeyFixturesRepeatKeys checks that each repeated-key fixture
+// still repeats its key. The byte-equality test passes after a regeneration
+// that drops the repeat, so it cannot catch that.
+func TestRepeatedKeyFixturesRepeatKeys(t *testing.T) {
+	tests := []struct {
+		name        string
+		description bool
+		key         string
+	}{
+		{"libmaxminddb-repeated-metadata-key.mmdb", false, "database_type"},
+		{"libmaxminddb-repeated-node-count.mmdb", false, "node_count"},
+		{"libmaxminddb-repeated-pointer-key.mmdb", false, "database_type"},
+		{"libmaxminddb-repeated-description-key.mmdb", true, "en"},
+	}
+	for _, test := range tests {
+		t.Run(test.name, func(t *testing.T) {
+			data, err := os.ReadFile(
+				filepath.Join("..", "..", "bad-data", "libmaxminddb", test.name),
+			)
+			if err != nil {
+				t.Fatal(err)
+			}
+			_, metadata, found := bytes.CutLast(data, []byte(metadataMarker))
+			if !found {
+				t.Fatal("no metadata marker")
+			}
+
+			counts := countMapKeys(t, mmdbdata.NewDecoder(metadata, 0), test.description)
+			if counts[test.key] != 2 {
+				t.Errorf("key %q appears %d times, want 2", test.key, counts[test.key])
+			}
+		})
+	}
+}
+
+// countMapKeys counts the keys of the top-level metadata map, or of its
+// description map if description is true.
+func countMapKeys(t *testing.T, decoder *mmdbdata.Decoder, description bool) map[string]int {
+	t.Helper()
+	keys, _, err := decoder.ReadMap()
+	if err != nil {
+		t.Fatal(err)
+	}
+	counts := map[string]int{}
+	for key, err := range keys {
+		if err != nil {
+			t.Fatal(err)
+		}
+		if description && string(key) == "description" {
+			return countMapKeys(t, decoder, false)
+		}
+		counts[string(key)]++
+	}
+	if description {
+		t.Fatal("no description key")
+	}
+	return counts
 }
 
 func TestDeepNestingFixturesExceedMaxDepth(t *testing.T) {
