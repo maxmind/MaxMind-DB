@@ -199,35 +199,10 @@ func writeMetadataBlockWithKeyOrder(
 	ipVersion uint16,
 	keys []string,
 ) int {
-	pos := 0
-
-	copy(buf[pos:], metadataMarker)
-	pos += len(metadataMarker)
-
-	pos += writeMap(buf[pos:], len(keys))
-
-	valueWriters := map[string]func([]byte) int{
-		"binary_format_major_version": func(b []byte) int { return writeUint16(b, 2) },
-		"binary_format_minor_version": func(b []byte) int { return writeUint16(b, 0) },
-		"build_epoch":                 func(b []byte) int { return writeUint64(b, buildEpoch) },
-		"database_type":               func(b []byte) int { return writeString(b, "Test") },
-		"description":                 func(b []byte) int { return writeMap(b, 0) },
-		"ip_version":                  func(b []byte) int { return writeUint16(b, ipVersion) },
-		"languages":                   writeEmptyArray,
-		"node_count":                  func(b []byte) int { return writeUint32(b, nodeCount) },
-		"record_size":                 func(b []byte) int { return writeUint16(b, 24) },
-	}
-
-	for _, key := range keys {
-		valueWriter, ok := valueWriters[key]
-		if !ok {
-			panic("unknown metadata key: " + key)
-		}
-		pos += writeMetaKey(buf[pos:], key)
-		pos += valueWriter(buf[pos:])
-	}
-
-	return pos
+	return writeMetadataBlockWithEntries(
+		buf,
+		metadataEntries(nodeCount, buildEpoch, ipVersion, keys),
+	)
 }
 
 // writeMetadataBlock writes the metadata marker followed by a standard
@@ -452,4 +427,163 @@ func buildCorruptSearchTreeDB() []byte {
 	pos += writeMetadataBlock(buf[pos:], fakeNodeCount, 1_000_000_000)
 
 	return buf[:pos]
+}
+
+// buildRepeatedMetadataKeyDB creates an MMDB whose metadata map has a second
+// database_type key with the value "Other". A reader that keeps the first
+// value sees "Test", and a reader that keeps the last value sees "Other".
+// Readers should reject the database.
+func buildRepeatedMetadataKeyDB() []byte {
+	return buildSimpleDB(func(buf []byte, nodeCount uint32, buildEpoch uint64) int {
+		entries := metadataEntries(nodeCount, buildEpoch, 4, metadataKeysStandard)
+		entries = append(entries, metadataEntry{
+			key:   "database_type",
+			write: func(b []byte) int { return writeString(b, "Other") },
+		})
+		return writeMetadataBlockWithEntries(buf, entries)
+	})
+}
+
+// buildRepeatedNodeCountDB creates an MMDB whose metadata map has a second
+// node_count key with a different value. node_count sets the size of the
+// search tree, so a reader that checks bounds with one value and reads the
+// tree with the other can read the wrong bytes. Readers should reject the
+// database.
+func buildRepeatedNodeCountDB() []byte {
+	return buildSimpleDB(func(buf []byte, nodeCount uint32, buildEpoch uint64) int {
+		entries := metadataEntries(nodeCount, buildEpoch, 4, metadataKeysStandard)
+		entries = append(entries, metadataEntry{
+			key:   "node_count",
+			write: func(b []byte) int { return writeUint32(b, nodeCount+1) },
+		})
+		return writeMetadataBlockWithEntries(buf, entries)
+	})
+}
+
+// buildRepeatedPointerKeyDB creates an MMDB whose metadata map has a second
+// database_type key with the value "Other". The second key is a pointer to the
+// first key string, so a check that compares only the raw key bytes misses the
+// repeat. Readers should reject the database.
+func buildRepeatedPointerKeyDB() []byte {
+	return buildSimpleDB(func(buf []byte, nodeCount uint32, buildEpoch uint64) int {
+		entries := metadataEntries(nodeCount, buildEpoch, 4, metadataKeysStandard)
+		entries = append(entries, metadataEntry{
+			key:        "database_type",
+			pointerKey: true,
+			write:      func(b []byte) int { return writeString(b, "Other") },
+		})
+		return writeMetadataBlockWithEntries(buf, entries)
+	})
+}
+
+// buildRepeatedDescriptionKeyDB creates an MMDB whose description map has
+// the key "en" two times, with different values. Its languages array is
+// ["en"]. Readers should reject the
+// database.
+func buildRepeatedDescriptionKeyDB() []byte {
+	return buildSimpleDB(func(buf []byte, nodeCount uint32, buildEpoch uint64) int {
+		entries := metadataEntries(nodeCount, buildEpoch, 4, metadataKeysStandard)
+		replaceMetadataValue(entries, "description", writeRepeatedDescription)
+		// List the description language, so the repeated key is the only
+		// problem in the database.
+		replaceMetadataValue(entries, "languages", func(b []byte) int {
+			pos := writeArrayHeader(b, 1)
+			return pos + writeString(b[pos:], "en")
+		})
+		return writeMetadataBlockWithEntries(buf, entries)
+	})
+}
+
+// replaceMetadataValue sets the value writer of the entry with the given key.
+// It panics if no entry has the key, so a builder cannot silently write a
+// database without the case it is meant to contain.
+func replaceMetadataValue(entries []metadataEntry, key string, write func([]byte) int) {
+	for i := range entries {
+		if entries[i].key == key {
+			entries[i].write = write
+			return
+		}
+	}
+	panic("no metadata entry has the key " + key)
+}
+
+// writeRepeatedDescription writes {"en": "Test", "en": "Other"}.
+func writeRepeatedDescription(buf []byte) int {
+	pos := writeMap(buf, 2)
+	pos += writeString(buf[pos:], "en")
+	pos += writeString(buf[pos:], "Test")
+	pos += writeString(buf[pos:], "en")
+	pos += writeString(buf[pos:], "Other")
+	return pos
+}
+
+// metadataEntry is one key of the metadata map and the function that writes
+// its value. If pointerKey is true, the key is written as a pointer to the
+// first key with the same name.
+type metadataEntry struct {
+	key        string
+	pointerKey bool
+	write      func([]byte) int
+}
+
+// metadataEntries returns the standard value writer for each key, in the
+// order of keys.
+func metadataEntries(
+	nodeCount uint32,
+	buildEpoch uint64,
+	ipVersion uint16,
+	keys []string,
+) []metadataEntry {
+	valueWriters := map[string]func([]byte) int{
+		"binary_format_major_version": func(b []byte) int { return writeUint16(b, 2) },
+		"binary_format_minor_version": func(b []byte) int { return writeUint16(b, 0) },
+		"build_epoch":                 func(b []byte) int { return writeUint64(b, buildEpoch) },
+		"database_type":               func(b []byte) int { return writeString(b, "Test") },
+		"description":                 func(b []byte) int { return writeMap(b, 0) },
+		"ip_version":                  func(b []byte) int { return writeUint16(b, ipVersion) },
+		"languages":                   writeEmptyArray,
+		"node_count":                  func(b []byte) int { return writeUint32(b, nodeCount) },
+		"record_size":                 func(b []byte) int { return writeUint16(b, 24) },
+	}
+
+	entries := make([]metadataEntry, 0, len(keys))
+	for _, key := range keys {
+		valueWriter, ok := valueWriters[key]
+		if !ok {
+			panic("unknown metadata key: " + key)
+		}
+		entries = append(entries, metadataEntry{key: key, write: valueWriter})
+	}
+	return entries
+}
+
+// writeMetadataBlockWithEntries writes the metadata marker followed by a map
+// with the given entries. Entries can repeat a key.
+func writeMetadataBlockWithEntries(buf []byte, entries []metadataEntry) int {
+	pos := 0
+
+	copy(buf[pos:], metadataMarker)
+	pos += len(metadataMarker)
+
+	metadataStart := pos
+	pos += writeMap(buf[pos:], len(entries))
+
+	keyOffsets := map[string]int{}
+	for _, entry := range entries {
+		if entry.pointerKey {
+			offset, ok := keyOffsets[entry.key]
+			if !ok {
+				panic("no earlier metadata key to point to: " + entry.key)
+			}
+			pos += copy(buf[pos:], writeDataPointer(offset))
+		} else {
+			if _, ok := keyOffsets[entry.key]; !ok {
+				keyOffsets[entry.key] = pos - metadataStart
+			}
+			pos += writeMetaKey(buf[pos:], entry.key)
+		}
+		pos += entry.write(buf[pos:])
+	}
+
+	return pos
 }
