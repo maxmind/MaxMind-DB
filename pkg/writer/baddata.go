@@ -54,6 +54,8 @@ func rawBadDataFixtures() map[string][]byte {
 		"libmaxminddb-separator-record-max-left.mmdb":    buildSeparatorRecordMaxLeftDB(),
 		"libmaxminddb-repeated-metadata-key.mmdb":        buildRepeatedMetadataKeyDB(),
 		"libmaxminddb-repeated-description-key.mmdb":     buildRepeatedDescriptionKeyDB(),
+		"libmaxminddb-repeated-node-count.mmdb":          buildRepeatedNodeCountDB(),
+		"libmaxminddb-repeated-pointer-key.mmdb":         buildRepeatedPointerKeyDB(),
 	}
 }
 
