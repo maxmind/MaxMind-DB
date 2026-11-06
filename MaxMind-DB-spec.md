@@ -55,6 +55,11 @@ structure at its beginning. This structure is described later in the spec.
 Except where otherwise specified, each key listed is required for the database
 to be considered valid.
 
+Each key in the metadata map must be unique. This also applies to the language
+codes in the `description` map. Readers should reject a database whose metadata
+repeats a key, because a reader that uses the first value and a reader that uses
+the last value would see different metadata.
+
 Changing a key's data type or removing a key would constitute a major version
 change for this spec. Adding a key constitutes a minor version change.
 
@@ -115,6 +120,8 @@ codes, and the values will be a description in that language as a UTF-8 string.
 The codes may include additional information such as script or country
 identifiers, like "zh-TW" or "mn-Cyrl-MN". The additional identifiers will be
 separated by a dash character ("-").
+
+Each language code must appear only once in this map.
 
 This key is optional. However, creators of databases are strongly encouraged to
 include a description in at least one language.
