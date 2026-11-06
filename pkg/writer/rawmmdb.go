@@ -445,12 +445,19 @@ func buildRepeatedMetadataKeyDB() []byte {
 }
 
 // buildRepeatedDescriptionKeyDB creates an MMDB whose description map has
-// the key "en" two times, with different values. Readers should reject the
+// the key "en" two times, with different values. Its languages array is
+// ["en"]. Readers should reject the
 // database.
 func buildRepeatedDescriptionKeyDB() []byte {
 	return buildSimpleDB(func(buf []byte, nodeCount uint32, buildEpoch uint64) int {
 		entries := metadataEntries(nodeCount, buildEpoch, 4, metadataKeysStandard)
 		replaceMetadataValue(entries, "description", writeRepeatedDescription)
+		// List the description language, so the repeated key is the only
+		// problem in the database.
+		replaceMetadataValue(entries, "languages", func(b []byte) int {
+			pos := writeArrayHeader(b, 1)
+			return pos + writeString(b[pos:], "en")
+		})
 		return writeMetadataBlockWithEntries(buf, entries)
 	})
 }
