@@ -18,27 +18,9 @@ func (w *Writer) WriteBadDataDBs(target string) error {
 		return fmt.Errorf("creating bad-data directory: %w", err)
 	}
 
-	// Raw binary databases — can't use mmdbwriter because the data is
-	// intentionally invalid or uses values mmdbwriter can't represent.
-	for _, db := range []struct {
-		name string
-		data []byte
-	}{
-		{"libmaxminddb-oversized-array.mmdb", buildOversizedArrayDB()},
-		{"libmaxminddb-oversized-map.mmdb", buildOversizedMapDB()},
-		{"libmaxminddb-uint64-max-epoch.mmdb", buildUint64MaxEpochDB()},
-		{"libmaxminddb-corrupt-search-tree.mmdb", buildCorruptSearchTreeDB()},
-		{"libmaxminddb-empty-map-last-in-metadata.mmdb", buildEmptyMapLastInMetadataDB()},
-		{"libmaxminddb-empty-array-last-in-metadata.mmdb", buildEmptyArrayLastInMetadataDB()},
-		{"libmaxminddb-metadata-marker-only.mmdb", buildMetadataMarkerOnlyDB()},
-		{"libmaxminddb-separator-record-min-left.mmdb", buildSeparatorRecordMinLeftDB()},
-		{"libmaxminddb-separator-record-min-right.mmdb", buildSeparatorRecordMinRightDB()},
-		{"libmaxminddb-separator-record-max-left.mmdb", buildSeparatorRecordMaxLeftDB()},
-		{"libmaxminddb-repeated-metadata-key.mmdb", buildRepeatedMetadataKeyDB()},
-		{"libmaxminddb-repeated-description-key.mmdb", buildRepeatedDescriptionKeyDB()},
-	} {
-		if err := writeRawDB(target, db.name, db.data); err != nil {
-			return fmt.Errorf("writing %s: %w", db.name, err)
+	for name, data := range rawBadDataFixtures() {
+		if err := writeRawDB(target, name, data); err != nil {
+			return fmt.Errorf("writing %s: %w", name, err)
 		}
 	}
 
@@ -52,6 +34,27 @@ func (w *Writer) WriteBadDataDBs(target string) error {
 	}
 
 	return nil
+}
+
+// rawBadDataFixtures returns the raw bad-data databases, keyed by filename.
+// They are built byte by byte, because mmdbwriter cannot write invalid data or
+// some extreme values. The writer and the byte-equality test share this map, so
+// a new fixture cannot be added to one without the other.
+func rawBadDataFixtures() map[string][]byte {
+	return map[string][]byte{
+		"libmaxminddb-oversized-array.mmdb":              buildOversizedArrayDB(),
+		"libmaxminddb-oversized-map.mmdb":                buildOversizedMapDB(),
+		"libmaxminddb-uint64-max-epoch.mmdb":             buildUint64MaxEpochDB(),
+		"libmaxminddb-corrupt-search-tree.mmdb":          buildCorruptSearchTreeDB(),
+		"libmaxminddb-empty-map-last-in-metadata.mmdb":   buildEmptyMapLastInMetadataDB(),
+		"libmaxminddb-empty-array-last-in-metadata.mmdb": buildEmptyArrayLastInMetadataDB(),
+		"libmaxminddb-metadata-marker-only.mmdb":         buildMetadataMarkerOnlyDB(),
+		"libmaxminddb-separator-record-min-left.mmdb":    buildSeparatorRecordMinLeftDB(),
+		"libmaxminddb-separator-record-min-right.mmdb":   buildSeparatorRecordMinRightDB(),
+		"libmaxminddb-separator-record-max-left.mmdb":    buildSeparatorRecordMaxLeftDB(),
+		"libmaxminddb-repeated-metadata-key.mmdb":        buildRepeatedMetadataKeyDB(),
+		"libmaxminddb-repeated-description-key.mmdb":     buildRepeatedDescriptionKeyDB(),
+	}
 }
 
 func writeRawDB(dir, name string, data []byte) error {

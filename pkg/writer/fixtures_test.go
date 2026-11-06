@@ -11,8 +11,10 @@ import (
 	"github.com/oschwald/maxminddb-golang/v2"
 )
 
-// TestFixedEpochFixturesMatchCommitted checks the generated databases that
-// have a fixed build epoch. The other databases record the build time.
+// TestFixedEpochFixturesMatchCommitted checks the mmdbwriter-generated
+// databases that have a fixed build epoch. The other test-data databases record
+// the build time. TestRawBadDataFixturesMatchCommitted checks the raw bad-data
+// databases.
 func TestFixedEpochFixturesMatchCommitted(t *testing.T) {
 	dir := t.TempDir()
 	w, err := New(filepath.Join("..", "..", "source-data"), dir)
@@ -27,11 +29,9 @@ func TestFixedEpochFixturesMatchCommitted(t *testing.T) {
 	}
 
 	for name, committed := range map[string]string{
-		"GeoIP-Residential-Proxy-Test.mmdb":          "test-data",
-		"libmaxminddb-deep-nesting.mmdb":             "bad-data/libmaxminddb",
-		"libmaxminddb-deep-array-nesting.mmdb":       "bad-data/libmaxminddb",
-		"libmaxminddb-repeated-metadata-key.mmdb":    "bad-data/libmaxminddb",
-		"libmaxminddb-repeated-description-key.mmdb": "bad-data/libmaxminddb",
+		"GeoIP-Residential-Proxy-Test.mmdb":    "test-data",
+		"libmaxminddb-deep-nesting.mmdb":       "bad-data/libmaxminddb",
+		"libmaxminddb-deep-array-nesting.mmdb": "bad-data/libmaxminddb",
 	} {
 		//nolint:gosec // name comes from the fixed cases map, not user input.
 		got, err := os.ReadFile(filepath.Join(dir, name))
@@ -40,6 +40,19 @@ func TestFixedEpochFixturesMatchCommitted(t *testing.T) {
 		}
 		//nolint:gosec // name comes from the fixed cases map, not user input.
 		want, err := os.ReadFile(filepath.Join("..", "..", committed, name))
+		if err != nil {
+			t.Fatal(err)
+		}
+		if !bytes.Equal(got, want) {
+			t.Errorf("%s differs from the committed file; regenerate with write-test-data", name)
+		}
+	}
+}
+
+func TestRawBadDataFixturesMatchCommitted(t *testing.T) {
+	for name, got := range rawBadDataFixtures() {
+		//nolint:gosec // name comes from the fixed fixtures map, not user input.
+		want, err := os.ReadFile(filepath.Join("..", "..", "bad-data", "libmaxminddb", name))
 		if err != nil {
 			t.Fatal(err)
 		}
