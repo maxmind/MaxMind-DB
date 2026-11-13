@@ -1,12 +1,12 @@
 github.com/maxmind/mmdbwriter/v2 v2.0.0-20261007223840-9a8f309f0d71 h1:JAcOLOiWieaBwuWUd0WmUpqRKlaKoVA9G4iLgxMcJa0=
 github.com/maxmind/mmdbwriter/v2 v2.0.0-20261007223840-9a8f309f0d71/go.mod h1:wgHnsdUYfQeQZI6xWn4Ix7zt1b9/Wi5Q9JJMFa1jZDk=
-github.com/oschwald/maxminddb-golang/v2 v2.8.0 h1:enP6KMn9sCV4bRAg3LfHMaU2qjOP2xqY8LjatJMwufU=
-github.com/oschwald/maxminddb-golang/v2 v2.8.0/go.mod h1:kvJXAdsCahFxSWHiigYomcbP0qnEtsL929Mv98Hz8dM=
+github.com/oschwald/maxminddb-golang/v2 v2.9.0 h1:YpIl3WoA9oIuNvqNaO/aD1N/7Ci2wOqoKH5GWo53H5Y=
+github.com/oschwald/maxminddb-golang/v2 v2.9.0/go.mod h1:3TxexMBcR0ss3SbyYvnqfsDzDjN4o1KCg/nTsaMAivU=
 github.com/stretchr/testify v1.12.1 h1:EuwCh5fleGS7H32xRwO3wRGT7DxrDhLAT6FF8MpWDWE=
 github.com/stretchr/testify v1.12.1/go.mod h1:MDEgiDPPsNp5cuIrHPPCyornHKgEVbtFUmoNlxoYthg=
 go.yaml.in/yaml/v3 v3.0.5 h1:N6y/pJk8buWs9NY5ERU2HSMfm+IuD/OtfdAnq6kESPw=
 go.yaml.in/yaml/v3 v3.0.5/go.mod h1:HVTZu1O7/Vkt2N+BFy8Zza+lnLsABggaTM2ZpNIGuKg=
 go4.org/netipx v0.0.0-20260823151212-3075585bcbeb h1:XBM4hvfwGAttkkiTIFfeigdfcL1xIfdKXqFdgiHGtDs=
 go4.org/netipx v0.0.0-20260823151212-3075585bcbeb/go.mod h1:PLyyIXexvUFg3Owu6p/WfdlivPbZJsZdgWZlrGope/Y=
-golang.org/x/sys v0.48.0 h1:bbX/i/6MgT9BVLM9RT1thmxL04yeTAhbEz4SyadbXoo=
-golang.org/x/sys v0.48.0/go.mod h1:hNLxWAXmnKAxqDtdwIYC4bM9oQPEecfsnNMuSxOs3og=
+golang.org/x/sys v0.49.0 h1:XbzkgYJHdqh/8m2Uu0W/dQv8nktxx4BFHp1M0gROTXA=
+golang.org/x/sys v0.49.0/go.mod h1:hNLxWAXmnKAxqDtdwIYC4bM9oQPEecfsnNMuSxOs3og=
