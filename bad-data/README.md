@@ -25,5 +25,16 @@ data section.
 - `libmaxminddb/libmaxminddb-repeated-description-key.mmdb` repeats the language
   key `en` in the `description` map. The top-level keys are unique.
 
+Note: the databases below have a map with a `uint16` key. The spec requires map
+keys to be UTF-8 strings, so readers should return an error. A reader that reads
+such a key as a string can read the wrong data.
+
+- `libmaxminddb/libmaxminddb-non-string-map-key.mmdb` has the data record
+  `{1: "test"}`. The database opens, and a lookup of any IPv4 address finds the
+  record. Readers should return an error when they decode it.
+- `libmaxminddb/libmaxminddb-non-string-description-key.mmdb` has the
+  `description` map `{1: "Test"}`. Readers should reject the database when they
+  open it.
+
 If you find a corrupt test-sized database that crashes a MMDB reader library,
 please feel free to add it here by creating a pull request.

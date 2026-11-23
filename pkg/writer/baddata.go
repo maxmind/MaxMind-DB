@@ -56,6 +56,8 @@ func rawBadDataFixtures() map[string][]byte {
 		"libmaxminddb-repeated-description-key.mmdb":     buildRepeatedDescriptionKeyDB(),
 		"libmaxminddb-repeated-node-count.mmdb":          buildRepeatedNodeCountDB(),
 		"libmaxminddb-repeated-pointer-key.mmdb":         buildRepeatedPointerKeyDB(),
+		"libmaxminddb-non-string-map-key.mmdb":           buildNonStringMapKeyDB(),
+		"libmaxminddb-non-string-description-key.mmdb":   buildNonStringDescriptionKeyDB(),
 	}
 }
 
