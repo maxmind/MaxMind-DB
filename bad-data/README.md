@@ -25,5 +25,27 @@ data section.
 - `libmaxminddb/libmaxminddb-repeated-description-key.mmdb` repeats the language
   key `en` in the `description` map. The top-level keys are unique.
 
+Note: the databases below have the data record `{"ip": value, "after": "test"}`,
+where the value has a type that the spec does not allow in a database. Each
+database opens, and a lookup of any IPv4 address finds the record. Readers
+should return an error when they decode the record, and when they skip the value
+to read `after`.
+
+- `libmaxminddb/libmaxminddb-extended-type-0.mmdb` has a value with extended
+  type byte 0. The spec uses the extended type byte only for types 8 and up. A
+  reader that adds 7 to the byte without a check reads the value as a map.
+- `libmaxminddb/libmaxminddb-extended-type-9.mmdb` has a value with extended
+  type byte 9. The spec defines no type 16.
+- `libmaxminddb/libmaxminddb-container-type.mmdb` has a value of the deprecated
+  data cache container type (12).
+- `libmaxminddb/libmaxminddb-end-marker-type.mmdb` has a value of the deprecated
+  end marker type (13).
+
+Note: `libmaxminddb/libmaxminddb-major-version-3.mmdb` has
+`binary_format_major_version` 3. Before that key, its metadata has the key `new`
+with a value of extended type byte 9, which the version 2 format does not
+define. A reader that checks the major version should report an unsupported
+version, not invalid data.
+
 If you find a corrupt test-sized database that crashes a MMDB reader library,
 please feel free to add it here by creating a pull request.
