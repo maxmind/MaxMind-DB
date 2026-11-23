@@ -25,5 +25,47 @@ data section.
 - `libmaxminddb/libmaxminddb-repeated-description-key.mmdb` repeats the language
   key `en` in the `description` map. The top-level keys are unique.
 
+Note: the databases below test where the data section ends. The data section
+ends where the last metadata marker starts, so a reader must not read the marker
+or the metadata as data. Each database has a search tree of one node with 24-bit
+records.
+
+These databases are valid. A reader should open them and decode their data:
+
+- `libmaxminddb/libmaxminddb-data-section-empty.mmdb` has no data section bytes.
+  Both records are empty.
+- `libmaxminddb/libmaxminddb-data-section-1-byte.mmdb` has an empty map.
+- `libmaxminddb/libmaxminddb-data-section-2-bytes.mmdb` has a 1-byte string.
+- `libmaxminddb/libmaxminddb-data-ends-at-metadata-marker.mmdb` has a string
+  that ends where the marker starts.
+- `libmaxminddb/libmaxminddb-data-contains-metadata-marker.mmdb` has a string
+  whose content is a metadata marker. Only the last marker in the file starts
+  the metadata.
+
+These databases open, but a lookup of `1.2.3.4` should fail when the reader
+decodes the data:
+
+- `libmaxminddb/libmaxminddb-data-section-truncated-size.mmdb` has a 2-byte data
+  section. Its value has a size that needs three more size bytes.
+- `libmaxminddb/libmaxminddb-data-extends-into-metadata-marker.mmdb` has a
+  string that claims one byte more than the data section holds.
+- `libmaxminddb/libmaxminddb-pointer-into-metadata.mmdb` has a pointer to the
+  first metadata byte.
+
+In `libmaxminddb/libmaxminddb-record-points-at-metadata-marker.mmdb`, the right
+record points at the metadata marker. A lookup of `128.0.0.1` should fail.
+
+Readers should not open these databases:
+
+- `libmaxminddb/libmaxminddb-no-data-separator.mmdb` has no separator between
+  the search tree and the metadata marker.
+- `libmaxminddb/libmaxminddb-short-data-separator.mmdb` has a separator of 8
+  bytes, not 16.
+- `libmaxminddb/libmaxminddb-no-search-tree.mmdb` has only the metadata marker
+  and valid metadata.
+- `libmaxminddb/libmaxminddb-metadata-truncated-size.mmdb` has only the metadata
+  marker and a 2-byte metadata section. Its value has a size that needs three
+  more size bytes.
+
 If you find a corrupt test-sized database that crashes a MMDB reader library,
 please feel free to add it here by creating a pull request.

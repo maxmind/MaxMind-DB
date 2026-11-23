@@ -587,3 +587,40 @@ func writeMetadataBlockWithEntries(buf []byte, entries []metadataEntry) int {
 
 	return pos
 }
+
+const (
+	// dataSectionEmptyRecord is the record value for "no data" in the
+	// 1-node databases that buildDataSectionDB creates.
+	dataSectionEmptyRecord = 1
+	// dataSectionFirstRecord is the record value that points to the first
+	// byte of the data section in those databases.
+	dataSectionFirstRecord = dataSectionEmptyRecord + dataSeparatorSize
+	// truncatedSizeBoolean is an extended boolean with a size of 31. That
+	// size needs three more size bytes, which are missing. A boolean has no
+	// payload, so only a check of the size bytes catches it.
+	truncatedSizeBoolean = "\x1f\x07"
+)
+
+// buildDataSectionDB creates a 1-node MMDB with the given records, a
+// separator of separatorSize bytes, and the given data section bytes. The
+// metadata marker follows the data directly, so these databases test that a
+// reader ends the data section where the marker starts.
+func buildDataSectionDB(leftRecord, rightRecord uint32, separatorSize int, data string) []byte {
+	const nodeCount = 1
+
+	buf := make([]byte, 1024)
+	pos := writeSearchTreeRecords(buf, leftRecord, rightRecord)
+	pos += separatorSize
+	pos += copy(buf[pos:], data)
+	pos += writeMetadataBlock(buf[pos:], nodeCount, 1_000_000_000)
+
+	return buf[:pos]
+}
+
+// buildNoSearchTreeDB creates a file that has only the metadata marker and
+// valid metadata. The metadata claims one node, but the file has no search
+// tree and no separator. Readers should reject it.
+func buildNoSearchTreeDB() []byte {
+	buf := make([]byte, 1024)
+	return buf[:writeMetadataBlock(buf, 1, 1_000_000_000)]
+}

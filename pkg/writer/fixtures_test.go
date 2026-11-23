@@ -122,6 +122,44 @@ func countMapKeys(t *testing.T, decoder *mmdbdata.Decoder, description bool) map
 	return counts
 }
 
+// TestDataSectionFixtureSizes checks the size of the data section in the
+// databases that test where the data section ends. The size is the number of
+// bytes between the 16-byte separator after the 1-node search tree and the
+// last metadata marker. A negative size means that the search tree or the
+// separator does not fit before the marker.
+func TestDataSectionFixtureSizes(t *testing.T) {
+	const searchTreeSize = 6
+	tests := map[string]int{
+		"libmaxminddb-data-section-empty.mmdb":                0,
+		"libmaxminddb-data-section-1-byte.mmdb":               1,
+		"libmaxminddb-data-section-2-bytes.mmdb":              2,
+		"libmaxminddb-data-section-truncated-size.mmdb":       2,
+		"libmaxminddb-data-ends-at-metadata-marker.mmdb":      3,
+		"libmaxminddb-data-extends-into-metadata-marker.mmdb": 3,
+		"libmaxminddb-data-contains-metadata-marker.mmdb":     15,
+		"libmaxminddb-pointer-into-metadata.mmdb":             3,
+		"libmaxminddb-record-points-at-metadata-marker.mmdb":  3,
+		"libmaxminddb-no-data-separator.mmdb":                 -16,
+		"libmaxminddb-short-data-separator.mmdb":              -8,
+		"libmaxminddb-no-search-tree.mmdb":                    -22,
+		"libmaxminddb-metadata-truncated-size.mmdb":           -22,
+	}
+	for name, want := range tests {
+		//nolint:gosec // name comes from the fixed cases map, not user input.
+		data, err := os.ReadFile(filepath.Join("..", "..", "bad-data", "libmaxminddb", name))
+		if err != nil {
+			t.Fatal(err)
+		}
+		marker := bytes.LastIndex(data, []byte(metadataMarker))
+		if marker < 0 {
+			t.Fatalf("%s: no metadata marker", name)
+		}
+		if got := marker - searchTreeSize - dataSeparatorSize; got != want {
+			t.Errorf("%s: data section size = %d, want %d", name, got, want)
+		}
+	}
+}
+
 func TestDeepNestingFixturesExceedMaxDepth(t *testing.T) {
 	for _, name := range []string{
 		"libmaxminddb-deep-nesting.mmdb",

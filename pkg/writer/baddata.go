@@ -56,6 +56,48 @@ func rawBadDataFixtures() map[string][]byte {
 		"libmaxminddb-repeated-description-key.mmdb":     buildRepeatedDescriptionKeyDB(),
 		"libmaxminddb-repeated-node-count.mmdb":          buildRepeatedNodeCountDB(),
 		"libmaxminddb-repeated-pointer-key.mmdb":         buildRepeatedPointerKeyDB(),
+		"libmaxminddb-data-section-empty.mmdb": buildDataSectionDB(
+			dataSectionEmptyRecord, dataSectionEmptyRecord, dataSeparatorSize, "",
+		),
+		"libmaxminddb-data-section-1-byte.mmdb": buildDataSectionDB(
+			dataSectionFirstRecord, dataSectionEmptyRecord, dataSeparatorSize, "\xe0",
+		),
+		"libmaxminddb-data-section-2-bytes.mmdb": buildDataSectionDB(
+			dataSectionFirstRecord, dataSectionEmptyRecord, dataSeparatorSize, "\x41a",
+		),
+		"libmaxminddb-data-section-truncated-size.mmdb": buildDataSectionDB(
+			dataSectionFirstRecord, dataSectionEmptyRecord, dataSeparatorSize, truncatedSizeBoolean,
+		),
+		"libmaxminddb-data-ends-at-metadata-marker.mmdb": buildDataSectionDB(
+			dataSectionFirstRecord, dataSectionEmptyRecord, dataSeparatorSize, "\x42ab",
+		),
+		// The string claims three bytes, but only two come before the marker.
+		"libmaxminddb-data-extends-into-metadata-marker.mmdb": buildDataSectionDB(
+			dataSectionFirstRecord, dataSectionEmptyRecord, dataSeparatorSize, "\x43ab",
+		),
+		// Only the last marker in the file starts the metadata.
+		"libmaxminddb-data-contains-metadata-marker.mmdb": buildDataSectionDB(
+			dataSectionFirstRecord,
+			dataSectionEmptyRecord,
+			dataSeparatorSize,
+			"\x4e"+metadataMarker,
+		),
+		// The pointer targets data section offset 17, the first metadata byte.
+		"libmaxminddb-pointer-into-metadata.mmdb": buildDataSectionDB(
+			dataSectionFirstRecord, dataSectionEmptyRecord, dataSeparatorSize, "\x20\x11\x00",
+		),
+		// The right record targets data section offset 3, the marker.
+		"libmaxminddb-record-points-at-metadata-marker.mmdb": buildDataSectionDB(
+			dataSectionEmptyRecord, dataSectionFirstRecord+3, dataSeparatorSize, "\x42ab",
+		),
+		"libmaxminddb-no-data-separator.mmdb": buildDataSectionDB(
+			dataSectionEmptyRecord, dataSectionEmptyRecord, 0, "",
+		),
+		"libmaxminddb-short-data-separator.mmdb": buildDataSectionDB(
+			dataSectionEmptyRecord, dataSectionEmptyRecord, dataSeparatorSize/2, "",
+		),
+		"libmaxminddb-no-search-tree.mmdb":          buildNoSearchTreeDB(),
+		"libmaxminddb-metadata-truncated-size.mmdb": []byte(metadataMarker + truncatedSizeBoolean),
 	}
 }
 
