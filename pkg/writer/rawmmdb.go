@@ -587,3 +587,58 @@ func writeMetadataBlockWithEntries(buf []byte, entries []metadataEntry) int {
 
 	return pos
 }
+
+const (
+	// dataSectionEmptyRecord is the record value for "no data" in the
+	// 1-node databases that buildDataSectionDB creates.
+	dataSectionEmptyRecord = 1
+	// dataSectionFirstRecord is the record value that points to the first
+	// byte of the data section in those databases.
+	dataSectionFirstRecord = dataSectionEmptyRecord + dataSeparatorSize
+	// truncatedSizeBoolean is an extended boolean with a size of 31. That
+	// size needs three more size bytes, which are missing.
+	truncatedSizeBoolean = "\x1f\x07"
+)
+
+// buildDataSectionDB creates a 1-node MMDB with the given records, a
+// separator of separatorSize bytes, and the given data section bytes. The
+// metadata marker follows the data directly, so these databases test that a
+// reader ends the data section where the marker starts.
+func buildDataSectionDB(leftRecord, rightRecord uint32, separatorSize int, data string) []byte {
+	const nodeCount = 1
+
+	buf := make([]byte, 1024)
+	pos := writeSearchTreeRecords(buf, leftRecord, rightRecord)
+	pos += separatorSize
+	pos += copy(buf[pos:], data)
+	pos += writeMetadataBlock(buf[pos:], nodeCount, 1_000_000_000)
+
+	return buf[:pos]
+}
+
+// buildNoSearchTreeDB creates a file that has only the metadata marker and
+// valid metadata. The metadata claims one node, but the file has no search
+// tree and no separator. Readers should reject it.
+func buildNoSearchTreeDB() []byte {
+	buf := make([]byte, 1024)
+	return buf[:writeMetadataBlock(buf, 1, 1_000_000_000)]
+}
+
+// buildDeepSearchTreeDB creates an IPv4 MMDB with a search tree of 34 nodes.
+// Both records of each node point to the next node, so a lookup uses all 32
+// bits of the address and still ends on a search node. Readers should report
+// a corrupt search tree and not treat the node number as a data pointer.
+func buildDeepSearchTreeDB() []byte {
+	const nodeCount = 34
+
+	buf := make([]byte, 1024)
+	pos := 0
+	for node := uint32(1); node <= nodeCount; node++ {
+		pos += writeSearchTreeRecords(buf[pos:], node, node)
+	}
+	pos += dataSeparatorSize
+	pos += writeMap(buf[pos:], 0)
+	pos += writeMetadataBlock(buf[pos:], nodeCount, 1_000_000_000)
+
+	return buf[:pos]
+}
