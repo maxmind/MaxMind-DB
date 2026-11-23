@@ -41,5 +41,11 @@ to read `after`.
 - `libmaxminddb/libmaxminddb-end-marker-type.mmdb` has a value of the deprecated
   end marker type (13).
 
+Note: `libmaxminddb/libmaxminddb-major-version-3.mmdb` has
+`binary_format_major_version` 3. Before that key, its metadata has the key `new`
+with a value of extended type byte 9, which the version 2 format does not
+define. A reader that checks the major version should report an unsupported
+version, not invalid data.
+
 If you find a corrupt test-sized database that crashes a MMDB reader library,
 please feel free to add it here by creating a pull request.

@@ -522,6 +522,26 @@ func buildExtendedTypeDB(extendedType byte) []byte {
 	}, writeMetadataBlock)
 }
 
+// buildMajorVersion3DB creates an MMDB whose metadata has
+// binary_format_major_version 3. Before that key, the metadata has the key
+// "new" with a value of extended type byte 9, which the version 2 format does
+// not define. Readers should report an unsupported format version, not
+// invalid data.
+func buildMajorVersion3DB() []byte {
+	return buildSimpleDB(func(buf []byte, nodeCount uint32, buildEpoch uint64) int {
+		entries := metadataEntries(nodeCount, buildEpoch, 4, metadataKeysStandard)
+		replaceMetadataValue(entries, "binary_format_major_version", func(b []byte) int {
+			return writeUint16(b, 3)
+		})
+		entries = append([]metadataEntry{{key: "new", write: func(b []byte) int {
+			b[0] = 0x00
+			b[1] = 0x09
+			return 2
+		}}}, entries...)
+		return writeMetadataBlockWithEntries(buf, entries)
+	})
+}
+
 // replaceMetadataValue sets the value writer of the entry with the given key.
 // It panics if no entry has the key, so a builder cannot silently write a
 // database without the case it is meant to contain.

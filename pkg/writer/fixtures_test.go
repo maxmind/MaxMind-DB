@@ -150,6 +150,24 @@ func TestExtendedTypeFixturesHaveBadTypes(t *testing.T) {
 	}
 }
 
+// TestMajorVersion3FixtureHasMajorVersion3 checks that the fixture still has
+// its major version. The byte-equality test passes after a regeneration that
+// drops it, so it cannot catch that.
+func TestMajorVersion3FixtureHasMajorVersion3(t *testing.T) {
+	// maxminddb-golang does not check the major version.
+	reader, err := maxminddb.Open(
+		filepath.Join("..", "..", "bad-data", "libmaxminddb", "libmaxminddb-major-version-3.mmdb"),
+	)
+	if err != nil {
+		t.Fatal(err)
+	}
+	defer reader.Close()
+
+	if got := reader.Metadata.BinaryFormatMajorVersion; got != 3 {
+		t.Errorf("BinaryFormatMajorVersion = %d, want 3", got)
+	}
+}
+
 func TestDeepNestingFixturesExceedMaxDepth(t *testing.T) {
 	for _, name := range []string{
 		"libmaxminddb-deep-nesting.mmdb",
