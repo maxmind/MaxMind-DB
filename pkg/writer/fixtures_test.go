@@ -122,6 +122,40 @@ func countMapKeys(t *testing.T, decoder *mmdbdata.Decoder, description bool) map
 	return counts
 }
 
+// TestNonStringKeyFixturesHaveNonStringKeys checks that each non-string-key
+// fixture still has its uint16 map key. The byte-equality test passes after a
+// regeneration that drops the key, so it cannot catch that.
+func TestNonStringKeyFixturesHaveNonStringKeys(t *testing.T) {
+	const wantErr = "unexpected map key type: Uint16"
+	dir := filepath.Join("..", "..", "bad-data", "libmaxminddb")
+
+	t.Run("data record", func(t *testing.T) {
+		reader, err := maxminddb.Open(filepath.Join(dir, "libmaxminddb-non-string-map-key.mmdb"))
+		if err != nil {
+			t.Fatal(err)
+		}
+		defer reader.Close()
+
+		var record any
+		err = reader.Lookup(netip.MustParseAddr("1.1.1.1")).Decode(&record)
+		if err == nil || !strings.Contains(err.Error(), wantErr) {
+			t.Errorf("Decode error = %v, want %q", err, wantErr)
+		}
+	})
+
+	t.Run("description", func(t *testing.T) {
+		reader, err := maxminddb.Open(
+			filepath.Join(dir, "libmaxminddb-non-string-description-key.mmdb"),
+		)
+		if err == nil {
+			reader.Close()
+		}
+		if err == nil || !strings.Contains(err.Error(), wantErr) {
+			t.Errorf("Open error = %v, want %q", err, wantErr)
+		}
+	})
+}
+
 func TestDeepNestingFixturesExceedMaxDepth(t *testing.T) {
 	for _, name := range []string{
 		"libmaxminddb-deep-nesting.mmdb",

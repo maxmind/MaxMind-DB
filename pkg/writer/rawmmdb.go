@@ -212,6 +212,20 @@ func writeMetadataBlock(buf []byte, nodeCount uint32, buildEpoch uint64) int {
 }
 
 func buildSimpleDB(metadataWriter func([]byte, uint32, uint64) int) []byte {
+	return buildDBWithRecord(func(buf []byte) int {
+		// A simple map with one string entry
+		pos := writeMap(buf, 1)
+		pos += writeString(buf[pos:], "ip")
+		return pos + writeString(buf[pos:], "test")
+	}, metadataWriter)
+}
+
+// buildDBWithRecord creates an MMDB with one search-tree node. Both of its
+// records point to the data record that recordWriter writes.
+func buildDBWithRecord(
+	recordWriter func([]byte) int,
+	metadataWriter func([]byte, uint32, uint64) int,
+) []byte {
 	const nodeCount = 1
 	const recordValue = nodeCount + 16
 	const buildEpoch = 1_000_000_000
@@ -224,10 +238,7 @@ func buildSimpleDB(metadataWriter func([]byte, uint32, uint64) int) []byte {
 	// 16-byte null separator
 	pos += dataSeparatorSize
 
-	// Data: a simple map with one string entry
-	pos += writeMap(buf[pos:], 1)
-	pos += writeString(buf[pos:], "ip")
-	pos += writeString(buf[pos:], "test")
+	pos += recordWriter(buf[pos:])
 
 	pos += metadataWriter(buf[pos:], nodeCount, buildEpoch)
 
@@ -492,6 +503,35 @@ func buildRepeatedDescriptionKeyDB() []byte {
 		})
 		return writeMetadataBlockWithEntries(buf, entries)
 	})
+}
+
+// buildNonStringMapKeyDB creates an MMDB whose data record is a map with a
+// uint16 key, {1: "test"}. The spec requires map keys to be UTF-8 strings.
+// Readers should open the database and return an error when they decode the
+// record.
+func buildNonStringMapKeyDB() []byte {
+	return buildDBWithRecord(func(buf []byte) int {
+		return writeNonStringKeyMap(buf, "test")
+	}, writeMetadataBlock)
+}
+
+// buildNonStringDescriptionKeyDB creates an MMDB whose description map has a
+// uint16 key, {1: "Test"}. Readers should reject the database.
+func buildNonStringDescriptionKeyDB() []byte {
+	return buildSimpleDB(func(buf []byte, nodeCount uint32, buildEpoch uint64) int {
+		entries := metadataEntries(nodeCount, buildEpoch, 4, metadataKeysStandard)
+		replaceMetadataValue(entries, "description", func(b []byte) int {
+			return writeNonStringKeyMap(b, "Test")
+		})
+		return writeMetadataBlockWithEntries(buf, entries)
+	})
+}
+
+// writeNonStringKeyMap writes {1: value}, where the key is a uint16.
+func writeNonStringKeyMap(buf []byte, value string) int {
+	pos := writeMap(buf, 1)
+	pos += writeUint16(buf[pos:], 1)
+	return pos + writeString(buf[pos:], value)
 }
 
 // replaceMetadataValue sets the value writer of the entry with the given key.
