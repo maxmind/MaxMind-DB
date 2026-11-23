@@ -51,6 +51,8 @@ decodes the data:
   string that claims one byte more than the data section holds.
 - `libmaxminddb/libmaxminddb-pointer-into-metadata.mmdb` has a pointer to the
   first metadata byte.
+- `libmaxminddb/libmaxminddb-boolean-size-2.mmdb` has a boolean with a size
+  of 2. The size field of a boolean holds its value, so only 0 and 1 are valid.
 
 In `libmaxminddb/libmaxminddb-record-points-at-metadata-marker.mmdb`, the right
 record points at the metadata marker. A lookup of `128.0.0.1` should fail.
@@ -66,6 +68,11 @@ Readers should not open these databases:
 - `libmaxminddb/libmaxminddb-metadata-truncated-size.mmdb` has only the metadata
   marker and a 2-byte metadata section. Its value has a size that needs three
   more size bytes.
+
+Note: `libmaxminddb/libmaxminddb-search-tree-deeper-than-address.mmdb` is an
+IPv4 database with a search tree of 34 nodes. Both records of each node point to
+the next node, so a lookup uses all 32 bits of the address and still ends on a
+search node. Each lookup should fail with a corrupt search tree error.
 
 If you find a corrupt test-sized database that crashes a MMDB reader library,
 please feel free to add it here by creating a pull request.

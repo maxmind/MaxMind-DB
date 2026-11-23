@@ -96,8 +96,15 @@ func rawBadDataFixtures() map[string][]byte {
 		"libmaxminddb-short-data-separator.mmdb": buildDataSectionDB(
 			dataSectionEmptyRecord, dataSectionEmptyRecord, dataSeparatorSize/2, "",
 		),
-		"libmaxminddb-no-search-tree.mmdb":          buildNoSearchTreeDB(),
-		"libmaxminddb-metadata-truncated-size.mmdb": []byte(metadataMarker + truncatedSizeBoolean),
+		// The size field of a boolean holds its value, so only 0 and 1 are valid.
+		"libmaxminddb-boolean-size-2.mmdb": buildDataSectionDB(
+			dataSectionFirstRecord, dataSectionEmptyRecord, dataSeparatorSize, "\x02\x07",
+		),
+		"libmaxminddb-search-tree-deeper-than-address.mmdb": buildDeepSearchTreeDB(),
+		"libmaxminddb-no-search-tree.mmdb":                  buildNoSearchTreeDB(),
+		"libmaxminddb-metadata-truncated-size.mmdb": []byte(
+			metadataMarker + truncatedSizeBoolean,
+		),
 	}
 }
 

@@ -596,8 +596,7 @@ const (
 	// byte of the data section in those databases.
 	dataSectionFirstRecord = dataSectionEmptyRecord + dataSeparatorSize
 	// truncatedSizeBoolean is an extended boolean with a size of 31. That
-	// size needs three more size bytes, which are missing. A boolean has no
-	// payload, so only a check of the size bytes catches it.
+	// size needs three more size bytes, which are missing.
 	truncatedSizeBoolean = "\x1f\x07"
 )
 
@@ -623,4 +622,23 @@ func buildDataSectionDB(leftRecord, rightRecord uint32, separatorSize int, data 
 func buildNoSearchTreeDB() []byte {
 	buf := make([]byte, 1024)
 	return buf[:writeMetadataBlock(buf, 1, 1_000_000_000)]
+}
+
+// buildDeepSearchTreeDB creates an IPv4 MMDB with a search tree of 34 nodes.
+// Both records of each node point to the next node, so a lookup uses all 32
+// bits of the address and still ends on a search node. Readers should report
+// a corrupt search tree and not treat the node number as a data pointer.
+func buildDeepSearchTreeDB() []byte {
+	const nodeCount = 34
+
+	buf := make([]byte, 1024)
+	pos := 0
+	for node := uint32(1); node <= nodeCount; node++ {
+		pos += writeSearchTreeRecords(buf[pos:], node, node)
+	}
+	pos += dataSeparatorSize
+	pos += writeMap(buf[pos:], 0)
+	pos += writeMetadataBlock(buf[pos:], nodeCount, 1_000_000_000)
+
+	return buf[:pos]
 }

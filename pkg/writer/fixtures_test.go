@@ -139,6 +139,7 @@ func TestDataSectionFixtureSizes(t *testing.T) {
 		"libmaxminddb-data-contains-metadata-marker.mmdb":     15,
 		"libmaxminddb-pointer-into-metadata.mmdb":             3,
 		"libmaxminddb-record-points-at-metadata-marker.mmdb":  3,
+		"libmaxminddb-boolean-size-2.mmdb":                    2,
 		"libmaxminddb-no-data-separator.mmdb":                 -16,
 		"libmaxminddb-short-data-separator.mmdb":              -8,
 		"libmaxminddb-no-search-tree.mmdb":                    -22,
