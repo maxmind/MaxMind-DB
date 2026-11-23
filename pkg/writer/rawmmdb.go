@@ -212,6 +212,20 @@ func writeMetadataBlock(buf []byte, nodeCount uint32, buildEpoch uint64) int {
 }
 
 func buildSimpleDB(metadataWriter func([]byte, uint32, uint64) int) []byte {
+	return buildDBWithRecord(func(buf []byte) int {
+		// A simple map with one string entry
+		pos := writeMap(buf, 1)
+		pos += writeString(buf[pos:], "ip")
+		return pos + writeString(buf[pos:], "test")
+	}, metadataWriter)
+}
+
+// buildDBWithRecord creates an MMDB with one search-tree node. Both of its
+// records point to the data record that recordWriter writes.
+func buildDBWithRecord(
+	recordWriter func([]byte) int,
+	metadataWriter func([]byte, uint32, uint64) int,
+) []byte {
 	const nodeCount = 1
 	const recordValue = nodeCount + 16
 	const buildEpoch = 1_000_000_000
@@ -224,10 +238,7 @@ func buildSimpleDB(metadataWriter func([]byte, uint32, uint64) int) []byte {
 	// 16-byte null separator
 	pos += dataSeparatorSize
 
-	// Data: a simple map with one string entry
-	pos += writeMap(buf[pos:], 1)
-	pos += writeString(buf[pos:], "ip")
-	pos += writeString(buf[pos:], "test")
+	pos += recordWriter(buf[pos:])
 
 	pos += metadataWriter(buf[pos:], nodeCount, buildEpoch)
 
@@ -492,6 +503,23 @@ func buildRepeatedDescriptionKeyDB() []byte {
 		})
 		return writeMetadataBlockWithEntries(buf, entries)
 	})
+}
+
+// buildExtendedTypeDB creates an MMDB whose data record is
+// {"ip": value, "after": "test"}. The value has a control byte of 0x00 and the
+// given extended type byte, so its type is 7 plus that byte and its size is 0.
+// Readers should open the database and return an error when they decode the
+// record, or when they skip the value to read "after".
+func buildExtendedTypeDB(extendedType byte) []byte {
+	return buildDBWithRecord(func(buf []byte) int {
+		pos := writeMap(buf, 2)
+		pos += writeString(buf[pos:], "ip")
+		buf[pos] = 0x00
+		buf[pos+1] = extendedType
+		pos += 2
+		pos += writeString(buf[pos:], "after")
+		return pos + writeString(buf[pos:], "test")
+	}, writeMetadataBlock)
 }
 
 // replaceMetadataValue sets the value writer of the entry with the given key.

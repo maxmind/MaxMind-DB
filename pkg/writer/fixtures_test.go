@@ -122,6 +122,34 @@ func countMapKeys(t *testing.T, decoder *mmdbdata.Decoder, description bool) map
 	return counts
 }
 
+// TestExtendedTypeFixturesHaveBadTypes checks that each extended-type fixture
+// still has its bad value. The byte-equality test passes after a regeneration
+// that drops the value, so it cannot catch that.
+func TestExtendedTypeFixturesHaveBadTypes(t *testing.T) {
+	for name, wantErr := range map[string]string{
+		"libmaxminddb-extended-type-0.mmdb": "unknown type: 263",
+		"libmaxminddb-extended-type-9.mmdb": "unknown type: 16",
+		"libmaxminddb-container-type.mmdb":  "unknown type: 12",
+		"libmaxminddb-end-marker-type.mmdb": "unknown type: 13",
+	} {
+		t.Run(name, func(t *testing.T) {
+			reader, err := maxminddb.Open(
+				filepath.Join("..", "..", "bad-data", "libmaxminddb", name),
+			)
+			if err != nil {
+				t.Fatal(err)
+			}
+			defer reader.Close()
+
+			var record any
+			err = reader.Lookup(netip.MustParseAddr("1.1.1.1")).Decode(&record)
+			if err == nil || !strings.Contains(err.Error(), wantErr) {
+				t.Errorf("Decode error = %v, want %q", err, wantErr)
+			}
+		})
+	}
+}
+
 func TestDeepNestingFixturesExceedMaxDepth(t *testing.T) {
 	for _, name := range []string{
 		"libmaxminddb-deep-nesting.mmdb",
